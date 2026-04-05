@@ -17,18 +17,19 @@ public class PlayerMovement : MonoBehaviour
     //Date: 03/04/2026
     //Availiability: https://www.youtube.com/watch?v=VWaiU7W5HdE
 
-    public float movementSpeed = 5f;
-    public Rigidbody2D rigBod;
+    public float MovementSpeed = 5f;
+    public Rigidbody2D RigBod;
     Vector2 movement;
 
     float dashSpeed = 20f;
     float dashDuration = 0.1f;
     float dashCooldown = 0.5f;
-    bool isDashing;
+    public bool IsDashing;
     bool canDash = true;
     void Update()
+    
     {
-       if (isDashing)
+       if (IsDashing)
         {
             return;
         }
@@ -44,21 +45,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isDashing)
+        if (IsDashing)
         {
             return;
         }
 
-        rigBod.MovePosition(rigBod.position + movement.normalized * movementSpeed * Time.deltaTime);
+        RigBod.MovePosition(RigBod.position + movement.normalized * MovementSpeed * Time.deltaTime);
     }
 
     private IEnumerator Dash()
     {
         canDash = false;
-        isDashing = true;
-        rigBod.linearVelocity = new Vector2(movement.x * dashSpeed, movement.y * dashSpeed);
+        IsDashing = true;
+        RigBod.linearVelocity = new Vector2(movement.x * dashSpeed, movement.y * dashSpeed);
         yield return new WaitForSeconds(dashDuration);
-        isDashing = false;
+        IsDashing = false;
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;

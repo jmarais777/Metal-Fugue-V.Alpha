@@ -12,7 +12,7 @@ public class ShootMech : MonoBehaviour
     //This creates a container for the bullet object.
     public GameObject Bullets;
     public Transform WeaponCenter;
- 
+    public bool IsShooting = false;
  
    
 
@@ -30,10 +30,12 @@ public class ShootMech : MonoBehaviour
         {
            
             Shoot();
-        
+            IsShooting = true;
 
 
         }
+
+        else IsShooting = false;
 
         void Shoot()
         //this clones the bullet prefab at the position of the firepoint (Nozzle), and ensures that bullets and firepoint roatet togetehr, allowing the bullets to always shoot from the firepoint..
