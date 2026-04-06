@@ -65,6 +65,6 @@ public class EnergyPool : MonoBehaviour
         {
             Debug.Log("You Have Died");
         }
-    
+   
     }
 }
