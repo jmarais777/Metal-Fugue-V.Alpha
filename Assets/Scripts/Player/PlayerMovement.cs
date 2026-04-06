@@ -41,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
         
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        if (dashCooldown > 0)
+        {
+            dashCooldown -= Time.deltaTime;
+        }
     }
 
     private void FixedUpdate()
