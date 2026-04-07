@@ -9,14 +9,17 @@ public class Enemy : MonoBehaviour
     public GameObject Player;
     public Transform EnemyRecall;
     public float MoveSpeed = 10.0f;
+    public float ReverseSpeed = 10.0f;
     Rigidbody2D rb;
     bool IsEnemyNPCSetActive = true;
-    bool IsRecall = true;
-    public float Timer = 1.0f;
+    public bool IsRecall = true;
+    private float LoopD = 2.0f;
+    public float Timer = 2.0f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Timer = LoopD;
        
        
     }
@@ -31,20 +34,24 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
-        Vector3 direction = (Player.transform.position - EnemyNPC.transform.position).normalized;
-        EnemyNPC.transform.position += direction * MoveSpeed * Time.deltaTime ;
-
-        Vector3 recall = (EnemyRecall.position - EnemyNPC.transform.position).normalized;
-
         if (IsRecall == true)
         {
-            EnemyNPC.transform.position += recall * MoveSpeed * Time.deltaTime;
+            Vector3 direction = (Player.transform.position - EnemyNPC.transform.position).normalized;
+            EnemyNPC.transform.position += direction * MoveSpeed * Time.deltaTime;
+        }
+        Vector3 recall = (EnemyRecall.position - EnemyNPC.transform.position).normalized;
+
+        if (IsRecall == false)
+        {
+            EnemyNPC.transform.position += recall * ReverseSpeed * Time.deltaTime;
             Timer -= Time.deltaTime;
             Debug.Log("wow");
-        }
-        if (Timer <= 0)
-        {
-            IsRecall = false;
+
+            if (Timer <= 0)
+            {
+                IsRecall = true;
+                Timer = LoopD;
+            }
         }
     }
 
@@ -53,7 +60,7 @@ public class Enemy : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Player")) 
         {
-            IsRecall = true;
+            IsRecall = false;
         }
     }
 }

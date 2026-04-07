@@ -2718,7 +2718,7 @@ Transform:
   m_GameObject: {fileID: 1025226935}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.96, y: -23.597, z: 0}
+  m_LocalPosition: {x: -1.95, y: -24.34, z: 0}
   m_LocalScale: {x: 0.6085644, y: 1.7052202, z: 0.46968}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2940,7 +2940,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1029971652
 Transform:
@@ -2977,7 +2977,9 @@ MonoBehaviour:
   EnemyNPC: {fileID: 1029971651}
   Player: {fileID: 304904380}
   EnemyRecall: {fileID: 1536167974}
-  MoveSpeed: 2
+  MoveSpeed: 0
+  ReverseSpeed: 7
+  IsRecall: 1
   Timer: 1
 --- !u!114 &1029971654
 MonoBehaviour:
@@ -3047,23 +3049,25 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 4.099997, y: 0.2613202}
-      - {x: 5.8860283, y: 0.29769415}
-      - {x: 5.9444966, y: 0.8213501}
-      - {x: 5.709904, y: 1.4188488}
-      - {x: 4.315039, y: 1.3985457}
-      - {x: 2.7820897, y: 1.937962}
-      - {x: 3.886722, y: 1.9455154}
-      - {x: 2.1804605, y: 4.3588037}
-      - {x: 0.4890352, y: 1.9935062}
-      - {x: 1.4393708, y: 1.9169832}
-      - {x: 1.3294793, y: 1.4740835}
-      - {x: 0.6968183, y: 1.3078321}
-      - {x: 0.7730346, y: 0.22469163}
-      - {x: 1.3351028, y: 0.24213225}
-      - {x: 1.4926051, y: -1.176961}
-      - {x: 2.7869966, y: -1.1588472}
-      - {x: 2.9523313, y: 0.33469492}
+    - - {x: 5.6920223, y: 0.88280445}
+      - {x: 4.7154765, y: 1.178901}
+      - {x: 4.5067096, y: 1.2135082}
+      - {x: 2.7203336, y: 1.2070351}
+      - {x: 2.6836736, y: 2.037886}
+      - {x: 3.7664254, y: 2.0248544}
+      - {x: 2.2001514, y: 4.333244}
+      - {x: 0.6456973, y: 2.1143303}
+      - {x: 1.5832961, y: 2.0612974}
+      - {x: 1.584744, y: 1.1668926}
+      - {x: 0.88472676, y: 1.1450853}
+      - {x: 0.8788911, y: 0.50425076}
+      - {x: 1.5975196, y: 0.47767156}
+      - {x: 1.5959973, y: -1.0069356}
+      - {x: 2.628417, y: -0.9961177}
+      - {x: 2.6571453, y: 0.47754976}
+      - {x: 4.895052, y: 0.48435187}
+      - {x: 4.9179406, y: 0.7058728}
+      - {x: 5.862701, y: 0.73508024}
   m_UseDelaunayMesh: 1
 --- !u!114 &1029971657
 MonoBehaviour:
@@ -3162,7 +3166,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1042296274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5988,7 +5992,7 @@ Transform:
   m_GameObject: {fileID: 1937791689}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.168, y: -36.609, z: 0}
+  m_LocalPosition: {x: -32.91, y: -35.08, z: 0}
   m_LocalScale: {x: 0.6793452, y: 0.69165075, z: 0.46968}
   m_ConstrainProportionsScale: 0
   m_Children: []
