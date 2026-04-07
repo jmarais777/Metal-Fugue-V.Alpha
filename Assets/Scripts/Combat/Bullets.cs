@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     //Speed setting
     public float LinearVelocity = 50.0f;
     //time setting for bullet destruction
-    private float time = 1;
+   // private float time = 1;
    
 
 
@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
         //direction and speed of bullet once fired
         rb.linearVelocity = transform.up * LinearVelocity;
         //this destoryes the bullet after time has passed
-        Destroy(gameObject, time);
+       // Destroy(gameObject, time);
         //test
 
 
@@ -37,13 +37,18 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         //destroys objects containing the "Obstacle" tag, on collision.
-        if (collision.gameObject.CompareTag("Obstacles"))
+        if (collision.gameObject.CompareTag("Obstacles") && CompareTag("Scrapheap"))
         {
 
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Enviroment"))
+        {  
+            Destroy(this.gameObject); 
+        }
 
 
+       // if (collision.gameObject
 
 
 

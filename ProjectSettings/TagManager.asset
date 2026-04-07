@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bullets
   - Obstacles
+  - Enviroment
+  - EnemyBullets
+  - Scrapheap
   layers:
   - Default
   - TransparentFX
