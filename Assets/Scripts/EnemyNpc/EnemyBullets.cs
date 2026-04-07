@@ -12,7 +12,7 @@ public class EnemyBullets : MonoBehaviour
     public float LinearVelocity = 50.0f;
     //time setting for bullet destruction
     private float time = 1;
-
+    
 
 
 
@@ -31,7 +31,7 @@ public class EnemyBullets : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         //destroys objects containing the "Obstacle" tag, on collision.
-        if (collision.gameObject.CompareTag("Player") && CompareTag("Scrapheap"))
+        if (collision.gameObject.CompareTag("Player"))
         {
 
             Destroy(gameObject);

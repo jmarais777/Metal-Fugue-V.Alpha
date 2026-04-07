@@ -7,7 +7,8 @@ public class EnemyHealth : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
     private float Timer = 1.0f;
-
+    [SerializeField] private Collider2D EnemyCollider;
+    [SerializeField] private Collider2D ProximityCollider;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -16,11 +17,15 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullets"))
-        {
-            HitPoints--;
-            
-        }
+        
+        
+
+            if (collision.gameObject.CompareTag("Bullets"))
+            {
+                HitPoints--;
+
+            }
+        
             
         {
 

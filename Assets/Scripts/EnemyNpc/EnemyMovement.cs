@@ -3,7 +3,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Enemy : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     public GameObject EnemyNPC;
     public GameObject Player;
@@ -15,7 +15,8 @@ public class Enemy : MonoBehaviour
     public bool IsRecall = true;
     private float LoopD = 2.0f;
     public float Timer = 2.0f;
-
+    [SerializeField] private Collider2D EnemyCollider;
+    [SerializeField] private Collider2D ProximityCollider;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -58,9 +59,12 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
-        if (collision.gameObject.CompareTag("Player")) 
-        {
-            IsRecall = false;
-        }
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                IsRecall = false;
+            }
+        
     }
+
+    
 }
