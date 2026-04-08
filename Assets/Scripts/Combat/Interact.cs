@@ -1,30 +1,29 @@
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Interact : MonoBehaviour
 {
-    Rigidbody2D rb;
-    public GameObject Artifact;
-
-
-
-    void Start()
-    {
-       rb = GetComponent<Rigidbody2D>();
-
-        bool isGameObjectInRange = true;
-    }
-
-
+    public Transform Artifact;
+    public Transform Player;
+    bool IsPlayerInProximity = true;
+    public float InteracatProximity = 2f;
     void Update()
     {
-     
+        float distance = Vector3.Distance(Artifact.position, Player.position);
+
         if (Input.GetKeyDown(KeyCode.E))
         {
-            
-            Debug.Log("heheh");
+            IsPlayerInProximity = true;
+            if (distance < InteracatProximity)
+            {
+
+                Debug.Log("rheheeh");
+
+            }
+
+
         }
-
-
     }
 }
