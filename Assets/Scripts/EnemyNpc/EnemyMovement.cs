@@ -1,70 +1,123 @@
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+
 
 public class EnemyMovement : MonoBehaviour
 {
+    //Main Game Objects
     public GameObject EnemyNPC;
     public GameObject Player;
-    public Transform EnemyRecall;
+
+    //Recall Positions
+    public Transform recallStart;
+    public Transform recallP1;
+    public Transform recallP2;
+
+    //Triggers:
+    public GameObject PlayerRadius;
+    public GameObject EnemySensor;
+
+    //Speed Controls
     public float MoveSpeed = 10.0f;
-    public float ReverseSpeed = 10.0f;
-    Rigidbody2D rb;
-    bool IsEnemyNPCSetActive = true;
-    public bool IsRecall = true;
-    private float LoopD = 2.0f;
-    public float Timer = 2.0f;
-    [SerializeField] private Collider2D EnemyCollider;
-    [SerializeField] private Collider2D ProximityCollider;
-    void Start()
+    public float repulsion = 10.0f;
+    public float recallingSpeed = 10.0f;
+
+    //Looping Conditions
+    public bool IsFollowing = true;
+    public int RecallPos = -1;
+
+    //collisionCTRL
+    public GameObject Scrapheap;
+    public bool EnemyRepos = true;
+    public Rigidbody2D RigBod;
+
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        Timer = LoopD;
        
-       
-    }
-
-    void OnEnable()
-    {
-        if (IsEnemyNPCSetActive == true)
-        {
-            Update();
-        }
-
-    }
-    void Update()
-    {
-        if (IsRecall == true)
-        {
-            Vector3 direction = (Player.transform.position - EnemyNPC.transform.position).normalized;
-            EnemyNPC.transform.position += direction * MoveSpeed * Time.deltaTime;
-        }
-        Vector3 recall = (EnemyRecall.position - EnemyNPC.transform.position).normalized;
-
-        if (IsRecall == false)
-        {
-            EnemyNPC.transform.position += recall * ReverseSpeed * Time.deltaTime;
-            Timer -= Time.deltaTime;
-            Debug.Log("wow");
-
-            if (Timer <= 0)
-            {
-                IsRecall = true;
-                Timer = LoopD;
-            }
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                IsRecall = false;
-            }
+        RigBod = GetComponent<Rigidbody2D>();
         
     }
+    void FixedUpdate()
+    {
+        if (RecallPos == -1 && IsFollowing == true)
+        {
+            Vector3 chase = (Player.transform.position - EnemyNPC.transform.position).normalized;
+            Vector3 MovementForce = chase * MoveSpeed;
+            RigBod.AddForce(MovementForce);
+            Debug.Log("IsFollowing");
+        }
+
+        if (RecallPos == 0 && IsFollowing == false)
+        {
+            Vector3 RecallDir0 = (recallStart.position - EnemyNPC.transform.position).normalized;
+            Vector3 dir0Force = RecallDir0 * repulsion;
+            RigBod.AddForce(dir0Force);
+            Debug.Log("NotFolliiwng");
+        }
+        if (RecallPos == 1)
+        {
+            Vector3 Recalldir1 = (recallP1.position - EnemyNPC.transform.position).normalized;
+            Vector3 DirForce = Recalldir1 * recallingSpeed;
+            RigBod.AddForce(DirForce);
+            Debug.Log("GoingToRecallp1");
+        }
+        if (RecallPos == 2)
+        {
+            Vector3 Recalldir2 = (recallP2.position - EnemyNPC.transform.position).normalized;
+            Vector3 dir2Force = Recalldir2 * recallingSpeed;
+            RigBod.AddForce(dir2Force);
+            Debug.Log("GoingToRecallp2");
+           
+
+        }
+        
+    }
+     
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerRadius"))
+        {
+           RecallPos = 0;
+           IsFollowing = false;
+        }
+
+        if (collision.gameObject.CompareTag("Recall") )
+        {
+            RecallPos = 1;                  
+        }
+
+        if (collision.gameObject.CompareTag("Recall1"))
+        {
+            RecallPos = 2;
+        }
+
+        if (collision.gameObject.CompareTag("Recall2"))
+        {
+            IsFollowing = true;
+            RecallPos = -1;
+        }
+    }
+ } 
+        
+
 
     
-}
+
+
+
+
+
+
+//Below is how movement used to work, Unfortunately it caused major bugs so i switched to physic based movement.
+//EnemyNPC.transform.position = Vector3.MoveTowards(EnemyNPC.transform.position, EnemyRecall.transform.position, ReverseSpeed * Time.deltaTime);
+
+//Movement using rigidbody
+
+/*Vector3 chase = (Player.transform.position - EnemyNPC.transform.position).normalized;
+Vector3 MovementForce = chase * MoveSpeed;
+RigBod.AddForce(MovementForce);
+Debug.Log("IsFollowing");*/

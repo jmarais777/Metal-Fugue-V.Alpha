@@ -9,6 +9,12 @@ TagManager:
   - Enviroment
   - EnemyBullets
   - Scrapheap
+  - Enemy
+  - PlayerDetection
+  - PlayerRadius
+  - Recall
+  - Recall1
+  - Recall2
   layers:
   - Default
   - TransparentFX
@@ -16,9 +22,9 @@ TagManager:
   - Lighting
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Lighting2
+  - WallTrue
+  - Player
   - 
   - 
   - 
@@ -48,6 +54,9 @@ TagManager:
     locked: 0
   - name: Lighting
     uniqueID: 957207341
+    locked: 0
+  - name: WallTrue
+    uniqueID: 2002494415
     locked: 0
   m_RenderingLayers:
   - Default

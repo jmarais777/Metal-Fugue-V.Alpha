@@ -7,9 +7,10 @@ using UnityEngine.UIElements;
 public class EnemySHootMech : MonoBehaviour
 {
     //this creates a firepoint container, the the wepaon object is stored in.
-    public Transform Firepoint;
+   
     //This creates a container for the bullet object.
     public GameObject EnemyBullets;
+    public Transform FirePoint;
     public Transform WeaponCenter;
     public Transform Player;
     public float Timer = 3.0f;
@@ -25,6 +26,7 @@ public class EnemySHootMech : MonoBehaviour
     private void Start()
     {
         Timer = LoopS;
+      
     }
 
     void Update()
@@ -58,10 +60,11 @@ public class EnemySHootMech : MonoBehaviour
     }
     public void Shoot()
     {
+         
         if (Time.time >= BulletSpawnRate)
         {
-
-            Instantiate(EnemyBullets, Firepoint.position, Firepoint.rotation);
+           
+            Instantiate(EnemyBullets, FirePoint.position, FirePoint.rotation);
             BulletSpawnRate = Time.time + FireRate;
 
         }

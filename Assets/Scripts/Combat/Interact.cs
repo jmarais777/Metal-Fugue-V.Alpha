@@ -3,36 +3,41 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 
 public class Interact : MonoBehaviour
 {
 
-    public Transform Artifact;
-    public Transform Player;
+    public GameObject Artifact;
+    public GameObject Player;
     public Transform ScavengerBot;
     public GameObject DialogueUI;
     public Transform RechargeStation;
     public GameObject CorticalProcessor;
     public GameObject CorticalProcessorEye;
+    public GameObject SecurityGate;
     public Light2D CorticalProcessorLight;
     public EnergyPool ForCurrentEnergy;
-    bool IsPlayerInProximity = true;
+     bool IsPlayerInProximity = true;
     public float InteractProximity = 20f;
+
+    public EnergyPool CurrentEnergyPool;
 
 
 
 
     void Update()
     {
-        float Artdistance = Vector2.Distance(Artifact.position, Player.position);
-        float Scavengerdistance = Vector2.Distance(ScavengerBot.position, Player.position);
-        float RechargeStat = Vector2.Distance(RechargeStation.position, Player.position);
-        float Cort = Vector2.Distance(CorticalProcessor.transform.position, Player.position);
-
+        float Artdistance = Vector2.Distance(Artifact.transform.position, Player.transform.position);
+        float Scavengerdistance = Vector2.Distance(ScavengerBot.position, Player.transform.position);
+        float RechargeStat = Vector2.Distance(RechargeStation.position, Player.transform.position);
+        float Cort = Vector2.Distance(CorticalProcessor.transform.position, Player.transform.position);
+        float Sec = Vector2.Distance(SecurityGate.transform.position, Player.transform.position);
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
-            IsPlayerInProximity = true;
+           // IsPlayerInProximity = true;
 
             if (Artdistance < InteractProximity)
             {
@@ -49,7 +54,7 @@ public class Interact : MonoBehaviour
             if (Scavengerdistance < InteractProximity)
             {
                 ShowMenu();
-                Debug.Log("yayyy");
+
 
             }
         }
@@ -61,8 +66,8 @@ public class Interact : MonoBehaviour
 
             if (RechargeStat < InteractProximity)
             {
-                
-                
+
+
                 ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
                 ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
             }
@@ -72,22 +77,33 @@ public class Interact : MonoBehaviour
         {
             IsPlayerInProximity = true;
 
-            if (Cort < InteractProximity)
+            if (Sec < InteractProximity)
             {
-                CorticalProcessor.SetActive(false);
-                CorticalProcessorEye.SetActive(true);
-                CorticalProcessorLight.pointLightInnerRadius = 10f;
-                CorticalProcessorLight.pointLightOuterRadius = 12f;
+                CurrentEnergyPool.CurrentEnergy -= 5;
+
             }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                IsPlayerInProximity = true;
+
+                if (Cort < InteractProximity)
+                {
+                    CorticalProcessor.SetActive(false);
+                    CorticalProcessorEye.SetActive(true);
+                    CorticalProcessorLight.pointLightInnerRadius = 10f;
+                    CorticalProcessorLight.pointLightOuterRadius = 12f;
+                }
+            }
+
+
         }
-
-
-    }
-    void ShowMenu()
-    {
-        DialogueUI.SetActive(true);
-        UnityEngine.Cursor.visible = true;
-        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        void ShowMenu()
+        {
+            DialogueUI.SetActive(true);
+            UnityEngine.Cursor.visible = true;
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
+        }
     }
 }
 
