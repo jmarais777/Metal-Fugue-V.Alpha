@@ -147,7 +147,7 @@ RectTransform:
   m_GameObject: {fileID: 11843167}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.96465, y: 0.96465, z: 0.96465}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 373262614}
@@ -939,7 +939,7 @@ GameObject:
   - component: {fileID: 417360713}
   - component: {fileID: 417360714}
   m_Layer: 5
-  m_Name: ArtifactMenu
+  m_Name: In game menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
