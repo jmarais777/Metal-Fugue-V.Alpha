@@ -1,4 +1,5 @@
 
+using UnityEditor.Search;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,6 +14,7 @@ public class ShootMech : MonoBehaviour
     public GameObject Bullets;
     public Transform WeaponCenter;
     public bool IsShooting = false;
+    public GameObject MuzzleFlash;
  
    
 
@@ -31,11 +33,16 @@ public class ShootMech : MonoBehaviour
            
             Shoot();
             IsShooting = true;
-
+            MuzzleFlash.SetActive(true);
+            
 
         }
 
-        else IsShooting = false;
+        else
+        {
+            IsShooting = false;
+            MuzzleFlash.SetActive(false);
+        }
 
         void Shoot()
         //this clones the bullet prefab at the position of the firepoint (Nozzle), and ensures that bullets and firepoint roatet togetehr, allowing the bullets to always shoot from the firepoint..

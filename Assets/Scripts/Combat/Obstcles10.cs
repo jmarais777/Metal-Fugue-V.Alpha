@@ -3,11 +3,11 @@ using UnityEngine;
 public class Obstcles10 : MonoBehaviour
 {
     int HitPoints = 10;
-    Rigidbody2D rb;
+    
     SpriteRenderer sr;
     void Start()
     {
-       rb = GetComponent<Rigidbody2D>();
+       
        sr = GetComponent<SpriteRenderer>();
     }
 
