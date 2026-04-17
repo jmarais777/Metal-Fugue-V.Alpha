@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PanelSettings
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.PanelSettings
   themeUss: {fileID: -4733365628477956816, guid: 0a14074cc879e32499525fb9339a8d2b, type: 3}
+  themeUss: {fileID: -4733365628477956816, guid: e0f52ac7a5d10774e8fba2f98a76ecde, type: 3}
   m_DisableNoThemeWarning: 0
   m_TargetTexture: {fileID: 0}
   m_RenderMode: 0
