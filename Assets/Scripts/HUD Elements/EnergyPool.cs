@@ -38,7 +38,7 @@ public class EnergyPool : MonoBehaviour
             CurrentEnergy -= MovementDrain;
             CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0, MaxEnergy);
             lastPoint = RigBod.position;
-            Debug.Log(CurrentEnergy);
+            //Debug.Log(CurrentEnergy);
         }
     }
 
@@ -49,7 +49,7 @@ public class EnergyPool : MonoBehaviour
         {
             CurrentEnergy -= 3;
             CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0, MaxEnergy);
-            Debug.Log(CurrentEnergy);
+            //Debug.Log(CurrentEnergy);
         }
     wasDashing = ForIsDashing.IsDashing;
 
@@ -58,12 +58,12 @@ public class EnergyPool : MonoBehaviour
         {
             CurrentEnergy -= 1;
             CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0, MaxEnergy);
-            Debug.Log(CurrentEnergy);
+            //Debug.Log(CurrentEnergy);
         }
 
     if (CurrentEnergy == 0)
         {
-            Debug.Log("You Have Died");
+            //Debug.Log("You Have Died");
         }
    
     }
