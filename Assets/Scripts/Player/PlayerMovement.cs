@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     
     {
+        //mapping movement controls for dash
        if (IsDashing)
         {
             return;
@@ -42,14 +43,11 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (dashCooldown > 0)
-        {
-            dashCooldown -= Time.deltaTime;
-        }
     }
 
     private void FixedUpdate()
     {
+       //defining dash position shift
         if (IsDashing)
         {
             return;
@@ -60,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        //establishing  dash velocity & cooldown
         canDash = false;
         IsDashing = true;
         RigBod.linearVelocity = new Vector2(movement.x * dashSpeed, movement.y * dashSpeed);
