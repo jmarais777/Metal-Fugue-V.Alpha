@@ -15,6 +15,12 @@ TagManager:
   - Recall
   - Recall1
   - Recall2
+  - Environment
+  - ToCryocombs
+  - FromCryocombs
+  - ToShuttle
+  - FromShuttle
+  - CryoEntrance
   layers:
   - Default
   - TransparentFX
