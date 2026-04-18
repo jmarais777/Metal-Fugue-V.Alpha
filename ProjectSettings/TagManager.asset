@@ -22,6 +22,10 @@ TagManager:
   - FromShuttle
   - CryoEntrance
   - PowerButton
+  - Electricity
+  - Electricity1
+  - Electricity2
+  - ElectricityPuzzleDoor
   layers:
   - Default
   - TransparentFX
