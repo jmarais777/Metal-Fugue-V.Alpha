@@ -69,5 +69,8 @@ TagManager:
   - name: WallTrue
     uniqueID: 2002494415
     locked: 0
+  - name: '-'
+    uniqueID: 2631756643
+    locked: 0
   m_RenderingLayers:
   - Default

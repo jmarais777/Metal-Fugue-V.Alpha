@@ -32,22 +32,22 @@ public class Obstacle : MonoBehaviour
 
         if (HitPoints == 4)
         {
-          rs.color = new Color(0.6980392f, 0.1333333f, 0.1333333f, 1f);
+          rs.color = new Color(0.5254902f, 0.3058824f, 0.6509804f, 1f);
 
         }
         if (HitPoints == 3)
         {
-            rs.color = new Color(0.7686275f, 0.222598f, 0.1490196f, 1f);
+            rs.color = new Color(0.6431373f, 0.4156863f, 0.7411765f, 1f);
 
         }
         if (HitPoints == 2)
         {
-            rs.color = new Color(0.7686275f, 0.333261f, 0.1490196f, 1f);
+            rs.color = new Color(0.7647059f, 0.5215687f, 0.8392157f, 1f);
 
         }
         if (HitPoints == 1)
         {
-            rs.color = new Color(0.6980392f, 0.4548363f, 0.1333333f, 1f);
+            rs.color = new Color(0.8470588f, 0.6392157f, 0.8901961f, 1f);
 
         }
 
