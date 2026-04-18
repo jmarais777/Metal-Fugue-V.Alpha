@@ -21,6 +21,8 @@ TagManager:
   - ToShuttle
   - FromShuttle
   - CryoEntrance
+  - New tag
+  - ScrapHeapsShut
   layers:
   - Default
   - TransparentFX

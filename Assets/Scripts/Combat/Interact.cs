@@ -12,7 +12,17 @@ public class Interact : MonoBehaviour
     public GameObject Artifact;
     public GameObject Player;
     public Transform ScavengerBot;
-    public GameObject DialogueUI;
+    public GameObject Enemy;
+    public bool IsLikerActive = true;
+
+    public GameObject DialogueUI1;
+    public GameObject UiLinker1;
+    public GameObject linkerGhost1;
+
+    public GameObject DialogueUI2;
+    public GameObject UiLinker2;
+
+
     public Transform RechargeStation;
     public GameObject CorticalProcessor;
     public GameObject CorticalProcessorEye;
@@ -33,7 +43,8 @@ public class Interact : MonoBehaviour
 
         //These lines of code do the the exact same thing as the code above, for each interactable object that was listed earlier.
      
-        float Scavengerdistance = Vector2.Distance(ScavengerBot.position, Player.transform.position);
+        float uiLinker1 = Vector2.Distance(ScavengerBot.position, Player.transform.position);
+        float uiLinker2 = Vector2.Distance(ScavengerBot.position, Player.transform.position);
         float RechargeStat = Vector2.Distance(RechargeStation.position, Player.transform.position);
         float Cort = Vector2.Distance(CorticalProcessor.transform.position, Player.transform.position);
         float Sec = Vector2.Distance(SecurityGate.transform.position, Player.transform.position);
@@ -56,12 +67,39 @@ public class Interact : MonoBehaviour
         {
             IsPlayerInProximity = true;
 
-            if (Scavengerdistance < InteractProximity)
+            if (uiLinker1 < InteractProximity)
             {
-                ShowMenu();
-
+                ShowMenu1();
 
             }
+        }
+
+        if (Enemy.activeInHierarchy)
+        {
+            IsLikerActive = true;
+           
+        }
+        else
+        {
+            IsLikerActive = false;
+        }
+         
+        if (Input.GetKeyDown(KeyCode.E)&& IsLikerActive == false)
+            {
+                IsPlayerInProximity = true;
+
+                if (uiLinker2 < InteractProximity)
+                {
+                ShowMenu2();
+
+                }
+            }
+
+
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            IsPlayerInProximity  = false;
         }
 
 
@@ -108,11 +146,15 @@ public class Interact : MonoBehaviour
 
         }
         //this is for our Ui,but its not working properly yet so don't try to learn from it.
-        void ShowMenu()
+        void ShowMenu1()
         {
-            DialogueUI.SetActive(true);
+            DialogueUI1.SetActive(true);
             UnityEngine.Cursor.visible = true;
             UnityEngine.Cursor.lockState = CursorLockMode.None;
+        }
+        void ShowMenu2()
+        {
+            DialogueUI2.SetActive(true);
         }
     }
 }

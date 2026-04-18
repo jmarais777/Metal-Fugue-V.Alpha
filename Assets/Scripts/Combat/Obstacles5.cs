@@ -5,9 +5,10 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     //stores 5 hitpoints
-    int HitPoints = 5;
+    public int HitPoints = 5;
     Rigidbody2D rb;
     SpriteRenderer rs;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -55,6 +56,7 @@ public class Obstacle : MonoBehaviour
         if (HitPoints == 0)
         {
             Destroy(this.gameObject);
+           
         }
     }
 }
