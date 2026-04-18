@@ -6,7 +6,6 @@ public class EnemyHealth : MonoBehaviour
     int HitPoints = 10;
     Rigidbody2D rb;
     SpriteRenderer sr;
-    private float Timer = 1.0f;
     [SerializeField] private Collider2D EnemyCollider;
     [SerializeField] private Collider2D ProximityCollider;
     void Start()

@@ -9,13 +9,13 @@ public class PlayerMovement : MonoBehaviour
     //Title: Top Down Movement In UNITY 6
     //Author: Unity Unlocked
     //Date: 02/04/2026
-    //Availiability: https://www.youtube.com/watch?v=Rs8Wy9jH8iA
+    //Availability: https://www.youtube.com/watch?v=Rs8Wy9jH8iA
 
     //Player Dash
     //Title: Simple DASH Mechanic in Unity
     //Author: BMo
     //Date: 03/04/2026
-    //Availiability: https://www.youtube.com/watch?v=VWaiU7W5HdE
+    //Availability: https://www.youtube.com/watch?v=VWaiU7W5HdE
 
     public float MovementSpeed = 5f;
     public Rigidbody2D RigBod;
