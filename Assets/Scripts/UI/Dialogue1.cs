@@ -3,14 +3,17 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Dialogue : MonoBehaviour
+public class Dialogue1 : MonoBehaviour
 {
     public GameObject Enemy;
     private Button nextButton;
     public Label DialogueLines;
     public string[] ScavengerLines;
     public int DialogueList = 0;
-    public GameObject DialogueUi;
+    public GameObject DialogueUi1;
+    public GameObject linkerGhost1;
+    public EnemyMovement enemySriptMove;
+    public EnemySHootMech enemyScriptShoot;
 
     void OnEnable()
     {
@@ -51,13 +54,16 @@ public class Dialogue : MonoBehaviour
     void EndDialogue()
     {
         nextButton.SetEnabled(false);
-        DialogueUi.SetActive(false);
+        DialogueUi1.SetActive(false);
         ShowGameObject();
       
     }
     void ShowGameObject()
     {
-        Enemy.SetActive(true);
+        enemySriptMove.enabled = true;
+        enemyScriptShoot.enabled = true;
+
+        linkerGhost1.SetActive(false);
     }
 }
 

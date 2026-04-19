@@ -3,6 +3,8 @@ using UnityEngine;
 public class Obstcles10 : MonoBehaviour
 {
     int HitPoints = 10;
+    public GameObject ThisObstacle;
+
     
     SpriteRenderer sr;
     void Start()
@@ -38,9 +40,13 @@ public class Obstcles10 : MonoBehaviour
         if (HitPoints == 0)
         {
             Destroy(this.gameObject);
+            ThisObstacle.SetActive(false);
+
         }
+
 
 
         
     }
+   
 }

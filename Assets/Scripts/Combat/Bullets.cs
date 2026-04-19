@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 
 public class Bullet : MonoBehaviour
 {
-    Rigidbody2D rb;
+    Rigidbody2D RigBod;
     //Speed setting
     public float LinearVelocity = 50.0f;
     //time setting for bullet destruction
@@ -17,16 +17,16 @@ public class Bullet : MonoBehaviour
 
 
 
-
+    
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        RigBod = GetComponent<Rigidbody2D>();
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        
- 
-        rb.linearVelocity = transform.up * LinearVelocity;
+
+
+        RigBod.linearVelocity = transform.up * LinearVelocity;
     
 
 
@@ -34,6 +34,7 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Destroy(this.gameObject);
       
         if (collision.gameObject.CompareTag("Obstacles") && CompareTag("Scrapheap"))
         {
