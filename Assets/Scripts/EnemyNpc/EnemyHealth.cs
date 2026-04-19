@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 
 {
-    int HitPoints = 10;
+   public int HitPoints = 25;
   
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
                 HitPoints--;
 
             }
-        
+
             
         {
 

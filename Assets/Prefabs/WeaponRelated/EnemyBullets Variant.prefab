@@ -30,19 +30,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9168229516404477185, guid: b97418ff54f3ebf4ea925f7fefa4c5ad, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.09188717
+      value: 0.08877679
       objectReference: {fileID: 0}
     - target: {fileID: 9168229516404477185, guid: b97418ff54f3ebf4ea925f7fefa4c5ad, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.07552691
+      value: 0.09873896
       objectReference: {fileID: 0}
     - target: {fileID: 9168229516404477185, guid: b97418ff54f3ebf4ea925f7fefa4c5ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.41777
+      value: 3.41621
       objectReference: {fileID: 0}
     - target: {fileID: 9168229516404477185, guid: b97418ff54f3ebf4ea925f7fefa4c5ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.94375
+      value: 7.95535
       objectReference: {fileID: 0}
     - target: {fileID: 9168229516404477185, guid: b97418ff54f3ebf4ea925f7fefa4c5ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -136,9 +136,9 @@ MonoBehaviour:
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
   m_ShadowsEnabled: 1
-  m_ShadowIntensity: 0.75
+  m_ShadowIntensity: 1
   m_ShadowSoftness: 0.3
-  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowSoftnessFalloffIntensity: 0
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
