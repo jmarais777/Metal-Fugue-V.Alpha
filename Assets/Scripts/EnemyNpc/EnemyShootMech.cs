@@ -21,7 +21,7 @@ public class EnemySHootMech : MonoBehaviour
     public float FireRate = 1.0f;
     public float BulletSpawnRate = 0.5f;
 
-    Rigidbody2D rb;
+ 
 
     private void Start()
     {
@@ -51,7 +51,7 @@ public class EnemySHootMech : MonoBehaviour
             AttackDuration -= Time.deltaTime;
         }
 
-        if (AttackDuration < 0)
+        if (AttackDuration <= 0)
         {
             IsShooting = false;
             Timer = LoopS;

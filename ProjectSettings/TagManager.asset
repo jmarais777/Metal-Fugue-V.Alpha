@@ -22,6 +22,9 @@ TagManager:
   - FromShuttle
   - CryoEntrance
   - PowerButton
+  - New tag
+  - ScrapHeapsShut
+  - Door
   layers:
   - Default
   - TransparentFX
