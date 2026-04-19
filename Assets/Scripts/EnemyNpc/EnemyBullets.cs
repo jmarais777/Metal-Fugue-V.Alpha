@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 
 public class EnemyBullets : MonoBehaviour
 {
-    Rigidbody2D rb;
+    Rigidbody2D RigBod;
     //Speed setting
     public float LinearVelocity = 50.0f;
     //time setting for bullet destruction
@@ -18,9 +18,9 @@ public class EnemyBullets : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        RigBod = GetComponent<Rigidbody2D>();
         //direction and speed of bullet once fired
-        rb.linearVelocity = transform.up * LinearVelocity;
+        RigBod.linearVelocity = transform.up * LinearVelocity;
         //this destoryes the bullet after time has passed
         Destroy(gameObject, time);
         //test
@@ -30,6 +30,7 @@ public class EnemyBullets : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Destroy(this.gameObject);
         //destroys objects containing the "Obstacle" tag, on collision.
         if (collision.gameObject.CompareTag("Player"))
         {
