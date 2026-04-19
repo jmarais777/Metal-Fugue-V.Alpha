@@ -25,10 +25,14 @@ TagManager:
   - New tag
   - ScrapHeapsShut
   - Door
+<<<<<<< Updated upstream
   - Electricity
   - Electricity1
   - Electricity2
   - ElectricityPuzzleDoor
+=======
+  - ShuttleEntrance
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
