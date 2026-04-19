@@ -13,14 +13,14 @@ public class Interact : MonoBehaviour
     public GameObject Player;
     public Transform ScavengerBot;
     public GameObject Enemy;
-    public bool IsLikerActive = true;
+    public bool IsLinkerActive = true;
 
     public GameObject DialogueUI1;
-    public GameObject UiLinker1;
+    public Transform UiLinker1;
     public GameObject linkerGhost1;
 
     public GameObject DialogueUI2;
-    public GameObject UiLinker2;
+    public Transform UiLinker2;
 
 
     public Transform RechargeStation;
@@ -43,8 +43,8 @@ public class Interact : MonoBehaviour
 
         //These lines of code do the the exact same thing as the code above, for each interactable object that was listed earlier.
      
-        float uiLinker1 = Vector2.Distance(ScavengerBot.position, Player.transform.position);
-        float uiLinker2 = Vector2.Distance(ScavengerBot.position, Player.transform.position);
+        float uiLinker1 = Vector2.Distance(UiLinker1.position, Player.transform.position);
+        float uiLinker2 = Vector2.Distance(UiLinker2.position, Player.transform.position);
         float RechargeStat = Vector2.Distance(RechargeStation.position, Player.transform.position);
         float Cort = Vector2.Distance(CorticalProcessor.transform.position, Player.transform.position);
         float Sec = Vector2.Distance(SecurityGate.transform.position, Player.transform.position);
@@ -61,40 +61,36 @@ public class Interact : MonoBehaviour
             }
         }
 
-       //These otehr id statements do the exact same thing, just for diffferent objects. teh big difference is what actually happens when each object is interacted with.
+        //These otehr id statements do the exact same thing, just for diffferent objects. teh big difference is what actually happens when each object is interacted with.
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            IsPlayerInProximity = true;
 
-            if (uiLinker1 < InteractProximity)
+            if (Enemy != null && Enemy.activeInHierarchy)
             {
-                ShowMenu1();
-
-            }
-        }
-
-        if (Enemy.activeInHierarchy)
-        {
-            IsLikerActive = true;
-           
-        }
-        else
-        {
-            IsLikerActive = false;
-        }
-         
-        if (Input.GetKeyDown(KeyCode.E)&& IsLikerActive == false)
-            {
-                IsPlayerInProximity = true;
-
-                if (uiLinker2 < InteractProximity)
+                if (uiLinker1 < InteractProximity)
                 {
-                ShowMenu2();
+                    ShowMenu1();
 
                 }
             }
 
+            else if (uiLinker2 < InteractProximity)
+            {
+                
+                
+                    ShowMenu2();
+                    Debug.Log("He dead");
+                
+
+
+               
+            }
+          
+
+        
+
+        }
 
 
         if (Input.GetKeyDown(KeyCode.E))

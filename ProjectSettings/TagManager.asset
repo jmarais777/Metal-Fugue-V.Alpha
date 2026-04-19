@@ -23,6 +23,7 @@ TagManager:
   - CryoEntrance
   - New tag
   - ScrapHeapsShut
+  - Door
   layers:
   - Default
   - TransparentFX

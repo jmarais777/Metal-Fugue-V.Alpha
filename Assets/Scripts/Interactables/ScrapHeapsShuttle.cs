@@ -6,12 +6,15 @@ public class ScrapHeapsShuttle : MonoBehaviour
     public int HitPoints = 5;
     public GameObject Thisheap;
     public bool IsActive = true;
+    public GameObject enemyNPC;
+    public GameObject Ui3;
+    
 
     SpriteRenderer spriteRen;
 
     void Start()
     {
-
+      
         spriteRen = GetComponent<SpriteRenderer>();
     }
 
@@ -19,14 +22,18 @@ public class ScrapHeapsShuttle : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+        Debug.Log("Something hit the heap: " + collision.gameObject.name);
+        if (enemyNPC != null && enemyNPC.activeInHierarchy)
+        {
+            this.enabled = false;
+            return;
+        }
+  
+
         if (collision.gameObject.CompareTag("Bullets"))
         {
-
-
-            //subtracts one hit point on each collision.
             HitPoints--;
-
-
         }
 
         if (HitPoints == 4)

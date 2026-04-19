@@ -12,6 +12,8 @@ public class Dialogue1 : MonoBehaviour
     public int DialogueList = 0;
     public GameObject DialogueUi1;
     public GameObject linkerGhost1;
+    public EnemyMovement enemySriptMove;
+    public EnemySHootMech enemyScriptShoot;
 
     void OnEnable()
     {
@@ -58,7 +60,9 @@ public class Dialogue1 : MonoBehaviour
     }
     void ShowGameObject()
     {
-        Enemy.SetActive(true);
+        enemySriptMove.enabled = true;
+        enemyScriptShoot.enabled = true;
+
         linkerGhost1.SetActive(false);
     }
 }
