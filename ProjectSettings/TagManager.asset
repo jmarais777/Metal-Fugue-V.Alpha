@@ -21,6 +21,7 @@ TagManager:
   - ToShuttle
   - FromShuttle
   - CryoEntrance
+  - PowerButton
   - New tag
   - ScrapHeapsShut
   - Door
