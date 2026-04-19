@@ -9,11 +9,13 @@ public class ElectricityPuzzle : MonoBehaviour
 
     private void Start()
     {
+        //set electric bridge to false, to prime the puzzle
         ElectricityBridge.SetActive(false);
     }
 
     private void Update()
     {
+        //set countdown timer for puzzle connections
         TimePassing += Time.deltaTime;
         if (TimePassing > 4)
         {
@@ -25,12 +27,13 @@ public class ElectricityPuzzle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        //when bullets hit, activate the electricity bridge
         if (collision.gameObject.CompareTag("Bullets"))
         {
-            Debug.Log("Fuck You Game");
             ElectricityBridge.SetActive(true);
             Destroy(collision.gameObject);
+            
+            //reset timer per each collision with the puzzle collider so that it lasts the full 4 seconds
             TimePassing = 0;
         }
 
