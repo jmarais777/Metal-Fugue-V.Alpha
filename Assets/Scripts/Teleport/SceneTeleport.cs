@@ -24,6 +24,17 @@ public class SceneTeleport : MonoBehaviour
             SceneManager.sceneLoaded += MovePlayerToFromCryo;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
+        else if (collision.tag == "ToShuttle")
+        {
+            SceneManager.sceneLoaded += MovePlayerToShuttleEntrance;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+        }
+        else if (collision.tag == "FromShuttle")
+        {
+            SceneManager.sceneLoaded += MovePlayerToFromShuttle;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+        }
     }
 
     //moves player to entrance of cryocombs, after the scene has loaded    
@@ -50,6 +61,32 @@ public class SceneTeleport : MonoBehaviour
         }
 
         SceneManager.sceneLoaded -= MovePlayerToFromCryo;
+    }
+
+    //moves player to the entrance of the shuttle, after the scene has loaded    
+    private void MovePlayerToShuttleEntrance(Scene scene, LoadSceneMode mode)
+    {
+        GameObject shuttleEntrance = GameObject.Find("ShuttleEntrance");
+
+        if (shuttleEntrance != null)
+        {
+            transform.position = shuttleEntrance.transform.position;
+        }
+
+        SceneManager.sceneLoaded -= MovePlayerToShuttleEntrance;
+    }
+
+    //moves player to the exterior of the shuttle, after the scene has loaded
+    private void MovePlayerToFromShuttle(Scene scene, LoadSceneMode mode)
+    {
+        GameObject fromShuttleSpawn = GameObject.Find("FromShuttle");
+
+        if (fromShuttleSpawn != null)
+        {
+            transform.position = fromShuttleSpawn.transform.position;
+        }
+
+        SceneManager.sceneLoaded -= MovePlayerToFromShuttle;
     }
 }
 
