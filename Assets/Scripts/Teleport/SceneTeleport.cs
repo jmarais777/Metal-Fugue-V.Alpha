@@ -17,23 +17,23 @@ public class SceneTeleport : MonoBehaviour
         if (collision.tag == "ToCryocombs")
         {
             SceneManager.sceneLoaded += MovePlayerToCryoEntrance;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
         }
         else if (collision.tag == "FromCryocombs")
         {
             SceneManager.sceneLoaded += MovePlayerToFromCryo;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
         }
         else if (collision.tag == "ToShuttle")
         {
             SceneManager.sceneLoaded += MovePlayerToShuttleEntrance;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }
         else if (collision.tag == "FromShuttle")
         {
             SceneManager.sceneLoaded += MovePlayerToFromShuttle;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 
