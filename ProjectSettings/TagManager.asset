@@ -25,6 +25,10 @@ TagManager:
   - New tag
   - ScrapHeapsShut
   - Door
+  - Electricity
+  - Electricity1
+  - Electricity2
+  - ElectricityPuzzleDoor
   layers:
   - Default
   - TransparentFX
