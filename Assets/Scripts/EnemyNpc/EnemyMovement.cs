@@ -100,6 +100,10 @@ public class EnemyMovement : MonoBehaviour
             IsFollowing = true;
             RecallPos = -1;
         }
+        if (collision.gameObject.CompareTag("ToShuttle"))
+        {
+        }
+        
     }
  } 
         
