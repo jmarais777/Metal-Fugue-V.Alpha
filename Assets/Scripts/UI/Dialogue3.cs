@@ -41,6 +41,8 @@ public class Dialogue3 : MonoBehaviour
 
     private void NextButtonOnClick()
     {
+        nextButton.clicked -= NextButtonOnClick;
+        nextButton.clicked += NextButtonOnClick;
         DialogueIndex++;
         UpdateDialogueLines();
 
@@ -68,8 +70,10 @@ public class Dialogue3 : MonoBehaviour
         }
         
         nextButton.SetEnabled(false);
-        DialogueUi3.SetActive(false);
-        GetComponent<UIDocument>().enabled = false;
+        if (dialogueui != null)
+        { DialogueUi3.SetActive(false); }
+      
+       GetComponent<UIDocument>().enabled = false;
        
        // ShowGameObject();
 

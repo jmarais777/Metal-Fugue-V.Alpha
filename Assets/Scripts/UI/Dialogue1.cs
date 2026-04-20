@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.ComponentModel.Design.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,37 +7,49 @@ using UnityEngine.UIElements;
 public class Dialogue1 : MonoBehaviour
 {
     public GameObject Enemy;
+    public GameObject Player;
     private Button nextButton;
     public Label DialogueLines;
     public string[] ScavengerLines;
     public int DialogueList = 0;
     public GameObject DialogueUi1;
-    public GameObject linkerGhost1;
+    public GameObject UIlinker1;
     public EnemyMovement enemySriptMove;
     public EnemySHootMech enemyScriptShoot;
+    public float InteractProximity = 40.0f;
+    public UIDocument dialogueui;
 
-    void OnEnable()
+
+    private void Update()
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
 
-        nextButton = root.Q<Button>("next");
-        DialogueLines = root.Q<Label>("DialogueLines");
-
-
-        if (nextButton != null)
+        if (DialogueUi1 != null && !DialogueUi1.activeSelf )
         {
-            nextButton.clicked += NextButtonOnClick;
-            Debug.Log("Next button found and linked!");
+            {
+                float uilinker1 = Vector2.Distance(UIlinker1.transform.position, Player.transform.position);
+                if (Enemy != null && Enemy.activeInHierarchy)
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                        if (uilinker1 < InteractProximity)
+                        {
+                            Debug.Log("linkeronereg");
+                            ShowMenu1();
 
+                        }
+                }
+
+            }
         }
-        
     }
+   
+        
+    
 
     private void NextButtonOnClick()
     {
         DialogueList++;
         UpdateDialogueLines();
-
+        Debug.Log("The button was physically clicked!");
 
 
 
@@ -63,7 +76,36 @@ public class Dialogue1 : MonoBehaviour
         enemySriptMove.enabled = true;
         enemyScriptShoot.enabled = true;
 
-        linkerGhost1.SetActive(false);
+       
+    }
+    void ShowMenu1()
+    {
+        DialogueUi1.SetActive(true);
+
+        var uiDocu = DialogueUi1.GetComponent<UIDocument>();
+        if (uiDocu == null && uiDocu.rootVisualElement == null)
+        {
+            return;
+        }
+     
+        if (uiDocu != null)
+        {
+            var root = uiDocu.rootVisualElement;
+            nextButton = root.Q<Button>("next");
+            DialogueLines = root.Q<Label>("DialogueLines");
+        }
+        else
+        {
+            Debug.LogError("FATAL: Could not find a Button named 'next' in the UXML!");
+        }
+
+        if (nextButton != null)
+        {
+            nextButton.clicked += NextButtonOnClick;
+            Debug.Log("Next button found and linked!");
+
+        }
+
     }
 }
 

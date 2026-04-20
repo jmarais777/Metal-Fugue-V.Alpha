@@ -11,17 +11,25 @@ public class Interact : MonoBehaviour
     //each of these are an object that the player can interact with in the game.
     public GameObject Artifact;
     public GameObject Player;
-    public Transform ScavengerBot;
+    //public Transform ScavengerBot;
+  //  public Transform UiLinker4;
     public GameObject Enemy;
-    public bool IsLinkerActive = true;
+   // public bool IsLinkerActive = true;
 
-    public GameObject DialogueUI1;
-    public Transform UiLinker1;
-    public GameObject linkerGhost1;
+  //  public GameObject DialogueUI1;
+   // public Transform UiLinker1;
+    //public GameObject linkerGhost1;
 
-    public GameObject DialogueUI2;
-    public Transform UiLinker2;
+   // public GameObject DialogueUI2;
+   // public GameObject UiLinker2;
 
+   // public GameObject DialogueUI4;
+
+    public GameObject ScavengerArmIngame;
+    public GameObject ScavengerArmOnPlayer;
+    public GameObject scavengerArmOnScav;
+
+    //
 
     public Transform RechargeStation;
     public GameObject CorticalProcessor;
@@ -43,15 +51,19 @@ public class Interact : MonoBehaviour
 
         //These lines of code do the the exact same thing as the code above, for each interactable object that was listed earlier.
      
-        float uiLinker1 = Vector2.Distance(UiLinker1.position, Player.transform.position);
-        float uiLinker2 = Vector2.Distance(UiLinker2.position, Player.transform.position);
+        //float uiLinker1 = Vector2.Distance(UiLinker1.position, Player.transform.position);
+        //float uiLinker2 = Vector2.Distance(UiLinker2.transform.position, Player.transform.position);
         float RechargeStat = Vector2.Distance(RechargeStation.position, Player.transform.position);
         float Cort = Vector2.Distance(CorticalProcessor.transform.position, Player.transform.position);
         float Sec = Vector2.Distance(SecurityGate.transform.position, Player.transform.position);
-        
+        float Scavarm = Vector2.Distance(ScavengerArmIngame.transform.position, Player.transform.position);
+        //  float uilinker4 = Vector2.Distance(UiLinker4.transform.position, Player.transform.position);
+        if (Input.GetKeyDown(KeyCode.E)) Debug.Log("E pressed. Distance to Arm is: " + Scavarm); //arm is to far away??
+
+
         if (Input.GetKeyDown(KeyCode.E)) //If the E key is pressed 
         {
-            IsPlayerInProximity = true; //THEN, this bool (declared with the game objects at the top) is set to "True"
+           //THEN, this bool (declared with the game objects at the top) is set to "True"
 
             if (Artdistance < InteractProximity) // This cheaks if the "Artdistance" (Which now contains the value mentioned above) is less than the value of the inetract proximity. If the value is less THEN: the DebugLog will be displayed.
             {
@@ -59,90 +71,109 @@ public class Interact : MonoBehaviour
                 Debug.Log("hoho"); //
 
             }
-        }
 
-        //These otehr id statements do the exact same thing, just for diffferent objects. teh big difference is what actually happens when each object is interacted with.
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
 
-            if (Enemy != null && Enemy.activeInHierarchy)
+
+
+
+            if (Scavarm < InteractProximity && ScavengerArmIngame.activeSelf == true)
             {
-                if (uiLinker1 < InteractProximity)
-                {
-                    ShowMenu1();
-
-                }
+                Debug.Log("Arm");
+                ScavengerArmIngame.SetActive(false);
+                ScavengerArmOnPlayer.SetActive(true);
             }
 
-            else if (uiLinker2 < InteractProximity)
-            {
-                
-                
-                    ShowMenu2();
-                    Debug.Log("He dead");
-                
 
-
-               
-            }
-          
-
-        
-
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            IsPlayerInProximity  = false;
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            IsPlayerInProximity = true;
-
-            if (RechargeStat < InteractProximity)
-            {
-
-
-                ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
-                ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            IsPlayerInProximity = true;
 
             if (Sec < InteractProximity)
-            {
-                CurrentEnergyPool.CurrentEnergy -= 5;
+                {
+                    CurrentEnergyPool.CurrentEnergy -= 5;
 
-            }
+                }
+            
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                IsPlayerInProximity = true;
+          
+            
+                
 
                 if (Cort < InteractProximity)
                 {
-                    //SetActive, basically controls weatehr or not an obect is visbale on screen. (false means invisivle) (true means visble)
 
-                    CorticalProcessor.SetActive(false); //This makes the Cortical procssor object go invisible when interacted with.
-                    CorticalProcessorEye.SetActive(true); // At teh same time, the cortical processorEye object is made visible!.
+
+                    CorticalProcessor.SetActive(false);
+                    CorticalProcessorEye.SetActive(true);
 
                     //these are just lighting controlls.
                     CorticalProcessorLight.pointLightInnerRadius = 10f;
                     CorticalProcessorLight.pointLightOuterRadius = 12f;
                 }
+            
+
+
             }
 
-
         }
+
+        //These otehr id statements do the exact same thing, just for diffferent objects. teh big difference is what actually happens when each object is interacted with.
+
+        /* if (Input.GetKeyDown(KeyCode.E))
+         {
+
+             if (Enemy != null && Enemy.activeInHierarchy)
+             {
+                 if (uiLinker1 < InteractProximity)
+                 {
+                     ShowMenu1();
+
+                 }
+             }
+
+             else if (uiLinker2 < InteractProximity)
+             {                            
+                     ShowMenu2();
+                 Debug.Log("He dead");
+
+
+             }
+             else if (uilinker4 < InteractProximity && UiLinker2 == null)
+             {
+                 if (ScavengerArmOnPlayer != null)
+                 {
+
+
+                     scavengerArmOnScav.SetActive(true);
+                     ShowMenu4();
+                 }
+
+             }
+
+         }*/
+
+
+        /* if (Input.GetKeyDown(KeyCode.E))
+         {
+             IsPlayerInProximity  = false;
+         /*}
+
+
+         /*if (Input.GetKeyDown(KeyCode.E))
+         {
+             IsPlayerInProximity = true;
+
+             if (RechargeStat < InteractProximity)
+             {
+
+
+                 ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
+                 ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
+             }
+         }*/
+
+
+
         //this is for our Ui,but its not working properly yet so don't try to learn from it.
-        void ShowMenu1()
+        /*void ShowMenu1()
         {
             DialogueUI1.SetActive(true);
             UnityEngine.Cursor.visible = true;
@@ -152,8 +183,12 @@ public class Interact : MonoBehaviour
         {
             DialogueUI2.SetActive(true);
         }
+        void ShowMenu4()
+        {
+           DialogueUI4.SetActive(true);
+        }*/
     }
-}
+
 
 
 
