@@ -4,6 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 747a880407d59be49afe101fe5b41361
+  - enabled: 1
+    path: Assets/Scenes/DUPLTEST.unity
+    guid: 51dc45b59f0959545bb22e6826d91994
+  - enabled: 1
+    path: Assets/Scenes/GameOverREAL.unity
+    guid: bb18ef08d132d4b4a9cb8246c63355cd
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
