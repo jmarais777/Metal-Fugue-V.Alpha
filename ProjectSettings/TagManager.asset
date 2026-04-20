@@ -4,6 +4,32 @@
 TagManager:
   serializedVersion: 3
   tags: []
+  tags:
+  - Bullets
+  - Obstacles
+  - Enviroment
+  - EnemyBullets
+  - Scrapheap
+  - Enemy
+  - PlayerDetection
+  - PlayerRadius
+  - Recall
+  - Recall1
+  - Recall2
+  - Environment
+  - ToCryocombs
+  - FromCryocombs
+  - ToShuttle
+  - FromShuttle
+  - CryoEntrance
+  - New tag
+  - ScrapHeapsShut
+  - Door
+  - ShuttleEntrance
+  - Electricity
+  - ElectricityPuzzleDoor
+  - PowerButton
+  - ScavengerBot
   layers:
   - Default
   - TransparentFX

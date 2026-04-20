@@ -6,35 +6,43 @@ using UnityEngine.SceneManagement;
 public class SceneTeleport : MonoBehaviour
 {
 
+
     //Title: Unity 2D Platformer Tutorial 21 - Level management and teleporting between scenes
     //Author: Daniel Wood
     //Date: 17/04/2026
     //Availability: https://www.youtube.com/watch?v=ILUbcxfvEMk
-   
+
     //Loading scenes on collider trigger by changing active scene
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "ToCryocombs")
         {
             SceneManager.sceneLoaded += MovePlayerToCryoEntrance;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            Debug.Log("Registers");
+
         }
         else if (collision.tag == "FromCryocombs")
         {
             SceneManager.sceneLoaded += MovePlayerToFromCryo;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else if (collision.tag == "ToShuttle")
         {
             SceneManager.sceneLoaded += MovePlayerToShuttleEntrance;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
 
         }
         else if (collision.tag == "FromShuttle")
         {
             SceneManager.sceneLoaded += MovePlayerToFromShuttle;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        
+
         }
+     
     }
 
     //moves player to entrance of cryocombs, after the scene has loaded    
@@ -84,9 +92,13 @@ public class SceneTeleport : MonoBehaviour
         if (fromShuttleSpawn != null)
         {
             transform.position = fromShuttleSpawn.transform.position;
+         
         }
 
         SceneManager.sceneLoaded -= MovePlayerToFromShuttle;
+    
+
+
     }
 }
 

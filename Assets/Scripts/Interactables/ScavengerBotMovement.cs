@@ -8,6 +8,8 @@ public class ScavengerBotMovement : MonoBehaviour
     public Transform scavp1;
     public GameObject scrapHeap;
 
+ 
+
     public GameObject dialogueUI3;
     public GameObject ScavBot;
     
@@ -50,16 +52,20 @@ public class ScavengerBotMovement : MonoBehaviour
 
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("ToShuttle"))
         {
             this.gameObject.SetActive(false);
             this.enabled = false;
-        }
-    }
+        } 
+    
 
 
-
+    } */
 }
+
+
+
+
 

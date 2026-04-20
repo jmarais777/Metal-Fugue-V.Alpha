@@ -8,7 +8,7 @@ public class ScrapHeapsShuttle : MonoBehaviour
     public bool IsActive = true;
     public GameObject enemyNPC;
     public GameObject Ui3;
-    
+    public StayDestroyed Des;
 
     SpriteRenderer spriteRen;
 
@@ -63,8 +63,9 @@ public class ScrapHeapsShuttle : MonoBehaviour
             //Destroy(Thisheap);
             IsActive = false;
             Thisheap.SetActive(false);
-
+            Des.DestructionReg();
         }
+      
 
     }
 
