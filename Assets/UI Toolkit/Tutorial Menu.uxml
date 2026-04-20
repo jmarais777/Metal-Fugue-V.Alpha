@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Tutorial%20Menu.uss?fileID=7433441132597879392&amp;guid=78cf71be28a02d242a71b35fcec7c036&amp;type=3#Tutorial Menu"/>
+    <ui:VisualElement style="flex-grow: 1; aspect-ratio: 1.777778;">
+        <ui:Image source="project://database/Assets/Sprites/Tutorial%20Menu.png?fileID=6779504389876196629&amp;guid=d4578952d03aa5a46ab98807ff3b5231&amp;type=3#Tutorial Menu_0"/>
+    </ui:VisualElement>
+</ui:UXML>
