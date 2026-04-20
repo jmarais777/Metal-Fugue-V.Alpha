@@ -1,5 +1,7 @@
+#if UNITY_EDITOR
 using UnityEditor.Rendering;
 using UnityEditor.ShaderGraph;
+#endif
 using UnityEngine;
 
 public class ScrapHeaps : MonoBehaviour

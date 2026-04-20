@@ -1,7 +1,9 @@
 
 using Unity.Cinemachine;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor.Experimental.GraphView;
+#endif
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;

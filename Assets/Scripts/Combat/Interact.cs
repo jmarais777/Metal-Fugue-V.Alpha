@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
-using static UnityEditor.Experimental.GraphView.GraphView;
+
 
 
 public class Interact : MonoBehaviour
@@ -14,6 +14,10 @@ public class Interact : MonoBehaviour
     public GameObject Artifact3;
     public GameObject Artifact4;
     public GameObject Artifact5;
+    public GameObject Artifact6;
+    public GameObject Artifact7;
+    public GameObject Artifact8;
+    public GameObject Artifact9;
 
     //recharge stations
     public GameObject RechargeStationCryo;
@@ -55,8 +59,12 @@ public class Interact : MonoBehaviour
         float Artdistance3 = Vector2.Distance(Artifact3.transform.position, Player.transform.position);
         float Artdistance4 = Vector2.Distance(Artifact4.transform.position, Player.transform.position);
         float Artdistance5 = Vector2.Distance(Artifact5.transform.position, Player.transform.position);
+        float Artdistance6 = Vector2.Distance(Artifact6.transform.position, Player.transform.position);
+        float Artdistance7 = Vector2.Distance(Artifact7.transform.position, Player.transform.position);
+        float Artdistance8 = Vector2.Distance(Artifact8.transform.position, Player.transform.position);
+        float Artdistance9 = Vector2.Distance(Artifact9.transform.position, Player.transform.position);
 
-       
+
 
         float RechargeStatCryo = Vector2.Distance(RechargeStationCryo.transform.position, Player.transform.position);
         float RechargeStatWind = Vector2.Distance(RechargeStationWind.transform.position, Player.transform.position);
@@ -114,6 +122,30 @@ public class Interact : MonoBehaviour
                 Artifact5.SetActive(false);
 
             }
+            if (Artdistance6 < InteractProximity)
+            {
+
+                Artifact6.SetActive(false);
+
+            }
+            if (Artdistance7 < InteractProximity)
+            {
+
+                Artifact7.SetActive(false);
+
+            }
+            if (Artdistance8 < InteractProximity)
+            {
+
+                Artifact8.SetActive(false);
+
+            }
+            if (Artdistance9 < InteractProximity)
+            {
+
+                Artifact9.SetActive(false);
+
+            }
 
             if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -169,8 +201,8 @@ public class Interact : MonoBehaviour
                     CorticalProcessorEye.SetActive(true);
 
                     //these are just lighting controlls.
-                    CorticalProcessorLight.pointLightInnerRadius = 10f;
-                    CorticalProcessorLight.pointLightOuterRadius = 12f;
+                    CorticalProcessorLight.pointLightInnerRadius = 2.63f;
+                    CorticalProcessorLight.pointLightOuterRadius = 8.6f;
                 }
             
 
