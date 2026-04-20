@@ -48,7 +48,7 @@ public class EnemyMovement : MonoBehaviour
             Vector3 chase = (Player.transform.position - EnemyNPC.transform.position).normalized;
             Vector3 MovementForce = chase * MoveSpeed;
             RigBod.AddForce(MovementForce);
-            Debug.Log("IsFollowing");
+            //Debug.Log("IsFollowing");
         }
 
         if (RecallPos == 0 && IsFollowing == false)
@@ -56,21 +56,21 @@ public class EnemyMovement : MonoBehaviour
             Vector3 RecallDir0 = (recallStart.position - EnemyNPC.transform.position).normalized;
             Vector3 dir0Force = RecallDir0 * repulsion;
             RigBod.AddForce(dir0Force);
-            Debug.Log("NotFolliiwng");
+            //Debug.Log("NotFolliiwng");
         }
         if (RecallPos == 1)
         {
             Vector3 Recalldir1 = (recallP1.position - EnemyNPC.transform.position).normalized;
             Vector3 DirForce = Recalldir1 * recallingSpeed;
             RigBod.AddForce(DirForce);
-            Debug.Log("GoingToRecallp1");
+            //Debug.Log("GoingToRecallp1");
         }
         if (RecallPos == 2)
         {
             Vector3 Recalldir2 = (recallP2.position - EnemyNPC.transform.position).normalized;
             Vector3 dir2Force = Recalldir2 * recallingSpeed;
             RigBod.AddForce(dir2Force);
-            Debug.Log("GoingToRecallp2");
+           // Debug.Log("GoingToRecallp2");
            
 
         }
@@ -100,6 +100,10 @@ public class EnemyMovement : MonoBehaviour
             IsFollowing = true;
             RecallPos = -1;
         }
+        if (collision.gameObject.CompareTag("ToShuttle"))
+        {
+        }
+        
     }
  } 
         

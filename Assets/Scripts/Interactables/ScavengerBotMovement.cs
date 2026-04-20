@@ -8,6 +8,8 @@ public class ScavengerBotMovement : MonoBehaviour
     public Transform scavp1;
     public GameObject scrapHeap;
 
+ 
+
     public GameObject dialogueUI3;
     public GameObject ScavBot;
     
@@ -28,7 +30,9 @@ public class ScavengerBotMovement : MonoBehaviour
         //Vector3 direction = scavp1.position - ScavengerBot.transform.position;
         if (scrapHeap.gameObject.activeInHierarchy) //forgott to get the bool conidition
         {
+            this.enabled = true;
             return;
+            
             // Debug.Log("HeapActive");
         }
         if (scrapHeap.gameObject.activeInHierarchy == false)
@@ -48,15 +52,20 @@ public class ScavengerBotMovement : MonoBehaviour
 
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Door"))
+        if (collision.gameObject.CompareTag("ToShuttle"))
         {
-            ScavBot.SetActive(false);
-        }
-    }
+            this.gameObject.SetActive(false);
+            this.enabled = false;
+        } 
+    
 
 
-
+    } */
 }
+
+
+
+
 

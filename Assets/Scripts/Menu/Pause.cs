@@ -1,11 +1,11 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-// Title: PAUSE MENU in Unity
+// Title:  MENU in Unity
 // Author: Brackeys
-// Date: 20 December 2017
+// Date: 17 april 2026
 // Code Version: 8.0
-// Availability: https://www.youtube.com/watch?v=JivuXdrIHK0&t=1s
+// Availability: https://www.youtube.com/watch?v=JivuXdrIHK0&t=1sPAUSE
 
 public class PauseManager : MonoBehaviour
 {

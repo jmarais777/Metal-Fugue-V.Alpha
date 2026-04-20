@@ -10,13 +10,19 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     public Transform destination;
-
+ 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       //call Player tag, Rigidbody attatched to it moves to the destination
-        if (collision.CompareTag("Player"))
+        //call Player tag, Rigidbody attatched to it moves to the destination
+
+        if (collision.CompareTag("Player") )
         {
+          
             collision.attachedRigidbody.position = destination.position;
+          
+          
         }
+  
+
     }
 }

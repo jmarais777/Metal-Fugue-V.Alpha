@@ -21,14 +21,14 @@ TagManager:
   - ToShuttle
   - FromShuttle
   - CryoEntrance
-  - PowerButton
   - New tag
   - ScrapHeapsShut
   - Door
+  - ShuttleEntrance
   - Electricity
-  - Electricity1
-  - Electricity2
   - ElectricityPuzzleDoor
+  - PowerButton
+  - ScavengerBot
   layers:
   - Default
   - TransparentFX

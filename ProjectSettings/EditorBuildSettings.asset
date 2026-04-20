@@ -15,11 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/ScrapYard.unity
     guid: b878588e0b4391640a2e09e0b1d7c445
   - enabled: 1
-    path: Assets/Scenes/ScrapYardCentralAreaDuplicate.unity
-    guid: 6dc17f931cdc1e044afadb801a6527d0
+    path: Assets/Scenes/ShuttleInterrior.unity
+    guid: 7e1ef47ba63b6844eaca47e7fc45eeb0
   - enabled: 1
     path: Assets/Scenes/Cryocombs.unity
     guid: 9e4b1ea2c4ad6814c8c6e2eb66d16bb9
+  - enabled: 0
+    path: Assets/Scenes/ScrapYardCentralAreaDuplicate.unity
+    guid: 6dc17f931cdc1e044afadb801a6527d0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
