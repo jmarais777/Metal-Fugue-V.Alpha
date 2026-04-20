@@ -1,6 +1,6 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/EnergyMeter/EnergyHUD.uss?fileID=7433441132597879392&amp;guid=fa91a8abab02f4b45a2f16e8217d81f9&amp;type=3#EnergyHUD"/>
-    <ui:VisualElement name="EnergyMeterContainer" style="flex-grow: 1; aspect-ratio: 1.777778;">
+    <ui:VisualElement name="EnergyMeterContainer" style="flex-grow: 1; aspect-ratio: 1.777778; left: -7%; top: 0%; right: 0%; bottom: 0%;">
         <ui:Image name="EnergyMeterHUDSprite" source="project://database/Assets/Sprites/EnergyHUD.png?fileID=8884348493690749678&amp;guid=bc114277cff64a9449ab5a1f21b8eefa&amp;type=3#EnergyHUD_0" style="height: 88px; width: 190px; align-self: center; align-items: center;">
             <ui:Label text="Label" name="CurrentEnergyOutputReading" style="height: 22px; width: 201px; top: 39%; right: 0%; left: 0%; bottom: 0%; -unity-text-align: upper-center;"/>
         </ui:Image>
