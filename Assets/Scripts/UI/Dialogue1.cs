@@ -18,7 +18,7 @@ public class Dialogue1 : MonoBehaviour
     public ShootMech PlayerShoot;
     public EnemySHootMech enemyScriptShoot;
     public PlayerMovement playerMove;
-    public float InteractProximity = 40.0f;
+    public float InteractProximity = 3.0f;
     public UIDocument dialogueui;
     public GameObject Weapon;
 
