@@ -1,5 +1,6 @@
+
+using UnityEngine.Rendering;
 #if UNITY_EDITOR
-using UnityEditor.Rendering;
 using UnityEditor.ShaderGraph;
 #endif
 using UnityEngine;
