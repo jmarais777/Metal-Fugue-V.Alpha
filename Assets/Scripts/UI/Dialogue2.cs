@@ -9,13 +9,16 @@ public class Dialogue2 : MonoBehaviour
     private Button nextButton;
     public Label DialogueLines;
     public string[] ScavengerLines;
-    public int DialogueList = 0;
+    public int DialogueList = 1;
     public GameObject DialogueUi2;
     public GameObject Enemy;
     public GameObject Player;
     public GameObject UIlinker2;
     public float InteractProximity = 20.0f;
     public UIDocument dialogueui;
+    public PlayerMovement PlayerMove;
+    public ShootMech PlayerShoot;
+    public GameObject scrapHeapGhost;
     private void Update()
     {
 
@@ -84,12 +87,17 @@ public class Dialogue2 : MonoBehaviour
         nextButton.SetEnabled(false);
         DialogueUi2.SetActive(false);
         UIlinker2.SetActive(false);
-       // ShowGameObject();
+        PlayerShoot.enabled = true;
+        PlayerMove.enabled = true;
+        scrapHeapGhost.SetActive(false);
+        // ShowGameObject();
 
     }
     void ShowMenu2()
     {
         DialogueUi2.SetActive(true);
+        PlayerShoot.enabled = false;
+        PlayerMove.enabled = false;
            var Uidocu = DialogueUi2.GetComponent<UIDocument>();
         if (dialogueui == null || dialogueui.rootVisualElement == null)
         {
@@ -101,6 +109,7 @@ public class Dialogue2 : MonoBehaviour
             var root = Uidocu.rootVisualElement;
             nextButton = root.Q<Button>("next");
             DialogueLines = root.Q<Label>("DialogueLines");
+            DialogueList = 0;
         }
 
 
@@ -111,6 +120,7 @@ public class Dialogue2 : MonoBehaviour
             Debug.Log("Next button found and linked!");
 
         }
+        UpdateDialogueLines();
     }
     /*void ShowGameObject()
     {

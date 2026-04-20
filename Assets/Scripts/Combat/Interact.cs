@@ -8,70 +8,136 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Interact : MonoBehaviour
 {
-    //each of these are an object that the player can interact with in the game.
-    public GameObject Artifact;
+   //artifacts:
+    public GameObject Artifact1;
+    public GameObject Artifact2;
+    public GameObject Artifact3;
+    public GameObject Artifact4;
+    public GameObject Artifact5;
+
+    //recharge stations
+    public GameObject RechargeStationCryo;
+    public GameObject RechargeStationWind;
+    public GameObject RechargeStationShuttle;
+
+
+
     public GameObject Player;
-    //public Transform ScavengerBot;
-  //  public Transform UiLinker4;
+  
     public GameObject Enemy;
-   // public bool IsLinkerActive = true;
-
-  //  public GameObject DialogueUI1;
-   // public Transform UiLinker1;
-    //public GameObject linkerGhost1;
-
-   // public GameObject DialogueUI2;
-   // public GameObject UiLinker2;
-
-   // public GameObject DialogueUI4;
+ 
 
     public GameObject ScavengerArmIngame;
     public GameObject ScavengerArmOnPlayer;
     public GameObject scavengerArmOnScav;
 
-    //
+    
 
-    public Transform RechargeStation;
+
     public GameObject CorticalProcessor;
     public GameObject CorticalProcessorEye;
     public GameObject SecurityGate;
     public Light2D CorticalProcessorLight;
     public EnergyPool ForCurrentEnergy;
     public bool IsPlayerInProximity = true;
-    public float InteractProximity = 20f; //this basically just lets you do some maths later on. Once this entire script is complete, you can change the numebr to get smaller or larger proximities.
+    public float InteractProximity = 20f; 
 
     public EnergyPool CurrentEnergyPool;
+    public GameObject PowerButton;
 
 
 
 
     void Update()
     {
-        float Artdistance = Vector2.Distance(Artifact.transform.position, Player.transform.position); //This line of code, calculates the distance between the 'Artifact' item, and the player. This value is the applie to teh the word, "Artdistance".
+        float Artdistance1 = Vector2.Distance(Artifact1.transform.position, Player.transform.position);
+        float Artdistance2 = Vector2.Distance(Artifact2.transform.position, Player.transform.position);
+        float Artdistance3 = Vector2.Distance(Artifact3.transform.position, Player.transform.position);
+        float Artdistance4 = Vector2.Distance(Artifact4.transform.position, Player.transform.position);
+        float Artdistance5 = Vector2.Distance(Artifact5.transform.position, Player.transform.position);
 
-        //These lines of code do the the exact same thing as the code above, for each interactable object that was listed earlier.
-     
-        //float uiLinker1 = Vector2.Distance(UiLinker1.position, Player.transform.position);
-        //float uiLinker2 = Vector2.Distance(UiLinker2.transform.position, Player.transform.position);
-        float RechargeStat = Vector2.Distance(RechargeStation.position, Player.transform.position);
+       
+
+        float RechargeStatCryo = Vector2.Distance(RechargeStationCryo.transform.position, Player.transform.position);
+        float RechargeStatWind = Vector2.Distance(RechargeStationWind.transform.position, Player.transform.position);
+        float RechargeStatShut = Vector2.Distance(RechargeStationShuttle.transform.position, Player.transform.position);
+
+
         float Cort = Vector2.Distance(CorticalProcessor.transform.position, Player.transform.position);
         float Sec = Vector2.Distance(SecurityGate.transform.position, Player.transform.position);
         float Scavarm = Vector2.Distance(ScavengerArmIngame.transform.position, Player.transform.position);
-        //  float uilinker4 = Vector2.Distance(UiLinker4.transform.position, Player.transform.position);
+     
         if (Input.GetKeyDown(KeyCode.E)) Debug.Log("E pressed. Distance to Arm is: " + Scavarm); //arm is to far away??
 
 
-        if (Input.GetKeyDown(KeyCode.E)) //If the E key is pressed 
+        if (Input.GetKeyDown(KeyCode.E)) 
         {
-           //THEN, this bool (declared with the game objects at the top) is set to "True"
+          
 
-            if (Artdistance < InteractProximity) // This cheaks if the "Artdistance" (Which now contains the value mentioned above) is less than the value of the inetract proximity. If the value is less THEN: the DebugLog will be displayed.
+            if (Artdistance1 < InteractProximity) 
             {
 
-                Debug.Log("hoho"); //
+               Artifact1.SetActive(false);
 
             }
 
+            if (Artdistance2 < InteractProximity)
+            {
+
+                Artifact2.SetActive(false);
+
+            }
+
+            if (Artdistance3 < InteractProximity)
+            {
+
+                Artifact3.SetActive(false);
+
+            }
+
+            if (Artdistance3 < InteractProximity)
+            {
+
+                Artifact3.SetActive(false);
+
+            }
+
+            if (Artdistance4 < InteractProximity)
+            {
+
+                Artifact4.SetActive(false);
+
+            }
+            if (Artdistance5 < InteractProximity)
+            {
+
+                Artifact5.SetActive(false);
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+                {
+            
+
+                if (RechargeStatCryo < InteractProximity)
+                     {
+    
+                ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
+                ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
+                    }
+                if (RechargeStatWind < InteractProximity)
+                {
+
+                    ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
+                    ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
+                }
+                if (RechargeStatShut < InteractProximity)
+                {
+
+                    ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
+                    ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
+                }
+            }
 
 
 
@@ -94,9 +160,7 @@ public class Interact : MonoBehaviour
             
 
           
-            
-                
-
+           
                 if (Cort < InteractProximity)
                 {
 
@@ -157,18 +221,7 @@ public class Interact : MonoBehaviour
          /*}
 
 
-         /*if (Input.GetKeyDown(KeyCode.E))
-         {
-             IsPlayerInProximity = true;
-
-             if (RechargeStat < InteractProximity)
-             {
-
-
-                 ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
-                 ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
-             }
-         }*/
+        
 
 
 

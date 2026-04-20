@@ -13,6 +13,8 @@ public class Dialogue3 : MonoBehaviour
     public GameObject DialogueUi3;
     public ScavengerBotMovement scavmove;
     public UIDocument dialogueui;
+    public PlayerMovement PlayerMove;
+    public ShootMech PlayerShoot;
 
 
     void OnEnable()
@@ -22,6 +24,8 @@ public class Dialogue3 : MonoBehaviour
         {
             return;
         }
+        PlayerShoot.enabled = false;
+        PlayerMove.enabled = false;
         scavmove.enabled = false;
         var root = GetComponent<UIDocument>().rootVisualElement;
 
@@ -67,6 +71,8 @@ public class Dialogue3 : MonoBehaviour
         if(scavmove != null)
         {
             scavmove.enabled = true;
+            PlayerShoot.enabled = true;
+            PlayerMove.enabled = true;
         }
         
         nextButton.SetEnabled(false);

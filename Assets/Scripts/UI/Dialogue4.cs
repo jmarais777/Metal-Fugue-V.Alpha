@@ -9,7 +9,7 @@ public class Dialogue4 : MonoBehaviour
     private Button nextButton;
     public Label DialogueLines;
     public string[] ScavengerLines;
-    public int DialogueIndex = 0;
+    public int DialogueIndex = 1;
     public GameObject DialogueUi4;
     public GameObject UIlinker4;
     public GameObject Player;
@@ -19,6 +19,8 @@ public class Dialogue4 : MonoBehaviour
 
     public GameObject ScavengerArmOnPlayer;
     public GameObject scavengerArmOnScav;
+    public PlayerMovement PlayerMove;
+    public ShootMech PlayerShoot;
 
     private void Update()
     {
@@ -70,14 +72,18 @@ public class Dialogue4 : MonoBehaviour
         nextButton.SetEnabled(false);
         DialogueUi4.SetActive(false);
         UIlinker4.SetActive(false);
-      //  GetComponent<UIDocument>().enabled = false;
-       
-       // ShowGameObject();
+        PlayerShoot.enabled = true;
+        PlayerMove.enabled = true;
+        //  GetComponent<UIDocument>().enabled = false;
+
+        // ShowGameObject();
 
     }
     void ShowMenu4()
     {
         DialogueUi4.SetActive(true);
+        PlayerShoot.enabled = false;
+        PlayerMove.enabled = false;
         var dialogueui = DialogueUi4.GetComponent<UIDocument>();
         if (dialogueui == null || dialogueui.rootVisualElement == null)
         {
@@ -90,7 +96,7 @@ public class Dialogue4 : MonoBehaviour
             var root = dialogueui.rootVisualElement;
             nextButton = root.Q<Button>("next");
             DialogueLines = root.Q<Label>("DialogueLines");
-            DialogueIndex = 0;
+            DialogueIndex = 1;
         }
 
         if (nextButton != null)

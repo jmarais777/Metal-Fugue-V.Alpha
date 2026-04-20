@@ -15,9 +15,12 @@ public class Dialogue1 : MonoBehaviour
     public GameObject DialogueUi1;
     public GameObject UIlinker1;
     public EnemyMovement enemySriptMove;
+    public ShootMech PlayerShoot;
     public EnemySHootMech enemyScriptShoot;
+    public PlayerMovement playerMove;
     public float InteractProximity = 40.0f;
     public UIDocument dialogueui;
+    public GameObject Weapon;
 
 
     private void Update()
@@ -68,6 +71,8 @@ public class Dialogue1 : MonoBehaviour
     {
         nextButton.SetEnabled(false);
         DialogueUi1.SetActive(false);
+        playerMove.enabled = true;
+       
         ShowGameObject();
       
     }
@@ -75,12 +80,15 @@ public class Dialogue1 : MonoBehaviour
     {
         enemySriptMove.enabled = true;
         enemyScriptShoot.enabled = true;
+        
+        Weapon.SetActive(true);
+        PlayerShoot.enabled =true;
 
-       
     }
     void ShowMenu1()
     {
         DialogueUi1.SetActive(true);
+        playerMove.enabled = false;
 
         var uiDocu = DialogueUi1.GetComponent<UIDocument>();
         if (uiDocu == null && uiDocu.rootVisualElement == null)
@@ -93,6 +101,7 @@ public class Dialogue1 : MonoBehaviour
             var root = uiDocu.rootVisualElement;
             nextButton = root.Q<Button>("next");
             DialogueLines = root.Q<Label>("DialogueLines");
+            DialogueList = 0;
         }
         else
         {
@@ -105,6 +114,7 @@ public class Dialogue1 : MonoBehaviour
             Debug.Log("Next button found and linked!");
 
         }
+        UpdateDialogueLines();
 
     }
 }
