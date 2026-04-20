@@ -211,67 +211,7 @@ public class Interact : MonoBehaviour
 
         }
 
-        //These otehr id statements do the exact same thing, just for diffferent objects. teh big difference is what actually happens when each object is interacted with.
-
-        /* if (Input.GetKeyDown(KeyCode.E))
-         {
-
-             if (Enemy != null && Enemy.activeInHierarchy)
-             {
-                 if (uiLinker1 < InteractProximity)
-                 {
-                     ShowMenu1();
-
-                 }
-             }
-
-             else if (uiLinker2 < InteractProximity)
-             {                            
-                     ShowMenu2();
-                 Debug.Log("He dead");
-
-
-             }
-             else if (uilinker4 < InteractProximity && UiLinker2 == null)
-             {
-                 if (ScavengerArmOnPlayer != null)
-                 {
-
-
-                     scavengerArmOnScav.SetActive(true);
-                     ShowMenu4();
-                 }
-
-             }
-
-         }*/
-
-
-        /* if (Input.GetKeyDown(KeyCode.E))
-         {
-             IsPlayerInProximity  = false;
-         /*}
-
-
-        
-
-
-
-        //this is for our Ui,but its not working properly yet so don't try to learn from it.
-        /*void ShowMenu1()
-        {
-            DialogueUI1.SetActive(true);
-            UnityEngine.Cursor.visible = true;
-            UnityEngine.Cursor.lockState = CursorLockMode.None;
-        }
-        void ShowMenu2()
-        {
-            DialogueUI2.SetActive(true);
-        }
-        void ShowMenu4()
-        {
-           DialogueUI4.SetActive(true);
-        }*/
+     
     }
 
 

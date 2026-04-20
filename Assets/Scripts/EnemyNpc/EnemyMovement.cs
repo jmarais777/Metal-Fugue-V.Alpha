@@ -105,6 +105,11 @@ public class EnemyMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("ToShuttle"))
         {
         }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            RecallPos = 1;
+
+        }
       
         
     }
