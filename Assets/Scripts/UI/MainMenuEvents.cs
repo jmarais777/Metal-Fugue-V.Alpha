@@ -24,7 +24,7 @@ public class MainMenuEvents : MonoBehaviour
     {
 
       
-        SceneManager.LoadScene("Test");
+        SceneManager.LoadScene("DUPLTEST");
 
     }
    
