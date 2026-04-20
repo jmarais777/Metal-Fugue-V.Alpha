@@ -8,7 +8,8 @@ public class ScrapHeapsShuttle : MonoBehaviour
     public bool IsActive = true;
     public GameObject enemyNPC;
     public GameObject Ui3;
-    public StayDestroyed Des;
+
+    public GameObject GhostCondition;
 
     SpriteRenderer spriteRen;
 
@@ -23,12 +24,18 @@ public class ScrapHeapsShuttle : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        Debug.Log("Something hit the heap: " + collision.gameObject.name);
-        if (enemyNPC != null && enemyNPC.activeInHierarchy)
+        
+        /*if (enemyNPC != null && enemyNPC.activeInHierarchy)
         {
             this.enabled = false;
             return;
-        }
+        }*/
+        if (GhostCondition != null && GhostCondition.activeInHierarchy) 
+            {
+            this.enabled = false;
+            return;
+                
+                }
   
 
         if (collision.gameObject.CompareTag("Bullets"))
@@ -63,7 +70,7 @@ public class ScrapHeapsShuttle : MonoBehaviour
             //Destroy(Thisheap);
             IsActive = false;
             Thisheap.SetActive(false);
-            Des.DestructionReg();
+          
         }
       
 

@@ -6,12 +6,15 @@ public class ScavengerBotMovement : MonoBehaviour
 {
    // public GameObject ScavengerBot;
     public Transform scavp1;
+
+    public Transform Scavpos2;
     public GameObject scrapHeap;
 
  
 
     public GameObject dialogueUI3;
     public GameObject ScavBot;
+
     
   
     public bool IsHeapActive = true;
@@ -30,7 +33,7 @@ public class ScavengerBotMovement : MonoBehaviour
         //Vector3 direction = scavp1.position - ScavengerBot.transform.position;
         if (scrapHeap.gameObject.activeInHierarchy) //forgott to get the bool conidition
         {
-            this.enabled = true;
+           // this.enabled = true;
             return;
             
             // Debug.Log("HeapActive");
@@ -46,26 +49,34 @@ public class ScavengerBotMovement : MonoBehaviour
                 dialogueUI3.SetActive(true);
                 IsDialogueStart = false;
             }
-           
+            if (this.transform.position == Scavpos2.position)
+            {
+                Debug.Log("AtP2");
+                this.enabled = false;
+                dialogueUI3.SetActive(false);
+            }
+
         }
         this.transform.position = Vector3.MoveTowards(this.transform.position, scavp1.position, MoveSpeed * Time.deltaTime);
 
-
-    }
-   /* private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("ToShuttle"))
-        {
-            this.gameObject.SetActive(false);
-            this.enabled = false;
-        } 
     
+        
+    }
 
-
-    } */
 }
 
 
 
 
 
+/* private void OnTriggerEnter2D(Collider2D collision)
+ {
+     if (collision.gameObject.CompareTag("ToShuttle"))
+     {
+         this.gameObject.SetActive(false);
+         this.enabled = false;
+     } 
+
+
+
+ } */

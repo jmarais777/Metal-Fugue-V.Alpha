@@ -1,5 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 // Title:  MENU in Unity
 // Author: Brackeys
@@ -9,13 +12,16 @@ using UnityEngine;
 
 public class PauseManager : MonoBehaviour
 {
+    public bool isPaused = false;
     public GameObject pauseMenu;
-    private bool isPaused = false;
+    public ShootMech shooting;
+    public GameObject resume;
+  
 
     public void Resume()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 1.0f;
         isPaused = false;
     }
 
@@ -25,27 +31,30 @@ public class PauseManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleMenu();
+            {
+
+            }
+            if (Time.timeScale == 1.0f)
+            {
+                Time.timeScale = 0f;
+            }
         }
+      
+        return;
     }
 
     public void ToggleMenu()
     {
-        bool isActive = pauseMenu.activeSelf;
-        pauseMenu.SetActive(!isActive);
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0.0f;
+
+       // pauseMenu.acti == true;
+       // pauseMenu.SetActive(!isActive);
 
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            return;
-        }
-        if (Time.timeScale == 1.0f)
-        {
-            Time.timeScale = 0f;
-        }
-        else
-        {
-            Time.timeScale = 1.0f;
-        }
+        
+     
+  
 
     }
 }

@@ -1,5 +1,6 @@
 
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,7 +13,9 @@ public class EnemyBullets : MonoBehaviour
     public float LinearVelocity = 50.0f;
     //time setting for bullet destruction
     private float time = 1;
-    
+   
+    public EnergyPool ForCurrentEnergy;
+ 
 
 
 
@@ -24,7 +27,7 @@ public class EnemyBullets : MonoBehaviour
         //this destoryes the bullet after time has passed
         Destroy(gameObject, time);
         //test
-
+     
 
     }
 
@@ -40,7 +43,8 @@ public class EnemyBullets : MonoBehaviour
         if (collision.gameObject.CompareTag("Scrapheap"))
         {
 
-            Destroy(gameObject);
+            
         }
+       
     }
 }
