@@ -1,7 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/Pause.uss?fileID=7433441132597879392&amp;guid=7f3ad9eb45e5439459e4c31e2f088507&amp;type=3#Pause"/>
-    <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
-        <ui:Button text="Resume" name="Resume" style="height: 43px; width: 287px; align-self: center; top: 33%; left: 0%; right: 0%; bottom: 0%;"/>
-        <ui:Button text="Quit" name="Quit" style="height: 7px; width: 122px; align-items: center; justify-content: space-between; align-self: center; top: 40%; bottom: 179px; left: 0%; right: 81px;"/>
-    </ui:VisualElement>
-</ui:UXML>

@@ -30,10 +30,10 @@ public class PauseManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ToggleMenu();
-            {
+           
+            
 
-            }
+           
             if (Time.timeScale == 1.0f)
             {
                 Time.timeScale = 0f;
@@ -43,7 +43,7 @@ public class PauseManager : MonoBehaviour
         return;
     }
 
-    public void ToggleMenu()
+   /* public void ToggleMenu()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
@@ -56,7 +56,7 @@ public class PauseManager : MonoBehaviour
      
   
 
-    }
+    }*/
 }
 
 
