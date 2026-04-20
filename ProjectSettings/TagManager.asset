@@ -3,6 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
+  tags: []
   tags:
   - Bullets
   - Obstacles
@@ -33,12 +34,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Lighting
+  - 
   - Water
   - UI
-  - Lighting2
-  - WallTrue
-  - Player
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -65,15 +66,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Lighting
-    uniqueID: 957207341
-    locked: 0
-  - name: WallTrue
-    uniqueID: 2002494415
-    locked: 0
-  - name: '-'
-    uniqueID: 2631756643
     locked: 0
   m_RenderingLayers:
   - Default
