@@ -21,6 +21,7 @@ public class EnergyPool : MonoBehaviour
     public float MovementDrain = 1f;
     public float BulletDrain = 1f;
     Vector2 lastPoint;
+    public GameOverUI gameOverUI;
 
     void Start()
     {
