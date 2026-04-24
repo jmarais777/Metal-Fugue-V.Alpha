@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Lock : MonoBehaviour
 {
@@ -7,13 +8,13 @@ public class Lock : MonoBehaviour
     public GameObject ScavenegrHandInGame;
     public GameObject ToScrapYard;
     public GameObject ToSecurity1;
-    public GameObject ToSecurity2;
-    public GameObject SecurityGateLocked;
-    public GameObject SecurityGateUnlcoked;
+    public GameObject FromSecurity;
+    public GameObject SecurityGatePowerIndicator;
+   // public GameObject SecurityGateUnlcoked;
     public GameObject bossTrig;
 
     public GameObject PowerButton;
-    public float proximity = 5.0f;
+    public float proximity = 10.0f;
     public GameObject Boss;
     public EnemyMovement Bossmove;
     public EnemySHootMech Bossshoot;
@@ -30,6 +31,7 @@ public class Lock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
         if (ScavenegrHandInGame.activeInHierarchy || ScavenegrHandOnPlayer.activeInHierarchy)
         {
             ToCryo.SetActive(false);
@@ -42,9 +44,9 @@ public class Lock : MonoBehaviour
         {
             ToScrapYard.SetActive(false);
             ToSecurity1.SetActive(false);
-            ToSecurity2.SetActive(false);
-            SecurityGateLocked.SetActive(true);
-            SecurityGateUnlcoked.SetActive(false);
+            FromSecurity.SetActive(false);
+            SecurityGatePowerIndicator.SetActive(true);
+           // SecurityGateUnlcoked.SetActive(false);
             if(bossTrig != null)
             { bossTrig.SetActive(false); }
          
@@ -53,20 +55,35 @@ public class Lock : MonoBehaviour
         {
             ToScrapYard.SetActive(true);
             ToSecurity1.SetActive(true);
-            ToSecurity2.SetActive(true);
-            SecurityGateLocked.SetActive(false);
-            SecurityGateUnlcoked.SetActive(true);
+            FromSecurity.SetActive(true);
+        
+          //  SecurityGateUnlcoked.SetActive(true);
             if (bossTrig != null)
             { bossTrig.SetActive(true); }
+            
         }
-
+        float secgate = Vector2.Distance(SecurityGatePowerIndicator.transform.position, this.transform.position);
         float PowBut = Vector2.Distance(PowerButton.transform.position, this.transform.position);
-        if (Input.GetKeyUp(KeyCode.E) && PowBut <= proximity)
+        //Debug.Log("Dist to Gate: " + secgate + " | Dist to Power: " + PowBut);
+        if (Input.GetKeyUp(KeyCode.E))
         {
-            IsPowerOn = false;
-        }
+            if (PowBut <= proximity)
+            { 
+                   IsPowerOn = false;
+                Debug.Log("PowerOff");
 
-        if (SecurityGateUnlcoked.activeInHierarchy)
+            }
+            if (!IsPowerOn && secgate<= proximity)
+            {
+                Debug.Log("Yippe you did it!!");
+                SceneManager.LoadScene("MainMenu");
+            }
+           
+        }
+       
+
+
+        if (!IsPowerOn && Boss != null)
         {
             Boss.SetActive(true);
             if (Boss.activeInHierarchy && bossTrig != null)
@@ -76,7 +93,7 @@ public class Lock : MonoBehaviour
 
             }
         }
-        else
+        else if (Boss != null) 
         {
             Boss.SetActive(false);
         }
@@ -93,12 +110,6 @@ public class Lock : MonoBehaviour
         }
 
 
-       
-        float secgate = Vector2.Distance(SecurityGateUnlcoked.transform.position, this.transform.position);
-        if(Input.GetKeyDown(KeyCode.E) && secgate <= proximity)
-            {
-            Debug.Log("Yippe you did it!!");
-
-             }
+    
     }
 }
