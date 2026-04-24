@@ -24,7 +24,9 @@ public class ShootMech : MonoBehaviour
     Rigidbody2D rb;
 
     void Update()
-    {   //this causes a single fire shoot response ecach time the left mouse button is clicked.
+    {  
+       
+        //this causes a single fire shoot response ecach time the left mouse button is clicked.
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 direction = mousePos - WeaponCenter.position;
         WeaponCenter.right = direction;

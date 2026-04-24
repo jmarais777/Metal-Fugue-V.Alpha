@@ -1,6 +1,6 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/GameOver.uss?fileID=7433441132597879392&amp;guid=78d6aaa430861ac49bd7d492eb52ee55&amp;type=3#GameOver"/>
-    <ui:VisualElement name="VisualElement" style="flex-grow: 1; aspect-ratio: 1.777778; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgb(29, 25, 25);">
+    <ui:VisualElement name="GameOverScreen" style="flex-grow: 1; aspect-ratio: 1.777778; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgb(29, 25, 25);">
         <ui:Label text="Game Over" name="Label" style="align-items: center; align-self: center; bottom: -37%; -unity-font-definition: resource(&quot;FlatSkin/Font/Roboto-MediumItalic&quot;); font-size: 41%; text-overflow: clip; -unity-font-style: normal; color: rgb(136, 1, 1);"/>
         <ui:Label text="Better Luck Next time..." style="align-items: center; align-self: center; bottom: -44%; -unity-font-definition: resource(&quot;FlatSkin/Font/Roboto-MediumItalic&quot;); font-size: 18%; text-overflow: clip; -unity-font-style: normal; color: rgb(136, 1, 1); -unity-text-align: upper-center;"/>
     </ui:VisualElement>

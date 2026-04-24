@@ -7,19 +7,25 @@ using UnityEngine.UIElements;
 
 public class GameOverUI : MonoBehaviour
 {
-    private VisualElement gameOverScreen;
+    private VisualElement GameOverScreen;
     public EnergyPool energyPool;
     void OnEnable()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
-        gameOverScreen = root.Q<VisualElement>("GameOverScreen");
-        gameOverScreen.style.display = DisplayStyle.None;
+       
+        GameOverScreen = root.Q<VisualElement>("GameOverScreen");
+        if (GameOverScreen != null)
+        {
+            GameOverScreen.style.display = DisplayStyle.Flex;
+        }
+       
     }
 
     public void ShowGameOver()
     {
-        gameOverScreen.style.display = DisplayStyle.Flex;
 
+       
+        SceneManager.LoadScene("GameOverREAL");
     }
 }
 
