@@ -89,7 +89,7 @@ public class Dialogue2 : MonoBehaviour
         UIlinker2.SetActive(false);
         PlayerShoot.enabled = true;
         PlayerMove.enabled = true;
-        scrapHeapGhost.SetActive(false);
+      //  scrapHeapGhost.SetActive(false);
         // ShowGameObject();
 
     }

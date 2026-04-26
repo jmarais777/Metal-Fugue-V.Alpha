@@ -21,12 +21,16 @@ public class Dialogue1 : MonoBehaviour
     public float InteractProximity = 3.0f;
     public UIDocument dialogueui;
     public GameObject Weapon;
+    public enum RigidbodyType2D
+    {
+        Static
+    }
 
 
     private void Update()
     {
 
-        if (DialogueUi1 != null && !DialogueUi1.activeSelf )
+        if (DialogueUi1 != null && !DialogueUi1.activeSelf)
         {
             {
                 float uilinker1 = Vector2.Distance(UIlinker1.transform.position, Player.transform.position);
@@ -35,6 +39,7 @@ public class Dialogue1 : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                         if (uilinker1 < InteractProximity)
                         {
+
                             Debug.Log("linkeronereg");
                             ShowMenu1();
 
@@ -44,9 +49,9 @@ public class Dialogue1 : MonoBehaviour
             }
         }
     }
-   
-        
-    
+
+
+
 
     private void NextButtonOnClick()
     {
@@ -64,17 +69,17 @@ public class Dialogue1 : MonoBehaviour
             EndDialogue();
             return;
         }
-        
+
         DialogueLines.text = ScavengerLines[DialogueList];
     }
     void EndDialogue()
     {
         nextButton.SetEnabled(false);
         DialogueUi1.SetActive(false);
-     
-       
+
+
         ShowGameObject();
-      
+
     }
     void ShowGameObject()
     {
@@ -83,15 +88,19 @@ public class Dialogue1 : MonoBehaviour
         playerMove.enabled = true;
 
         Weapon.SetActive(true);
-        PlayerShoot.enabled =true;
+        PlayerShoot.enabled = true;
 
     }
     void ShowMenu1()
     {
         DialogueUi1.SetActive(true);
         playerMove.enabled = false;
+        
 
-        var uiDocu = DialogueUi1.GetComponent<UIDocument>();
+
+
+
+      var uiDocu = DialogueUi1.GetComponent<UIDocument>();
         if (uiDocu == null && uiDocu.rootVisualElement == null)
         {
             return;
