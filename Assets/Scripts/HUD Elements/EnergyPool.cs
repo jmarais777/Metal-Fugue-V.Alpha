@@ -1,5 +1,9 @@
 using JetBrains.Annotations;
+#if UNITY_EDITORs
+using UnityEditorInternal;
+#endif
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnergyPool : MonoBehaviour
 {
@@ -49,17 +53,17 @@ public class EnergyPool : MonoBehaviour
 
     void Update()
     {
-    //Energy subtraction check for dash
-    if (ForIsDashing.IsDashing && !wasDashing)
+        //Energy subtraction check for dash
+        if (ForIsDashing.IsDashing && !wasDashing)
         {
             CurrentEnergy -= 3;
             CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0, MaxEnergy);
             //Debug.Log(CurrentEnergy);
         }
-    wasDashing = ForIsDashing.IsDashing;
+        wasDashing = ForIsDashing.IsDashing;
 
-    //Energy subtraction check for a shot fired
-    if (ForIsShooting.IsShooting == true)
+        //Energy subtraction check for a shot fired
+        if (ForIsShooting.IsShooting == true)
         {
             CurrentEnergy -= 1;
             CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0, MaxEnergy);
@@ -69,11 +73,17 @@ public class EnergyPool : MonoBehaviour
             CurrentEnergy -= 1;
         CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0, MaxEnergy);
 
-    if (CurrentEnergy == 0)
+        if (CurrentEnergy == 0)
         {
             //Debug.Log("You Have Died");
+
+
+
+            SceneManager.LoadScene("GameOverREAL");
+
+
+
         }
-   
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -83,5 +93,7 @@ public class EnergyPool : MonoBehaviour
             Debug.Log("Hit");
 
         }
+
     }
+
 }
