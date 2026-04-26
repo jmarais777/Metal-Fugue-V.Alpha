@@ -25,7 +25,7 @@ public class Interact : MonoBehaviour
     public Light2D CorticalProcessorLight;
     public EnergyPool ForCurrentEnergy;
     public bool IsPlayerInProximity = true;
-    public float InteractProximity = 20f; 
+    public float InteractProximity = 8.0f; 
 
     public EnergyPool CurrentEnergyPool;
     public GameObject PowerButton;
