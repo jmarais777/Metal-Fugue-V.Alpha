@@ -22,7 +22,7 @@ public class MainMenuEvents : MonoBehaviour
 
     private void OnPlayGameCLick(ClickEvent evt)
     {
-        SceneManager.LoadScene("DULTEST");
+        SceneManager.LoadScene("DUPLTEST");
     
 
     }
