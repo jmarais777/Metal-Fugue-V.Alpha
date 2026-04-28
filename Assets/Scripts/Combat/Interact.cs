@@ -43,7 +43,7 @@ public class Interact : MonoBehaviour
         float Sec = Vector2.Distance(SecurityGate.transform.position, Player.transform.position);
         float Scavarm = Vector2.Distance(ScavengerArmIngame.transform.position, Player.transform.position);
      
-       // if (Input.GetKeyDown(KeyCode.E)) Debug.Log("E pressed. Distance to Arm is: " + Scavarm); //arm is to far away??
+       if (Input.GetKeyDown(KeyCode.E)) Debug.Log("E pressed. Distance to Arm is: " + Scavarm); //arm is to far away??
 
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -70,7 +70,7 @@ public class Interact : MonoBehaviour
             }
 
 
-            if (Scavarm < InteractProximity && ScavengerArmIngame.activeSelf == true)
+            if (Scavarm < InteractProximity && ScavengerArmIngame.activeInHierarchy == true)
             {
                 Debug.Log("Arm");
                 ScavengerArmIngame.SetActive(false);

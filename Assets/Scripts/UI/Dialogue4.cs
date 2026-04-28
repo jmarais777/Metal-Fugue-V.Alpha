@@ -74,6 +74,7 @@ public class Dialogue4 : MonoBehaviour
         UIlinker4.SetActive(false);
         PlayerShoot.enabled = true;
         PlayerMove.enabled = true;
+        Time.timeScale = 1.0f;
         //  GetComponent<UIDocument>().enabled = false;
 
         // ShowGameObject();
@@ -81,6 +82,7 @@ public class Dialogue4 : MonoBehaviour
     }
     void ShowMenu4()
     {
+        Time.timeScale = 0.0f;
         DialogueUi4.SetActive(true);
         PlayerShoot.enabled = false;
         PlayerMove.enabled = false;

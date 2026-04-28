@@ -19,6 +19,9 @@ public class Dialogue2 : MonoBehaviour
     public PlayerMovement PlayerMove;
     public ShootMech PlayerShoot;
     public GameObject scrapHeapGhost;
+   
+
+
     private void Update()
     {
 
@@ -89,8 +92,9 @@ public class Dialogue2 : MonoBehaviour
         UIlinker2.SetActive(false);
         PlayerShoot.enabled = true;
         PlayerMove.enabled = true;
-      //  scrapHeapGhost.SetActive(false);
-        // ShowGameObject();
+       scrapHeapGhost.SetActive(false);
+        Time.timeScale = 1.0f;
+        //ShowGameObject();
 
     }
     void ShowMenu2()
@@ -98,7 +102,10 @@ public class Dialogue2 : MonoBehaviour
         DialogueUi2.SetActive(true);
         PlayerShoot.enabled = false;
         PlayerMove.enabled = false;
-           var Uidocu = DialogueUi2.GetComponent<UIDocument>();
+        Time.timeScale = 0.0f;
+        
+
+    var Uidocu = DialogueUi2.GetComponent<UIDocument>();
         if (dialogueui == null || dialogueui.rootVisualElement == null)
         {
             return;

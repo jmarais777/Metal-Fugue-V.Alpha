@@ -21,6 +21,7 @@ public class Dialogue1 : MonoBehaviour
     public float InteractProximity = 3.0f;
     public UIDocument dialogueui;
     public GameObject Weapon;
+    public Transform PlayerDialogueP1;
     public enum RigidbodyType2D
     {
         Static
@@ -76,7 +77,7 @@ public class Dialogue1 : MonoBehaviour
     {
         nextButton.SetEnabled(false);
         DialogueUi1.SetActive(false);
-
+        Time.timeScale = 1.0f;
 
         ShowGameObject();
 
@@ -89,13 +90,15 @@ public class Dialogue1 : MonoBehaviour
 
         Weapon.SetActive(true);
         PlayerShoot.enabled = true;
+       
 
     }
     void ShowMenu1()
     {
         DialogueUi1.SetActive(true);
         playerMove.enabled = false;
-        
+        Time.timeScale = 0;
+       // Player.transform.position = PlayerDialogueP1.position
 
 
 
