@@ -1,10 +1,11 @@
 #if UNITY_EDITOR
 using UnityEditor.Search;
-using UnityEditor.Tilemaps;
+
 #endif
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using UnityEngine.Tilemaps;
 
 
 public class ShootMech : MonoBehaviour
@@ -23,7 +24,9 @@ public class ShootMech : MonoBehaviour
     Rigidbody2D rb;
 
     void Update()
-    {   //this causes a single fire shoot response ecach time the left mouse button is clicked.
+    {  
+       
+        //this causes a single fire shoot response ecach time the left mouse button is clicked.
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 direction = mousePos - WeaponCenter.position;
         WeaponCenter.right = direction;
@@ -46,7 +49,7 @@ public class ShootMech : MonoBehaviour
         }
 
         void Shoot()
-        //this clones the bullet prefab at the position of the firepoint (Nozzle), and ensures that bullets and firepoint roatet togetehr, allowing the bullets to always shoot from the firepoint..
+        
         {
             Instantiate(Bullets, Firepoint.position, Firepoint.rotation);
 

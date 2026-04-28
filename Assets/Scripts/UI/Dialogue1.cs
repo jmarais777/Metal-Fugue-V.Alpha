@@ -71,7 +71,7 @@ public class Dialogue1 : MonoBehaviour
     {
         nextButton.SetEnabled(false);
         DialogueUi1.SetActive(false);
-        playerMove.enabled = true;
+     
        
         ShowGameObject();
       
@@ -80,7 +80,8 @@ public class Dialogue1 : MonoBehaviour
     {
         enemySriptMove.enabled = true;
         enemyScriptShoot.enabled = true;
-        
+        playerMove.enabled = true;
+
         Weapon.SetActive(true);
         PlayerShoot.enabled =true;
 
