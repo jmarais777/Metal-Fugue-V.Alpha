@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cb3015dc61320474fa7087fc89df5279
+guid: 28ca029c9fb30d34690cd6df653430ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3349411892819858466
-    second: Pooling_0
+      213: 2757796967625512524
+    second: Cryopod7_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pooling_0
+      name: Cryopod7_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
-        width: 467
-        height: 352
+        y: 60
+        width: 123
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: edbe00221af7481d0800000000000000
-      internalID: -3349411892819858466
+      spriteID: c46d7f90bb9a54620800000000000000
+      internalID: 2757796967625512524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cryopod7_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 123
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301a7f9eaeb7e41469408654b61e2c1f
+      internalID: 517948696
       vertices: []
       indices: 
       edges: []
@@ -125,7 +147,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9923b124948abb64b97726ea9c9d459c
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +155,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":2.0},"gridSpriteSize":{"x":123.0,"y":60.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Pooling_0: -3349411892819858466
+      Cryopod7_0: 2757796967625512524
+      Cryopod7_1: 517948696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

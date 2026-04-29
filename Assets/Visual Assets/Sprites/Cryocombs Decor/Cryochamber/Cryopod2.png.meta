@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cb3015dc61320474fa7087fc89df5279
+guid: 6fd5993626a915f439e18e6e995810c3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3349411892819858466
-    second: Pooling_0
+      213: 6774600766553783806
+    second: Cryopod2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pooling_0
+      name: Cryopod2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
-        width: 467
-        height: 352
+        y: 60
+        width: 123
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: edbe00221af7481d0800000000000000
-      internalID: -3349411892819858466
+      spriteID: efdf689f087340e50800000000000000
+      internalID: 6774600766553783806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cryopod2_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 123
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20097c06c39eb6d439bf703cadddaac2
+      internalID: -518819581
       vertices: []
       indices: 
       edges: []
@@ -125,7 +147,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 643ff9537a12031418866e50b7719365
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +155,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":2.0},"gridSpriteSize":{"x":123.0,"y":60.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Pooling_0: -3349411892819858466
+      Cryopod2_0: 6774600766553783806
+      Cryopod2_1: -518819581
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

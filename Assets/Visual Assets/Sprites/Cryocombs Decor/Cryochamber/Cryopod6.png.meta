@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cb3015dc61320474fa7087fc89df5279
+guid: 05abc1e72ed4762498e00eb307d10001
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3349411892819858466
-    second: Pooling_0
+      213: 6920820191265124767
+    second: Cryopod6_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pooling_0
+      name: Cryopod6_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
-        width: 467
-        height: 352
+        y: 0
+        width: 80
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: edbe00221af7481d0800000000000000
-      internalID: -3349411892819858466
+      spriteID: f9175bebb41bb0060800000000000000
+      internalID: 6920820191265124767
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pooling_0: -3349411892819858466
+      Cryopod6_0: 6920820191265124767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
