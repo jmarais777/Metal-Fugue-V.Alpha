@@ -1,4 +1,6 @@
+#if UNITY_EDITOR
 using UnityEditor.Tilemaps;
+#endif
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;

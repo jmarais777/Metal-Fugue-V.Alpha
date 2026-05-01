@@ -869,7 +869,7 @@ MonoBehaviour:
   container: {fileID: 837707766}
   entryPrefab: {fileID: 2053378728}
   entries:
-  - Text: hi meow cat ekeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+  - Text: "Quest 1 \nFollow the compas!"
     icon: {fileID: 0}
 --- !u!1 &158076024
 GameObject:

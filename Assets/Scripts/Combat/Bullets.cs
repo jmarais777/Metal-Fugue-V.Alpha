@@ -1,6 +1,5 @@
 
 using Unity.Cinemachine;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -36,7 +35,7 @@ public class Bullet : MonoBehaviour
     {
         Destroy(this.gameObject);
       
-        if (collision.gameObject.CompareTag("Obstacles") && CompareTag("Scrapheap"))
+        if (collision.gameObject.CompareTag("Scrapheap"))
         {
 
             Destroy(gameObject);
@@ -45,12 +44,6 @@ public class Bullet : MonoBehaviour
         {  
             Destroy(this.gameObject); 
         }
-
-
-      
-
-
-
 
     }
     

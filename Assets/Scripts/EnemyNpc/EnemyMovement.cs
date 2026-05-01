@@ -1,6 +1,8 @@
 using JetBrains.Annotations;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor.Experimental.GraphView;
+#endif
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -103,6 +105,12 @@ public class EnemyMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("ToShuttle"))
         {
         }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            RecallPos = 1;
+
+        }
+      
         
     }
  } 

@@ -1,5 +1,8 @@
-using UnityEditor.Rendering;
+
+using UnityEngine.Rendering;
+#if UNITY_EDITOR
 using UnityEditor.ShaderGraph;
+#endif
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
