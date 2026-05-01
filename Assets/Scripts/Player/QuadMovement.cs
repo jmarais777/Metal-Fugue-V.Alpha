@@ -2,9 +2,9 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class QuadMovement : MonoBehaviour
 {
-   
+
     //Basic Player Movement
     //Title: Top Down Movement In UNITY 6
     //Author: Unity Unlocked
@@ -28,8 +28,10 @@ public class PlayerMovement : MonoBehaviour
     bool canDash = true;
     public bool IsWalking;
     void Update()
-    
+
     {
+        Vector3 moveDirection = Vector3.zero;
+
         //Checking WASD for Animator
 
         if (Input.GetKey(KeyCode.W))
@@ -49,25 +51,27 @@ public class PlayerMovement : MonoBehaviour
             IsWalking = true;
         }
 
+        //Moving the player
+        transform.position += moveDirection * MovementSpeed * Time.deltaTime;
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
         //mapping movement controls for dash
         if (IsDashing)
         {
             return;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && canDash)
+        if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
             StartCoroutine(Dash());
         }
-        
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
 
     }
 
     private void FixedUpdate()
     {
-       //defining dash position shift
+        //defining dash position shift
         if (IsDashing)
         {
             return;
