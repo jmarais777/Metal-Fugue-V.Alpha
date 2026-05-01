@@ -22,7 +22,7 @@ public class MainMenuEvents : MonoBehaviour
 
     private void OnPlayGameCLick(ClickEvent evt)
     {
-        SceneManager.LoadScene("DUPLTEST");
+        SceneManager.LoadScene("Proto2ScrapBlocking");
     
 
     }
