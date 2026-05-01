@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: cb3015dc61320474fa7087fc89df5279
+guid: cae5e995a1ab1274e9cffd102644ae4b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3349411892819858466
-    second: Pooling_0
+      213: -6798761533415344335
+    second: Electricity Puzzle_0
+  - first:
+      213: 3453530756718452209
+    second: Electricity Puzzle_1
+  - first:
+      213: 1886525005991436201
+    second: Electricity Puzzle_2
+  - first:
+      213: 8585894291503654443
+    second: Electricity Puzzle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pooling_0
+      name: Electricity Puzzle_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 470
-        height: 352
+        width: 66
+        height: 81
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: edbe00221af7481d0800000000000000
-      internalID: -3349411892819858466
+      spriteID: 13730302862f5a1a0800000000000000
+      internalID: -6798761533415344335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electricity Puzzle_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 61
+        width: 143
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fdd617fce76def20800000000000000
+      internalID: 3453530756718452209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electricity Puzzle_2
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 61
+        width: 189
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9afd20a6f784e2a10800000000000000
+      internalID: 1886525005991436201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electricity Puzzle_3
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 61
+        width: 155
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b26212c3e59372770800000000000000
+      internalID: 8585894291503654443
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pooling_0: -3349411892819858466
+      Electricity Puzzle_0: -6798761533415344335
+      Electricity Puzzle_1: 3453530756718452209
+      Electricity Puzzle_2: 1886525005991436201
+      Electricity Puzzle_3: 8585894291503654443
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -26,11 +26,31 @@ public class PlayerMovement : MonoBehaviour
     float dashCooldown = 0.5f;
     public bool IsDashing;
     bool canDash = true;
+    public bool IsWalking;
     void Update()
     
     {
+        //Checking WASD for Animator
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            IsWalking = true;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            IsWalking = true;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            IsWalking = true;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            IsWalking = true;
+        }
+
         //mapping movement controls for dash
-       if (IsDashing)
+        if (IsDashing)
         {
             return;
         }
