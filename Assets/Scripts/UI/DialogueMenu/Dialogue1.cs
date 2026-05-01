@@ -9,7 +9,7 @@ public class Dialogue1 : MonoBehaviour
     public GameObject Enemy;
     public GameObject Player;
     private Button nextButton;
-    public Label DialogueLines;
+    public Label DialogueLinesLabel;
     public string[] ScavengerLines;
     public int DialogueList = 0;
     public GameObject DialogueUi1;
@@ -21,7 +21,10 @@ public class Dialogue1 : MonoBehaviour
     public float InteractProximity = 3.0f;
     public UIDocument dialogueui;
     public GameObject Weapon;
-    public Transform PlayerDialogueP1;
+
+    public GameObject TransitionCondition1;
+
+   
     public enum RigidbodyType2D
     {
         Static
@@ -71,7 +74,7 @@ public class Dialogue1 : MonoBehaviour
             return;
         }
 
-        DialogueLines.text = ScavengerLines[DialogueList];
+        DialogueLinesLabel.text = ScavengerLines[DialogueList];
     }
     void EndDialogue()
     {
@@ -90,7 +93,9 @@ public class Dialogue1 : MonoBehaviour
 
         Weapon.SetActive(true);
         PlayerShoot.enabled = true;
-       
+        TransitionCondition1.SetActive(true);
+
+
 
     }
     void ShowMenu1()
@@ -113,7 +118,7 @@ public class Dialogue1 : MonoBehaviour
         {
             var root = uiDocu.rootVisualElement;
             nextButton = root.Q<Button>("next");
-            DialogueLines = root.Q<Label>("DialogueLines");
+            DialogueLinesLabel = root.Q<Label>("DialogueLinesLabel");
             DialogueList = 0;
         }
         else
