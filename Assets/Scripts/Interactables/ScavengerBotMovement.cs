@@ -12,7 +12,7 @@ public class ScavengerBotMovement : MonoBehaviour
 
  
 
-    public GameObject dialogueUI3;
+    public GameObject TransitionCondition8;
     public GameObject ScavBot;
 
     
@@ -40,21 +40,21 @@ public class ScavengerBotMovement : MonoBehaviour
         }
         if (scrapHeap.gameObject.activeInHierarchy == false)
         {
-
+            
             IsDialogueStart = true;
 
             if (IsDialogueStart == true)
             {
                 this.transform.eulerAngles = new Vector3(0, 0, 140);
-                dialogueUI3.SetActive(true);
+                TransitionCondition8.SetActive(true);
                 IsDialogueStart = false;
             }
-            if (this.transform.position == Scavpos2.position)
+           if (this.transform.position == Scavpos2.position)
             {
                 Debug.Log("AtP2");
                 this.enabled = false;
-                dialogueUI3.SetActive(false);
-            }
+               
+            } 
 
         }
         this.transform.position = Vector3.MoveTowards(this.transform.position, scavp1.position, MoveSpeed * Time.deltaTime);
