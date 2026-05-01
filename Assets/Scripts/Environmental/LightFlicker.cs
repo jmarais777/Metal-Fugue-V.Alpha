@@ -12,28 +12,39 @@ public class LightFlicker : MonoBehaviour
     //Availiability: https://www.youtube.com/watch?v=zfrpRYZfO1w
 
     public Light2D Light2D;
-    public int FramesPerFlicker;
-    public float MinValue;
-    public float MaxValue;
-    int frames = 0;
-  
+    public float MinIntensity;
+    public float MaxIntensity;
+    public float MinFlickerTime;
+    public float MaxFlickerTime;
+    float flickerTimer = 0f;
+    float currentFlickerTime;
+
+    private void Start()
+    {
+        currentFlickerTime = Random.Range(MinFlickerTime, MaxFlickerTime);
+    }
     void Update()
     {
         //Trigger for intensity modulation
-        frames++;
-        if (frames % FramesPerFlicker == 0)
+        flickerTimer += Time.deltaTime;
+        if (flickerTimer >= currentFlickerTime)
         {
             IntensityRandomizer();
+            FlickerRateRandomizer();
+
+            flickerTimer = 0.2f;
         }
     }
 
     void IntensityRandomizer()
     {
-        //Creating an instance of the Random class
-        System.Random randomize = new System.Random();
-
         //Defining equation for modulation of the light intensity
-        float randomValue = (float)(randomize.NextDouble() * (MaxValue - MinValue) + MinValue);
-        Light2D.intensity = randomValue;
+        Light2D.intensity = Random.Range(MinIntensity, MaxIntensity);
+    }
+
+    void FlickerRateRandomizer()
+    {
+        //Defining equation for modulation of the time per each flicker
+       currentFlickerTime = Random.Range(MinFlickerTime, MaxFlickerTime);
     }
 }
