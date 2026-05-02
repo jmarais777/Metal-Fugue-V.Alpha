@@ -4,18 +4,11 @@ using UnityEngine;
 public class Obstacles2 : MonoBehaviour
 {
     int HitPoints = 2;
-    Rigidbody2D rb;
-    SpriteRenderer rs;
+    SpriteRenderer sprRen;
     void Start()
     {
-       rb =  GetComponent<Rigidbody2D>();
-        rs = GetComponent<SpriteRenderer>();
-
-    }
-
-    void Update()
-    {
-
+      
+        sprRen = GetComponent<SpriteRenderer>();
 
     }
 
@@ -28,7 +21,7 @@ public class Obstacles2 : MonoBehaviour
         }
         if (HitPoints == 1)
         {
-            rs.color = new Color(0.5357571f, 0.6980392f, 0.1333333f, 1f);
+            sprRen.color = new Color(0.7647059f , 0.5215687f, 0.8392157f, 1f);
 
         }
         if (HitPoints == 0)

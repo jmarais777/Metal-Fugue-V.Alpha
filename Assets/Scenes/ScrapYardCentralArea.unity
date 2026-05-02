@@ -895,6 +895,7 @@ Transform:
   - {fileID: 1067058827}
   m_Father: {fileID: 1431610554}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -85.568}
+<<<<<<< HEAD
 --- !u!1 &36495090
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +912,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &43757537
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,7 +2954,10 @@ MonoBehaviour:
   enemyNPC: {fileID: 1029971651}
   Ui3: {fileID: 908986980}
   GhostCondition: {fileID: 0}
+<<<<<<< HEAD
   spriteRen: {fileID: 0}
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &229178772
 GameObject:
   m_ObjectHideFlags: 0
@@ -4216,6 +4222,7 @@ PolygonCollider2D:
       - {x: 0.41557324, y: -0.58060527}
       - {x: 0.4178453, y: 0.47965735}
   m_UseDelaunayMesh: 1
+<<<<<<< HEAD
 --- !u!1 &262606155
 GameObject:
   m_ObjectHideFlags: 0
@@ -4367,6 +4374,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &282560582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4505,6 +4514,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &289118610
 GameObject:
   m_ObjectHideFlags: 0
@@ -4643,6 +4653,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &302869145
 GameObject:
   m_ObjectHideFlags: 0
@@ -6312,6 +6324,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 897114ad6729c8b46b7dca1f1a715b88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+<<<<<<< HEAD
+=======
+  HitPoints: 5
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!58 &376173285
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7113,6 +7129,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &457158100
 GameObject:
   m_ObjectHideFlags: 0
@@ -7204,6 +7221,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &471880640
 GameObject:
   m_ObjectHideFlags: 0
@@ -7968,6 +7987,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &542687799
 GameObject:
   m_ObjectHideFlags: 0
@@ -7984,6 +8004,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &544945943
 GameObject:
   m_ObjectHideFlags: 0
@@ -8624,6 +8646,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &615958274
 GameObject:
   m_ObjectHideFlags: 0
@@ -8762,6 +8785,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &618756888
 GameObject:
   m_ObjectHideFlags: 0
@@ -10552,6 +10577,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 77597488}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &737314952
 GameObject:
   m_ObjectHideFlags: 0
@@ -10690,6 +10716,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &741316671
 GameObject:
   m_ObjectHideFlags: 0
@@ -10989,6 +11017,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &751760286
 GameObject:
   m_ObjectHideFlags: 0
@@ -11080,6 +11109,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &765816474
 GameObject:
   m_ObjectHideFlags: 0
@@ -11309,6 +11340,187 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
+=======
+--- !u!43 &780302618
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 12
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 45
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 25
+    localAABB:
+      m_Center: {x: -95.23056, y: -39.2284, z: 0}
+      m_Extent: {x: 14.205746, y: 11.431227, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 0
+  m_KeepIndices: 0
+  m_IndexFormat: 1
+  m_IndexBuffer: 04000000050000000600000006000000000000000400000000000000090000000a0000000a0000000100000000000000010000000d0000000e0000000e0000000200000001000000020000001100000012000000120000000300000002000000030000001500000016000000160000000400000003000000040000000700000008000000000000000b0000000c000000010000000f00000010000000020000001300000014000000030000001700000018000000
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 25
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 700
+    _typelessdata: 015facc276a34ac200000000000080bf00000000b50ca2c2204c11c2b50ca2c2204c11c200000000000080bf0000000004d1b5c257d0e1c104d1b5c257d0e1c100000000000080bf00000000b0fed9c29e60dec1b0fed9c29e60dec100000000000080bf0000000064dfdac262f618c264dfdac262f618c200000000000080bf00000000015facc276a34ac264dfdac262f618c2000000000000000000000000015facc276a34ac2015facc276a34ac200000000000000000000000064dfdac262f618c264dfdac262f618c2000000000000803f00000000015facc276a34ac264dfdac262f618c2000000000000404000000000015facc276a34ac2015facc276a34ac2000000000000000000000000b50ca2c2204c11c2b50ca2c2204c11c2000000000000000000000000015facc276a34ac2015facc276a34ac2000000000000803f00000000b50ca2c2204c11c2015facc276a34ac2000000000000404000000000b50ca2c2204c11c2b50ca2c2204c11c200000000000000000000000004d1b5c257d0e1c104d1b5c257d0e1c1000000000000000000000000b50ca2c2204c11c2b50ca2c2204c11c2000000000000803f0000000004d1b5c257d0e1c1b50ca2c2204c11c200000000000040400000000004d1b5c257d0e1c104d1b5c257d0e1c1000000000000000000000000b0fed9c29e60dec1b0fed9c29e60dec100000000000000000000000004d1b5c257d0e1c104d1b5c257d0e1c1000000000000803f00000000b0fed9c29e60dec104d1b5c257d0e1c1000000000000404000000000b0fed9c29e60dec1b0fed9c29e60dec100000000000000000000000064dfdac262f618c264dfdac262f618c2000000000000000000000000b0fed9c29e60dec1b0fed9c29e60dec1000000000000803f0000000064dfdac262f618c2b0fed9c29e60dec100000000000040400000000064dfdac262f618c2
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_MeshUsageFlags: 0
+  m_CookingOptions: 30
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  'm_MeshMetrics[0]': 1
+  'm_MeshMetrics[1]': 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
+  m_MeshLodInfo:
+    serializedVersion: 2
+    m_LodSelectionCurve:
+      serializedVersion: 1
+      m_LodSlope: 0
+      m_LodBias: 0
+    m_NumLevels: 1
+    m_SubMeshes:
+    - serializedVersion: 2
+      m_Levels:
+      - serializedVersion: 1
+        m_IndexStart: 0
+        m_IndexCount: 0
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &788065722
 GameObject:
   m_ObjectHideFlags: 0
@@ -12105,7 +12317,10 @@ MonoBehaviour:
   AttackDuration: 0
   IsShooting: 0
   IsEnemyNPCSetActive: 0
+<<<<<<< HEAD
   LoopS: 3
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
   FireRate: 0.1
   BulletSpawnRate: 3
 --- !u!114 &867045870
@@ -14528,7 +14743,10 @@ MonoBehaviour:
   AttackDuration: 5
   IsShooting: 0
   IsEnemyNPCSetActive: 0
+<<<<<<< HEAD
   LoopS: 3
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
   FireRate: 0.2
   BulletSpawnRate: 5
 --- !u!212 &1029971658
@@ -14721,6 +14939,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &1041623613
 GameObject:
   m_ObjectHideFlags: 0
@@ -14876,6 +15095,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &1042296274
 GameObject:
   m_ObjectHideFlags: 0
@@ -15569,6 +15790,7 @@ PrefabInstance:
       addedObject: {fileID: 1801875582}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1cf57033fca74a41ace95858a4df2a1, type: 3}
+<<<<<<< HEAD
 --- !u!4 &1068851311
 Transform:
   m_ObjectHideFlags: 0
@@ -15593,6 +15815,13 @@ Transform:
   - {fileID: 1801875582}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+--- !u!4 &1068851311 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7353100292054467917, guid: c1cf57033fca74a41ace95858a4df2a1, type: 3}
+  m_PrefabInstance: {fileID: 1068851310}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &1094665952
 GameObject:
   m_ObjectHideFlags: 0
@@ -16030,6 +16259,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &1121909971
 GameObject:
   m_ObjectHideFlags: 0
@@ -16121,6 +16351,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &1144254463
 GameObject:
   m_ObjectHideFlags: 0
@@ -17427,7 +17659,11 @@ MonoBehaviour:
     rid: -2
   m_ShadowCastingSource: 1
   m_ShadowMesh:
+<<<<<<< HEAD
     m_Mesh: {fileID: 2019877574}
+=======
+    m_Mesh: {fileID: 780302618}
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
     m_LocalBounds:
       m_Center: {x: -95.23056, y: -39.2284, z: 0}
       m_Extent: {x: 14.205746, y: 11.431227, z: 0}
@@ -17910,6 +18146,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &1314278645
 GameObject:
   m_ObjectHideFlags: 0
@@ -18094,6 +18331,8 @@ Transform:
   - {fileID: 1121909972}
   m_Father: {fileID: 3061156100981277129}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &1328539540
 GameObject:
   m_ObjectHideFlags: 0
@@ -20190,6 +20429,7 @@ PrefabInstance:
       addedObject: {fileID: 507916472}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1cf57033fca74a41ace95858a4df2a1, type: 3}
+<<<<<<< HEAD
 --- !u!4 &1495432339
 Transform:
   m_ObjectHideFlags: 0
@@ -20209,6 +20449,13 @@ Transform:
   - {fileID: 507916472}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -32.085}
+=======
+--- !u!4 &1495432339 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7353100292054467917, guid: c1cf57033fca74a41ace95858a4df2a1, type: 3}
+  m_PrefabInstance: {fileID: 1495432338}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &1510113168
 GameObject:
   m_ObjectHideFlags: 0
@@ -23196,6 +23443,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &1643382940
 GameObject:
   m_ObjectHideFlags: 0
@@ -23334,6 +23582,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &1648014131
 GameObject:
   m_ObjectHideFlags: 0
@@ -26357,6 +26607,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 897114ad6729c8b46b7dca1f1a715b88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+<<<<<<< HEAD
+=======
+  HitPoints: 5
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!212 &1862304651
 SpriteRenderer:
   serializedVersion: 2
@@ -27656,6 +27910,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &1936215415
 GameObject:
   m_ObjectHideFlags: 0
@@ -27672,6 +27927,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &1942218753
 GameObject:
   m_ObjectHideFlags: 0
@@ -28678,6 +28935,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!43 &2019877574
 Mesh:
   m_ObjectHideFlags: 0
@@ -28856,6 +29114,8 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+=======
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1 &2024285690
 GameObject:
   m_ObjectHideFlags: 0
@@ -29403,6 +29663,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 897114ad6729c8b46b7dca1f1a715b88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+<<<<<<< HEAD
+=======
+  HitPoints: 5
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!212 &2062748359
 SpriteRenderer:
   serializedVersion: 2
@@ -30595,11 +30859,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnergyPool
   ForIsDashing: {fileID: 0}
   ForIsShooting: {fileID: 0}
+<<<<<<< HEAD
   CurrentEnergy: 0
   MaxEnergy: 100
   RigBod: {fileID: 3828621389755376}
   DistanceLimit: 12
   MovementDrain: 1
+=======
+  ForIsBeingShot: {fileID: 0}
+  CurrentEnergy: 0
+  MaxEnergy: 100
+  player: {fileID: 0}
+  RigBod: {fileID: 3828621389755376}
+  DistanceLimit: 12
+  MovementDrain: 1
+  BulletDrain: 1
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!114 &3828621389755387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30636,6 +30911,7 @@ MonoBehaviour:
   Obst6: {fileID: 1844722582}
   Obst7: {fileID: 497003423}
   Obst8: {fileID: 1844722582}
+<<<<<<< HEAD
 --- !u!4 &3061156100981277129
 Transform:
   m_ObjectHideFlags: 0
@@ -30657,6 +30933,13 @@ Transform:
   - {fileID: 1319058215}
   m_Father: {fileID: 749544215}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+--- !u!4 &3061156100981277129 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2764485086999090744, guid: 97b479fabfb4ba34fa3b1bcdd8ec2965, type: 3}
+  m_PrefabInstance: {fileID: 5431081051704349363}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> 05cabe4c0b1beaee2d4e2f25cc4f987afe2d4634
 --- !u!1001 &5431081051704349363
 PrefabInstance:
   m_ObjectHideFlags: 0

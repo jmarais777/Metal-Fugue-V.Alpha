@@ -1,0 +1,92 @@
+using System.ComponentModel.Design.Serialization;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class Dialogue3 : MonoBehaviour
+{
+   
+    private Button nextButton;
+    public Label DialogueLines;
+    public string[] ScavengerLines;
+    public int DialogueIndex = 0;
+    public GameObject DialogueUi3;
+    public ScavengerBotMovement scavmove;
+    public UIDocument dialogueui;
+    public PlayerMovement PlayerMove;
+    public ShootMech PlayerShoot;
+
+
+    void OnEnable()
+
+    {
+        if (dialogueui == null || dialogueui.rootVisualElement == null)
+        {
+            return;
+        }
+        PlayerShoot.enabled = false;
+        PlayerMove.enabled = false;
+        scavmove.enabled = false;
+        var root = GetComponent<UIDocument>().rootVisualElement;
+
+        nextButton = root.Q<Button>("next");
+        DialogueLines = root.Q<Label>("DialogueLines");
+        DialogueIndex = 0;
+
+
+        if (nextButton != null)
+        {
+            nextButton.clicked += NextButtonOnClick;
+            UpdateDialogueLines();
+            Debug.Log("Next button found and linked!");
+
+        }
+    }
+
+    private void NextButtonOnClick()
+    {
+        nextButton.clicked -= NextButtonOnClick;
+        nextButton.clicked += NextButtonOnClick;
+        DialogueIndex++;
+        UpdateDialogueLines();
+
+
+
+
+    }
+    void UpdateDialogueLines()
+    {
+        if (DialogueIndex >= ScavengerLines.Length)
+        {
+            Debug.Log("shouldEnd");
+            EndDialogue3();
+            return;
+        
+        }
+
+        DialogueLines.text = ScavengerLines[DialogueIndex];
+    }
+    void EndDialogue3()
+    {
+        if(scavmove != null)
+        {
+            scavmove.enabled = true;
+            PlayerShoot.enabled = true;
+            PlayerMove.enabled = true;
+        }
+        
+        nextButton.SetEnabled(false);
+        if (dialogueui != null)
+        { DialogueUi3.SetActive(false); }
+      
+       GetComponent<UIDocument>().enabled = false;
+       
+       // ShowGameObject();
+
+    }
+    /*void ShowGameObject()
+    {
+        Enemy.SetActive(true);
+    } */
+}
+
