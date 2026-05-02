@@ -7,16 +7,32 @@ using UnityEngine.UIElements;
 
 public class GameOverUI : MonoBehaviour
 {
-    private VisualElement GameOverScreen;
+    public UIDocument GameOverScreen;
+    public VisualElement root;
     public EnergyPool energyPool;
+
     void OnEnable()
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
-       
-        GameOverScreen = root.Q<VisualElement>("GameOverScreen");
-        if (GameOverScreen != null)
+        var Uidoc = GetComponent<UIDocument>();
+        if (Uidoc == null || Uidoc.rootVisualElement == null)
         {
-            GameOverScreen.style.display = DisplayStyle.Flex;
+            return;
+        }
+
+        if (Uidoc != null)
+        {
+            root = Uidoc.GetComponent<VisualElement>();
+        }
+        if (root != null)
+        {
+            root.Q<Label>("LabelOver1");
+            root.Q<Label>("LabelOver2");
+        }
+            if (GameOverScreen != null) 
+                
+        {
+            
+            root.style.display = DisplayStyle.Flex;
         }
        
     }
