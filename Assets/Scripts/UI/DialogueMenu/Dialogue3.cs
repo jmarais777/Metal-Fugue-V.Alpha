@@ -15,18 +15,24 @@ public class Dialogue3 : MonoBehaviour
     public UIDocument dialogueui;
     public PlayerMovement PlayerMove;
     public ShootMech PlayerShoot;
-
+   
+    public GameObject Player;
 
     void OnEnable()
 
     {
+
         if (dialogueui == null || dialogueui.rootVisualElement == null)
         {
             return;
         }
+        Time.timeScale = 0.0f;
         PlayerShoot.enabled = false;
         PlayerMove.enabled = false;
         scavmove.enabled = false;
+   
+
+
         var root = GetComponent<UIDocument>().rootVisualElement;
 
         nextButton = root.Q<Button>("next");
@@ -73,6 +79,7 @@ public class Dialogue3 : MonoBehaviour
             scavmove.enabled = true;
             PlayerShoot.enabled = true;
             PlayerMove.enabled = true;
+            Time.timeScale = 1.0f;
         }
         
         nextButton.SetEnabled(false);
