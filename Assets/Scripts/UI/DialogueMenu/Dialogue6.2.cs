@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Dialogue6Real : MonoBehaviour
+public class Dialogue62: MonoBehaviour
 {
 
     public Label DialogueLinesLabel;
@@ -12,23 +12,23 @@ public class Dialogue6Real : MonoBehaviour
     public VisualElement root;
     public Button nextButton;
     public GameObject ScavengerDialogueMenu6Object;
-    public GameObject UILinker_6_real;
+    public GameObject UILinker_62_real;
     public float InteractProximity = 3.0f;
     public string[] DialogueLines;
     public int DialogueIndex = 0;
 
 
    // public GameObject ScavenegrHeapGhostCondition;
-    public GameObject TransitionCondition8;
- 
-   
+  
+    public GameObject TransitionCondition82;
+    public GameObject TransitionCondition9;
 
     private void Update()
     {
         if (ScavengerDialogueMenu6Object != null && !ScavengerDialogueMenu6Object.activeSelf)
         {
             {
-                if (TransitionCondition8.activeSelf == true)
+                if (TransitionCondition82.activeSelf == true)
                 {
                     ShowMenu1();
                 }
@@ -67,9 +67,10 @@ public class Dialogue6Real : MonoBehaviour
         void HideMenu1()
         {
            
-            TransitionCondition8.SetActive(false);
-
-            
+         
+            TransitionCondition82.SetActive(false);
+            TransitionCondition9.SetActive(true);
+            UILinker_62_real.SetActive(false);
             nextButton.SetEnabled(false);
             ScavengerDialogueMenu6Object.SetActive(false);
             //ScavenegrHeapGhostCondition.SetActive(false);

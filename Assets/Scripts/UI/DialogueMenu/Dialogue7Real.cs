@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using System.Linq;
+using System.Linq.Expressions;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -16,21 +17,29 @@ public class Dialogue7Real : MonoBehaviour
     public float InteractProximity = 3.0f;
     public string[] DialogueLines;
     public int DialogueIndex = 0;
+    public GameObject Player;
 
 
-
-    public GameObject TransitionCondition8;
+    public GameObject TransitionCondition9;
+   
+   
 
     private void Update()
     {
-        if (ScavengerDialogueMenu7Object != null && !ScavengerDialogueMenu7Object.activeSelf)
+        if (UILinker_7_real != null && !ScavengerDialogueMenu7Object.activeSelf)
         {
             {
-                if (TransitionCondition8.activeSelf == true)
-                {
-                    ShowMenu1();
-                }
+                float uilinker1 = Vector2.Distance(UILinker_7_real.transform.position, Player.transform.position);
+                    if (TransitionCondition9.activeSelf == true)
+                    if (Input.GetKeyDown(KeyCode.E))
+                        if (uilinker1 < InteractProximity)
+                        {
 
+                            Debug.Log("linkeronereg");
+                            ShowMenu1();
+
+                        }
+                
 
             }
         }
@@ -65,7 +74,7 @@ public class Dialogue7Real : MonoBehaviour
         void HideMenu1()
         {
            
-            TransitionCondition8.SetActive(false);
+            TransitionCondition9.SetActive(false);
             nextButton.SetEnabled(false);
             ScavengerDialogueMenu7Object.SetActive(false);
           
