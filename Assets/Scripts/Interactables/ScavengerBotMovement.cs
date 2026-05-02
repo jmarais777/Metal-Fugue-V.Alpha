@@ -24,12 +24,11 @@ public class ScavengerBotMovement : MonoBehaviour
     public bool IsDialogueStart = false;
 
     public float MoveSpeed = 5.0f;
-    public Dialogue61Player DialScri61;
-    public Dialogue6Real DialScri6;
-    //public ScrapHeapsShuttle heap;
-    public GameObject ConditionCOndition;
-    public GameObject UIlinker7;
 
+    //public ScrapHeapsShuttle heap;
+
+    public GameObject UIlinker7;
+    public GameObject TransitionCondition9;
 
     void Start()
     {
@@ -69,6 +68,7 @@ public class ScavengerBotMovement : MonoBehaviour
 
                 this.enabled = false;
                 UIlinker7.SetActive(true);
+                TransitionCondition9.SetActive(true);
 
             }
 
