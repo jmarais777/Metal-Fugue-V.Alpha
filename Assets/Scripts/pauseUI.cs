@@ -11,31 +11,32 @@ public class pauseUI : MonoBehaviour
 {
     public Button ResumeButton;
     public Button QuitButton;
-    public GameObject pauseMenu;
+   public GameObject pauseMenu;
     public bool IsPaused = true;
-    VisualElement root;
+     VisualElement root;
     public UIDocument Pausedoc;
 
 
     public void Start()
     {
         Pausedoc = GetComponent<UIDocument>();
-
-
+        root = Pausedoc.rootVisualElement;
+        ResumeButton = root.Q<Button>("Resume");
+        QuitButton = root.Q<Button>("Quit");
     }
     public void OnEnable()
     {
-
-
-
-
-
+        
+        
+        
+    
+    
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
-
+            
         }
-
+       
         if (ResumeButton != null)
         {
             ResumeGame();
@@ -47,39 +48,32 @@ public class pauseUI : MonoBehaviour
     }
 
 
-
+  
     void PauseGame()
     {
-
-        if (Pausedoc != null)
-        {
-            var root = Pausedoc.rootVisualElement;
-            ResumeButton = root.Q<Button>("Resume");
-            QuitButton = root.Q<Button>("Quit");
-            pauseMenu.SetActive(true);
-        }
-
+      
+      
+        pauseMenu.SetActive(true);
         root.style.display = DisplayStyle.Flex;
         IsPaused = true;
         Time.timeScale = 0;
-    }
-
         
-
-        void ResumeGame()
-        {
-
-            pauseMenu.SetActive(false);
-            root.style.display = DisplayStyle.None;
-            IsPaused = false;
-            Time.timeScale = 1;
-
-
-
-
+       
         }
-    
 
+    void ResumeGame()
+    {
+
+        pauseMenu.SetActive(false);
+        root.style.display = DisplayStyle.None;
+        IsPaused = false;
+        Time.timeScale = 1;
+      
+
+
+
+    }
 }
+
     
    
