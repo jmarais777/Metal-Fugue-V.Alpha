@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: 85457a1c10c357741b6c26fa8d95a249
+guid: 5ef7a393179cdfd479b47cd14cb95a76
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4813046260214496003
-    second: Mc_Run_(Front)_0
+      213: -5820106050164937038
+    second: Mc_Idle_Front_0
   - first:
-      213: 704419733167335223
-    second: Mc_Run_(Front)_1
+      213: 7757749832887882173
+    second: Mc_Idle_Front_1
   - first:
-      213: 9091025990587815357
-    second: Mc_Run_(Front)_2
+      213: -2284854777179384510
+    second: Mc_Idle_Front_2
   - first:
-      213: 754489433162951021
-    second: Mc_Run_(Front)_3
+      213: 2136107893086888762
+    second: Mc_Idle_Front_3
   - first:
-      213: 1354018136365506270
-    second: Mc_Run_(Front)_4
-  - first:
-      213: 3223169871089382020
-    second: Mc_Run_(Front)_5
-  - first:
-      213: -560755526533186768
-    second: Mc_Run_(Front)_6
-  - first:
-      213: -3091469948442657318
-    second: Mc_Run_(Front)_7
+      213: -5608204515014266425
+    second: Mc_Idle_Front_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,177 +112,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mc_Run_(Front)_0
+      name: Mc_Idle_Front_0
       rect:
         serializedVersion: 2
-        x: 66
-        y: 340
-        width: 200
-        height: 379
+        x: 368
+        y: 223
+        width: 215
+        height: 394
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30b7b93b2106bc240800000000000000
-      internalID: 4813046260214496003
+      spriteID: 2be21d43264da3fa0800000000000000
+      internalID: -5820106050164937038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Run_(Front)_1
+      name: Mc_Idle_Front_1
       rect:
         serializedVersion: 2
-        x: 289
-        y: 345
-        width: 200
-        height: 375
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 737e630e30a96c900800000000000000
-      internalID: 704419733167335223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mc_Run_(Front)_2
-      rect:
-        serializedVersion: 2
-        x: 522
-        y: 323
-        width: 200
-        height: 399
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: db594dcd8ffc92e70800000000000000
-      internalID: 9091025990587815357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mc_Run_(Front)_3
-      rect:
-        serializedVersion: 2
-        x: 740
-        y: 328
-        width: 200
+        x: 694
+        y: 220
+        width: 217
         height: 395
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d69a67a542c787a00800000000000000
-      internalID: 754489433162951021
+      spriteID: db1d0a5ee5019ab60800000000000000
+      internalID: 7757749832887882173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Run_(Front)_4
+      name: Mc_Idle_Front_2
       rect:
         serializedVersion: 2
-        x: 972
-        y: 326
-        width: 200
+        x: 1001
+        y: 230
+        width: 217
         height: 395
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ede908532507ac210800000000000000
-      internalID: 1354018136365506270
+      spriteID: 2455ed29fa09a40e0800000000000000
+      internalID: -2284854777179384510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Run_(Front)_5
+      name: Mc_Idle_Front_3
       rect:
         serializedVersion: 2
-        x: 1201
-        y: 325
-        width: 200
-        height: 399
+        x: 1333
+        y: 222
+        width: 217
+        height: 398
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4823601bbeffabc20800000000000000
-      internalID: 3223169871089382020
+      spriteID: a332a59afcaf4ad10800000000000000
+      internalID: 2136107893086888762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Run_(Front)_6
+      name: Mc_Idle_Front_4
       rect:
         serializedVersion: 2
-        x: 1428
-        y: 340
-        width: 200
-        height: 379
+        x: 1659
+        y: 222
+        width: 217
+        height: 398
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 03bf623d1dbc738f0800000000000000
-      internalID: -560755526533186768
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mc_Run_(Front)_7
-      rect:
-        serializedVersion: 2
-        x: 1656
-        y: 344
-        width: 200
-        height: 379
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: addb7411674e815d0800000000000000
-      internalID: -3091469948442657318
+      spriteID: 7c135d605b7ab22b0800000000000000
+      internalID: -5608204515014266425
       vertices: []
       indices: 
       edges: []
@@ -300,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 02411348a3e120e4a989162d7c1d542a
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -308,18 +233,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Mc_Run_(Front)_0: 4813046260214496003
-      Mc_Run_(Front)_1: 704419733167335223
-      Mc_Run_(Front)_2: 9091025990587815357
-      Mc_Run_(Front)_3: 754489433162951021
-      Mc_Run_(Front)_4: 1354018136365506270
-      Mc_Run_(Front)_5: 3223169871089382020
-      Mc_Run_(Front)_6: -560755526533186768
-      Mc_Run_(Front)_7: -3091469948442657318
+      Mc_Idle_Front_0: -5820106050164937038
+      Mc_Idle_Front_1: 7757749832887882173
+      Mc_Idle_Front_2: -2284854777179384510
+      Mc_Idle_Front_3: 2136107893086888762
+      Mc_Idle_Front_4: -5608204515014266425
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

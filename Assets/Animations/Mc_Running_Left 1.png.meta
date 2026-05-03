@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: 85457a1c10c357741b6c26fa8d95a249
+guid: 841354e8c58a17b4980a771ccb4099a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4813046260214496003
-    second: Mc_Run_(Front)_0
+      213: 7095787760709974600
+    second: Mc_Running_Left_0
   - first:
-      213: 704419733167335223
-    second: Mc_Run_(Front)_1
+      213: 2261105132900561242
+    second: Mc_Running_Left_1
   - first:
-      213: 9091025990587815357
-    second: Mc_Run_(Front)_2
+      213: -4443671484180377214
+    second: Mc_Running_Left_2
   - first:
-      213: 754489433162951021
-    second: Mc_Run_(Front)_3
+      213: 231603282720525672
+    second: Mc_Running_Left_3
   - first:
-      213: 1354018136365506270
-    second: Mc_Run_(Front)_4
+      213: -1281898051058374487
+    second: Mc_Running_Left_4
   - first:
-      213: 3223169871089382020
-    second: Mc_Run_(Front)_5
-  - first:
-      213: -560755526533186768
-    second: Mc_Run_(Front)_6
-  - first:
-      213: -3091469948442657318
-    second: Mc_Run_(Front)_7
+      213: -189965647162580791
+    second: Mc_Running_Left_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,177 +115,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mc_Run_(Front)_0
+      name: Mc_Running_Left_0
       rect:
         serializedVersion: 2
-        x: 66
-        y: 340
-        width: 200
-        height: 379
+        x: 267
+        y: 311
+        width: 231
+        height: 385
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30b7b93b2106bc240800000000000000
-      internalID: 4813046260214496003
+      spriteID: 84abeae8f5d497260800000000000000
+      internalID: 7095787760709974600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Run_(Front)_1
+      name: Mc_Running_Left_1
       rect:
         serializedVersion: 2
-        x: 289
-        y: 345
-        width: 200
-        height: 375
+        x: 528
+        y: 302
+        width: 230
+        height: 391
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 737e630e30a96c900800000000000000
-      internalID: 704419733167335223
+      spriteID: a51b956732f016f10800000000000000
+      internalID: 2261105132900561242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Run_(Front)_2
+      name: Mc_Running_Left_2
       rect:
         serializedVersion: 2
-        x: 522
-        y: 323
-        width: 200
-        height: 399
+        x: 816
+        y: 299
+        width: 230
+        height: 389
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db594dcd8ffc92e70800000000000000
-      internalID: 9091025990587815357
+      spriteID: 28155e62458e452c0800000000000000
+      internalID: -4443671484180377214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Run_(Front)_3
+      name: Mc_Running_Left_3
       rect:
         serializedVersion: 2
-        x: 740
-        y: 328
-        width: 200
-        height: 395
+        x: 1111
+        y: 309
+        width: 230
+        height: 383
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d69a67a542c787a00800000000000000
-      internalID: 754489433162951021
+      spriteID: 86d0f5365f1d63300800000000000000
+      internalID: 231603282720525672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Run_(Front)_4
+      name: Mc_Running_Left_4
       rect:
         serializedVersion: 2
-        x: 972
-        y: 326
-        width: 200
-        height: 395
+        x: 1364
+        y: 299
+        width: 230
+        height: 387
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ede908532507ac210800000000000000
-      internalID: 1354018136365506270
+      spriteID: 9a8666ca388c53ee0800000000000000
+      internalID: -1281898051058374487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Run_(Front)_5
+      name: Mc_Running_Left_5
       rect:
         serializedVersion: 2
-        x: 1201
-        y: 325
-        width: 200
-        height: 399
+        x: 1627
+        y: 306
+        width: 231
+        height: 389
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4823601bbeffabc20800000000000000
-      internalID: 3223169871089382020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mc_Run_(Front)_6
-      rect:
-        serializedVersion: 2
-        x: 1428
-        y: 340
-        width: 200
-        height: 379
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03bf623d1dbc738f0800000000000000
-      internalID: -560755526533186768
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mc_Run_(Front)_7
-      rect:
-        serializedVersion: 2
-        x: 1656
-        y: 344
-        width: 200
-        height: 379
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: addb7411674e815d0800000000000000
-      internalID: -3091469948442657318
+      spriteID: 9c0e859104b1d5df0800000000000000
+      internalID: -189965647162580791
       vertices: []
       indices: 
       edges: []
@@ -300,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 02411348a3e120e4a989162d7c1d542a
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -308,18 +258,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Mc_Run_(Front)_0: 4813046260214496003
-      Mc_Run_(Front)_1: 704419733167335223
-      Mc_Run_(Front)_2: 9091025990587815357
-      Mc_Run_(Front)_3: 754489433162951021
-      Mc_Run_(Front)_4: 1354018136365506270
-      Mc_Run_(Front)_5: 3223169871089382020
-      Mc_Run_(Front)_6: -560755526533186768
-      Mc_Run_(Front)_7: -3091469948442657318
+      Mc_Running_Left_0: 7095787760709974600
+      Mc_Running_Left_1: 2261105132900561242
+      Mc_Running_Left_2: -4443671484180377214
+      Mc_Running_Left_3: 231603282720525672
+      Mc_Running_Left_4: -1281898051058374487
+      Mc_Running_Left_5: -189965647162580791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
