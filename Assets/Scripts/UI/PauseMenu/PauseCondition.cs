@@ -12,11 +12,13 @@ public class PauseCondition : MonoBehaviour
     public Button howtoplay;
     public bool IsPaused = false;
     public GameObject TransitionCOndition_Pause1;
+    public GameObject TransitionCOndition_Pause2;
 
- 
+
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || TransitionCOndition_Pause2.activeSelf)
         {
             IsPaused = true;
             if (IsPaused == true)
@@ -64,6 +66,7 @@ public class PauseCondition : MonoBehaviour
 
         Time.timeScale = 1.0f;
         PauseMenu.enabled = false;
+        TransitionCOndition_Pause2.SetActive(false);
         Debug.Log("clikyclicky");
     }
 
@@ -77,6 +80,7 @@ public class PauseCondition : MonoBehaviour
     void howButtonOnCLick(ClickEvent clk)
     {
         TransitionCOndition_Pause1.SetActive(true);
+        PauseMenu.enabled = false;
         
     }
 

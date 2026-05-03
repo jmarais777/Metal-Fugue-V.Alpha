@@ -7,6 +7,9 @@ public class HowToPlay_pause : MonoBehaviour
     public UIDocument HowToPlayPause;
     public Button ReturnToPause;
     public GameObject TransitionCOndition_Pause1;
+    public GameObject TransitionCOndition_Pause2;
+    public PauseCondition PauseScreen;
+
     public void Update()
     {
         if (TransitionCOndition_Pause1.activeSelf)
@@ -29,6 +32,10 @@ public class HowToPlay_pause : MonoBehaviour
     }
     void RetButtonOnClick(ClickEvent clk)
     {
+
+        TransitionCOndition_Pause2.SetActive(true);
        HowToPlayPause.enabled = false;
+       TransitionCOndition_Pause1.SetActive(false);
+       
     }
 }
