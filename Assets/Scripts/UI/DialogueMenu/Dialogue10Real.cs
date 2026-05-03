@@ -5,41 +5,47 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Dialogue7Real : MonoBehaviour
+public class Dialogue10Real : MonoBehaviour
 {
 
     public Label DialogueLinesLabel;
     public UIDocument ScavengerUIDOC;
     public VisualElement root;
     public Button nextButton;
-    public GameObject ScavengerDialogueMenu7Object;
-    public GameObject UILinker_7_real;
+    public GameObject ScavengerDialogueMenu10Object;
+    public GameObject UILinker_10_real;
     public float InteractProximity = 3.0f;
     public string[] DialogueLines;
     public int DialogueIndex = 0;
     public GameObject Player;
+    public GameObject ScavengerArmOnPlayer;
+    public GameObject ScavengerArmOnScavP;
 
-
-    public GameObject TransitionCondition9;
-    public GameObject TransitionCondition10;
+    public GameObject TransitionCondition14;
+   
    
    
 
     private void Update()
     {
-        if (UILinker_7_real != null && !ScavengerDialogueMenu7Object.activeSelf)
+        if (UILinker_10_real != null && !ScavengerDialogueMenu10Object.activeSelf)
         {
             {
-                float uilinker7 = Vector2.Distance(UILinker_7_real.transform.position, Player.transform.position);
-                    if (TransitionCondition9.activeSelf == true)
-                    if (Input.GetKeyDown(KeyCode.E))
-                        if (uilinker7 < InteractProximity)
+                float uilinker10 = Vector2.Distance(UILinker_10_real.transform.position, Player.transform.position);
+
+                if (Input.GetKeyDown(KeyCode.E))
+
+                    if (uilinker10 < InteractProximity)
+                    {
+                        if (ScavengerArmOnPlayer.activeSelf == true)
                         {
 
-                            Debug.Log("linkeronereg");
+                            ScavengerArmOnScavP.SetActive(true);
+                            ScavengerArmOnPlayer.SetActive(false);
                             ShowMenu1();
 
                         }
+                    }
                 
 
             }
@@ -47,7 +53,7 @@ public class Dialogue7Real : MonoBehaviour
 
         void ShowMenu1()
         {
-            ScavengerDialogueMenu7Object.SetActive(true);
+            ScavengerDialogueMenu10Object.SetActive(true);
 
             Time.timeScale = 0.0f;
             var Ui1 = ScavengerUIDOC.GetComponent<UIDocument>();
@@ -75,10 +81,10 @@ public class Dialogue7Real : MonoBehaviour
         void HideMenu1()
         {
            
-            TransitionCondition9.SetActive(false);
-            TransitionCondition10.SetActive(true);
+           
+            TransitionCondition14.SetActive(true);
             nextButton.SetEnabled(false);
-            ScavengerDialogueMenu7Object.SetActive(false);
+            ScavengerDialogueMenu10Object.SetActive(false);
           
             Time.timeScale = 1.0f;
             
