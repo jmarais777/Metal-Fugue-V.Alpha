@@ -1,5 +1,7 @@
 #if UNITY_EDITOR
 using Mono.Cecil.Cil;
+using Unity.VisualScripting;
+
 #endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,41 +9,70 @@ using UnityEngine.UIElements;
 
 public class GameOverUI : MonoBehaviour
 {
-    public UIDocument GameOverScreen;
-    public VisualElement root;
+    public UIDocument GameOver;
     public EnergyPool energyPool;
+    public Button RetryButton;
 
-    void OnEnable()
+
+    private void OnEnable()
     {
-        var Uidoc = GetComponent<UIDocument>();
-        if (Uidoc == null || Uidoc.rootVisualElement == null)
-        {
-            return;
-        }
+        GameOver = GetComponent<UIDocument>();
+        var root = GameOver.rootVisualElement;
 
-        if (Uidoc != null)
-        {
-            root = Uidoc.GetComponent<VisualElement>();
-        }
-        if (root != null)
-        {
-            root.Q<Label>("LabelOver1");
-            root.Q<Label>("LabelOver2");
-        }
-            if (GameOverScreen != null) 
-                
-        {
+        RetryButton = root.Q<Button>("RetryButton");
+        
+        
+            RetryButton.RegisterCallback<ClickEvent>(ButtOnClick);
             
-            root.style.display = DisplayStyle.Flex;
-        }
-       
+           
+            Debug.Log("I'm ALivee");
+        
+ 
+
+
     }
 
     public void ShowGameOver()
     {
 
-       
         SceneManager.LoadScene("GameOverREAL");
+    }
+    public void ButtOnClick(ClickEvent clk)
+    {
+
+        SceneManager.LoadScene("Proto2ScrapBlocking");
     }
 }
 
+//before I simplified
+/*if (GameOverScreen != null)
+
+{
+
+    root.style.display = DisplayStyle.Flex;
+} */
+
+/*var Uidoc = GetComponent<UIDocument>();
+if (Uidoc == null || Uidoc.rootVisualElement == null)
+{
+    return;
+}
+
+if (Uidoc != null)
+{
+    var root = Uidoc.rootVisualElement;
+    Debug.Log("UI doc active");
+}
+if (root != null)
+{
+    root.Q<Label>("LabelOver1");
+    root.Q<Label>("LabelOver2");
+    RetryButton = root.Q<Button>("RetryButton");
+    Debug.Log("Visual eleemt active");
+}
+if (RetryButton != null)
+{
+    Debug.Log("I'm ALivee");
+    RetryButton.clicked += ButtOnClick;
+    RetryButton.clicked -= ButtOnClick;
+} */
