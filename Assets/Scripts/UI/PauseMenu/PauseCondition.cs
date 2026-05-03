@@ -7,33 +7,37 @@ public class PauseCondition : MonoBehaviour
     public GameObject PauseMenu_UIDOC;
     public UIDocument PauseMenu;
     public Button resume;
-  
+    public bool IsPaused = false;
+ 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ShowPauseMenu();
-     
+            IsPaused = true;
+            if (IsPaused == true)
+            {
+                ShowPauseMenu();
+            }
         }
-
     }
     public void ShowPauseMenu()
     {
-        PauseMenu_UIDOC.SetActive(true);
+        PauseMenu.enabled = true;
         Time.timeScale = 0.0f;
-        PauseMenu = GetComponent<UIDocument>();
+         PauseMenu = GetComponent<UIDocument>();
+        
         if (PauseMenu == null)
         {
             return;
-
         }
-     
-        else if(PauseMenu != null )
-        { 
+
+        else if (PauseMenu != null)
+        {
             Debug.Log("VisualElement yes");
             var root = PauseMenu.rootVisualElement;
             resume = root.Q<Button>("Resume");
             resume.RegisterCallback<ClickEvent>(ButtonOnClick);
+
         }
         else
         {
@@ -43,10 +47,12 @@ public class PauseCondition : MonoBehaviour
 
 
 
-        }
+
+    }
     public void ButtonOnClick(ClickEvent clk)
     {
-        PauseMenu_UIDOC.SetActive(false);
+   Time.timeScale = 1.0f;
+  PauseMenu.enabled = false;
         Debug.Log("clikyclicky");
     }
 
