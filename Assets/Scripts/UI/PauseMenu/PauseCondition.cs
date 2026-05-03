@@ -1,0 +1,58 @@
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class PauseCondition : MonoBehaviour
+{
+    public GameObject PauseMenu_UIDOC;
+    public UIDocument PauseMenu;
+    public Button resume;
+  
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ShowPauseMenu();
+     
+        }
+
+    }
+    public void ShowPauseMenu()
+    {
+        PauseMenu_UIDOC.SetActive(true);
+        Time.timeScale = 0.0f;
+        PauseMenu = GetComponent<UIDocument>();
+        if (PauseMenu == null)
+        {
+            return;
+
+        }
+     
+        else if(PauseMenu != null )
+        { 
+            Debug.Log("VisualElement yes");
+            var root = PauseMenu.rootVisualElement;
+            resume = root.Q<Button>("Resume");
+            resume.RegisterCallback<ClickEvent>(ButtonOnClick);
+        }
+        else
+        {
+            Debug.Log("VisualElement no");
+        }
+
+
+
+
+        }
+    public void ButtonOnClick(ClickEvent clk)
+    {
+        PauseMenu_UIDOC.SetActive(false);
+        Debug.Log("clikyclicky");
+    }
+
+
+
+
+
+    
+}
