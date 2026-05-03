@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: 775500d1010913f4390827c0f40c66d5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5124016558113608934
+    second: Cryocorp_0
+  - first:
+      213: 1640612305834185384
+    second: Cryocorp_1
+  - first:
+      213: 4002172910715625177
+    second: Cryocorp_2
+  - first:
+      213: 4509119932447866806
+    second: Cryocorp_3
+  - first:
+      213: 4237126615827563859
+    second: Cryocorp_4
+  - first:
+      213: 4650188859329110423
+    second: Cryocorp_5
+  - first:
+      213: -5448189527717127720
+    second: Cryocorp_6
+  - first:
+      213: 7617521630333068884
+    second: Cryocorp_7
+  - first:
+      213: 5087401533093914405
+    second: Cryocorp_8
+  - first:
+      213: -7661481775546371874
+    second: Cryocorp_9
+  - first:
+      213: -943746503987706236
+    second: Cryocorp_10
+  - first:
+      213: 8585608935184006948
+    second: Cryocorp_11
+  - first:
+      213: -5802797917166661403
+    second: Cryocorp_12
+  - first:
+      213: -1230074866338957316
+    second: Cryocorp_13
+  - first:
+      213: -7439495901628830500
+    second: Cryocorp_14
+  - first:
+      213: -7321370989518837762
+    second: Cryocorp_15
+  - first:
+      213: 8109117557895705075
+    second: Cryocorp_16
+  - first:
+      213: -3254149858109759117
+    second: Cryocorp_17
+  - first:
+      213: -1746803240702108321
+    second: Cryocorp_18
+  - first:
+      213: 3850554638034836067
+    second: Cryocorp_19
+  - first:
+      213: -6700713959109129145
+    second: Cryocorp_20
+  - first:
+      213: 6606703721153774798
+    second: Cryocorp_21
+  - first:
+      213: -5690636354033694626
+    second: Cryocorp_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cryocorp_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 585
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1b2b6ea616d3e8b0800000000000000
+      internalID: -5124016558113608934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d26195321a4d53b4bad4d25e33eebd4d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":585.0,"y":164.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Cryocorp_0: -5124016558113608934
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
