@@ -18,8 +18,8 @@ public class Dialogue12Real : MonoBehaviour
     public string[] DialogueLines;
     public int DialogueIndex = 0;
     public GameObject Player;
-  
 
+    public bool isUiDisplaying3;
     public GameObject TransitionCondition16;
     public Lock locky;
    
@@ -27,6 +27,10 @@ public class Dialogue12Real : MonoBehaviour
 
     private void Update()
     {
+        if (isUiDisplaying3 == true)
+        {
+            Time.timeScale = 0.0f;
+        }
         if (UILinker_12_real != null && !ScavengerDialogueMenu12Object.activeSelf)
         {
             {
@@ -52,7 +56,7 @@ public class Dialogue12Real : MonoBehaviour
         void ShowMenu1()
         {
             ScavengerDialogueMenu12Object.SetActive(true);
-
+            isUiDisplaying3 = true;
             Time.timeScale = 0.0f;
             var Ui1 = ScavengerUIDOC.GetComponent<UIDocument>();
             if (Ui1 == null || Ui1.rootVisualElement == null)
@@ -83,7 +87,7 @@ public class Dialogue12Real : MonoBehaviour
             TransitionCondition16.SetActive(true);
             nextButton.SetEnabled(false);
             ScavengerDialogueMenu12Object.SetActive(false);
-          
+            isUiDisplaying3 = false;
             Time.timeScale = 1.0f;
             
 }

@@ -8,7 +8,7 @@
     visibility: visible;
     display: flex;
     flex-direction: row;
-    -unity-font-definition: url("project://database/Assets/Fonts/Quantico-Regular%20SDF.asset?fileID=11400000&guid=9accaec8dcdca784db5dd46021d0c915&type=2#Quantico-Regular SDF");
+    -unity-font-definition: url("project://database/Assets/Fonts/AssetFonts/Quantico-Regular%20SDF.asset?fileID=11400000&guid=a18a0fe47715b294dafeac30cecda53d&type=2#Quantico-Regular SDF");
     background-color: rgba(0, 147, 160, 0.16);
     border-top-width: 13px;
     border-left-width: 13px;
