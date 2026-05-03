@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/HowTopla.uss?fileID=7433441132597879392&amp;guid=9a91ddec07aa55f46827bc21ada1bf2d&amp;type=3#HowTopla"/>
+    <ui:VisualElement name="Container" style="background-image: url(&quot;project://database/Assets/Sprites/HowToPlayProto2.png?fileID=603777355113896515&amp;guid=867fbdb6286c0a540bcde73cb7e68273&amp;type=3#HowToPlayProto2_0&quot;); width: 100%; height: 100%;">
+        <ui:Button text="Button" name="ReturnToMenu" style="top: 70%; width: 19%; height: 13%; left: 70%; background-image: none; background-color: rgb(92, 97, 99);"/>
+    </ui:VisualElement>
+</ui:UXML>
