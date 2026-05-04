@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 841354e8c58a17b4980a771ccb4099a6
+guid: 473cfa620cf35b44f83c5947083fae1d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7095787760709974600
-    second: Mc_Running_Left_0
+      213: -1824997559030142500
+    second: Med_Enemy_Right_0
   - first:
-      213: 2261105132900561242
-    second: Mc_Running_Left_1
+      213: -7050418628670109643
+    second: Med_Enemy_Right_1
   - first:
-      213: -4443671484180377214
-    second: Mc_Running_Left_2
+      213: 5617681864369278067
+    second: Med_Enemy_Right_2
   - first:
-      213: 231603282720525672
-    second: Mc_Running_Left_3
-  - first:
-      213: -1281898051058374487
-    second: Mc_Running_Left_4
-  - first:
-      213: -189965647162580791
-    second: Mc_Running_Left_5
+      213: 7177371905012387528
+    second: Med_Enemy_Right_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mc_Running_Left_0
+      name: Med_Enemy_Right_0
       rect:
         serializedVersion: 2
-        x: 267
-        y: 311
-        width: 231
-        height: 385
+        x: 538
+        y: 305
+        width: 148
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 84abeae8f5d497260800000000000000
-      internalID: 7095787760709974600
+      spriteID: cd9ad0aa36e4ca6e0800000000000000
+      internalID: -1824997559030142500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Running_Left_1
+      name: Med_Enemy_Right_1
       rect:
         serializedVersion: 2
-        x: 528
-        y: 302
-        width: 230
-        height: 391
+        x: 769
+        y: 301
+        width: 148
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a51b956732f016f10800000000000000
-      internalID: 2261105132900561242
+      spriteID: 5384258ac91e72e90800000000000000
+      internalID: -7050418628670109643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Running_Left_2
+      name: Med_Enemy_Right_2
       rect:
         serializedVersion: 2
-        x: 816
-        y: 299
-        width: 230
-        height: 389
+        x: 1022
+        y: 303
+        width: 148
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28155e62458e452c0800000000000000
-      internalID: -4443671484180377214
+      spriteID: 37c82e254e306fd40800000000000000
+      internalID: 5617681864369278067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Running_Left_3
+      name: Med_Enemy_Right_3
       rect:
         serializedVersion: 2
-        x: 1111
-        y: 309
-        width: 230
-        height: 383
+        x: 1253
+        y: 301
+        width: 148
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,52 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86d0f5365f1d63300800000000000000
-      internalID: 231603282720525672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mc_Running_Left_4
-      rect:
-        serializedVersion: 2
-        x: 1364
-        y: 299
-        width: 230
-        height: 387
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9a8666ca388c53ee0800000000000000
-      internalID: -1281898051058374487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mc_Running_Left_5
-      rect:
-        serializedVersion: 2
-        x: 1627
-        y: 306
-        width: 231
-        height: 389
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c0e859104b1d5df0800000000000000
-      internalID: -189965647162580791
+      spriteID: 8cec12368b52b9360800000000000000
+      internalID: 7177371905012387528
       vertices: []
       indices: 
       edges: []
@@ -260,12 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mc_Running_Left_0: 7095787760709974600
-      Mc_Running_Left_1: 2261105132900561242
-      Mc_Running_Left_2: -4443671484180377214
-      Mc_Running_Left_3: 231603282720525672
-      Mc_Running_Left_4: -1281898051058374487
-      Mc_Running_Left_5: -189965647162580791
+      Med_Enemy_Right_0: -1824997559030142500
+      Med_Enemy_Right_1: -7050418628670109643
+      Med_Enemy_Right_2: 5617681864369278067
+      Med_Enemy_Right_3: 7177371905012387528
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

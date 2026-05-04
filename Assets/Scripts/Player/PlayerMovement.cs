@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,35 +20,53 @@ public class PlayerMovement : MonoBehaviour
 
     public float MovementSpeed = 5f;
     public Rigidbody2D RigBod;
+    
+
+
+
     Vector2 movement;
+    private Vector2 moveInput;
+    private Animator animator; 
 
     float dashSpeed = 20f;
     float dashDuration = 0.1f;
     float dashCooldown = 0.5f;
     public bool IsDashing;
     bool canDash = true;
-    public bool IsWalking;
-    void Update()
+   bool IsWalking = false;
+
+    void Start()
+    {
+      RigBod = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
+
+ void Update()
     
     {
+
+       IsWalking = false;
         //Checking WASD for Animator
 
         if (Input.GetKey(KeyCode.W))
+
+        {
+
+            IsWalking = true;
+        }
+        else if (Input.GetKey(KeyCode.S))
         {
             IsWalking = true;
         }
-        if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.A))
         {
             IsWalking = true;
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.D))
         {
             IsWalking = true;
         }
-        if (Input.GetKey(KeyCode.D))
-        {
-            IsWalking = true;
-        }
+
 
         //mapping movement controls for dash
         if (IsDashing)
@@ -60,10 +79,28 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash());
         }
         
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        animator.SetBool("IsWalking", IsWalking);
 
     }
+    public void Move(InputAction.CallbackContext context)
+    {
+      animator.SetBool("IsWalking", true);
+
+        if (context.canceled)
+        {
+            animator.SetBool("IsWalking", false);
+            animator.SetFloat("LastInputX", movement.x);
+            animator.SetFloat("LastInputY", movement.y);
+        }
+         
+        moveInput = context.ReadValue<Vector2>();
+        animator.SetFloat("InputX", moveInput.x);
+        animator.SetFloat("InputY", moveInput.y);
+    }
+
 
     private void FixedUpdate()
     {
