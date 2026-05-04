@@ -1,0 +1,12 @@
+:root {
+}
+
+
+
+.Label {
+    justify-content: flex-start;
+    align-self: center;
+    top: 16%;
+    left: -7px;
+    -unity-font-definition: url("project://database/Assets/Fonts/AssetFonts/Robot_Font%20SDF.asset?fileID=11400000&guid=58122920defbe584d86c7c5fe90a7632&type=2#Robot_Font SDF");
+}
