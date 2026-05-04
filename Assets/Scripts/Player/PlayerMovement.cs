@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float MovementSpeed = 5f;
     public Rigidbody2D RigBod;
+    private Animator animator;
+    private Vector2 moveInput;
     Vector2 movement;
 
     float dashSpeed = 20f;
@@ -26,7 +29,27 @@ public class PlayerMovement : MonoBehaviour
     float dashCooldown = 0.5f;
     public bool IsDashing;
     bool canDash = true;
-    public bool IsWalking;
+    public bool isWalking;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    public void Move(InputAction.CallbackContext context)
+    {
+       animator.SetBool("IsWalking", true);
+
+        if (context.canceled)
+        {
+            animator.SetBool("IsWalking", false);
+            animator.SetFloat("LastInputX", moveInput.x);
+            animator.SetFloat("LastInputY", moveInput.y);
+        }
+        moveInput = context.ReadValue<Vector2>();
+        animator.SetFloat("InputX", moveInput.x);
+            animator.SetFloat("InputY", moveInput.y);
+    }
     void Update()
     
     {
@@ -34,19 +57,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            IsWalking = true;
+            isWalking = true;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            IsWalking = true;
+            isWalking = true;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            IsWalking = true;
+            isWalking = true;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            IsWalking = true;
+            isWalking = true;
         }
 
         //mapping movement controls for dash
