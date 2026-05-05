@@ -25,7 +25,10 @@ public class ShootMech : MonoBehaviour
 
     void Update()
     {  
-       
+       if (Time.timeScale == 0.0f)
+        {
+            return;
+        }
         //this causes a single fire shoot response ecach time the left mouse button is clicked.
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 direction = mousePos - WeaponCenter.position;

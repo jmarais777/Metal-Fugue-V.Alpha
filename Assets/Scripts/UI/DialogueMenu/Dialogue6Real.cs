@@ -16,6 +16,7 @@ public class Dialogue6Real : MonoBehaviour
     public float InteractProximity = 3.0f;
     public string[] DialogueLines;
     public int DialogueIndex = 0;
+    public QuestTracker quest;
 
 
    // public GameObject ScavenegrHeapGhostCondition;
@@ -74,7 +75,9 @@ public class Dialogue6Real : MonoBehaviour
             ScavengerDialogueMenu6Object.SetActive(false);
             //ScavenegrHeapGhostCondition.SetActive(false);
             Time.timeScale = 1.0f;
-            
+            quest.IsQ2ObjectiveUpdate4 = true;
+
+
 }
 
 

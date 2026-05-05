@@ -3,7 +3,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 
 {
-   public int HitPoints = 25;
+   public int HitPoints = 10;
+    
   
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -23,6 +24,7 @@ public class EnemyHealth : MonoBehaviour
         if (HitPoints < 0)
         {
             Destroy(this.gameObject);
+            
         }
     } 
 

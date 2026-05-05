@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/BestExperiencedWIthHeadPhones.uss?fileID=7433441132597879392&amp;guid=5b76d2a9ce44bdb40a22b84515700dcb&amp;type=3#BestExperiencedWIthHeadPhones"/>
+    <ui:VisualElement name="HeadPhonesCont" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/ThisGameIsBestExperiencedWithHeadphones.png?fileID=2800000&amp;guid=a6cd0b91d935f3c449968d0f66a4aaa0&amp;type=3#ThisGameIsBestExperiencedWithHeadphones&quot;);"/>
+</ui:UXML>

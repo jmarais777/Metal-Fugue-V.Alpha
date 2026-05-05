@@ -17,18 +17,23 @@ public class Dialogue9Real : MonoBehaviour
     public string[] DialogueLines;
     public int DialogueIndex = 0;
 
-
+    public QuestTracker quest;
     public GameObject TransitionCondition13;
-  
+    public bool isUiDisplaying1;
 
     private void Update()
     {
+        if (isUiDisplaying1 == true)
+        {
+            Time.timeScale = 0.0f;
+        }
         if (ScavengerDialogueMenu9Object != null && !ScavengerDialogueMenu9Object.activeSelf)
         {
             {
                 if (TransitionCondition13.activeSelf == true)
                 {
                     ShowMenu1();
+                   
                 }
 
 
@@ -38,7 +43,7 @@ public class Dialogue9Real : MonoBehaviour
         void ShowMenu1()
         {
             ScavengerDialogueMenu9Object.SetActive(true);
-
+            isUiDisplaying1 = true;
             Time.timeScale = 0.0f;
             var Ui1 = ScavengerUIDOC.GetComponent<UIDocument>();
             if (Ui1 == null || Ui1.rootVisualElement == null)
@@ -69,6 +74,8 @@ public class Dialogue9Real : MonoBehaviour
             nextButton.SetEnabled(false);
             ScavengerDialogueMenu9Object.SetActive(false);
             Time.timeScale = 1.0f;
+            isUiDisplaying1 = false;
+            quest.IsQ2ObjectiveUpdate5 = true;
         } 
 
 

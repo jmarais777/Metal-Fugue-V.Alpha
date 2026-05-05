@@ -1,8 +1,8 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/EnergyMeter/EnergyHUD.uss?fileID=7433441132597879392&amp;guid=fa91a8abab02f4b45a2f16e8217d81f9&amp;type=3#EnergyHUD"/>
+    <Style src="project://database/Assets/UI%20Toolkit/EnergyMeter/EnergyHUD.uss?fileID=7433441132597879392&amp;guid=fa91a8abab02f4b45a2f16e8217d81f9&amp;type=3"/>
     <ui:VisualElement name="EnergyMeterContainer" style="flex-grow: 1; aspect-ratio: 1.777778; left: -7%; top: 0%; right: 0%; bottom: 0%;">
-        <ui:Image name="EnergyMeterHUDSprite" source="project://database/Assets/Sprites/EnergyHUD.png?fileID=8884348493690749678&amp;guid=bc114277cff64a9449ab5a1f21b8eefa&amp;type=3#EnergyHUD_0" style="height: 88px; width: 190px; align-self: center; align-items: center;">
-            <ui:Label text="Label" name="CurrentEnergyOutputReading" style="height: 22px; width: 201px; top: 39%; right: 0%; left: 0%; bottom: 0%; -unity-text-align: upper-center;"/>
+        <ui:Image name="EnergyMeterHUDSprite" source="project://database/Assets/Visual%20Assets/Sprites/EnergyHUD.png?fileID=8884348493690749678&amp;guid=bc114277cff64a9449ab5a1f21b8eefa&amp;type=3#EnergyHUD_0" tint-color="rgb(255, 255, 255)" style="height: 14%; width: 19%; align-self: center; align-items: center; top: 3%; left: 6%; -unity-text-align: middle-center;">
+            <ui:Label text="100%&#10;" name="CurrentEnergyOutputReading" style="height: 22px; width: 201px; top: 45%; right: 0%; left: 2%; bottom: 0%; -unity-text-align: middle-center; font-size: 22px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/AssetFonts/Robot_Font%20SDF.asset?fileID=11400000&amp;guid=58122920defbe584d86c7c5fe90a7632&amp;type=2#Robot_Font SDF&quot;); color: rgb(58, 56, 56); -unity-font-style: bold; letter-spacing: 28px; text-shadow: 5px 5px 0 rgba(0, 216, 255, 0); -unity-text-outline-width: 0.1px; -unity-text-outline-color: rgb(0, 255, 245); text-overflow: ellipsis;"/>
         </ui:Image>
     </ui:VisualElement>
 </ui:UXML>
