@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 5ef7a393179cdfd479b47cd14cb95a76
+guid: 473cfa620cf35b44f83c5947083fae1d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5820106050164937038
-    second: Mc_Idle_Front_0
+      213: -1824997559030142500
+    second: Med_Enemy_Right_0
   - first:
-      213: 7757749832887882173
-    second: Mc_Idle_Front_1
+      213: -7050418628670109643
+    second: Med_Enemy_Right_1
   - first:
-      213: -2284854777179384510
-    second: Mc_Idle_Front_2
+      213: 5617681864369278067
+    second: Med_Enemy_Right_2
   - first:
-      213: 2136107893086888762
-    second: Mc_Idle_Front_3
-  - first:
-      213: -5608204515014266425
-    second: Mc_Idle_Front_4
+      213: 7177371905012387528
+    second: Med_Enemy_Right_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mc_Idle_Front_0
+      name: Med_Enemy_Right_0
       rect:
         serializedVersion: 2
-        x: 368
-        y: 223
-        width: 215
-        height: 394
+        x: 538
+        y: 305
+        width: 148
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2be21d43264da3fa0800000000000000
-      internalID: -5820106050164937038
+      spriteID: cd9ad0aa36e4ca6e0800000000000000
+      internalID: -1824997559030142500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Idle_Front_1
+      name: Med_Enemy_Right_1
       rect:
         serializedVersion: 2
-        x: 694
-        y: 220
-        width: 217
-        height: 395
+        x: 769
+        y: 301
+        width: 148
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db1d0a5ee5019ab60800000000000000
-      internalID: 7757749832887882173
+      spriteID: 5384258ac91e72e90800000000000000
+      internalID: -7050418628670109643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Idle_Front_2
+      name: Med_Enemy_Right_2
       rect:
         serializedVersion: 2
-        x: 1001
-        y: 230
-        width: 217
-        height: 395
+        x: 1022
+        y: 303
+        width: 148
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2455ed29fa09a40e0800000000000000
-      internalID: -2284854777179384510
+      spriteID: 37c82e254e306fd40800000000000000
+      internalID: 5617681864369278067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_Idle_Front_3
+      name: Med_Enemy_Right_3
       rect:
         serializedVersion: 2
-        x: 1333
-        y: 222
-        width: 217
-        height: 398
+        x: 1253
+        y: 301
+        width: 148
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,30 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a332a59afcaf4ad10800000000000000
-      internalID: 2136107893086888762
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mc_Idle_Front_4
-      rect:
-        serializedVersion: 2
-        x: 1659
-        y: 222
-        width: 217
-        height: 398
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c135d605b7ab22b0800000000000000
-      internalID: -5608204515014266425
+      spriteID: 8cec12368b52b9360800000000000000
+      internalID: 7177371905012387528
       vertices: []
       indices: 
       edges: []
@@ -235,11 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mc_Idle_Front_0: -5820106050164937038
-      Mc_Idle_Front_1: 7757749832887882173
-      Mc_Idle_Front_2: -2284854777179384510
-      Mc_Idle_Front_3: 2136107893086888762
-      Mc_Idle_Front_4: -5608204515014266425
+      Med_Enemy_Right_0: -1824997559030142500
+      Med_Enemy_Right_1: -7050418628670109643
+      Med_Enemy_Right_2: 5617681864369278067
+      Med_Enemy_Right_3: 7177371905012387528
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
