@@ -2,6 +2,8 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
+using Animator = UnityEngine.Animator;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,58 +22,30 @@ public class PlayerMovement : MonoBehaviour
 
     public float MovementSpeed = 5f;
     public Rigidbody2D RigBod;
-<<<<<<< HEAD
-    
 
-
-
-=======
-    private Animator animator;
+   private Animator animator;
     private Vector2 moveInput;
->>>>>>> 7527c3f8dd37d3056d7be23ec90369cb2f545b13
+
     Vector2 movement;
-    private Vector2 moveInput;
-    private Animator animator; 
-
+    
     float dashSpeed = 20f;
     float dashDuration = 0.1f;
     float dashCooldown = 0.5f;
     public bool IsDashing;
     bool canDash = true;
-<<<<<<< HEAD
+
    bool IsWalking = false;
 
     void Start()
     {
       RigBod = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+     
     }
 
- void Update()
-=======
-    public bool isWalking;
 
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
-
-    public void Move(InputAction.CallbackContext context)
-    {
-       animator.SetBool("IsWalking", true);
-
-        if (context.canceled)
-        {
-            animator.SetBool("IsWalking", false);
-            animator.SetFloat("LastInputX", moveInput.x);
-            animator.SetFloat("LastInputY", moveInput.y);
-        }
-        moveInput = context.ReadValue<Vector2>();
-        animator.SetFloat("InputX", moveInput.x);
-            animator.SetFloat("InputY", moveInput.y);
-    }
+   
     void Update()
->>>>>>> 7527c3f8dd37d3056d7be23ec90369cb2f545b13
+
     
     {
 
@@ -86,23 +60,23 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            isWalking = true;
+            IsWalking = true;
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            isWalking = true;
+            IsWalking = true;
         }
-<<<<<<< HEAD
+
         else if (Input.GetKey(KeyCode.D))
-=======
+
         if (Input.GetKey(KeyCode.A))
         {
-            isWalking = true;
+            IsWalking = true;
         }
         if (Input.GetKey(KeyCode.D))
->>>>>>> 7527c3f8dd37d3056d7be23ec90369cb2f545b13
+
         {
-            isWalking = true;
+            IsWalking = true;
         }
 
 
@@ -120,24 +94,9 @@ public class PlayerMovement : MonoBehaviour
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        animator.SetBool("IsWalking", IsWalking);
-
+       
     }
-    public void Move(InputAction.CallbackContext context)
-    {
-      animator.SetBool("IsWalking", true);
-
-        if (context.canceled)
-        {
-            animator.SetBool("IsWalking", false);
-            animator.SetFloat("LastInputX", movement.x);
-            animator.SetFloat("LastInputY", movement.y);
-        }
-         
-        moveInput = context.ReadValue<Vector2>();
-        animator.SetFloat("InputX", moveInput.x);
-        animator.SetFloat("InputY", moveInput.y);
-    }
+   
 
 
     private void FixedUpdate()
