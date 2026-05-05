@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using Animator = UnityEngine.Animator;
+using JetBrains.Annotations;
 
 public class PlayerMovement : MonoBehaviour
+
 {
    
     //Basic Player Movement
@@ -27,19 +29,18 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
 
     Vector2 movement;
-    
+    bool IsWalking = true;
     float dashSpeed = 20f;
     float dashDuration = 0.1f;
     float dashCooldown = 0.5f;
     public bool IsDashing;
     bool canDash = true;
 
-   bool IsWalking = false;
 
     void Start()
     {
       RigBod = GetComponent<Rigidbody2D>();
-     
+      animator = GetComponent<Animator>();
     }
 
 
@@ -48,36 +49,19 @@ public class PlayerMovement : MonoBehaviour
 
     
     {
-
-       IsWalking = false;
+        RigBod.linearVelocity = moveInput * MovementSpeed;
+       IsWalking = true;
         //Checking WASD for Animator
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
 
         {
+            animator.SetBool("IsWalking", IsWalking);
+            //IsWalking = true;
+        }
+        else
+            { animator.SetBool("IsWalking", false); }
 
-            IsWalking = true;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            IsWalking = true;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            IsWalking = true;
-        }
-
-        else if (Input.GetKey(KeyCode.D))
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            IsWalking = true;
-        }
-        if (Input.GetKey(KeyCode.D))
-
-        {
-            IsWalking = true;
-        }
 
 
         //mapping movement controls for dash
@@ -97,7 +81,22 @@ public class PlayerMovement : MonoBehaviour
        
     }
    
+    public void Move(InputAction.CallbackContext context)
+    {
+       animator.SetBool("IsWalking", true);
 
+       if (context.canceled)
+        {
+            animator.SetBool("IsWalking", false);
+            animator.SetFloat("LastInputX", moveInput.x);
+            animator.SetFloat("LastInputY", moveInput.y);
+        } 
+
+        moveInput = context.ReadValue<Vector2>();
+        animator.SetFloat("InputX", moveInput.x);
+        animator.SetFloat("InputY", moveInput.y);
+        animator.SetBool("IsWalking", IsWalking);
+    }
 
     private void FixedUpdate()
     {
@@ -123,3 +122,30 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 }
+
+
+
+/*if (Input.GetKey(KeyCode.W))
+
+{
+    animator.SetBool("IsWalking", IsWalking);
+    //IsWalking = true;
+}
+else if (Input.GetKey(KeyCode.S))
+{
+    animator.SetBool("IsWalking", IsWalking);
+}
+else if (Input.GetKey(KeyCode.A))
+{
+    animator.SetBool("IsWalking", IsWalking);
+}
+
+else if (Input.GetKey(KeyCode.A))
+{
+    animator.SetBool("IsWalking", IsWalking);
+}
+else if (Input.GetKey(KeyCode.D))
+
+{
+    animator.SetBool("IsWalking", IsWalking);
+}*/
