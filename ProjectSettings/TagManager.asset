@@ -26,6 +26,11 @@ TagManager:
   - EnemyBullets
   - Bullets
   - Quest_Begginings_Objective1
+  - Quest_FriendOrFoe_Objective1
+  - Quest_AhelpingHand_Objective1
+  - Quest_IntoTheDark_Objective1
+  - Quest_IntoTheDark_Objective2
+  - Quest_OutOfTheFryingPan_Objective1
   layers:
   - Default
   - TransparentFX
