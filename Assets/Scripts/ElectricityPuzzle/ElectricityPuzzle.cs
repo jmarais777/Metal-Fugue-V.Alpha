@@ -5,12 +5,16 @@ public class ElectricityPuzzle : MonoBehaviour
 {
     public Collider2D ElectricityHitbox;
     public GameObject ElectricityBridge;
+    public GameObject ElectricityMeterGreen;
+    public GameObject ElectricityMeterRed;
     public float TimePassing;
 
     private void Start()
     {
         //set electric bridge to false, to prime the puzzle
         ElectricityBridge.SetActive(false);
+        ElectricityMeterGreen.SetActive(false);
+        ElectricityMeterRed.SetActive(true);
     }
 
     private void Update()
@@ -22,6 +26,16 @@ public class ElectricityPuzzle : MonoBehaviour
             ElectricityBridge.SetActive(false);
         }
 
+        if (ElectricityBridge.activeSelf)
+        {
+            ElectricityMeterRed.SetActive(false);
+            ElectricityMeterGreen.SetActive(true);
+        }
+        else
+        {
+            ElectricityMeterGreen.SetActive(false);
+            ElectricityMeterRed.SetActive(true);
+        }
     }
 
 
