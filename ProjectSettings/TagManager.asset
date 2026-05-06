@@ -3,33 +3,34 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
   tags:
-  - Bullets
-  - Obstacles
   - Enviroment
-  - EnemyBullets
-  - Scrapheap
-  - Enemy
-  - PlayerDetection
-  - PlayerRadius
-  - Recall
-  - Recall1
-  - Recall2
   - Environment
-  - ToCryocombs
-  - FromCryocombs
-  - ToShuttle
-  - FromShuttle
-  - CryoEntrance
-  - New tag
-  - ScrapHeapsShut
-  - Door
-  - ShuttleEntrance
-  - Electricity
   - ElectricityPuzzleDoor
-  - PowerButton
+  - CryoEntrance
+  - ScrapHeapsShut
+  - ToCryocombs
+  - Recall
+  - Scrapheap
+  - Recall1
+  - Enemy
+  - PlayerRadius
+  - FromShuttle
   - ScavengerBot
+  - ToShuttle
+  - Electricity
+  - PlayerDetection
+  - ShuttleEntrance
+  - Recall2
+  - FromCryocombs
+  - EnemyBullets
+  - Bullets
+  - Quest_Begginings_Objective1
+  - Quest_FriendOrFoe_Objective1
+  - Quest_AhelpingHand_Objective1
+  - Quest_IntoTheDark_Objective1
+  - Quest_IntoTheDark_Objective2
+  - Quest_OutOfTheFryingPan_Objective1
   layers:
   - Default
   - TransparentFX

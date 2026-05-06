@@ -18,7 +18,11 @@ public class Lock : MonoBehaviour
     public GameObject Boss;
     public EnemyMovement Bossmove;
     public EnemySHootMech Bossshoot;
-    
+    public GameObject CryCombsAudioCondition;
+    public QuestTracker quest;
+    public GameObject Quest_OutOfTheFryingPan_Objective1;
+
+
     public bool IsPowerOn = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,8 +50,9 @@ public class Lock : MonoBehaviour
             ToSecurity1.SetActive(false);
             FromSecurity.SetActive(false);
             SecurityGatePowerIndicator.SetActive(true);
-           // SecurityGateUnlcoked.SetActive(false);
-            if(bossTrig != null)
+          
+            // SecurityGateUnlcoked.SetActive(false);
+            if (bossTrig != null)
             { bossTrig.SetActive(false); }
          
         }
@@ -56,8 +61,9 @@ public class Lock : MonoBehaviour
             ToScrapYard.SetActive(true);
             ToSecurity1.SetActive(true);
             FromSecurity.SetActive(true);
-        
-          //  SecurityGateUnlcoked.SetActive(true);
+            Quest_OutOfTheFryingPan_Objective1.SetActive(true);
+            quest.IsQ2ObjectiveUpdate11 = true;
+            //  SecurityGateUnlcoked.SetActive(true);
             if (bossTrig != null)
             { bossTrig.SetActive(true); }
             
@@ -104,6 +110,7 @@ public class Lock : MonoBehaviour
             {
                 Bossmove.enabled = true;
                 Bossshoot.enabled = true;
+                quest.IsQ2ObjectiveUpdate13 = true;
             }
 
            
