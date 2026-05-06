@@ -35,7 +35,7 @@ public class ScavengerBotMovement : MonoBehaviour
         GetComponent<ScrapHeapsShuttle>();
     }
     void Update()
-    {
+    { 
 
 
         //Vector3 direction = scavp1.position - ScavengerBot.transform.position;
