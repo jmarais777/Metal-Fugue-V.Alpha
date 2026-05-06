@@ -446,7 +446,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1622406396322123051, guid: fa587589827060f4da2a5f6818ece399, type: 3}
+  m_Sprite: {fileID: 4813046260214496003, guid: e21b1120069b9b744b6882787d348842, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -650,10 +650,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1654984827493897009, guid: 2bd6b14de3f6b9845a341027eb1ca1a4, type: 3}
-      insertIndex: -1
+      insertIndex: 2
       addedObject: {fileID: 989011039}
     - targetCorrespondingSourceObject: {fileID: 1654984827493897009, guid: 2bd6b14de3f6b9845a341027eb1ca1a4, type: 3}
-      insertIndex: -1
+      insertIndex: 3
       addedObject: {fileID: 989011038}
     - targetCorrespondingSourceObject: {fileID: 1682008200892547708, guid: 2bd6b14de3f6b9845a341027eb1ca1a4, type: 3}
       insertIndex: -1
