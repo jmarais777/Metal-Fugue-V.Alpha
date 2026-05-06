@@ -10,6 +10,7 @@ public class SoundDetector : MonoBehaviour
     public GameObject LampFrontLit_4;
     public GameObject LampFrontLit_5;
     public GameObject LampRight_2;
+    public GameObject Wind_Turbine;
 
 
     void OnTriggerStay2D(Collider2D collision)
@@ -57,7 +58,12 @@ public class SoundDetector : MonoBehaviour
             LampFrontLit_5.GetComponent<AudioSource>().mute = false;
             Debug.Log("Light Detetcted");
         }
-    
+        if (collision.CompareTag("LightFlicker"))
+        {
+
+            Wind_Turbine.GetComponent<AudioSource>().mute = false;
+            Debug.Log("Light Detetcted");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -68,6 +74,7 @@ public class SoundDetector : MonoBehaviour
         LampFrontLit_3.GetComponent<AudioSource>().mute = true;
         LampFrontLit_4.GetComponent<AudioSource>().mute = true;
         LampFrontLit_5.GetComponent<AudioSource>().mute = true;
+        Wind_Turbine.GetComponent<AudioSource>().mute = true;
     }
 
 
