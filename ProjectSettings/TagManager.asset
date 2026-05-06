@@ -31,6 +31,8 @@ TagManager:
   - Quest_IntoTheDark_Objective1
   - Quest_IntoTheDark_Objective2
   - Quest_OutOfTheFryingPan_Objective1
+  - PowerButton
+  - ScavNew
   layers:
   - Default
   - TransparentFX

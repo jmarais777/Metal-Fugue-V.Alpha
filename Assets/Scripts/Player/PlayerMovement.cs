@@ -1,13 +1,8 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using System.Collections.Generic;
-using Animator = UnityEngine.Animator;
-using JetBrains.Annotations;
 
 public class PlayerMovement : MonoBehaviour
-
 {
 
     //Basic Player Movement
@@ -29,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
 
     Vector2 movement;
-    bool IsWalking = true;
+
     float dashSpeed = 20f;
     float dashDuration = 0.1f;
     float dashCooldown = 0.5f;
@@ -108,6 +103,28 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+    public bool IsWalking;
+    void Update()
+
+    {
+        //Checking WASD for Animator
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            IsWalking = true;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            IsWalking = true;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            IsWalking = true;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            IsWalking = true;
+        }
 
         //mapping movement controls for dash
         if (IsDashing)
@@ -115,11 +132,10 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && canDash)
+        if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
             StartCoroutine(Dash());
         }
-        
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -128,9 +144,11 @@ public class PlayerMovement : MonoBehaviour
    
    
 
+    }
+
     private void FixedUpdate()
     {
-       //defining dash position shift
+        //defining dash position shift
         if (IsDashing)
         {
             return;
