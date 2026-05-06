@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
 
     Vector2 movement;
-    bool IsWalking = true;
+  
     float dashSpeed = 20f;
     float dashDuration = 0.1f;
     float dashCooldown = 0.5f;
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     {
         RigBod.linearVelocity = moveInput * MovementSpeed;
-        IsWalking = true;
+
         //Checking WASD for Animator
 
         /* if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
