@@ -55,7 +55,7 @@ public class ArtifactPopup : MonoBehaviour
 
             if (ArtHope <= proximity)
             {
-                
+                ShowMenu1();
                 ArtifactText();
                 artifacttext.text = Artifact_Text[1];
 
