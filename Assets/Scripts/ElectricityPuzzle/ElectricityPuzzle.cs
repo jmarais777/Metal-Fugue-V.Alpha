@@ -8,6 +8,7 @@ public class ElectricityPuzzle : MonoBehaviour
     public GameObject ElectricityMeterGreen;
     public GameObject ElectricityMeterRed;
     public float TimePassing;
+    
 
     private void Start()
     {
@@ -19,8 +20,9 @@ public class ElectricityPuzzle : MonoBehaviour
 
     private void Update()
     {
-        //set countdown timer for puzzle connections
-        TimePassing += Time.deltaTime;
+       
+            //set countdown timer for puzzle connections
+            TimePassing += Time.deltaTime;
         if (TimePassing > 4)
         {
             ElectricityBridge.SetActive(false);
@@ -31,10 +33,15 @@ public class ElectricityPuzzle : MonoBehaviour
             ElectricityMeterRed.SetActive(false);
             ElectricityMeterGreen.SetActive(true);
         }
+       
         else
         {
-            ElectricityMeterGreen.SetActive(false);
-            ElectricityMeterRed.SetActive(true);
+            
+                ElectricityMeterGreen.SetActive(false);
+            
+         
+                ElectricityMeterRed.SetActive(true);
+            
         }
     }
 
