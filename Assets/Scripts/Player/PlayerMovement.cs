@@ -19,6 +19,10 @@ public class PlayerMovement : MonoBehaviour
 
     public float MovementSpeed = 5f;
     public Rigidbody2D RigBod;
+
+    private Animator animator;
+    private Vector2 moveInput;
+
     Vector2 movement;
 
     float dashSpeed = 20f;
@@ -26,6 +30,79 @@ public class PlayerMovement : MonoBehaviour
     float dashCooldown = 0.5f;
     public bool IsDashing;
     bool canDash = true;
+    bool WalkF = true;
+    bool WalkR = true;
+    bool WalkB = true;
+    bool WalkL = true;
+
+    void Start()
+    {
+        RigBod = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
+
+
+
+    void Update()
+
+
+    {
+        RigBod.linearVelocity = moveInput * MovementSpeed;
+        IsWalking = true;
+        //Checking WASD for Animator
+
+        /* if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+
+         {
+             animator.SetBool("IsWalking", IsWalking);
+             //IsWalking = true;
+         }
+         else
+             { animator.SetBool("IsWalking", false); } */
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            animator.SetBool("WalkF", WalkF);
+            WalkF = true;
+        }
+        else
+        {
+            animator.SetBool("WalkF", false);
+            WalkF = false;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            animator.SetBool("WalkR", WalkR);
+            WalkR = true;
+        }
+        else
+        {
+            animator.SetBool("WalkR", false);
+            WalkR = false;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            animator.SetBool("WalkB", WalkB);
+            WalkB = true;
+        }
+        else
+        {
+            animator.SetBool("WalkB", false);
+            WalkB = false;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            animator.SetBool("WalkL", WalkL);
+            WalkL = true;
+        }
+        else
+        {
+            animator.SetBool("WalkL", false);
+            WalkL = false;
+        }
+
+
+
     public bool IsWalking;
     void Update()
 
@@ -62,6 +139,10 @@ public class PlayerMovement : MonoBehaviour
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+       
+    }
+   
+   
 
     }
 
@@ -89,3 +170,7 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 }
+
+
+
+
