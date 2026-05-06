@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     {
         RigBod.linearVelocity = moveInput * MovementSpeed;
-        IsWalking = true;
+
         //Checking WASD for Animator
 
         /* if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
