@@ -1,0 +1,111 @@
+:root {
+}
+
+.ButtonsNav:hover {
+    border-left-color: rgb(0, 255, 216);
+    border-right-color: rgb(0, 255, 216);
+    border-top-color: rgb(0, 255, 216);
+    border-bottom-color: rgb(0, 255, 216);
+    border-top-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    border-left-width: 10px;
+    color: rgb(0, 231, 255);
+    background-position-x: left 0;
+    background-color: rgba(59, 94, 104, 0.37);
+    background-size: 200% 100%;
+    -unity-text-outline-color: rgb(125, 255, 0);
+    -unity-text-outline-width: 1px;
+    transition-property: border-left-color, border-right-color, border-bottom-color, border-top-color, color, background-image;
+    transition-timing-function: ease-in-sine, ease-in-sine, ease-in-sine, ease-in-sine, ease-in-cubic, ease;
+    transition-delay: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s, 0.2s, 0.3s;
+}
+
+.label--pulse {
+    transition-property: opacity, scale;
+    transition-duration: 0, 1s;
+    opacity: 0.5;
+    Ease: 0.95;
+}
+
+.PauseMenuTrue {
+    width: 45%;
+    height: 44%;
+    color: rgb(0, 241, 52);
+    -unity-font-definition: url("project://database/Assets/Fonts/AssetFonts/Robot_Font%20SDF.asset?fileID=11400000&guid=58122920defbe584d86c7c5fe90a7632&type=2#Robot_Font SDF");
+    font-size: 170px;
+    top: -39%;
+    bottom: 0%;
+    right: -1%;
+    left: 8%;
+    border-width: 1%;
+    border-left-color: rgb(33, 255, 0);
+    border-right-color: rgb(33, 255, 0);
+    border-top-color: rgb(33, 255, 0);
+    border-bottom-color: rgb(33, 255, 0);
+    align-items: stretch;
+    -unity-text-align: middle-center;
+    border-top-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+}
+
+.PauseMenu-VisualElement {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    top: -6px;
+}
+
+.ButtonsNav {
+    background-image: tbackground-image linear-gradient(to right, rgba(0, 87, 13, 0.16) 50%, rgb(58, 255, 0) 50%);
+    background-size: 200% 100%;
+    background-position: left;
+    flex-shrink: 0;
+    width: 38%;
+    margin-top: 7%;
+    visibility: visible;
+    display: flex;
+    flex-direction: row;
+    -unity-font-definition: url("project://database/Assets/Fonts/AssetFonts/Quantico-Regular%20SDF.asset?fileID=11400000&guid=707b0b7b590f1584d9a4b8385827c478&type=2#Quantico-Regular SDF");
+    background-color: rgba(59, 97, 0, 0.16);
+    border-top-width: 3px;
+    border-left-width: 3px;
+    border-bottom-width: 3px;
+    border-right-width: 3px;
+    border-top-color: rgb(130, 182, 100);
+    border-left-color: rgb(130, 182, 100);
+    border-right-color: rgb(130, 182, 100);
+    border-bottom-color: rgb(130, 182, 100);
+    border-top-left-radius: -122px;
+    border-bottom-left-radius: -122px;
+    border-top-right-radius: -122px;
+    border-bottom-right-radius: -122px;
+    background-image: none;
+    top: -8%;
+    left: 60%;
+    right: 0%;
+    bottom: 0%;
+    color: rgb(0, 255, 26);
+    height: 22%;
+    font-size: 50px;
+    -unity-font-style: bold;
+    text-shadow: 4px 4px 0 rgba(0, 255, 173, 0);
+    min-width: 2px;
+    background-position-x: right 20px;
+    -unity-background-scale-mode: scale-to-fit;
+    background-position-y: top 0;
+    -unity-material: url("");
+}
+
+#ExitButton {
+    margin-top: -6%;
+    top: -379px;
+}
+
+.NuttonGlitch:hhover {
+    -unity-material: url("project://database/Assets/Materials/Glitch%20mateial.mat?fileID=2100000&guid=e077908475122b54695980c8a687eee7&type=2#Glitch mateial");
+    background-color: rgb(137, 255, 231);
+}
