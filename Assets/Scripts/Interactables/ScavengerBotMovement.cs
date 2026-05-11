@@ -55,7 +55,7 @@ public class ScavengerBotMovement : MonoBehaviour
 
             if (IsDialogueStart == true)
             {
-                this.transform.eulerAngles = new Vector3(0, 0, 140);
+                this.transform.eulerAngles = new Vector3(0, 0, 180);
                 TransitionCondition8.SetActive(true);
 
             }
