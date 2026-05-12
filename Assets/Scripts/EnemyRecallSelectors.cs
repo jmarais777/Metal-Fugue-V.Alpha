@@ -36,6 +36,7 @@ public class EnemyRecallSelectors : MonoBehaviour
  
     public void Update()
     {
+        //Defualt 
         if (option == RecallLayout.Defualt)
         {
             Is_Defualt = true;
@@ -49,15 +50,43 @@ public class EnemyRecallSelectors : MonoBehaviour
             Is_Defualt = false;
         }
 
+        //LinearVerticle
         if (option == RecallLayout.LinearVerticle)
             Is_LinVert = true;
-           if(Is_LinVert == true)
+        if (Is_LinVert == true)
         {
-
+            Recall_Layout_LinearVerticle();
         }
-        
+        else { Is_LinVert = false; }
 
-        
+        //LinearHoroznontal
+        if (option == RecallLayout.LinearHoroznontal)
+            Is_LinHoroz = true;
+        if (Is_LinHoroz == true)
+        {
+            Recall_Layout_LinearHorozontal();
+        }
+        else { Is_LinHoroz = false; }
+    
+        //CustomDiagonal1
+        if (option == RecallLayout.CustomDiagonal1)
+            Is_CusDiag1 = true;
+        if (Is_CusDiag1 == true)
+        {
+            Recall_Layout_CustomDiag1();
+        }
+        else
+        { Is_CusDiag1 = false; }
+
+        //CustomDiagonal2
+        if (option == RecallLayout.CustomDiagonal2)
+            Is_CusDiag2 = true;
+        if (Is_CusDiag2 == true)
+        {
+            Recall_Layout_CustomDiag2();
+        }
+        else { Is_CusDiag2 = false; }
+
 
     }
 
