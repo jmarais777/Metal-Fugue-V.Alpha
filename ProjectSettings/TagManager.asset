@@ -33,11 +33,12 @@ TagManager:
   - Quest_OutOfTheFryingPan_Objective1
   - PowerButton
   - ScavNew
+  - LightFlicker
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - particles
   - Water
   - UI
   - 

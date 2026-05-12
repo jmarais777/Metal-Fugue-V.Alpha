@@ -1,8 +1,13 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
+using Animator = UnityEngine.Animator;
+using JetBrains.Annotations;
 
 public class PlayerMovement : MonoBehaviour
+
 {
 
     //Basic Player Movement
@@ -21,10 +26,11 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D RigBod;
 
     private Animator animator;
+    private AudioSource Walking;
     private Vector2 moveInput;
 
     Vector2 movement;
-
+    bool IsWalking = true;
     float dashSpeed = 20f;
     float dashDuration = 0.1f;
     float dashCooldown = 0.5f;
@@ -39,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     {
         RigBod = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        Walking = GetComponent<AudioSource>();
+        
     }
 
 
@@ -64,70 +72,62 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("WalkF", WalkF);
             WalkF = true;
+           
         }
         else
         {
             animator.SetBool("WalkF", false);
             WalkF = false;
+          
         }
         if (Input.GetKey(KeyCode.D))
         {
             animator.SetBool("WalkR", WalkR);
             WalkR = true;
+        
         }
         else
         {
             animator.SetBool("WalkR", false);
             WalkR = false;
+          
         }
         if (Input.GetKey(KeyCode.W))
         {
             animator.SetBool("WalkB", WalkB);
             WalkB = true;
+            
         }
         else
         {
             animator.SetBool("WalkB", false);
             WalkB = false;
+          
         }
         if (Input.GetKey(KeyCode.A))
         {
             animator.SetBool("WalkL", WalkL);
             WalkL = true;
+           
         }
         else
         {
             animator.SetBool("WalkL", false);
             WalkL = false;
+     
         }
-
-
-
-    public bool IsWalking;
-    void Update()
-
-    {
-        //Checking WASD for Animator
-
-        if (Input.GetKey(KeyCode.W))
+        //Sound Conditions
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            IsWalking = true;
+            Walking.mute = false;       
         }
-        if (Input.GetKey(KeyCode.S))
+        else
         {
-            IsWalking = true;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            IsWalking = true;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            IsWalking = true;
+            Walking.mute = true;
         }
 
-        //mapping movement controls for dash
-        if (IsDashing)
+            //mapping movement controls for dash
+            if (IsDashing)
         {
             return;
         }
@@ -137,14 +137,13 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash());
         }
 
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-       
-    }
-   
-   
 
     }
+
+
 
     private void FixedUpdate()
     {

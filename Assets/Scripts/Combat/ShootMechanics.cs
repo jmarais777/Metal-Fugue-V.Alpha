@@ -16,7 +16,7 @@ public class ShootMech : MonoBehaviour
     public GameObject Bullets;
     public Transform WeaponCenter;
     public bool IsShooting = false;
-    public GameObject MuzzleFlash;
+   // public GameObject MuzzleFlash;
  
    
 
@@ -40,7 +40,7 @@ public class ShootMech : MonoBehaviour
            
             Shoot();
             IsShooting = true;
-            MuzzleFlash.SetActive(true);
+          
             
 
         }
@@ -48,7 +48,7 @@ public class ShootMech : MonoBehaviour
         else
         {
             IsShooting = false;
-            MuzzleFlash.SetActive(false);
+           
         }
 
         void Shoot()
