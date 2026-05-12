@@ -6,6 +6,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using static EnemyRecallSelectors;
 
 
 public class EnemyMovementRev : MonoBehaviour
@@ -18,6 +19,7 @@ public class EnemyMovementRev : MonoBehaviour
     public Transform recallStart;
     public Transform recallP1;
     public Transform recallP2;
+   
 
     //Triggers:
     public GameObject PlayerRadius;
@@ -43,8 +45,10 @@ public class EnemyMovementRev : MonoBehaviour
     public float patrollSpeed = 4.0f;
     public int path = 0;
 
-    public enum EnemyMode 
-    { 
+    public EnemyRecallSelectors RecallState;
+
+    public enum EnemyMode
+    {
         Patrolling,
         Combat,
     }
@@ -54,10 +58,10 @@ public class EnemyMovementRev : MonoBehaviour
     private void Start()
     {
         RigBod = GetComponent<Rigidbody2D>();
-     
-      
-  
-        
+
+
+
+
     }
     void FixedUpdate()
     {
@@ -111,9 +115,9 @@ public class EnemyMovementRev : MonoBehaviour
 
             }
         }
-        
+
     }
-     
+
     public void OnTriggerStay2D(Collider2D collision)
     {
 
@@ -129,13 +133,13 @@ public class EnemyMovementRev : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("PlayerRadius"))
         {
-           RecallPos = 0;
-           IsFollowing = false;
+            RecallPos = 0;
+            IsFollowing = false;
         }
 
-        if (collision.gameObject.CompareTag("Recall") )
+        if (collision.gameObject.CompareTag("Recall"))
         {
-            RecallPos = 1;                  
+            RecallPos = 1;
         }
 
         if (collision.gameObject.CompareTag("Recall1"))
@@ -156,7 +160,18 @@ public class EnemyMovementRev : MonoBehaviour
             RecallPos = 1;
 
         }
+
+
+    }
+    public void Recall_Lyaout_Defualt()
+    {
       
+        float Z = 0;
+
+        if (RecallState.option == RecallLayout.Defualt)
+        {
+            recallStart.localPosition = new Vector3(18.74814f, 9.504487f, Z);
+        }
         
     }
  } 

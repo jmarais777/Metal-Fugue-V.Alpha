@@ -61,7 +61,7 @@ public class ScavengerBotMovement : MonoBehaviour
             }
 
 
-
+           
             if (this.transform.position == Scavpos2.position)
             {
                 Debug.Log("AtP2");
@@ -80,7 +80,7 @@ public class ScavengerBotMovement : MonoBehaviour
 
     void MovemnetLogic()
     {
-
+        //movemenemt
         if (Time.timeScale == 0.0f)
         {
             return;

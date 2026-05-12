@@ -5,28 +5,108 @@ public class EnemyRecallSelectors : MonoBehaviour
 {
     public enum  RecallLayout
     {
-        Defualt = 0,
-        Linear = 1,
-        Wide = 2,
+        Defualt,
+        LinearHoroznontal,
+        LinearVerticle,
+        CustomDiagonal1,
+        CustomDiagonal2,
+
     }
     public RecallLayout option = RecallLayout.Defualt;
-    
-    void Start()
+
+    public bool Is_Defualt = false;
+    public bool Is_LinHoroz= false;
+    public bool Is_LinVert = false;
+    public bool Is_CusDiag1 = false;
+    public bool Is_CusDiag2 = false;
+
+    public EnemyMovementRev EnemyMoveRev;
+
+    public float X = 0;
+    float Z = 0;
+    float Y = 0;
+
+    public void Start()
     {
-        option = RecallLayout.Defualt;
+     
+      
+        
+    }
+ 
+    public void Update()
+    {
+        if (option == RecallLayout.Defualt)
+        {
+            Is_Defualt = true;
+            if (Is_Defualt == true)
+            {
+                Recall_Lyaout_Defualt();
+            }
+        }
+        else
+        {
+            Is_Defualt = false;
+        }
+
+
 
     }
 
- public void OnTriggerEntter2D(Collider2D collider)
+    public void OnTriggerStay2D(Collider2D collider)
     {
+        //CustomDiagonal2 
+        if (collider.gameObject.CompareTag("Recall_Layout_Custom_Diag2"))
+        {
+            Debug.Log("Recall_Layout_Custom_Diag2 is active");
+            option = RecallLayout.CustomDiagonal2;
+        }
+
+        //CustomDiagonal1
         if (collider.gameObject.CompareTag("Recall_Layout_Custom_Diag1"))
         {
             Debug.Log("Recall_Layout_Custom_Diag1 is active");
+            option = RecallLayout.CustomDiagonal1;
         }
-    
+  
+
+    //LinearHoroznontal
             if (collider.gameObject.CompareTag("RecallLayout_Linear_Horozontal"))
         {
-            Debug.Log("RecallLayout_Linear_Horozontal");
+            Debug.Log("RecallLayout_Linear_Horozontal is active");
+            option = RecallLayout.LinearHoroznontal;
         }
+    //LinearVerticle
+        if (collider.gameObject.CompareTag("RecallLayout_Linear_Verticle"))
+        {
+            Debug.Log("RecallLayout_Linear_Verticle is active");
+            option = RecallLayout.LinearVerticle;
+        }
+
+
+        //Defualt 
+        if (collider.gameObject.CompareTag("RecallLayout_Defualt"))
+        {
+            Debug.Log("RecallLayoutDefualte is active");
+            option = RecallLayout.Defualt;
+        }
+
+      
     }
+    public void Recall_Lyaout_Defualt()
+    {
+
+
+        EnemyMoveRev.recallStart.localPosition = new Vector3(18.74814f, 9.504487f, Z);
+        EnemyMoveRev.recallP1.localPosition = new Vector3(22.49776f , -1.900897f ,Z);
+        EnemyMoveRev.recallP2.localPosition = new Vector3(12.49876f, -10.45494f , Z);
+
+    }
+    public void Recall_Unset()
+    {
+        EnemyMoveRev.recallStart.localPosition = new Vector3(X, Y, Z);
+        EnemyMoveRev.recallP1.localPosition = new Vector3(X, Y, Z);
+        EnemyMoveRev.recallP2.localPosition = new Vector3(X, Y, Z);
+    }
+
+
 }

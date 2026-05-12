@@ -39,6 +39,7 @@ TagManager:
   - RecallLayoutDefualt
   - Recall_Layout_Custom_Diag1
   - Recall_Layout_Custom_Diag2
+  - RecallLayout_Defualt
   layers:
   - Default
   - TransparentFX
