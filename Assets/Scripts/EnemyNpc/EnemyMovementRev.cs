@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 #endif
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using static EnemyRecallSelectors;
@@ -45,6 +46,25 @@ public class EnemyMovementRev : MonoBehaviour
     public float patrollSpeed = 4.0f;
     public int path = 0;
 
+    public Transform repositioner;
+   /*
+    public Transform mainHeap1;
+    public Transform mainHeap2;
+    public Transform MainHeap3;
+    public Transform MainHeap4;
+    public Transform MainHeap5;
+    public Transform MainHeap6;
+    public Transform MainHeap7;
+    public Transform MainHeap8;
+   */
+    public GameObject Mainheaps;
+
+
+
+
+
+
+
     public EnemyRecallSelectors RecallState;
 
     public enum EnemyMode
@@ -58,8 +78,9 @@ public class EnemyMovementRev : MonoBehaviour
     private void Start()
     {
         RigBod = GetComponent<Rigidbody2D>();
-
-
+       
+        
+        
 
 
     }
@@ -69,6 +90,7 @@ public class EnemyMovementRev : MonoBehaviour
         {
             if (path == 0)
             {
+                
                 Vector3 patroll1 = (PathPoint1.position - this.transform.position).normalized;
                 Vector3 MoveForce = patroll1 * patrollSpeed;
                 RigBod.AddForce(MoveForce);
@@ -160,19 +182,23 @@ public class EnemyMovementRev : MonoBehaviour
             RecallPos = 1;
 
         }
+        
+        if (collision.gameObject.CompareTag("MainHeaps"))
+        {
+            Repos();
+            Debug.Log("COlliding with main heaps");
+        }
 
 
     }
-    public void Recall_Lyaout_Defualt()
+    public void Repos()
     {
-      
-        float Z = 0;
+      Vector3 Dirdir = (this.transform.position - Mainheaps.transform.position).normalized;
 
-        if (RecallState.option == RecallLayout.Defualt)
-        {
-            recallStart.localPosition = new Vector3(18.74814f, 9.504487f, Z);
-        }
-        
+
+
+        // Physics2D.Raycast(this.transform.localPosition, repositioner.localPosition, RayDis * MoveSpeed *Time.deltaTime);
+        Physics2D.CircleCast(this.transform.position, repulsion, Dirdir * MoveSpeed);
     }
  } 
         
