@@ -197,7 +197,7 @@ public class EnemyMovementRev : MonoBehaviour
 
 
 
-        // Physics2D.Raycast(this.transform.localPosition, repositioner.localPosition, RayDis * MoveSpeed *Time.deltaTime);
+        // Physics2D.Raycast(this.transform.localPosition, repositioner.localPosition, DirDir * MoveSpeed *Time.deltaTime);
         Physics2D.CircleCast(this.transform.position, repulsion, Dirdir * MoveSpeed);
     }
  } 
