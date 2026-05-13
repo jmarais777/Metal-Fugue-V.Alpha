@@ -18,7 +18,6 @@ public class EnemyRecallSelectors : MonoBehaviour
     public bool Is_Defualt = false;
     public bool Is_LinVert = false;
     public bool Is_LinHoroz= false;
-
     public bool Is_CusDiag1 = false;
     public bool Is_CusDiag2 = false;
 
@@ -41,52 +40,75 @@ public class EnemyRecallSelectors : MonoBehaviour
         if (option == RecallLayout.Defualt)
         {
             Is_Defualt = true;
+
             if (Is_Defualt == true)
             {
                 Recall_Layout_Defualt();
             }
         }
-        else
+        else if (option != RecallLayout.Defualt)
         {
             Is_Defualt = false;
         }
 
         //LinearVerticle
         if (option == RecallLayout.LinearVerticle)
-            Is_LinVert = true;
-        if (Is_LinVert == true)
         {
-            Recall_Layout_LinearVerticle();
+            Is_LinVert = true;
+
+            if (Is_LinVert == true)
+            {
+                Recall_Layout_LinearVerticle();
+            }
         }
-        else { Is_LinVert = false; }
+
+        else if (option != RecallLayout.LinearVerticle)
+        {
+            Is_LinVert = false;
+        }
 
         //LinearHoroznontal
         if (option == RecallLayout.LinearHoroznontal)
-            Is_LinHoroz = true;
-        if (Is_LinHoroz == true)
         {
-            Recall_Layout_LinearHorozontal();
+            Is_LinHoroz = true;
+
+            if (Is_LinHoroz == true)
+            {
+                Recall_Layout_LinearHorozontal();
+            }
         }
-        else { Is_LinHoroz = false; }
-    
+
+        else if (option != RecallLayout.LinearHoroznontal)
+        {
+            Is_LinHoroz = false;
+        }
+
         //CustomDiagonal1
         if (option == RecallLayout.CustomDiagonal1)
-            Is_CusDiag1 = true;
-        if (Is_CusDiag1 == true)
         {
-            Recall_Layout_CustomDiag1();
+            Is_CusDiag1 = true;
+            if (Is_CusDiag1 == true)
+            {
+                Recall_Layout_CustomDiag1();
+            }
         }
-        else
-        { Is_CusDiag1 = false; }
+        else if (option != RecallLayout.CustomDiagonal1)
+        { 
+            Is_CusDiag1 = false;
+        }
 
         //CustomDiagonal2
         if (option == RecallLayout.CustomDiagonal2)
-            Is_CusDiag2 = true;
-        if (Is_CusDiag2 == true)
         {
-            Recall_Layout_CustomDiag2();
+            Is_CusDiag2 = true;
+
+            if (Is_CusDiag2 == true)
+            {
+                Recall_Layout_CustomDiag2();
+            }
         }
-        else { Is_CusDiag2 = false; }
+        else if (option != RecallLayout.CustomDiagonal2)
+            { Is_CusDiag2 = false; }
 
 
     }
