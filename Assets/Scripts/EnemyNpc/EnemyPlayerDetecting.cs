@@ -1,15 +1,17 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using static EnemyMovementRev;
 
 public class EnemyPlayerDetecting : MonoBehaviour
 {
-    public EnemyMovementRev EnemyMove;
-
-    public void OnTriggerEnter2D(Collider2D collider)
+   public EnemyMovementFinal EnemyFin;
+    public void OnTriggerStay2D(Collider2D collider)
     {
        if(collider.gameObject.CompareTag("Player"))
         {
-            EnemyMove.type = EnemyMode.Combat;
+            EnemyFin.Move_Type = EnemyMovementFinal.MovementType.Recalling;
+
+
         }
     }
 }
