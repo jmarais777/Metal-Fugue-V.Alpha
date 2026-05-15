@@ -113,7 +113,7 @@ public class EnemyRecallSelectors : MonoBehaviour
 
     }
 
-    public void OnTriggerStay2D(Collider2D collider)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
         //CustomDiagonal2 
         if (collider.gameObject.CompareTag("Recall_Layout_Custom_Diag2"))

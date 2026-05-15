@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class EnemyMovementFinal :  MonoBehaviour
@@ -34,6 +35,8 @@ public class EnemyMovementFinal :  MonoBehaviour
     {
        RigBod = GetComponent<Rigidbody2D>();
        Move_Type = MovementType.Pathfinding1;
+     TriggEvent = GetComponent<Enemy_Trigger_Events>();
+       TriggEvent.Movefin = this;
     }
     
     public void FixedUpdate()
@@ -65,66 +68,40 @@ public class EnemyMovementFinal :  MonoBehaviour
 
     public void Pathfinding1()
     {
-
         Vector3 Dir_PathP1 = (PathP1.position - transform.position).normalized;
         RigBod.linearVelocity = (Dir_PathP1 * Pathfinding_Speed);
+        Debug.Log("Pathfiding1()");
     }
     public void Pathfinding2()
     {
         Vector3 Dir_PathP2 = (PathP2.position - transform.position).normalized;
         RigBod.linearVelocity = (Dir_PathP2 * Pathfinding_Speed);
+        Debug.Log("Pathfinding2()");
 
     }
     public void Chasing()
     {
         Vector3 Direction_To_Player = (Player.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Direction_To_Player * Follow_Speed);
+        Debug.Log("Chasing()");
     }
     public void Recalling()
     {    
         RecallForce = ForceMode2D.Impulse;
         Vector3 Direction_To_RecallStart = (RecallStart.position - transform.position).normalized;
         RigBod.AddForce(Direction_To_RecallStart, ForceMode2D.Impulse);
+        Debug.Log("Recalling()");
     }
     public void Recall_Parent_One()
     {
         RecallForce = ForceMode2D.Impulse;
         Vector3 Direction_To_RecallP1 = (RecallP1.position - transform.position ).normalized;
         RigBod.AddForce(Direction_To_RecallP1, ForceMode2D.Impulse);
+        Debug.Log("RecallingP1()");
 
     }
- 
-
 }
 
-public class Enemy_Trigger_Events : MonoBehaviour
-{
-    public EnemyMovementFinal Movefin;
-    public void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.name == ("PathP1"))
-        {
-           Movefin.Move_Type = EnemyMovementFinal.MovementType.Pathfinding2;
-        }
-        if (collider.gameObject.name == ("PathP2"))
-        {
-            Movefin.Move_Type = EnemyMovementFinal.MovementType.Pathfinding1;
-        }
-
-        if (collider.gameObject.CompareTag("PlayerRadius"))
-        {
-            Movefin.Move_Type = EnemyMovementFinal.MovementType.Chasing;
-        }
-        if (collider.gameObject.CompareTag("Recall"))
-        {
-            Movefin.Move_Type = EnemyMovementFinal.MovementType.Recalling;
-        }
-        if (collider.gameObject.CompareTag("Recall1"))
-        {
-           Movefin.Move_Type = EnemyMovementFinal.MovementType.Recalling1;
-        }
-       
-    }
 
 
 
@@ -134,4 +111,4 @@ public class Enemy_Trigger_Events : MonoBehaviour
 
 
 
-}
+
