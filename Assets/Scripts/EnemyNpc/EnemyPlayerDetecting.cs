@@ -68,21 +68,12 @@ public class EnemyPlayerDetecting : MonoBehaviour
 
     }
     public void System_Failure_Effects() //set in EnemyHealth
-    {
-        
-      
+    {             
         PlayerDetection_Light.falloffIntensity = 0.5f;
         PlayerDetection_Light.intensity = 7.0f;
-        Debug.Log("System_FailureEffect");
-        
-        
-      
-        
+        Debug.Log("System_FailureEffect");                     
     }
-        public void Recalling_Light_Effect()
-    {
-
-    }
+   
 
 
 

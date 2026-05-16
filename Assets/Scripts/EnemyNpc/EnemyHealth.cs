@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -6,24 +7,41 @@ public class EnemyHealth : MonoBehaviour
    public int HitPoints = 10;
     public EnemyMovementFinal Enemy_Move_Fin;
     public EnemyPlayerDetecting Enemy_Player_Detection;
-    public float DamageEffectTimer = 0.1f;
+    public float DamageEffectTimer = 0.5f;
+    public float DamageEffectDuration = 0.5f;
+    public bool IsTakingDamage = false;
 
     public void Update()
     {
-        DamageEffectTimer -= Time.deltaTime;
+        if (DamageEffectTimer >= 0.0f)
+        {
+            DamageEffectTimer -= Time.deltaTime;
+        }
+        if (DamageEffectDuration >= 0.0f)
+        {
+            Enemy_Player_Detection.Chasing_Light_Effect();
+            DamageEffectDuration -= Time.deltaTime;
+          
+        }
+
     }
      public void OnCollisionEnter2D(Collision2D collision)
     {            
        if (collision.gameObject.CompareTag("Bullets"))
        {
-            if (DamageEffectTimer <= 0.0f)
+            if (DamageEffectTimer < 0.0f)
             {
-                HitPoints--;
                 Enemy_Player_Detection.System_Failure_Effects();
-                DamageEffectTimer = 0.1f;
+                HitPoints--;
+                DamageEffectTimer = 0.5f;
+                DamageEffectDuration = 0.5f;
+
             }
-              
-            
+
+        
+
+
+
          Debug.Log("BulletHit");
        }
       
