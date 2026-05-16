@@ -5,11 +5,12 @@ using UnityEngine.Rendering.Universal;
 
 public class EnemyLightTypeDefault : EnemyLightingCollisionEffects
 {
+
     public void ENemyLighting_Defualt()
     {
-        Light_Source.intensity = 2;
+        EnemyEyesLight_Source.intensity = 2;
     }
- 
+
 }
 public class EnemyLightTypeDamaged : EnemyLightingCollisionEffects
 {
@@ -23,7 +24,7 @@ public class EnemyLightTypeDamaged : EnemyLightingCollisionEffects
         {
             if (EnemyLighting == Enemy_Lighting_Type.Damged)
             {
-                Light_Source.intensity = 1;
+                EnemyEyesLight_Source.intensity = 1;
             }
         }
 
@@ -43,11 +44,10 @@ public class EnemyLightTypeDead : EnemyLightingCollisionEffects
 public class EnemyLightingCollisionEffects : MonoBehaviour
 {
     public GameObject player_Bullets;
+    public Light2D EnemyEyesLight_Source;
 
 
-    public Light2D Light_Source;
 
-    
     public enum Enemy_Lighting_Type
     {
         Defualt,
@@ -59,7 +59,7 @@ public class EnemyLightingCollisionEffects : MonoBehaviour
 
     public void Start()
     {
-       Light_Source = GetComponent<Light2D>();
+        EnemyEyesLight_Source = GetComponent<Light2D>();
     }
 
     public void OnTrigggerEnter2D(Collider2D collider)

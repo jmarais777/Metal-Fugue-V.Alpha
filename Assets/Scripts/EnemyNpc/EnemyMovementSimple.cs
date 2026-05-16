@@ -19,22 +19,25 @@ public class EnemyMovementFinal :  MonoBehaviour
     public Transform PathP1;
     public Transform PathP2;
 
-    private Enemy_Trigger_Events TriggEvent;
+    public Enemy_Trigger_Events TriggEvent;
+    public EnemySHootMech Enemy_Shoot_Mech;
+    public EnemyPlayerDetecting Enemy_Player_Detetction;
 
- public enum MovementType
+ public enum EnemyMovementType
     {
         Pathfinding1,
         Pathfinding2,
         Chasing,
         Recalling,
         Recalling1,
+        SystemFailure,
     }
-    public MovementType Move_Type;
+    public EnemyMovementType Move_Type;
 
     public void Start()
     {
        RigBod = GetComponent<Rigidbody2D>();
-       Move_Type = MovementType.Pathfinding1;
+       Move_Type = EnemyMovementType.Pathfinding1;
      TriggEvent = GetComponent<Enemy_Trigger_Events>();
        TriggEvent.Movefin = this;
     }
@@ -44,25 +47,29 @@ public class EnemyMovementFinal :  MonoBehaviour
         Debug.Log("Current State: " + Move_Type);
         switch (Move_Type)
          {
-           case MovementType.Pathfinding1:
+           case EnemyMovementType.Pathfinding1:
            Pathfinding1();
            break;
 
-           case MovementType.Pathfinding2:
+           case EnemyMovementType.Pathfinding2:
             Pathfinding2();
            break;
 
-           case MovementType.Chasing:
+           case EnemyMovementType.Chasing:
             Chasing();
            break;
 
-           case MovementType.Recalling:
+           case EnemyMovementType.Recalling:
             Recalling();
            break;
 
-           case MovementType.Recalling1:
+           case EnemyMovementType.Recalling1:
             Recall_Parent_One();
-           break;                    
+           break;
+
+            case EnemyMovementType.SystemFailure:
+               System_Failure();
+            break;
          }
     }
 
@@ -98,6 +105,15 @@ public class EnemyMovementFinal :  MonoBehaviour
         Vector3 Direction_To_RecallP1 = (RecallP1.position - transform.position ).normalized;
         RigBod.AddForce(Direction_To_RecallP1, ForceMode2D.Impulse);
         Debug.Log("RecallingP1()");
+
+    }
+    public void System_Failure() //set in EnemyHealth Script
+    {
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
+        this.enabled = false;
+        Enemy_Shoot_Mech.enabled = false;
+        Enemy_Player_Detetction.enabled = false;
+
 
     }
 }
