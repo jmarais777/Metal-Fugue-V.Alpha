@@ -18,15 +18,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7425806145979970831, guid: b97418ff54f3ebf4ea925f7fefa4c5ad, type: 3}
       propertyPath: m_Color.b
-      value: 0.19536921
+      value: 0.53333336
       objectReference: {fileID: 0}
     - target: {fileID: 7425806145979970831, guid: b97418ff54f3ebf4ea925f7fefa4c5ad, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.53333336
       objectReference: {fileID: 0}
     - target: {fileID: 7425806145979970831, guid: b97418ff54f3ebf4ea925f7fefa4c5ad, type: 3}
       propertyPath: m_Color.r
-      value: 0.99607843
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425806145979970831, guid: b97418ff54f3ebf4ea925f7fefa4c5ad, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9168229516404477185, guid: b97418ff54f3ebf4ea925f7fefa4c5ad, type: 3}
       propertyPath: m_LocalScale.x
@@ -106,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBullets
   LinearVelocity: 50
+  ForCurrentEnergy: {fileID: 0}
 --- !u!114 &3267383582784097269
 MonoBehaviour:
   m_ObjectHideFlags: 0
