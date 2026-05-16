@@ -17,7 +17,7 @@ public class Dialogue11Real : MonoBehaviour
     public string[] DialogueLines;
     public int DialogueIndex = 0;
 
-
+    public QuestTracker quest;
     public GameObject TransitionCondition15;
   
 
@@ -69,6 +69,7 @@ public class Dialogue11Real : MonoBehaviour
             nextButton.SetEnabled(false);
             ScavengerDialogueMenu11Object.SetActive(false);
             Time.timeScale = 1.0f;
+            quest.IsQ2ObjectiveUpdate8 = true;
         } 
 
 

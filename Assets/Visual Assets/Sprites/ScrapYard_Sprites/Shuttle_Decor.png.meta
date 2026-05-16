@@ -1,0 +1,764 @@
+fileFormatVersion: 2
+guid: 6bd8d9aec151b454897a2d3b2f4f2c4d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2625429506500051396
+    second: Shuttle_Decor_0
+  - first:
+      213: 5096280797672727145
+    second: Shuttle_Decor_1
+  - first:
+      213: -4498842867368213150
+    second: Shuttle_Decor_2
+  - first:
+      213: -5971667119075178904
+    second: Shuttle_Decor_3
+  - first:
+      213: 5618341010919912208
+    second: Shuttle_Decor_4
+  - first:
+      213: 2901794831841923986
+    second: Shuttle_Decor_5
+  - first:
+      213: -8959081613436286148
+    second: Shuttle_Decor_6
+  - first:
+      213: 3374575666014162534
+    second: Shuttle_Decor_7
+  - first:
+      213: 8504309068924378119
+    second: Shuttle_Decor_8
+  - first:
+      213: 2485831141242231247
+    second: Shuttle_Decor_9
+  - first:
+      213: 1821432292139064043
+    second: Shuttle_Decor_10
+  - first:
+      213: -1177631915140765258
+    second: Shuttle_Decor_11
+  - first:
+      213: 2025972825981557658
+    second: Shuttle_Decor_12
+  - first:
+      213: 4920161218097890114
+    second: Shuttle_Decor_13
+  - first:
+      213: 6483585001958449671
+    second: Shuttle_Decor_14
+  - first:
+      213: -7713816232244821114
+    second: Shuttle_Decor_15
+  - first:
+      213: 5520009329802686167
+    second: Shuttle_Decor_16
+  - first:
+      213: -6323193986125164296
+    second: Shuttle_Decor_17
+  - first:
+      213: -8376038445265944384
+    second: Shuttle_Decor_18
+  - first:
+      213: 2359364885846146172
+    second: Shuttle_Decor_19
+  - first:
+      213: -6703855504112751204
+    second: Shuttle_Decor_20
+  - first:
+      213: -4718837893331647571
+    second: Shuttle_Decor_21
+  - first:
+      213: 5502840213343656419
+    second: Shuttle_Decor_22
+  - first:
+      213: -1887188401957139986
+    second: Shuttle_Decor_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shuttle_Decor_0
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 664
+        width: 67
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c1c3cdd9366f6420800000000000000
+      internalID: 2625429506500051396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_1
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 677
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9626dec5260a9b640800000000000000
+      internalID: 5096280797672727145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_2
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 581
+        width: 61
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 265c73e7f36e091c0800000000000000
+      internalID: -4498842867368213150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_3
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 586
+        width: 51
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 866c4aaf460602da0800000000000000
+      internalID: -5971667119075178904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_4
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 583
+        width: 62
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013f3e6d16b58fd40800000000000000
+      internalID: 5618341010919912208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_5
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 593
+        width: 79
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2939003760f354820800000000000000
+      internalID: 2901794831841923986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_6
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 566
+        width: 117
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3b85656db2faa380800000000000000
+      internalID: -8959081613436286148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_7
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 619
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e837060b6e4de20800000000000000
+      internalID: 3374575666014162534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_8
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 591
+        width: 61
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70cde595a00650670800000000000000
+      internalID: 8504309068924378119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_9
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 602
+        width: 42
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc9d851a0427f7220800000000000000
+      internalID: 2485831141242231247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_10
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 589
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beadf53f407074910800000000000000
+      internalID: 1821432292139064043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_11
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 594
+        width: 56
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b92fd5330638afe0800000000000000
+      internalID: -1177631915140765258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_12
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 425
+        width: 493
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9b99391d83bd1c10800000000000000
+      internalID: 2025972825981557658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_13
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 471
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 243c06a4f8ce74440800000000000000
+      internalID: 4920161218097890114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_14
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 538
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 702a8c035325af950800000000000000
+      internalID: 6483585001958449671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_15
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 516
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 683c76e910503f490800000000000000
+      internalID: -7713816232244821114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_16
+      rect:
+        serializedVersion: 2
+        x: 1991
+        y: 462
+        width: 142
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de2bbb3d330b9c40800000000000000
+      internalID: 5520009329802686167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_17
+      rect:
+        serializedVersion: 2
+        x: 2138
+        y: 445
+        width: 77
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f09f1342908f38a0800000000000000
+      internalID: -6323193986125164296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_18
+      rect:
+        serializedVersion: 2
+        x: 2218
+        y: 501
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c088e4896552cb80800000000000000
+      internalID: -8376038445265944384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_19
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 363
+        width: 57
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7cb36cfcd52eb020800000000000000
+      internalID: 2359364885846146172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_20
+      rect:
+        serializedVersion: 2
+        x: 1974
+        y: 377
+        width: 53
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9defc300fe17f2a0800000000000000
+      internalID: -6703855504112751204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_21
+      rect:
+        serializedVersion: 2
+        x: 2097
+        y: 390
+        width: 38
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da3805fffe1538eb0800000000000000
+      internalID: -4718837893331647571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_22
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 331
+        width: 83
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e9551cc4040e5c40800000000000000
+      internalID: 5502840213343656419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_23
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 400
+        width: 157
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee98b1da52c5fc5e0800000000000000
+      internalID: -1887188401957139986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shuttle_Decor_24
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 610
+        width: 2
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4cb3af8b8b27e4bb6d9f053e2181bc
+      internalID: -743384029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9b8a2f9f593742f41a769f457c22e9b0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Shuttle_Decor_0: 2625429506500051396
+      Shuttle_Decor_1: 5096280797672727145
+      Shuttle_Decor_10: 1821432292139064043
+      Shuttle_Decor_11: -1177631915140765258
+      Shuttle_Decor_12: 2025972825981557658
+      Shuttle_Decor_13: 4920161218097890114
+      Shuttle_Decor_14: 6483585001958449671
+      Shuttle_Decor_15: -7713816232244821114
+      Shuttle_Decor_16: 5520009329802686167
+      Shuttle_Decor_17: -6323193986125164296
+      Shuttle_Decor_18: -8376038445265944384
+      Shuttle_Decor_19: 2359364885846146172
+      Shuttle_Decor_2: -4498842867368213150
+      Shuttle_Decor_20: -6703855504112751204
+      Shuttle_Decor_21: -4718837893331647571
+      Shuttle_Decor_22: 5502840213343656419
+      Shuttle_Decor_23: -1887188401957139986
+      Shuttle_Decor_24: -743384029
+      Shuttle_Decor_3: -5971667119075178904
+      Shuttle_Decor_4: 5618341010919912208
+      Shuttle_Decor_5: 2901794831841923986
+      Shuttle_Decor_6: -8959081613436286148
+      Shuttle_Decor_7: 3374575666014162534
+      Shuttle_Decor_8: 8504309068924378119
+      Shuttle_Decor_9: 2485831141242231247
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

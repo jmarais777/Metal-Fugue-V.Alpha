@@ -22,12 +22,16 @@ public class Dialogue10Real : MonoBehaviour
     public GameObject ScavengerArmOnScavP;
 
     public GameObject TransitionCondition14;
-   
-   
-   
+    public bool isUiDisplaying2;
+
+
 
     private void Update()
     {
+        if (isUiDisplaying2 == true)
+        {
+            Time.timeScale = 0.0f;
+        }
         if (UILinker_10_real != null && !ScavengerDialogueMenu10Object.activeSelf)
         {
             {
@@ -54,7 +58,7 @@ public class Dialogue10Real : MonoBehaviour
         void ShowMenu1()
         {
             ScavengerDialogueMenu10Object.SetActive(true);
-
+            isUiDisplaying2 = true;
             Time.timeScale = 0.0f;
             var Ui1 = ScavengerUIDOC.GetComponent<UIDocument>();
             if (Ui1 == null || Ui1.rootVisualElement == null)
@@ -85,7 +89,7 @@ public class Dialogue10Real : MonoBehaviour
             TransitionCondition14.SetActive(true);
             nextButton.SetEnabled(false);
             ScavengerDialogueMenu10Object.SetActive(false);
-          
+            isUiDisplaying2 = false;
             Time.timeScale = 1.0f;
             
 }

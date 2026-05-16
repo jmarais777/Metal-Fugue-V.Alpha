@@ -20,6 +20,7 @@ public class Dialogue1Real : MonoBehaviour
     public int DialogueIndex = 0;
 
     public GameObject TransitionCondition1;
+    public QuestTracker quest;
 
 
     private void Update()
@@ -77,6 +78,7 @@ void ShowMenu1()
         ScavengerDialogueMenu1Object.SetActive(false);
         TransitionCondition1.SetActive(true);
         Time.timeScale = 1.0f;
+        quest.IsQ2ObjectiveUpdate2 = true;
     }
 
 

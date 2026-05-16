@@ -29,7 +29,7 @@ public class Interact : MonoBehaviour
 
     public EnergyPool CurrentEnergyPool;
     public GameObject PowerButton;
-
+    public QuestTracker quest;
 
 
 
@@ -98,6 +98,11 @@ public class Interact : MonoBehaviour
                 //these are just lighting controlls.
                 CorticalProcessorLight.pointLightInnerRadius = 2.63f;
                 CorticalProcessorLight.pointLightOuterRadius = 8.6f;
+            }
+
+            if (CorticalProcessor.activeSelf == false)
+            {
+                quest.IsQ1ObjectiveUpdate2 = true ;
             }
         }
 

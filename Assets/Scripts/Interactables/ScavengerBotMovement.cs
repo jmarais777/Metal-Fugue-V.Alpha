@@ -1,6 +1,7 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ScavengerBotMovement : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class ScavengerBotMovement : MonoBehaviour
     public GameObject ScavBot;
 
 
-
+    
 
 
     public bool IsHeapActive = true;
@@ -33,9 +34,10 @@ public class ScavengerBotMovement : MonoBehaviour
     void Start()
     {
         GetComponent<ScrapHeapsShuttle>();
+      
     }
     void Update()
-    {
+    { 
 
 
         //Vector3 direction = scavp1.position - ScavengerBot.transform.position;
@@ -55,13 +57,13 @@ public class ScavengerBotMovement : MonoBehaviour
 
             if (IsDialogueStart == true)
             {
-                this.transform.eulerAngles = new Vector3(0, 0, 140);
+                this.transform.eulerAngles = new Vector3(0, 0, 180);
                 TransitionCondition8.SetActive(true);
 
             }
 
 
-
+           
             if (this.transform.position == Scavpos2.position)
             {
                 Debug.Log("AtP2");
@@ -80,7 +82,7 @@ public class ScavengerBotMovement : MonoBehaviour
 
     void MovemnetLogic()
     {
-
+        //movemenemt
         if (Time.timeScale == 0.0f)
         {
             return;
@@ -88,11 +90,13 @@ public class ScavengerBotMovement : MonoBehaviour
         }
         else if (Time.timeScale == 1.0f)
         {
-            this.transform.position = Vector3.MoveTowards(this.transform.position, scavp1.position, MoveSpeed * Time.deltaTime);
-
+        
+            
+                this.transform.position = Vector3.MoveTowards(this.transform.position, scavp1.position, MoveSpeed * Time.deltaTime);
+            
 
         }
-
+       
 
     }
 }

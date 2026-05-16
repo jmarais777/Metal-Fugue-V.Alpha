@@ -21,7 +21,7 @@ public class ShuttleTeleport : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //call Player tag, Rigidbody attatched to it moves to the destination
-
+        Debug.Log("Colliding with: " + collision.name);
         if (collision.CompareTag("Player"))
         {
 
@@ -30,7 +30,7 @@ public class ShuttleTeleport : MonoBehaviour
 
 
         }
-        if (collision.CompareTag("ScavengerBot"))
+        if (collision.CompareTag("ScavNew"))
         {
 
             scav.transform.position = ScavengerDestination.position;

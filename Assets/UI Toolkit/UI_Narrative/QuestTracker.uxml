@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/InGameQuestLog.uss?fileID=7433441132597879392&amp;guid=e8ce6e21fb27a214b85b114fad8101b6&amp;type=3#InGameQuestLog"/>
+    <ui:VisualElement name="QuestLogCOntainer" style="flex-grow: initial; background-image: none; flex-basis: initial; flex-shrink: initial; width: 278px; height: 555px; left: 75%; top: -4px;">
+        <ui:Label text="QUEST LOG" name="Heading" class="Label" style="top: 9%; text-overflow: clip; letter-spacing: 18px; width: 31%; height: 5%; font-size: 25px; left: -41px;"/>
+        <ui:Label text="Quest Name" name="QuestName" class="Label" style="top: 18%; font-size: 20px;"/>
+        <ui:Label text="Current Objective" name="CurrentObjectiveHeading" class="Label" style="top: 23%; font-size: 16px;"/>
+        <ui:Label text="Label" name="CurrentObjctive" class="Label" style="top: 29%; width: 143px; height: 6%; -unity-text-align: upper-center; font-size: 16px;"/>
+    </ui:VisualElement>
+</ui:UXML>

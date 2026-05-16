@@ -75,7 +75,7 @@ public class Player_Dialogue5 : MonoBehaviour
         PlayerDialogueMenu5.SetActive(false);
         TransitionCondition12.SetActive(false);
         TransitionCondition13.SetActive(true);
-        Time.timeScale = 1.0f;
+      //  Time.timeScale = 1.0f;
         Debug.Log("Hidden");
      
        

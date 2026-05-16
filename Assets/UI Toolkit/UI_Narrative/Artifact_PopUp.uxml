@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/ArtifactMenu.uss?fileID=7433441132597879392&amp;guid=04bf7e8df231f6f4399792f64a8de06a&amp;type=3#ArtifactMenu"/>
+    <ui:VisualElement class="VisCont">
+        <ui:Label text="ARTIFACT NAME&#10;" name="Header" class="Header"/>
+        <ui:Label text="wOW THE SUN IS SO VERBRIGHT TODAY I LOVE THE #10 SUN SO MUCH WWOW WEEE JEEE WILLLIECKERS THIS PLACE HOLDER TEXT IS SO GREAT YES VERY #10MUCH DO LOVE THAT " name="Label" class="ArtifactText"/>
+        <ui:Button text="CLOSE MENU" name="BackToGame" data-source-path="button" class="Button"/>
+        
+    </ui:VisualElement>
+</ui:UXML>
