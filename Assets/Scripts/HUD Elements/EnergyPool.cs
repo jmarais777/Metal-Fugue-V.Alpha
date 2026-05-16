@@ -1,4 +1,6 @@
 using JetBrains.Annotations;
+using Unity.VisualScripting;
+
 #if UNITY_EDITORs
 using UnityEditorInternal;
 #endif
@@ -23,7 +25,12 @@ public class EnergyPool : MonoBehaviour
     public Rigidbody2D RigBod;
     public float DistanceLimit = 12f;
     public float MovementDrain = 1f;
+
+    private float _ammoRechargeCost = 5f;
+    public float CurrentAmmo;
+    private float _maxAmmo = 10;
     public float BulletDrain = 1f;
+    
     Vector2 lastPoint;
     public GameOverUI gameOverUI;
 
@@ -76,13 +83,13 @@ public class EnergyPool : MonoBehaviour
         if (CurrentEnergy == 0)
         {
             //Debug.Log("You Have Died");
-
-
-
             SceneManager.LoadScene("GameOverREAL");
+        }
 
-
-
+        if (Input.GetKeyDown(KeyCode.R) && CurrentEnergy > 10)
+        {
+            CurrentEnergy -= _ammoRechargeCost;
+            CurrentAmmo = _maxAmmo;
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)
