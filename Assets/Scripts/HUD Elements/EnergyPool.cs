@@ -90,6 +90,7 @@ public class EnergyPool : MonoBehaviour
         {
             CurrentEnergy -= _ammoRechargeCost;
             CurrentAmmo = _maxAmmo;
+            Debug.Log(CurrentAmmo);
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)
