@@ -47,7 +47,7 @@ public class ArtifactPopup : MonoBehaviour
             {
                 ShowMenu1();
                 ArtifactText();
-                artifacttext.text = Artifact_Text[2];
+                artifacttext.text = Artifact_Text[0];
 
                 ArtifactHeadings();
                 header.text = Artifact_Header[2];
@@ -67,7 +67,7 @@ public class ArtifactPopup : MonoBehaviour
             {
                 ShowMenu1();
                 ArtifactText();
-                artifacttext.text = Artifact_Text[0];
+                artifacttext.text = Artifact_Text[2];
 
                 ArtifactHeadings();
                 header.text = Artifact_Header[0];
