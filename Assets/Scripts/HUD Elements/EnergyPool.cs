@@ -25,9 +25,8 @@ public class EnergyPool : MonoBehaviour
     //Establishing variables for energy drain based on distance travelled
     public Rigidbody2D RigBod;
     public float DistanceLimit = 12f;
-    public float MovementDrain = 1f;
+    public float MovementDrain = 0f;
 
-    private float _ammoRechargeCost = 5f;
     public int CurrentAmmo;
     private int _maxAmmo = 10;
     public float BulletDrain = 1f;
@@ -89,10 +88,51 @@ public class EnergyPool : MonoBehaviour
             SceneManager.LoadScene("GameOverREAL");
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && CurrentEnergy > 10)
+        if (Input.GetKeyDown(KeyCode.R) && CurrentEnergy > 10 && CurrentAmmo != 10)
         {
-            CurrentEnergy -= _ammoRechargeCost;
-            CurrentAmmo = _maxAmmo;
+            switch(CurrentAmmo)
+            {
+                case 0:
+                    CurrentEnergy -= 5;
+                    CurrentAmmo += 10;
+                    break;
+                case 1:
+                    CurrentEnergy -= 5;
+                    CurrentAmmo += 9;
+                    break;
+                case 2:
+                    CurrentEnergy -= 4;
+                    CurrentAmmo += 8;
+                    break;
+                case 3:
+                    CurrentEnergy -= 4;
+                    CurrentAmmo += 7;
+                    break;
+                case 4:
+                    CurrentEnergy -= 3;
+                    CurrentAmmo += 6;
+                    break;
+                case 5:
+                    CurrentEnergy -= 3;
+                    CurrentAmmo += 5;
+                    break;
+                case 6:
+                    CurrentEnergy -= 3;
+                    CurrentAmmo += 4;
+                    break;
+                case 7:
+                    CurrentEnergy -= 2;
+                    CurrentAmmo += 3;
+                    break;
+                case 8:
+                    CurrentEnergy -= 2;
+                    CurrentAmmo += 2;
+                    break;
+                case 9:
+                    CurrentEnergy -= 1;
+                    CurrentAmmo += 1;
+                    break;
+            }
             Debug.Log(CurrentAmmo);
         }
     }
