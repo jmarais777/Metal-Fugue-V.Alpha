@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b60e9dda9ba31e84e9c4bfcd12ad7f9f
+guid: b4baedba51fd9fd4c98cfca344675e96
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 576547649470552343
-    second: LampRight3_0
+      213: -2857861339420560624
+    second: Carpet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,45 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LampRight3_0
+      name: Carpet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 130
-        width: 164
-        height: 206
+        x: 28
+        y: 23
+        width: 1914
+        height: 207
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71957c2580f400800800000000000000
-      internalID: 576547649470552343
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LampRight3_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 164
-        height: 130
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abb18fd9d2c3a284f8752a604f3eb6f3
-      internalID: -1254457896
+      spriteID: 013f38ed046d658d0800000000000000
+      internalID: -2857861339420560624
       vertices: []
       indices: 
       edges: []
@@ -147,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 494292248b4373842b96f244fe3a460d
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -155,12 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":2.0},"gridSpriteSize":{"x":164.0,"y":168.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      LampRight3_0: 576547649470552343
-      LampRight3_1: -1254457896
+      Carpet_0: -2857861339420560624
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
