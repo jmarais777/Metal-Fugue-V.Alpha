@@ -31,9 +31,11 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
     bool IsWalking = true;
-    float dashSpeed = 20f;
+    float dashSpeed = 40f;
     float dashDuration = 0.1f;
     float dashCooldown = 0.5f;
+    public EnergyPool ForCurrentEnergy;
+
     public bool IsDashing;
     bool canDash = true;
     bool WalkF = true;
@@ -55,7 +57,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     {
-        RigBod.linearVelocity = moveInput * MovementSpeed;
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
         //Checking WASD for Animator
 
@@ -132,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && canDash)
+        if (Input.GetKeyDown(KeyCode.Space) && canDash && ForCurrentEnergy.CurrentEnergy > 9)
         {
             StartCoroutine(Dash());
         }
@@ -153,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        RigBod.MovePosition(RigBod.position + movement.normalized * MovementSpeed * Time.deltaTime);
+        RigBod.linearVelocity = movement.normalized * MovementSpeed;
     }
 
     private IEnumerator Dash()
@@ -161,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
         //establishing  dash velocity & cooldown
         canDash = false;
         IsDashing = true;
-        RigBod.linearVelocity = new Vector2(movement.x * dashSpeed, movement.y * dashSpeed);
+        RigBod.linearVelocity = movement.normalized * dashSpeed;
         yield return new WaitForSeconds(dashDuration);
         IsDashing = false;
 

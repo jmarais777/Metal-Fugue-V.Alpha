@@ -34,6 +34,13 @@ TagManager:
   - PowerButton
   - ScavNew
   - LightFlicker
+  - RecallLayout_Linear_Horozontal
+  - RecallLayout_Linear_Verticle
+  - RecallLayoutDefualt
+  - Recall_Layout_Custom_Diag1
+  - Recall_Layout_Custom_Diag2
+  - RecallLayout_Defualt
+  - MainHeaps
   layers:
   - Default
   - TransparentFX
@@ -41,8 +48,8 @@ TagManager:
   - particles
   - Water
   - UI
-  - 
-  - 
+  - Enemies
+  - RecallRepos
   - 
   - 
   - 
