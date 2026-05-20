@@ -31,6 +31,8 @@ public class EnemyMovementFinal :  MonoBehaviour
         Recalling,
         Recalling1,
         SystemFailure,
+        searching,
+      
     }
     public EnemyMovementType Move_Type;
 
@@ -39,7 +41,7 @@ public class EnemyMovementFinal :  MonoBehaviour
        RigBod = GetComponent<Rigidbody2D>();
        Move_Type = EnemyMovementType.Pathfinding1;
      TriggEvent = GetComponent<Enemy_Trigger_Events>();
-       TriggEvent.Movefin = this;
+      TriggEvent.Movefin = this;
     }
     
     public void FixedUpdate()
@@ -70,6 +72,10 @@ public class EnemyMovementFinal :  MonoBehaviour
             case EnemyMovementType.SystemFailure:
                System_Failure();
             break;
+            case EnemyMovementType.searching:
+                Searching(); 
+            break;
+      
          }
     }
 
@@ -113,9 +119,14 @@ public class EnemyMovementFinal :  MonoBehaviour
         this.enabled = false;
         Enemy_Shoot_Mech.enabled = false;
         Enemy_Player_Detetction.enabled = false;
-
-
     }
+    public void Searching()
+    {
+        Vector3 Direction_To_Player2 = (Player.transform.position - transform.position).normalized;
+        RigBod.linearVelocity = Direction_To_Player2 * Follow_Speed;
+        Enemy_Shoot_Mech.enabled = false;
+    }
+ 
 }
 
 
