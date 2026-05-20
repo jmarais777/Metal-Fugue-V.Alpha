@@ -60,17 +60,13 @@ public class EnemyMovementRev : MonoBehaviour
     public GameObject Mainheaps;
 
 
-
-
-
-
-
     public EnemyRecallSelectors RecallState;
 
     public enum EnemyMode
     {
         Patrolling,
         Combat,
+        Searching,
     }
     public EnemyMode type = EnemyMode.Patrolling;
     //public EnemyMode type2 = EnemyMode.Combat;
