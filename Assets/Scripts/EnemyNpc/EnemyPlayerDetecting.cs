@@ -81,12 +81,10 @@ public class EnemyPlayerDetecting : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        
-      
+     
        if(collider.gameObject.CompareTag("Player"))
         {
             EnemyFin.Move_Type = EnemyMovementFinal.EnemyMovementType.Chasing;
-            Enemeyshoot.enabled = true;
 
         }
     }

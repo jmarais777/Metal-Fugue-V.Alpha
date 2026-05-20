@@ -37,11 +37,5 @@ public class Enemy_Trigger_Events : MonoBehaviour
         }
 
     }
-    public void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider.gameObject.CompareTag("Player"))
-        {
-            Movefin.Move_Type = EnemyMovementFinal.EnemyMovementType.searching;
-        }
-    }
+   
 }

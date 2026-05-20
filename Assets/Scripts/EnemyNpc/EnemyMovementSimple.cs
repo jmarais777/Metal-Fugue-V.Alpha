@@ -12,6 +12,7 @@ public class EnemyMovementFinal :  MonoBehaviour
 
 
     public GameObject Player;
+    public GameObject PlayerDetector;
 
     public Transform RecallStart;
     public Transform RecallP1;
@@ -20,8 +21,10 @@ public class EnemyMovementFinal :  MonoBehaviour
     public Transform PathP2;
 
     public Enemy_Trigger_Events TriggEvent;
-    public EnemySHootMech Enemy_Shoot_Mech;
+
     public EnemyPlayerDetecting Enemy_Player_Detetction;
+    public EnemySHootMech Enemy_Shoot_Mech;
+
 
  public enum EnemyMovementType
     {
@@ -31,7 +34,6 @@ public class EnemyMovementFinal :  MonoBehaviour
         Recalling,
         Recalling1,
         SystemFailure,
-        searching,
     }
     public EnemyMovementType Move_Type;
 
@@ -45,7 +47,7 @@ public class EnemyMovementFinal :  MonoBehaviour
     
     public void FixedUpdate()
     {
-        Debug.Log("Current State: " + Move_Type);
+        Debug.Log(Move_Type);
         switch (Move_Type)
          {
            case EnemyMovementType.Pathfinding1:
@@ -71,9 +73,7 @@ public class EnemyMovementFinal :  MonoBehaviour
             case EnemyMovementType.SystemFailure:
                System_Failure();
             break;
-            case EnemyMovementType.searching:
-                Searching(); 
-            break;
+       
       
          }
     }
@@ -95,6 +95,7 @@ public class EnemyMovementFinal :  MonoBehaviour
     {
         Vector3 Direction_To_Player = (Player.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Direction_To_Player * Follow_Speed);
+        Enemy_Shoot_Mech.enabled = true;
         Debug.Log("Chasing()");
     }
     public void Recalling()
@@ -115,16 +116,12 @@ public class EnemyMovementFinal :  MonoBehaviour
     public void System_Failure() //set in EnemyHealth Script
     {
         transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
+        PlayerDetector.SetActive(false);
+        Enemy_Shoot_Mech.enabled = false;
         this.enabled = false;
-        Enemy_Shoot_Mech.enabled = false;
-        Enemy_Player_Detetction.enabled = false;
-    }
-    public void Searching()
-    {
-        Vector3 Direction_To_Player2 = (Player.transform.position - transform.position).normalized;
-        RigBod.linearVelocity = Direction_To_Player2 * Follow_Speed;
-        Enemy_Shoot_Mech.enabled = false;
-    }
+
+   }
+
  
 }
 
