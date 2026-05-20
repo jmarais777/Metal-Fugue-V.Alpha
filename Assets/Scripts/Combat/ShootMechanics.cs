@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using UnityEngine.Tilemaps;
+using System;
 
 
 public class ShootMech : MonoBehaviour
@@ -16,13 +17,13 @@ public class ShootMech : MonoBehaviour
     public GameObject Bullets;
     public Transform WeaponCenter;
     public bool IsShooting = false;
-   // public GameObject MuzzleFlash;
- 
-   
+    // public GameObject MuzzleFlash;
+    public EnergyPool Energy_Pool;
 
-
-    Rigidbody2D rb;
-
+    private void Start()
+    {
+        Energy_Pool.CurrentAmmo = 10;
+    }
     void Update()
     {  
        if (Time.timeScale == 0.0f)
@@ -33,31 +34,32 @@ public class ShootMech : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 direction = mousePos - WeaponCenter.position;
         WeaponCenter.right = direction;
-       
 
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Energy_Pool.CurrentAmmo < 1)
         {
-           
-            Shoot();
-            IsShooting = true;
-          
-            
-
+            return;
         }
+            if (Mouse.current.leftButton.wasPressedThisFrame)
+            {
+            IsShooting = true;
 
-        else
+                Shoot();
+
+            }
+        else if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
             IsShooting = false;
-           
         }
+        
+      
 
         void Shoot()
         
         {
             Instantiate(Bullets, Firepoint.position, Firepoint.rotation);
-
-
         }
+
+      
 
 
     }

@@ -32,7 +32,6 @@ public class EnemyMovementFinal :  MonoBehaviour
         Recalling1,
         SystemFailure,
         searching,
-      
     }
     public EnemyMovementType Move_Type;
 

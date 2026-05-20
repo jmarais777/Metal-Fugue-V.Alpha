@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEditorInternal;
 #endif
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class EnergyPool : MonoBehaviour
@@ -27,8 +28,8 @@ public class EnergyPool : MonoBehaviour
     public float MovementDrain = 1f;
 
     private float _ammoRechargeCost = 5f;
-    public float CurrentAmmo;
-    private float _maxAmmo = 10;
+    public int CurrentAmmo;
+    private int _maxAmmo = 10;
     public float BulletDrain = 1f;
     
     Vector2 lastPoint;
@@ -70,11 +71,13 @@ public class EnergyPool : MonoBehaviour
         wasDashing = ForIsDashing.IsDashing;
 
         //Energy subtraction check for a shot fired
-        if (ForIsShooting.IsShooting == true)
+
+       
+        if (ForIsShooting.IsShooting == true && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            CurrentEnergy -= 1;
-            CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0, MaxEnergy);
-            //Debug.Log(CurrentEnergy);
+            CurrentAmmo -= 1;
+            CurrentAmmo = Mathf.Clamp(CurrentAmmo, 0, _maxAmmo);
+            Debug.Log(CurrentAmmo);
         }
         if (ForIsBeingShot)
             CurrentEnergy -= 1;
