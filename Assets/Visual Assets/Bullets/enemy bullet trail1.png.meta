@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 85b3b615ceb08d54b9cf022e948acef3
+guid: 6bb6b99dba9b0804da9f6290cfaebe88
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7922671561111113862
-    second: Bullet_Textures2_0
+      213: -8359265753359030303
+    second: enemy bullet trail1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bullet_Textures2_0
+      name: enemy bullet trail1_0
       rect:
         serializedVersion: 2
-        x: 661
-        y: 161
-        width: 373
-        height: 694
+        x: 0
+        y: 539
+        width: 1920
+        height: 267
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a7fe1e7f0340d0290800000000000000
-      internalID: -7922671561111113862
+      spriteID: 1e762fb261cedfb80800000000000000
+      internalID: -8359265753359030303
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bullet_Textures2_0: -7922671561111113862
+      enemy bullet trail1_0: -8359265753359030303
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
