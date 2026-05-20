@@ -78,19 +78,13 @@ public class EnemyMovementRev : MonoBehaviour
     private void Start()
     {
         RigBod = GetComponent<Rigidbody2D>();
-       
-        
-        
-
-
     }
     void FixedUpdate()
     {
         if (type == EnemyMode.Patrolling)
         {
             if (path == 0)
-            {
-                
+            {              
                 Vector3 patroll1 = (PathPoint1.position - this.transform.position).normalized;
                 Vector3 MoveForce = patroll1 * patrollSpeed;
                 RigBod.AddForce(MoveForce);
@@ -120,6 +114,7 @@ public class EnemyMovementRev : MonoBehaviour
                 RigBod.AddForce(dir0Force);
                 //Debug.Log("NotFolliiwng");
             }
+
             if (RecallPos == 1)
             {
                 Vector3 Recalldir1 = (recallP1.position - EnemyNPC.transform.position).normalized;
@@ -127,6 +122,7 @@ public class EnemyMovementRev : MonoBehaviour
                 RigBod.AddForce(DirForce);
                 //Debug.Log("GoingToRecallp1");
             }
+
             if (RecallPos == 2)
             {
                 Vector3 Recalldir2 = (recallP2.position - EnemyNPC.transform.position).normalized;
@@ -183,23 +179,11 @@ public class EnemyMovementRev : MonoBehaviour
 
         }
         
-        if (collision.gameObject.CompareTag("MainHeaps"))
-        {
-            Repos();
-            Debug.Log("COlliding with main heaps");
-        }
+     
 
 
     }
-    public void Repos()
-    {
-      Vector3 Dirdir = (this.transform.position - Mainheaps.transform.position).normalized;
 
-
-
-        // Physics2D.Raycast(this.transform.localPosition, repositioner.localPosition, RayDis * MoveSpeed *Time.deltaTime);
-        Physics2D.CircleCast(this.transform.position, repulsion, Dirdir * MoveSpeed);
-    }
  } 
         
 
