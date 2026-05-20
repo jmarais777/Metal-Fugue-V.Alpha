@@ -44,7 +44,7 @@ public class ShootMech : MonoBehaviour
             IsShooting = true;
 
                 Shoot();
-
+            Debug.Log(Energy_Pool.CurrentAmmo);
             }
         else if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
