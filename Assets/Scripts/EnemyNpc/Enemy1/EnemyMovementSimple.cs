@@ -1,4 +1,6 @@
 using JetBrains.Annotations;
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovementFinal :  MonoBehaviour
@@ -12,89 +14,76 @@ public class EnemyMovementFinal :  MonoBehaviour
 
 
     public GameObject Player;
+    public GameObject PlayerDetector;
 
     public Transform RecallStart;
     public Transform RecallP1;
 
-    public Transform PathP1;
-    public Transform PathP2;
+ 
+    public GameObject PathP0;
+    public GameObject PathP1;
 
     public Enemy_Trigger_Events TriggEvent;
-    public EnemySHootMech Enemy_Shoot_Mech;
     public EnemyPlayerDetecting Enemy_Player_Detetction;
+    public EnemySHootMech Enemy_Shoot_Mech;
+    public Interact interact_;
 
- public enum EnemyMovementType
+    public Collider2D ForceField_Collider;
+    public Collider2D Player_Detection_Collider;
+
+    public enum EnemyMovementType
     {
+        Pathfinding0,
         Pathfinding1,
         Pathfinding2,
+        Pathfinding3,
         Chasing,
         Recalling,
         Recalling1,
         SystemFailure,
-        searching,
+        FullDead,
     }
     public EnemyMovementType Move_Type;
 
     public void Start()
     {
        RigBod = GetComponent<Rigidbody2D>();
-       Move_Type = EnemyMovementType.Pathfinding1;
-     TriggEvent = GetComponent<Enemy_Trigger_Events>();
-      TriggEvent.Movefin = this;
-    }
-    
-    public void FixedUpdate()
+       Move_Type = EnemyMovementType.Pathfinding0;
+    }    
+public void FixedUpdate()
     {
-        Debug.Log("Current State: " + Move_Type);
+        Debug.Log(Move_Type);
         switch (Move_Type)
-         {
-           case EnemyMovementType.Pathfinding1:
-           Pathfinding1();
-           break;
-
-           case EnemyMovementType.Pathfinding2:
-            Pathfinding2();
-           break;
-
-           case EnemyMovementType.Chasing:
-            Chasing();
-           break;
-
-           case EnemyMovementType.Recalling:
-            Recalling();
-           break;
-
-           case EnemyMovementType.Recalling1:
-            Recall_Parent_One();
-           break;
-
-            case EnemyMovementType.SystemFailure:
-               System_Failure();
-            break;
-            case EnemyMovementType.searching:
-                Searching(); 
-            break;
-      
-         }
+        {
+            case EnemyMovementType.Chasing: Chasing(); break;
+            case EnemyMovementType.Recalling: Recalling(); break;
+            case EnemyMovementType.Recalling1: Recall_Parent_One(); break;
+            case EnemyMovementType.SystemFailure: System_Failure(); break;
+            case EnemyMovementType.FullDead: FullDead(); break;
+            case EnemyMovementType.Pathfinding0: Pathfinding0(); break;
+            case EnemyMovementType.Pathfinding1: Pathfinding1(); break;
+        
+        }
     }
 
-    public void Pathfinding1()
+    public void Pathfinding0()
     {
-        Vector3 Dir_PathP1 = (PathP1.position - transform.position).normalized;
+        Vector3 Dir_PathP1 = (PathP0.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Dir_PathP1 * Pathfinding_Speed);
         Debug.Log("Pathfiding1()");
     }
-    public void Pathfinding2()
+    public void Pathfinding1()
     {
-        Vector3 Dir_PathP2 = (PathP2.position - transform.position).normalized;
+        Vector3 Dir_PathP2 = (PathP1.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Dir_PathP2 * Pathfinding_Speed);
         Debug.Log("Pathfinding2()");
-
     }
     public void Chasing()
     {
         Vector3 Direction_To_Player = (Player.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Direction_To_Player * Follow_Speed);
+        Enemy_Shoot_Mech.enabled = true;
+    
         Debug.Log("Chasing()");
     }
     public void Recalling()
@@ -110,21 +99,29 @@ public class EnemyMovementFinal :  MonoBehaviour
         Vector3 Direction_To_RecallP1 = (RecallP1.position - transform.position ).normalized;
         RigBod.AddForce(Direction_To_RecallP1, ForceMode2D.Impulse);
         Debug.Log("RecallingP1()");
-
     }
     public void System_Failure() //set in EnemyHealth Script
     {
         transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
-        this.enabled = false;
+        TriggEvent.enabled = false;
         Enemy_Shoot_Mech.enabled = false;
         Enemy_Player_Detetction.enabled = false;
-    }
-    public void Searching()
+        ForceField_Collider.enabled = false;
+        Player_Detection_Collider.enabled = false;
+   }
+    public void FullDead()
     {
-        Vector3 Direction_To_Player2 = (Player.transform.position - transform.position).normalized;
-        RigBod.linearVelocity = Direction_To_Player2 * Follow_Speed;
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
+        TriggEvent.enabled = false;
         Enemy_Shoot_Mech.enabled = false;
+        Enemy_Player_Detetction.enabled = false;
+        ForceField_Collider.enabled = false;
+        Player_Detection_Collider.enabled = false;
+        interact_.Enemies.Remove(transform);
+        
     }
+   
+
  
 }
 

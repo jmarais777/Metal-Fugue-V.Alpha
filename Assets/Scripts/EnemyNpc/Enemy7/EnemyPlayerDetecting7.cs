@@ -4,32 +4,36 @@ using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Rendering.Universal;
 
-public class EnemyPlayerDetecting : MonoBehaviour
+public class EnemyPlayerDetecting7 : MonoBehaviour
 {
+    public EnemyMovementFinal7 EnemyFin7; //Custom
+
     public float Detection_Light_timer = 10.0f;
     public float Damage_Effect_Timer = 2.0f;
     public bool Is_Detection_Light_timer_Done;
-    public EnemyMovementFinal EnemyFin;
     public EnemySHootMech Enemeyshoot;
     public Light2D PlayerDetection_Light;
     //public Light2D Enemy_Eye_Light;
     public void Start()
     {
         PlayerDetection_Light = GetComponent<Light2D>();
-
-
     }
     public void Update()
     {
-
-        if (EnemyFin.Move_Type == EnemyMovementFinal.EnemyMovementType.Pathfinding1 ||
-            EnemyFin.Move_Type == EnemyMovementFinal.EnemyMovementType.Pathfinding2)
+        //Custom
+        if (EnemyFin7.Move_Type7 == EnemyMovementFinal7.EnemyMovementType.Pathfinding16 ||
+            EnemyFin7.Move_Type7 == EnemyMovementFinal7.EnemyMovementType.Pathfinding17)
         {
             Patrolling_Light_Effect();
         }
-        if (EnemyFin.Move_Type == EnemyMovementFinal.EnemyMovementType.Chasing)
+        //Custom
+        if (EnemyFin7.Move_Type7 == EnemyMovementFinal7.EnemyMovementType.Chasing)
         {
             Chasing_Light_Effect();
+        }
+        if (EnemyFin7.Move_Type7 == EnemyMovementFinal7.EnemyMovementType.FullDead)
+        {
+            DeadEffect();
         }
     }
     public void Patrolling_Light_Effect()
@@ -42,7 +46,6 @@ public class EnemyPlayerDetecting : MonoBehaviour
             {
                 PlayerDetection_Light.intensity = 2.0f;
                 PlayerDetection_Light.falloffIntensity = 0.557f;
-
                 // Enemy_Eye_Light.intensity = 2.0f;
                 Is_Detection_Light_timer_Done = true;
             }
@@ -65,29 +68,22 @@ public class EnemyPlayerDetecting : MonoBehaviour
     {
         PlayerDetection_Light.falloffIntensity = 1.0f;
         PlayerDetection_Light.intensity = 1.0f;
-
     }
     public void System_Failure_Effects() //set in EnemyHealth
-    {             
+    {
         PlayerDetection_Light.falloffIntensity = 0.5f;
         PlayerDetection_Light.intensity = 7.0f;
-        Debug.Log("System_FailureEffect");                     
+        Debug.Log("System_FailureEffect");
     }
-   
-
-
-
-   
-    
+    public void DeadEffect()
+    {
+        PlayerDetection_Light.intensity = 0.0f;
+    }
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        
-      
-       if(collider.gameObject.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player"))
         {
-            EnemyFin.Move_Type = EnemyMovementFinal.EnemyMovementType.Chasing;
-            Enemeyshoot.enabled = true;
-
+            EnemyFin7.Move_Type7 = EnemyMovementFinal7.EnemyMovementType.Chasing; //Custom
         }
     }
 

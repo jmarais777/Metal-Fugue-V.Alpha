@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -8,20 +9,22 @@ using UnityEngine.UIElements;
 
 public class Interact : MonoBehaviour
 {
- 
 
+    public List<Transform> Enemies = new List<Transform>();
+    //public Transform TargetEnemy;
     //recharge stations
     public GameObject RechargeStationCryo;
     public GameObject RechargeStationWind;
     public GameObject RechargeStationShuttle;
     public GameObject Player; 
-    public GameObject Enemy;
+    
     public GameObject ScavengerArmIngame;
     public GameObject ScavengerArmOnPlayer;
     public GameObject scavengerArmOnScav;
     public GameObject CorticalProcessor;
     public GameObject CorticalProcessorEye;
     public GameObject SecurityGate;
+
     public Light2D CorticalProcessorLight;
     public EnergyPool ForCurrentEnergy;
     public bool IsPlayerInProximity = true;
@@ -30,6 +33,7 @@ public class Interact : MonoBehaviour
     public EnergyPool CurrentEnergyPool;
     public GameObject PowerButton;
     public QuestTracker quest;
+    public EnemyMovementFinal Enemy_Move_fin;
 
 
 
@@ -42,13 +46,25 @@ public class Interact : MonoBehaviour
         float Cort = Vector2.Distance(CorticalProcessor.transform.position, Player.transform.position);
         float Sec = Vector2.Distance(SecurityGate.transform.position, Player.transform.position);
         float Scavarm = Vector2.Distance(ScavengerArmIngame.transform.position, Player.transform.position);
+        
+
      
        if (Input.GetKeyDown(KeyCode.E)) Debug.Log("E pressed. Distance to Arm is: " + Scavarm); //arm is to far away??
 
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-
+            foreach (Transform CurrentEnemy in Enemies)
+            {
+                float Enem = Vector2.Distance(CurrentEnemy.position, Player.transform.position);
+                if (Enem < InteractProximity && Enemy_Move_fin.Move_Type == EnemyMovementFinal.EnemyMovementType.SystemFailure)
+                {
+                    Debug.Log("Charginggg gunnnn");
+                    CurrentEnergyPool.CurrentAmmo = 10;
+                    Enemy_Move_fin.Move_Type = EnemyMovementFinal.EnemyMovementType.FullDead;
+                    break;
+                }
+            }
 
             if (RechargeStatCryo < InteractProximity)
             {
@@ -104,6 +120,8 @@ public class Interact : MonoBehaviour
             {
                 quest.IsQ1ObjectiveUpdate2 = true ;
             }
+
+           
         }
 
 
