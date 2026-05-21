@@ -17,7 +17,6 @@ public class EnemyPlayerDetecting2 : MonoBehaviour
     {
         PlayerDetection_Light = GetComponent<Light2D>();
 
-
     }
     public void Update()
     {
@@ -32,6 +31,10 @@ public class EnemyPlayerDetecting2 : MonoBehaviour
         if (EnemyFin2.Move_Type == EnemyMovementFinal2.EnemyMovementType.Chasing)
         {
             Chasing_Light_Effect();
+        }
+        if (EnemyFin2.Move_Type == EnemyMovementFinal2.EnemyMovementType.FullDead)
+        {
+            DeadEffect();
         }
     }
     public void Patrolling_Light_Effect()
@@ -76,7 +79,11 @@ public class EnemyPlayerDetecting2 : MonoBehaviour
         Debug.Log("System_FailureEffect");
     }
 
+    public void DeadEffect()
+    {
+        PlayerDetection_Light.intensity = 0.0f;
 
+    }
 
 
 

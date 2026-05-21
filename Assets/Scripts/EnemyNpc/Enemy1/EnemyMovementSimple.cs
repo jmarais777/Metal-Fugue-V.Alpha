@@ -20,8 +20,8 @@ public class EnemyMovementFinal :  MonoBehaviour
     public Transform RecallP1;
 
  
-    public Transform PathP0;
-    public Transform PathP1;
+    public GameObject PathP0;
+    public GameObject PathP1;
 
     public Enemy_Trigger_Events TriggEvent;
     public EnemyPlayerDetecting Enemy_Player_Detetction;
@@ -68,13 +68,13 @@ public void FixedUpdate()
 
     public void Pathfinding0()
     {
-        Vector3 Dir_PathP1 = (PathP0.position - transform.position).normalized;
+        Vector3 Dir_PathP1 = (PathP0.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Dir_PathP1 * Pathfinding_Speed);
         Debug.Log("Pathfiding1()");
     }
     public void Pathfinding1()
     {
-        Vector3 Dir_PathP2 = (PathP1.position - transform.position).normalized;
+        Vector3 Dir_PathP2 = (PathP1.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Dir_PathP2 * Pathfinding_Speed);
         Debug.Log("Pathfinding2()");
     }
@@ -83,6 +83,7 @@ public void FixedUpdate()
         Vector3 Direction_To_Player = (Player.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Direction_To_Player * Follow_Speed);
         Enemy_Shoot_Mech.enabled = true;
+    
         Debug.Log("Chasing()");
     }
     public void Recalling()

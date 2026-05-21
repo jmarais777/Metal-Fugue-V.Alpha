@@ -31,6 +31,10 @@ public class EnemyPlayerDetecting4 : MonoBehaviour
         {
             Chasing_Light_Effect();
         }
+        if (EnemyFin4.Move_Type4 == EnemyMovementFinal4.EnemyMovementType.FullDead)
+        {
+            DeadEffect();
+        }
     }
     public void Patrolling_Light_Effect()
     {
@@ -72,6 +76,10 @@ public class EnemyPlayerDetecting4 : MonoBehaviour
         PlayerDetection_Light.falloffIntensity = 0.5f;
         PlayerDetection_Light.intensity = 7.0f;
         Debug.Log("System_FailureEffect");
+    }
+    public void DeadEffect()
+    {
+        PlayerDetection_Light.intensity = 0.0f;
     }
     public void OnTriggerEnter2D(Collider2D collider)
     {

@@ -25,6 +25,10 @@ public class EnemyPlayerDetecting8 : MonoBehaviour
         {
             Chasing_Light_Effect();
         }
+        if (EnemyFin8.Move_Type8 == EnemyMovementFinal8.EnemyMovementType.FullDead)
+        {
+            DeadEffect();
+        }
     }
     public void Patrolling_Light_Effect()
     {
@@ -61,8 +65,8 @@ public class EnemyPlayerDetecting8 : MonoBehaviour
     }
     public void System_Failure_Effects() //set in EnemyHealth
     {
-        PlayerDetection_Light.falloffIntensity = 0.5f;
-        PlayerDetection_Light.intensity = 7.0f;
+        PlayerDetection_Light.falloffIntensity = 0f;
+        PlayerDetection_Light.intensity = 0.5f;
         Debug.Log("System_FailureEffect");
     }
     public void OnTriggerEnter2D(Collider2D collider)
@@ -71,6 +75,14 @@ public class EnemyPlayerDetecting8 : MonoBehaviour
         {
             EnemyFin8.Move_Type8 = EnemyMovementFinal8.EnemyMovementType.Chasing; //Custom
         }
+    }
+    public void DeepSleepEffects()
+    {
+        PlayerDetection_Light.intensity = 0.0f;
+    }
+    public void DeadEffect()
+    {  
+        PlayerDetection_Light.intensity = 0.0f;
     }
 
 }
