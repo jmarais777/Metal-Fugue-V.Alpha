@@ -30,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
 
     IEnumerator DamageEffect()
     {
+
        Enemy_Light.intensity = 100;
         yield return new WaitForSeconds(0.1f);
         Enemy_Player_Detection.Chasing_Light_Effect();

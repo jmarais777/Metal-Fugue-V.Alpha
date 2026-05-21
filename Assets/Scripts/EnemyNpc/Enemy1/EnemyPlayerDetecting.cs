@@ -22,8 +22,8 @@ public class EnemyPlayerDetecting : MonoBehaviour
     public void Update()
     {
 
-        if (EnemyFin.Move_Type == EnemyMovementFinal.EnemyMovementType.Pathfinding1 ||
-            EnemyFin.Move_Type == EnemyMovementFinal.EnemyMovementType.Pathfinding2 )   
+        if (EnemyFin.Move_Type == EnemyMovementFinal.EnemyMovementType.Pathfinding0 ||
+            EnemyFin.Move_Type == EnemyMovementFinal.EnemyMovementType.Pathfinding1 )   
         {
             Patrolling_Light_Effect();
         }
@@ -68,8 +68,9 @@ public class EnemyPlayerDetecting : MonoBehaviour
 
     public void Chasing_Light_Effect()
     {
+        PlayerDetection_Light.lightType = Light2D.LightType.Freeform;
         PlayerDetection_Light.falloffIntensity = 1.0f;
-        PlayerDetection_Light.intensity = 1.0f;
+        PlayerDetection_Light.intensity = 2.0f;
 
     }
     public void System_Failure_Effects() //set in EnemyHealth
