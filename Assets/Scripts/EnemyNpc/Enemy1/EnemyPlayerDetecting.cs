@@ -23,11 +23,13 @@ public class EnemyPlayerDetecting : MonoBehaviour
     {
 
         if (EnemyFin.Move_Type == EnemyMovementFinal.EnemyMovementType.Pathfinding1 ||
-            EnemyFin.Move_Type == EnemyMovementFinal.EnemyMovementType.Pathfinding2)
+            EnemyFin.Move_Type == EnemyMovementFinal.EnemyMovementType.Pathfinding2 )   
         {
             Patrolling_Light_Effect();
         }
-        if (EnemyFin.Move_Type == EnemyMovementFinal.EnemyMovementType.Chasing)
+    
+
+            if (EnemyFin.Move_Type == EnemyMovementFinal.EnemyMovementType.Chasing)
         {
             Chasing_Light_Effect();
         }

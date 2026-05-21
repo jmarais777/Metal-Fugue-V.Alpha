@@ -6,17 +6,20 @@ public class Enemy_Trigger_Events : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collider)
     {
 
-        if (collider.gameObject.name == ("PathPoint1"))
+        if (collider.gameObject.name == ("PathPoint0"))
         {
-            Movefin.Move_Type = EnemyMovementFinal.EnemyMovementType.Pathfinding2;
+            Movefin.Move_Type = EnemyMovementFinal.EnemyMovementType.Pathfinding1;
+        
             Debug.Log("Pathp1Hit");
         }
 
-        if (collider.gameObject.name == ("PathPoint2"))
+        if (collider.gameObject.name == ("PathPoint1"))
         {
-            Movefin.Move_Type = EnemyMovementFinal.EnemyMovementType.Pathfinding1;
+            Movefin.Move_Type = EnemyMovementFinal.EnemyMovementType.Pathfinding0;
+           
             Debug.Log("Pathp2it");
         }
+      
 
         if (collider.gameObject.CompareTag("PlayerRadius"))
         {
