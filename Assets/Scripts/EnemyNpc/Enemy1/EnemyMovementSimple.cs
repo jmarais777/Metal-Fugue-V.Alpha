@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class EnemyMovementFinal :  MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class EnemyMovementFinal :  MonoBehaviour
     public float Follow_Speed = 5.0f;
     public float Pathfinding_Speed = 5.0f;
 
+    public Light2D Enem_Detection_Light;
 
     public GameObject Player;
     public GameObject PlayerDetector;
@@ -105,9 +107,11 @@ public void FixedUpdate()
         transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
         TriggEvent.enabled = false;
         Enemy_Shoot_Mech.enabled = false;
-        Enemy_Player_Detetction.enabled = false;
+        //Enemy_Player_Detetction.enabled = false;
         ForceField_Collider.enabled = false;
         Player_Detection_Collider.enabled = false;
+        Enem_Detection_Light.intensity = 0.3f;
+        
    }
     public void FullDead()
     {
@@ -117,6 +121,7 @@ public void FixedUpdate()
         Enemy_Player_Detetction.enabled = false;
         ForceField_Collider.enabled = false;
         Player_Detection_Collider.enabled = false;
+        Enem_Detection_Light.enabled = false;
         interact_.Enemies.Remove(transform);
         
     }
