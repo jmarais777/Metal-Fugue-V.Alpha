@@ -33,6 +33,11 @@ public class EnemyMovementFinal :  MonoBehaviour
     public Collider2D ForceField_Collider;
     public Collider2D Player_Detection_Collider;
 
+    bool isWalkingF = true;
+    bool isWalkingR = true;
+    bool isWalkingB = true;
+    bool isWalkingL = true;
+
     public enum EnemyMovementType
     {
         Pathfinding0,
