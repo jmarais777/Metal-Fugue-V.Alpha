@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class EnemyMovemnentFinalFin4 :  MonoBehaviour
+public class EnemyMovementFinalFin5 :  MonoBehaviour
 {
     //THE MOVEMNET STUFF
     public Rigidbody2D RigBod;
@@ -25,9 +25,10 @@ public class EnemyMovemnentFinalFin4 :  MonoBehaviour
     public Transform RecallP1;
 
  
-    public GameObject PathP6;
-    public GameObject PathP7;
-  
+    public GameObject PathP8;
+    public GameObject PathP9;
+    public GameObject PathP10;
+    public GameObject PathP11;
 
     public Enemy_Trigger_EventsFin4 TriggEvent;
     public EnemyPlayerDetectingFin4 Enemy_Player_Detetction;
@@ -45,21 +46,22 @@ public class EnemyMovemnentFinalFin4 :  MonoBehaviour
 
     public enum EnemyMovementType
     {
-        Pathfinding0,
-        Pathfinding1,
-    
+        Pathfinding8,
+        Pathfinding9,
+        Pathfinding10,
+        Pathfinding11,
         Chasing,
         Recalling,
         Recalling1,
         SystemFailure,
         FullDead,
     }
-    public EnemyMovementType Move_Type;
+    public EnemyMovementType Move_TypeFin5;
 
     public void Start()
     {
-       RigBod = GetComponent<Rigidbody2D>();
-       Move_Type = EnemyMovementType.Pathfinding0;
+        RigBod = GetComponent<Rigidbody2D>();
+       Move_TypeFin5 = EnemyMovementType.Pathfinding8;
       
     }    
 public void FixedUpdate()
@@ -151,29 +153,44 @@ public void FixedUpdate()
 
 
 
-        Debug.Log(Move_Type);
-        switch (Move_Type)
+        Debug.Log(Move_TypeFin5);
+        switch (Move_TypeFin5)
         {
             case EnemyMovementType.Chasing: Chasing(); break;
             case EnemyMovementType.Recalling: Recalling(); break;
             case EnemyMovementType.Recalling1: Recall_Parent_One(); break;
             case EnemyMovementType.SystemFailure: System_Failure(); break;
             case EnemyMovementType.FullDead: FullDead(); break;
-            case EnemyMovementType.Pathfinding0: Pathfinding0(); break;
-            case EnemyMovementType.Pathfinding1: Pathfinding1(); break;     
+            case EnemyMovementType.Pathfinding8: Pathfinding8(); break;
+            case EnemyMovementType.Pathfinding9: Pathfinding9(); break;
+            case EnemyMovementType.Pathfinding10: Pathfinding10(); break;
+            case EnemyMovementType.Pathfinding11: Pathfinding11(); break;
+
         }
     }
 
-    public void Pathfinding0()
+    public void Pathfinding8() //custom
     {
-        Vector3 Dir_PathP1 = (PathP6.transform.position - transform.position).normalized;
-        RigBod.linearVelocity = (Dir_PathP1 * Pathfinding_Speed);
+        Vector3 Dir_PathP8 = (PathP8.transform.position - transform.position).normalized;
+        RigBod.linearVelocity = (Dir_PathP8 * Pathfinding_Speed);
         Debug.Log("Pathfiding1()");
     }
-    public void Pathfinding1()
+    public void Pathfinding9() //custom
     {
-        Vector3 Dir_PathP2 = (PathP7.transform.position - transform.position).normalized;
-        RigBod.linearVelocity = (Dir_PathP2 * Pathfinding_Speed);
+        Vector3 Dir_PathP9 = (PathP9.transform.position - transform.position).normalized;
+        RigBod.linearVelocity = (Dir_PathP9 * Pathfinding_Speed);
+        Debug.Log("Pathfinding2()");
+    }
+    public void Pathfinding10() //custom
+    {
+        Vector3 Dir_PathP10 = (PathP10.transform.position - transform.position).normalized;
+        RigBod.linearVelocity = (Dir_PathP10 * Pathfinding_Speed);
+        Debug.Log("Pathfinding2()");
+    }
+    public void Pathfinding11() //custom
+    {
+        Vector3 Dir_PathP11 = (PathP11.transform.position - transform.position).normalized;
+        RigBod.linearVelocity = (Dir_PathP11 * Pathfinding_Speed);
         Debug.Log("Pathfinding2()");
     }
     public void Chasing()
@@ -181,8 +198,8 @@ public void FixedUpdate()
         Vector3 Direction_To_Player = (Player.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Direction_To_Player * Follow_Speed);
         Enemy_Shoot_Mech.enabled = true;
-       PathP6.SetActive(false);
-        PathP7.SetActive(false);
+       PathP8.SetActive(false);
+        PathP9.SetActive(false);
         Debug.Log("Chasing()");
     }
     public void Recalling()

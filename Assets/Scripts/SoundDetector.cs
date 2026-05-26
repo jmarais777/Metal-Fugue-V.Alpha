@@ -64,6 +64,7 @@ public class SoundDetector : MonoBehaviour
             Wind_Turbine.GetComponent<AudioSource>().mute = false;
             Debug.Log("Light Detetcted");
         }
+       
     }
 
     private void OnTriggerExit2D(Collider2D collision)

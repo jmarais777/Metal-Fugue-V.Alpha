@@ -22,7 +22,7 @@ public class Lock : MonoBehaviour
     public QuestTracker quest;
     public GameObject Quest_OutOfTheFryingPan_Objective1;
 
-    public EnemyMovementFinal8 Enemy_Move_Fin8;
+    public EnemyMovementFinalFin8 Enemy_Move_Fin8;
 
 
     public bool IsPowerOn = true;
@@ -93,7 +93,7 @@ public class Lock : MonoBehaviour
 
         if (!IsPowerOn && Boss != null)
         {
-            Enemy_Move_Fin8.Move_Type8 = EnemyMovementFinal8.EnemyMovementType.Chasing;
+            Enemy_Move_Fin8.Move_Type = EnemyMovementFinalFin8.EnemyMovementType.Chasing;
             Boss.SetActive(true);
             if (Boss.activeInHierarchy && bossTrig != null)
             {

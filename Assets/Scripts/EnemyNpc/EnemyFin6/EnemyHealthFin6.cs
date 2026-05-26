@@ -2,12 +2,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class EnemyHealthFin4 : MonoBehaviour
+public class EnemyHealthFin6 : MonoBehaviour
 
 {
    public int HitPoints = 10;
-    public EnemyMovemnentFinalFin4 Enemy_Move_Fin;
-    public EnemyPlayerDetectingFin4 Enemy_Player_Detection;
+    public EnemyMovementFinalFin6 Enemy_Move_Fin;
+    public EnemyPlayerDetectingFin6 Enemy_Player_Detection;
     public float DamageEffectTimer = 0.5f;
     public float DamageEffectDuration = 0.5f;
     public bool IsTakingDamage = false;
@@ -25,7 +25,7 @@ public class EnemyHealthFin4 : MonoBehaviour
       
        if (HitPoints < 1)
        {
-           Enemy_Move_Fin.Move_Type = EnemyMovemnentFinalFin4.EnemyMovementType.SystemFailure;
+           Enemy_Move_Fin.Move_TypeFin5 = EnemyMovementFinalFin6.EnemyMovementType.SystemFailure;
        }
     }
 

@@ -5,14 +5,14 @@ using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Rendering.Universal;
 
-public class EnemyPlayerDetectingFin1 : MonoBehaviour
+public class EnemyPlayerDetectingFin8 : MonoBehaviour
 {
     public float Detection_Light_timer = 10.0f;
     public float Damage_Effect_Timer = 2.0f;
     public float lightSpeed = 2.0f;
     public bool IsSystemFail = false;
     public bool Is_Detection_Light_timer_Done;
-    public EnemyMovementFinalFin1 EnemyFin;
+    public EnemyMovementFinalFin8 EnemyFinFin2;
     public EnemySHootMech Enemeyshoot;
     public Light2D PlayerDetection_Light;
     public GameObject PlayerDetectObj;
@@ -26,58 +26,54 @@ public class EnemyPlayerDetectingFin1 : MonoBehaviour
     }
     public void Update()
     {
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.Pathfinding0 ||
-            EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.Pathfinding1 )   
-        {
-            StartCoroutine(Enemy_Patroll_Sfx());
-        }
+        
 
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.Chasing)
+        if (EnemyFinFin2.Move_Type == EnemyMovementFinalFin8.EnemyMovementType.Chasing)
         {
             Chasing_Light_Effect();
         }
 
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.FullDead)
+        if (EnemyFinFin2.Move_Type == EnemyMovementFinalFin8.EnemyMovementType.FullDead)
         {
             DeadEffect();
         }
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.SystemFailure)
+        if (EnemyFinFin2.Move_Type == EnemyMovementFinalFin8.EnemyMovementType.SystemFailure)
         {
             StartCoroutine(Enemy_System_Failure());
         }
 
-        if (EnemyFin.isWalkingL == true)
+        if (EnemyFinFin2.isWalkingL == true)
         {
             transform.localPosition = new Vector3(-0.586f, 1.083f, 0.0f);
         }
 
-        if (EnemyFin.isWalkingR == true )
+        if (EnemyFinFin2.isWalkingR == true )
         {
             transform.localPosition = new Vector3(0.416f, 1.078f, 0.0f);
         }
 
-        if (EnemyFin.isWalkingB == true)
+        if (EnemyFinFin2.isWalkingB == true)
         {
             transform.localPosition = new Vector3(0.288f, 1.054f, 0.0f);
             
-            if (EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.Pathfinding0 && EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.Pathfinding1)
-            {
                 PlayerDetection_Light.enabled = false;
-            }
+            
             // PlayerDetection_Light.RemoveTargetSortingLayer("Defualt");
               
         }
        
-        else if (EnemyFin.isWalkingB == false)
+        else if (EnemyFinFin2.isWalkingB == false)
         {
             PlayerDetection_Light.enabled = true;
            // transform.localPosition = new Vector3(-300.35f, 18.51f, 0.0f);
         }
-        if (EnemyFin.isWalkingF == true)
+        if (EnemyFinFin2.isWalkingF == true)
         {
             transform.localPosition = new Vector3(0.288f, 1.054f, 0.0f);
+
         }
-         
+        
+        
     }
   
 
@@ -155,7 +151,8 @@ public class EnemyPlayerDetectingFin1 : MonoBehaviour
      
        if(collider.gameObject.CompareTag("Player"))
         {
-            EnemyFin.Move_Type = EnemyMovementFinalFin1.EnemyMovementType.Chasing;
+        EnemyFinFin2
+            .Move_Type = EnemyMovementFinalFin8.EnemyMovementType.Chasing;
 
         }
     }

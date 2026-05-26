@@ -12,7 +12,7 @@ public class EnemyPlayerDetectingFin4 : MonoBehaviour
     public float lightSpeed = 2.0f;
     public bool IsSystemFail = false;
     public bool Is_Detection_Light_timer_Done;
-    public EnemyMovementFinalFin4 EnemyFin;
+    public EnemyMovemnentFinalFin4 EnemyFin;
     public EnemySHootMech Enemeyshoot;
     public Light2D PlayerDetection_Light;
     public GameObject PlayerDetectObj;
@@ -26,22 +26,22 @@ public class EnemyPlayerDetectingFin4 : MonoBehaviour
     }
     public void Update()
     {
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin4.EnemyMovementType.Pathfinding0 ||
-            EnemyFin.Move_Type == EnemyMovementFinalFin4    .EnemyMovementType.Pathfinding1 )   
+        if (EnemyFin.Move_Type == EnemyMovemnentFinalFin4.EnemyMovementType.Pathfinding0 ||
+            EnemyFin.Move_Type == EnemyMovemnentFinalFin4.EnemyMovementType.Pathfinding1 )   
         {
             StartCoroutine(Enemy_Patroll_Sfx());
         }
 
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin4.EnemyMovementType.Chasing)
+        if (EnemyFin.Move_Type == EnemyMovemnentFinalFin4.EnemyMovementType.Chasing)
         {
             Chasing_Light_Effect();
         }
 
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin4.EnemyMovementType.FullDead)
+        if (EnemyFin.Move_Type == EnemyMovemnentFinalFin4.EnemyMovementType.FullDead)
         {
             DeadEffect();
         }
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin4.EnemyMovementType.SystemFailure)
+        if (EnemyFin.Move_Type == EnemyMovemnentFinalFin4.EnemyMovementType.SystemFailure)
         {
             StartCoroutine(Enemy_System_Failure());
         }
@@ -60,7 +60,7 @@ public class EnemyPlayerDetectingFin4 : MonoBehaviour
         {
             transform.localPosition = new Vector3(0.288f, 1.054f, 0.0f);
             
-            if (EnemyFin.Move_Type == EnemyMovementFinalFin4.EnemyMovementType.Pathfinding0 && EnemyFin.Move_Type == EnemyMovementFinalFin4.EnemyMovementType.Pathfinding1)
+            if (EnemyFin.Move_Type == EnemyMovemnentFinalFin4.EnemyMovementType.Pathfinding0 && EnemyFin.Move_Type == EnemyMovemnentFinalFin4.EnemyMovementType.Pathfinding1)
             {
                 PlayerDetection_Light.enabled = false;
             }
@@ -157,7 +157,7 @@ public class EnemyPlayerDetectingFin4 : MonoBehaviour
      
        if(collider.gameObject.CompareTag("Player"))
         {
-            EnemyFin.Move_Type = EnemyMovementFinalFin4.EnemyMovementType.Chasing;
+            EnemyFin.Move_Type = EnemyMovemnentFinalFin4.EnemyMovementType.Chasing;
 
         }
     }

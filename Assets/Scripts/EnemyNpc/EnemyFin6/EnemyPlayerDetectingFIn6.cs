@@ -5,14 +5,14 @@ using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Rendering.Universal;
 
-public class EnemyPlayerDetectingFin1 : MonoBehaviour
+public class EnemyPlayerDetectingFin6 : MonoBehaviour
 {
     public float Detection_Light_timer = 10.0f;
     public float Damage_Effect_Timer = 2.0f;
     public float lightSpeed = 2.0f;
     public bool IsSystemFail = false;
     public bool Is_Detection_Light_timer_Done;
-    public EnemyMovementFinalFin1 EnemyFin;
+    public EnemyMovementFinalFin6 EnemyFin;
     public EnemySHootMech Enemeyshoot;
     public Light2D PlayerDetection_Light;
     public GameObject PlayerDetectObj;
@@ -26,22 +26,24 @@ public class EnemyPlayerDetectingFin1 : MonoBehaviour
     }
     public void Update()
     {
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.Pathfinding0 ||
-            EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.Pathfinding1 )   
+        if (EnemyFin.Move_TypeFin5 == EnemyMovementFinalFin6.EnemyMovementType.Pathfinding8 ||
+            EnemyFin.Move_TypeFin5 == EnemyMovementFinalFin6.EnemyMovementType.Pathfinding9 ||
+            EnemyFin.Move_TypeFin5 == EnemyMovementFinalFin6.EnemyMovementType.Pathfinding10 ||
+            EnemyFin.Move_TypeFin5 == EnemyMovementFinalFin6.EnemyMovementType.Pathfinding11)   
         {
             StartCoroutine(Enemy_Patroll_Sfx());
         }
 
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.Chasing)
+        if (EnemyFin.Move_TypeFin5 == EnemyMovementFinalFin6.EnemyMovementType.Chasing)
         {
             Chasing_Light_Effect();
         }
 
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.FullDead)
+        if (EnemyFin.Move_TypeFin5 == EnemyMovementFinalFin6.EnemyMovementType.FullDead)
         {
             DeadEffect();
         }
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.SystemFailure)
+        if (EnemyFin.Move_TypeFin5  == EnemyMovementFinalFin6.EnemyMovementType.SystemFailure)
         {
             StartCoroutine(Enemy_System_Failure());
         }
@@ -60,7 +62,7 @@ public class EnemyPlayerDetectingFin1 : MonoBehaviour
         {
             transform.localPosition = new Vector3(0.288f, 1.054f, 0.0f);
             
-            if (EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.Pathfinding0 && EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.Pathfinding1)
+            if (EnemyFin.Move_TypeFin5 == EnemyMovementFinalFin6.EnemyMovementType.Pathfinding8 && EnemyFin.Move_TypeFin5 == EnemyMovementFinalFin6.EnemyMovementType.Pathfinding9)
             {
                 PlayerDetection_Light.enabled = false;
             }
@@ -76,8 +78,10 @@ public class EnemyPlayerDetectingFin1 : MonoBehaviour
         if (EnemyFin.isWalkingF == true)
         {
             transform.localPosition = new Vector3(0.288f, 1.054f, 0.0f);
+
         }
-         
+        
+        
     }
   
 
@@ -155,7 +159,7 @@ public class EnemyPlayerDetectingFin1 : MonoBehaviour
      
        if(collider.gameObject.CompareTag("Player"))
         {
-            EnemyFin.Move_Type = EnemyMovementFinalFin1.EnemyMovementType.Chasing;
+            EnemyFin.Move_TypeFin5 = EnemyMovementFinalFin6.EnemyMovementType.Chasing;
 
         }
     }

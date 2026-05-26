@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class EnemyMovemnentFinalFin4 :  MonoBehaviour
+public class EnemyMovementFinalFin7 : MonoBehaviour
 {
     //THE MOVEMNET STUFF
     public Rigidbody2D RigBod;
@@ -25,12 +25,11 @@ public class EnemyMovemnentFinalFin4 :  MonoBehaviour
     public Transform RecallP1;
 
  
-    public GameObject PathP6;
-    public GameObject PathP7;
-  
+    public GameObject PathP16;
+    public GameObject PathP17;
 
-    public Enemy_Trigger_EventsFin4 TriggEvent;
-    public EnemyPlayerDetectingFin4 Enemy_Player_Detetction;
+    public Enemy_Trigger_EventsFin7 TriggEventFin2;
+    public EnemyPlayerDetectingFin7 Enemy_Player_Detetction;
     public EnemySHootMech Enemy_Shoot_Mech;
     public Interact interact_;
 
@@ -45,9 +44,8 @@ public class EnemyMovemnentFinalFin4 :  MonoBehaviour
 
     public enum EnemyMovementType
     {
-        Pathfinding0,
-        Pathfinding1,
-    
+        Pathfinding2,
+        Pathfinding3,
         Chasing,
         Recalling,
         Recalling1,
@@ -59,7 +57,7 @@ public class EnemyMovemnentFinalFin4 :  MonoBehaviour
     public void Start()
     {
        RigBod = GetComponent<Rigidbody2D>();
-       Move_Type = EnemyMovementType.Pathfinding0;
+       Move_Type = EnemyMovementType.Pathfinding2;
       
     }    
 public void FixedUpdate()
@@ -159,21 +157,21 @@ public void FixedUpdate()
             case EnemyMovementType.Recalling1: Recall_Parent_One(); break;
             case EnemyMovementType.SystemFailure: System_Failure(); break;
             case EnemyMovementType.FullDead: FullDead(); break;
-            case EnemyMovementType.Pathfinding0: Pathfinding0(); break;
-            case EnemyMovementType.Pathfinding1: Pathfinding1(); break;     
+            case EnemyMovementType.Pathfinding2: Pathfinding2(); break;
+            case EnemyMovementType.Pathfinding3: Pathfinding3(); break;     
         }
     }
 
-    public void Pathfinding0()
+    public void Pathfinding2()
     {
-        Vector3 Dir_PathP1 = (PathP6.transform.position - transform.position).normalized;
-        RigBod.linearVelocity = (Dir_PathP1 * Pathfinding_Speed);
-        Debug.Log("Pathfiding1()");
-    }
-    public void Pathfinding1()
-    {
-        Vector3 Dir_PathP2 = (PathP7.transform.position - transform.position).normalized;
+        Vector3 Dir_PathP2 = (PathP16.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Dir_PathP2 * Pathfinding_Speed);
+        Debug.Log("PathfidingFIn2()");
+    }
+    public void Pathfinding3()
+    {
+        Vector3 Dir_PathP3 = (PathP17.transform.position - transform.position).normalized;
+        RigBod.linearVelocity = (Dir_PathP3 * Pathfinding_Speed);
         Debug.Log("Pathfinding2()");
     }
     public void Chasing()
@@ -181,8 +179,8 @@ public void FixedUpdate()
         Vector3 Direction_To_Player = (Player.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Direction_To_Player * Follow_Speed);
         Enemy_Shoot_Mech.enabled = true;
-       PathP6.SetActive(false);
-        PathP7.SetActive(false);
+       PathP16.SetActive(false);
+        PathP17.SetActive(false);
         Debug.Log("Chasing()");
     }
     public void Recalling()
@@ -202,7 +200,7 @@ public void FixedUpdate()
     public void System_Failure() //set in EnemyHealth Script
     {
         transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
-        TriggEvent.enabled = false;
+        TriggEventFin2.enabled = false;
         Enemy_Shoot_Mech.enabled = false;
         //Enemy_Player_Detetction.enabled = false;
         ForceField_Collider.enabled = false;
@@ -214,7 +212,7 @@ public void FixedUpdate()
     public void FullDead()
     {
         transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
-        TriggEvent.enabled = false;
+        TriggEventFin2.enabled = false;
         Enemy_Shoot_Mech.enabled = false;
         Enemy_Player_Detetction.enabled = false;
         ForceField_Collider.enabled = false;

@@ -6,14 +6,14 @@ public class Enemy_Trigger_EventsFin3 : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collider)
     {
 
-        if (collider.gameObject.name == ("PathPoint0"))
+        if (collider.gameObject.name == ("PathPoint6"))
         {
             Movefin.Move_Type = EnemyMovementFinalFin3  .EnemyMovementType.Pathfinding1;
         
             Debug.Log("Pathp1Hit");
         }
 
-        if (collider.gameObject.name == ("PathPoint1"))
+        if (collider.gameObject.name == ("PathPoint7"))
         {
             Movefin.Move_Type = EnemyMovementFinalFin3.EnemyMovementType.Pathfinding0;
            
