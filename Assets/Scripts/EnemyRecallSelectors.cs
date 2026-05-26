@@ -31,83 +31,29 @@ public class EnemyRecallSelectors : MonoBehaviour
  
     public void Update()
     {
-        //Defualt 
-        if (option == RecallLayout.Defualt)
+        switch (option)
         {
-            Is_Defualt = true;
-
-            if (Is_Defualt == true)
-            {
+            case RecallLayout.Defualt:
                 Recall_Layout_Defualt();
-            }
-        }
-        else if (option != RecallLayout.Defualt)
-        {
-            Is_Defualt = false;
-        }
+            break;
 
-        //LinearVerticle
-        if (option == RecallLayout.LinearVerticle)
-        {
-            Is_LinVert = true;
-
-            if (Is_LinVert == true)
-            {
-                Recall_Layout_LinearVerticle();
-            }
-        }
-
-        else if (option != RecallLayout.LinearVerticle)
-        {
-            Is_LinVert = false;
-        }
-
-        //LinearHoroznontal
-        if (option == RecallLayout.LinearHoroznontal)
-        {
-            Is_LinHoroz = true;
-
-            if (Is_LinHoroz == true)
-            {
+            case RecallLayout.LinearHoroznontal:
                 Recall_Layout_LinearHorozontal();
-            }
-        }
+             break;
+            case RecallLayout.LinearVerticle:
+             Recall_Layout_LinearVerticle();
+             break;
 
-        else if (option != RecallLayout.LinearHoroznontal)
-        {
-            Is_LinHoroz = false;
-        }
-
-        //CustomDiagonal1
-        if (option == RecallLayout.CustomDiagonal1)
-        {
-            Is_CusDiag1 = true;
-            if (Is_CusDiag1 == true)
-            {
+            case RecallLayout.CustomDiagonal1:
                 Recall_Layout_CustomDiag1();
-            }
-        }
-        else if (option != RecallLayout.CustomDiagonal1)
-        { 
-            Is_CusDiag1 = false;
-        }
+             break;
 
-        //CustomDiagonal2
-        if (option == RecallLayout.CustomDiagonal2)
-        {
-            Is_CusDiag2 = true;
-
-            if (Is_CusDiag2 == true)
-            {
+            case RecallLayout.CustomDiagonal2:
                 Recall_Layout_CustomDiag2();
-            }
+             break;
+
         }
-        else if (option != RecallLayout.CustomDiagonal2)
-            { Is_CusDiag2 = false; }
-
-
     }
-
     public void OnTriggerEnter2D(Collider2D collider)
     {
         //CustomDiagonal2 
@@ -140,7 +86,7 @@ public class EnemyRecallSelectors : MonoBehaviour
 
 
         //Defualt 
-        if (collider.gameObject.CompareTag("RecallLayout_Defualt"))
+        if (collider.gameObject.CompareTag("RecallLayoutDefualt"))
         {
             Debug.Log("RecallLayoutDefualte is active");
             option = RecallLayout.Defualt;
@@ -192,3 +138,77 @@ public class EnemyRecallSelectors : MonoBehaviour
 
 
 }
+
+//Defualt 
+/*  if (option == RecallLayout.Defualt)
+  {
+      Is_Defualt = true;
+
+      if (Is_Defualt == true)
+      {
+          Recall_Layout_Defualt();
+      }
+  }
+  else if (option != RecallLayout.Defualt)
+  {
+      Is_Defualt = false;
+  }
+
+  //LinearVerticle
+  if (option == RecallLayout.LinearVerticle)
+  {
+      Is_LinVert = true;
+
+      if (Is_LinVert == true)
+      {
+          Recall_Layout_LinearVerticle();
+      }
+  }
+
+  else if (option != RecallLayout.LinearVerticle)
+  {
+      Is_LinVert = false;
+  }
+
+  //LinearHoroznontal
+  if (option == RecallLayout.LinearHoroznontal)
+  {
+      Is_LinHoroz = true;
+
+      if (Is_LinHoroz == true)
+      {
+          Recall_Layout_LinearHorozontal();
+      }
+  }
+
+  else if (option != RecallLayout.LinearHoroznontal)
+  {
+      Is_LinHoroz = false;
+  }
+
+  //CustomDiagonal1
+  if (option == RecallLayout.CustomDiagonal1)
+  {
+      Is_CusDiag1 = true;
+      if (Is_CusDiag1 == true)
+      {
+          Recall_Layout_CustomDiag1();
+      }
+  }
+  else if (option != RecallLayout.CustomDiagonal1)
+  { 
+      Is_CusDiag1 = false;
+  }
+
+  //CustomDiagonal2
+  if (option == RecallLayout.CustomDiagonal2)
+  {
+      Is_CusDiag2 = true;
+
+      if (Is_CusDiag2 == true)
+      {
+          Recall_Layout_CustomDiag2();
+      }
+  }
+  else if (option != RecallLayout.CustomDiagonal2)
+      { Is_CusDiag2 = false; } */

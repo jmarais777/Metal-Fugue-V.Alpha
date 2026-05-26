@@ -2,18 +2,18 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealthFinBoss : MonoBehaviour
 
 {
    public int HitPoints = 10;
-    public EnemyMovementFinal Enemy_Move_Fin;
-    public EnemyPlayerDetecting Enemy_Player_Detection;
+    public EnemyMovementFinalFinBoss Enemy_Move_Fin;
+    public EnemyPlayerDetectingFinBoss Enemy_Player_Detection;
     public float DamageEffectTimer = 0.5f;
     public float DamageEffectDuration = 0.5f;
     public bool IsTakingDamage = false;
     public Light2D Enemy_Light;
     public SpriteRenderer Enemy_SpriteRenderer;
-    
+   
      public void OnCollisionEnter2D(Collision2D collision)
     {               
        if (collision.gameObject.CompareTag("Bullets"))
@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
       
        if (HitPoints < 1)
        {
-           Enemy_Move_Fin.Move_Type = EnemyMovementFinal.EnemyMovementType.SystemFailure;
+           Enemy_Move_Fin.Move_Type = EnemyMovementFinalFinBoss.EnemyMovementType.SystemFailure;
        }
     }
 
@@ -33,9 +33,10 @@ public class EnemyHealth : MonoBehaviour
     {
 
        Enemy_Light.intensity = 100;
-        Enemy_SpriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-        Enemy_Player_Detection.Chasing_Light_Effect();
+       Enemy_Light.pointLightInnerRadius = 1.0f;
+       Enemy_Light.pointLightOuterRadius = 1.0f;
+       yield return new WaitForSeconds(0.1f);
+       Enemy_Player_Detection.Chasing_Light_Effect();
     }
 
 }

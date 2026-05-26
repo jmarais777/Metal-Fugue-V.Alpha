@@ -33,7 +33,7 @@ public class Interact : MonoBehaviour
     public EnergyPool CurrentEnergyPool;
     public GameObject PowerButton;
     public QuestTracker quest;
-    public EnemyMovementFinal Enemy_Move_fin;
+    public EnemyMovementFinalFin1 Enemy_Move_fin;
 
 
 
@@ -57,11 +57,11 @@ public class Interact : MonoBehaviour
             foreach (Transform CurrentEnemy in Enemies)
             {
                 float Enem = Vector2.Distance(CurrentEnemy.position, Player.transform.position);
-                if (Enem < InteractProximity && Enemy_Move_fin.Move_Type == EnemyMovementFinal.EnemyMovementType.SystemFailure)
+                if (Enem < InteractProximity && Enemy_Move_fin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.SystemFailure)
                 {
                     Debug.Log("Charginggg gunnnn");
                     CurrentEnergyPool.CurrentAmmo = 10;
-                    Enemy_Move_fin.Move_Type = EnemyMovementFinal.EnemyMovementType.FullDead;
+                   // Enemy_Move_fin.Move_Type = EnemyMovementFinalFin1.EnemyMovementType.FullDead;
                     break;
                 }
             }

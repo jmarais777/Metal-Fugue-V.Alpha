@@ -1,0 +1,259 @@
+using JetBrains.Annotations;
+using NUnit.Framework;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering.Universal;
+
+public class EnemyMovementFinalFin6 :  MonoBehaviour
+{
+    //THE MOVEMNET STUFF
+    public Rigidbody2D RigBod;
+
+    public float Velocity_Constant = 0.01f;
+
+    public ForceMode2D RecallForce;
+
+    public float Follow_Speed = 5.0f;
+    public float Pathfinding_Speed = 5.0f;
+
+    public Light2D Enem_Detection_Light;
+
+    public GameObject Player;
+    public GameObject PlayerDetector;
+
+    public Transform RecallStart;
+    public Transform RecallP1;
+
+ 
+    public GameObject PathP12;
+    public GameObject PathP13;
+    public GameObject PathP14;
+    public GameObject PathP15;
+
+    public Enemy_Trigger_EventsFin6 TriggEvent;
+    public EnemyPlayerDetectingFin6 Enemy_Player_Detetction;
+    public EnemySHootMech Enemy_Shoot_Mech;
+    public Interact interact_;
+
+    public Collider2D ForceField_Collider;
+    public Collider2D Player_Detection_Collider;
+
+    public Animator Enemy_Animator;
+    public bool isWalkingF = false;
+    public bool isWalkingR = false;
+    public  bool isWalkingB = false;
+    public bool isWalkingL = false;
+
+    public enum EnemyMovementType
+    {
+        Pathfinding8,
+        Pathfinding9,
+        Pathfinding10,
+        Pathfinding11,
+        Chasing,
+        Recalling,
+        Recalling1,
+        SystemFailure,
+        FullDead,
+    }
+    public EnemyMovementType Move_TypeFin5;
+
+    public void Start()
+    {
+        RigBod = GetComponent<Rigidbody2D>();
+       Move_TypeFin5 = EnemyMovementType.Pathfinding8;
+      
+    }    
+public void FixedUpdate()
+    {
+        float Absolute_Lin_X = Mathf.Abs(RigBod.linearVelocityX);
+        float Absolute_Lin_Y = Mathf.Abs(RigBod.linearVelocityY);
+
+        switch (RigBod.linearVelocityY)
+        {
+            case < 0:
+                isWalkingB = false;
+                isWalkingF = true;
+                
+            break;
+            case > 0:
+                isWalkingB = true;
+                isWalkingF = false;
+                break;
+            
+        }
+        switch (RigBod.linearVelocityX)
+        {
+            case < 0:
+                isWalkingL = true;
+                isWalkingR = false;
+            break;
+            case > 0:
+                isWalkingL = false;
+                isWalkingR = true;
+            break;
+        }
+        if (Absolute_Lin_X < Absolute_Lin_Y)
+        {
+            Debug.Log("+LinX < +LinY");
+            isWalkingR = false;
+
+        }
+        else if (Absolute_Lin_X > Absolute_Lin_Y)
+        {
+            Debug.Log("+LinX > +LinY");
+            isWalkingF = false;
+        }
+        if (-Absolute_Lin_X < -Absolute_Lin_Y)
+        {
+            Debug.Log("-LinX < -LinY");
+            isWalkingB = false;
+        }
+        else if (-Absolute_Lin_X > -Absolute_Lin_Y)
+        {
+            Debug.Log("-LinX > -LinY");
+            isWalkingL = false;
+        }
+
+        if (isWalkingF == true)
+        {
+            Enemy_Animator.SetBool("isWalkingF", isWalkingF);
+        }
+        else if (isWalkingF == false)
+        {
+            Enemy_Animator.SetBool("isWalkingF", false);
+        }
+
+        if (isWalkingB == true)
+        {
+            Enemy_Animator.SetBool("isWalkingB", isWalkingB);
+        }
+        else if (isWalkingB == false)
+        {
+            Enemy_Animator.SetBool("isWalkingB", false);
+        }
+
+        if (isWalkingR == true)
+        {
+            Enemy_Animator.SetBool("isWalkingR", isWalkingR);
+        }
+        else if (isWalkingR == false)
+        {
+            Enemy_Animator.SetBool("isWalkingR", false);
+        }
+
+        if (isWalkingL == true)
+        {
+            Enemy_Animator.SetBool("isWalkingL", isWalkingL);
+        }
+        else if (isWalkingL == false)
+        {
+            Enemy_Animator.SetBool("isWalkingL", false);
+        }
+
+
+
+        Debug.Log(Move_TypeFin5);
+        switch (Move_TypeFin5)
+        {
+            case EnemyMovementType.Chasing: Chasing(); break;
+            case EnemyMovementType.Recalling: Recalling(); break;
+            case EnemyMovementType.Recalling1: Recall_Parent_One(); break;
+            case EnemyMovementType.SystemFailure: System_Failure(); break;
+            case EnemyMovementType.FullDead: FullDead(); break;
+            case EnemyMovementType.Pathfinding8: Pathfinding8(); break;
+            case EnemyMovementType.Pathfinding9: Pathfinding9(); break;
+            case EnemyMovementType.Pathfinding10: Pathfinding10(); break;
+            case EnemyMovementType.Pathfinding11: Pathfinding11(); break;
+
+        }
+    }
+
+    public void Pathfinding8() //custom
+    {
+        Vector3 Dir_PathP8 = (PathP12.transform.position - transform.position).normalized;
+        RigBod.linearVelocity = (Dir_PathP8 * Pathfinding_Speed);
+        Debug.Log("Pathfiding1()");
+    }
+    public void Pathfinding9() //custom
+    {
+        Vector3 Dir_PathP9 = (PathP13.transform.position - transform.position).normalized;
+        RigBod.linearVelocity = (Dir_PathP9 * Pathfinding_Speed);
+        Debug.Log("Pathfinding2()");
+    }
+    public void Pathfinding10() //custom
+    {
+        Vector3 Dir_PathP10 = (PathP14.transform.position - transform.position).normalized;
+        RigBod.linearVelocity = (Dir_PathP10 * Pathfinding_Speed);
+        Debug.Log("Pathfinding2()");
+    }
+    public void Pathfinding11() //custom
+    {
+        Vector3 Dir_PathP11 = (PathP15.transform.position - transform.position).normalized;
+        RigBod.linearVelocity = (Dir_PathP11 * Pathfinding_Speed);
+        Debug.Log("Pathfinding2()");
+    }
+    public void Chasing()
+    {
+        Vector3 Direction_To_Player = (Player.transform.position - transform.position).normalized;
+        RigBod.linearVelocity = (Direction_To_Player * Follow_Speed);
+        Enemy_Shoot_Mech.enabled = true;
+       PathP12.SetActive(false);
+       PathP13.SetActive(false);
+        PathP14.SetActive(false);
+        PathP15.SetActive(false);
+        Debug.Log("Chasing()");
+    }
+    public void Recalling()
+    {    
+        RecallForce = ForceMode2D.Impulse;
+        Vector3 Direction_To_RecallStart = (RecallStart.position - transform.position).normalized;
+        RigBod.AddForce(Direction_To_RecallStart, ForceMode2D.Impulse);
+        Debug.Log("Recalling()");
+    }
+    public void Recall_Parent_One()
+    {
+        RecallForce = ForceMode2D.Impulse;
+        Vector3 Direction_To_RecallP1 = (RecallP1.position - transform.position ).normalized;
+        RigBod.AddForce(Direction_To_RecallP1, ForceMode2D.Impulse);
+        Debug.Log("RecallingP1()");
+    }
+    public void System_Failure() //set in EnemyHealth Script
+    {
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
+        TriggEvent.enabled = false;
+        Enemy_Shoot_Mech.enabled = false;
+        //Enemy_Player_Detetction.enabled = false;
+        ForceField_Collider.enabled = false;
+        Player_Detection_Collider.enabled = false;
+        RigBod.linearVelocity = Vector2.zero;
+
+
+}
+    public void FullDead()
+    {
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
+        TriggEvent.enabled = false;
+        Enemy_Shoot_Mech.enabled = false;
+        Enemy_Player_Detetction.enabled = false;
+        ForceField_Collider.enabled = false;
+        Player_Detection_Collider.enabled = false;
+        Enem_Detection_Light.enabled = false;
+        interact_.Enemies.Remove(transform);
+        
+    }
+   
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
+

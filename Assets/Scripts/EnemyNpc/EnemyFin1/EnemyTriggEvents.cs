@@ -1,21 +1,21 @@
 using UnityEngine;
 
-public class Enemy_Trigger_Events : MonoBehaviour
+public class Enemy_Trigger_EventsFin1 : MonoBehaviour
 {
-    public EnemyMovementFinal Movefin;
+    public EnemyMovementFinalFin1 Movefin;
     public void OnTriggerStay2D(Collider2D collider)
     {
 
         if (collider.gameObject.name == ("PathPoint0"))
         {
-            Movefin.Move_Type = EnemyMovementFinal.EnemyMovementType.Pathfinding1;
+            Movefin.Move_Type = EnemyMovementFinalFin1.EnemyMovementType.Pathfinding1;
         
             Debug.Log("Pathp1Hit");
         }
 
         if (collider.gameObject.name == ("PathPoint1"))
         {
-            Movefin.Move_Type = EnemyMovementFinal.EnemyMovementType.Pathfinding0;
+            Movefin.Move_Type = EnemyMovementFinalFin1.EnemyMovementType.Pathfinding0;
            
             Debug.Log("Pathp2it");
         }
@@ -23,19 +23,19 @@ public class Enemy_Trigger_Events : MonoBehaviour
 
         if (collider.gameObject.CompareTag("PlayerRadius"))
         {
-            Movefin.Move_Type = EnemyMovementFinal.EnemyMovementType.Recalling;
+            Movefin.Move_Type = EnemyMovementFinalFin1.EnemyMovementType.Recalling;
             Debug.Log("PlayerRdiusHit");
         }
 
         if (collider.gameObject.CompareTag("Recall"))
         {
-            Movefin.Move_Type = EnemyMovementFinal.EnemyMovementType.Recalling1;
+            Movefin.Move_Type = EnemyMovementFinalFin1.EnemyMovementType.Recalling1;
             Debug.Log("RecallHit");
         }
 
         if (collider.gameObject.CompareTag("Recall1"))
         {
-            Movefin.Move_Type = EnemyMovementFinal.EnemyMovementType.Chasing;
+            Movefin.Move_Type = EnemyMovementFinalFin1.EnemyMovementType.Chasing;
             Debug.Log("Recallp1Hit");
         }
 
