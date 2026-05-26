@@ -16,23 +16,23 @@ public class Lock : MonoBehaviour
     public GameObject PowerButton;
     public float proximity = 10.0f;
     public GameObject Boss;
-    public EnemyMovement Bossmove;
-    public EnemySHootMech Bossshoot;
+    //public EnemyMovement Bossmove;
+   // public EnemySHootMech Bossshoot;
     public GameObject CryCombsAudioCondition;
     public QuestTracker quest;
     public GameObject Quest_OutOfTheFryingPan_Objective1;
 
     public EnemyMovementFinalFin8 Enemy_Move_Fin8;
-
+    public EnemyMovementFinalFinBoss BossScr;
 
     public bool IsPowerOn = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        Bossmove = Boss.GetComponent<EnemyMovement>();
-        Bossshoot = Boss.GetComponent<EnemySHootMech>();
+   // void Start()
+   // {
+       // Bossmove = Boss.GetComponent<EnemyMovement>();
+       // Bossshoot = Boss.GetComponent<EnemySHootMech>();
 
-    }
+   // }
 
     // Update is called once per frame
     void Update()
@@ -97,9 +97,7 @@ public class Lock : MonoBehaviour
             Boss.SetActive(true);
             if (Boss.activeInHierarchy && bossTrig != null)
             {
-                Bossmove.enabled = false;
-                Bossshoot.enabled = false;
-
+                BossScr.Move_Type = EnemyMovementFinalFinBoss.EnemyMovementType.DeepSleep;
             }
         }
         else if (Boss != null) 
@@ -109,14 +107,15 @@ public class Lock : MonoBehaviour
 
         if (bossTrig == null)
         {
-            if (Bossmove != null && Bossshoot != null)
+            BossScr.Move_Type = EnemyMovementFinalFinBoss.EnemyMovementType.Chasing;
+           /* if (Bossmove != null && Bossshoot != null)
             {
                 Bossmove.enabled = true;
                 Bossshoot.enabled = true;
                 quest.IsQ2ObjectiveUpdate13 = true;
-            }
+            } */
 
-           
+
         }
 
 
