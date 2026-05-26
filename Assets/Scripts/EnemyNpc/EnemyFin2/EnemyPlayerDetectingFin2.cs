@@ -99,7 +99,6 @@ public class EnemyPlayerDetectingFin2 : MonoBehaviour
     public IEnumerator Enemy_System_Failure()
     {
         IsSystemFail = true;
-        yield return null;
         while (IsSystemFail == true)
         {
             PlayerDetection_Light.falloffIntensity = 1.0f;
@@ -107,7 +106,6 @@ public class EnemyPlayerDetectingFin2 : MonoBehaviour
             PlayerDetection_Light.pointLightInnerRadius = 0.07f;
             PlayerDetection_Light.pointLightOuterRadius = 0.2f;
             Debug.Log("System_FailureEffect");
-          
             yield return null;
         }
           IsSystemFail = false;

@@ -32,8 +32,9 @@ public class EnemyHealthFin2 : MonoBehaviour
     IEnumerator DamageEffect()
     {
 
-       Enemy_Light.intensity = 100;
-        Enemy_SpriteRenderer.color = Color.red;
+        Enemy_Light.intensity = 100;
+        Enemy_Light.pointLightInnerRadius = 1.0f;
+        Enemy_Light.pointLightOuterRadius = 1.0f;
         yield return new WaitForSeconds(0.1f);
         Enemy_Player_Detection.Chasing_Light_Effect();
     }

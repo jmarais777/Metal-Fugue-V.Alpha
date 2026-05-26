@@ -61,7 +61,7 @@ public class Interact : MonoBehaviour
                 {
                     Debug.Log("Charginggg gunnnn");
                     CurrentEnergyPool.CurrentAmmo = 10;
-                    Enemy_Move_fin.Move_Type = EnemyMovementFinalFin1.EnemyMovementType.FullDead;
+                   // Enemy_Move_fin.Move_Type = EnemyMovementFinalFin1.EnemyMovementType.FullDead;
                     break;
                 }
             }

@@ -1,10 +1,10 @@
 using JetBrains.Annotations;
 using NUnit.Framework;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class EnemyMovementFinalFIn2:  MonoBehaviour
+public class EnemyMovementFinalFin10 : MonoBehaviour
 {
     //THE MOVEMNET STUFF
     public Rigidbody2D RigBod;
@@ -24,12 +24,8 @@ public class EnemyMovementFinalFIn2:  MonoBehaviour
     public Transform RecallStart;
     public Transform RecallP1;
 
- 
-    public GameObject PathP2;
-    public GameObject PathP3;
-
-    public Enemy_Trigger_EventsFin2 TriggEventFin2;
-    public EnemyPlayerDetectingFin2 Enemy_Player_Detetction;
+    public Enemy_Trigger_EventsFin10 TriggEventFin2;
+    public EnemyPlayerDetectingFin10 Enemy_Player_Detetction;
     public EnemySHootMech Enemy_Shoot_Mech;
     public Interact interact_;
 
@@ -44,20 +40,19 @@ public class EnemyMovementFinalFIn2:  MonoBehaviour
 
     public enum EnemyMovementType
     {
-        Pathfinding2,
-        Pathfinding3,
         Chasing,
         Recalling,
         Recalling1,
         SystemFailure,
         FullDead,
+        DeepSleep,
     }
     public EnemyMovementType Move_Type;
 
     public void Start()
     {
        RigBod = GetComponent<Rigidbody2D>();
-       Move_Type = EnemyMovementType.Pathfinding2;
+       Move_Type = EnemyMovementType.DeepSleep;
       
     }    
 public void FixedUpdate()
@@ -155,32 +150,18 @@ public void FixedUpdate()
             case EnemyMovementType.Chasing: Chasing(); break;
             case EnemyMovementType.Recalling: Recalling(); break;
             case EnemyMovementType.Recalling1: Recall_Parent_One(); break;
-            case EnemyMovementType.SystemFailure: StartCoroutine(SystemFailureTimer()); break;
+            case EnemyMovementType.SystemFailure: System_Failure(); break;
             case EnemyMovementType.FullDead: FullDead(); break;
-            case EnemyMovementType.Pathfinding2: Pathfinding2(); break;
-            case EnemyMovementType.Pathfinding3: Pathfinding3(); break;     
+            case EnemyMovementType.DeepSleep: DeepSleep(); break;
+
         }
     }
 
-    public void Pathfinding2()
-    {
-        Vector3 Dir_PathP2 = (PathP2.transform.position - transform.position).normalized;
-        RigBod.linearVelocity = (Dir_PathP2 * Pathfinding_Speed);
-        Debug.Log("PathfidingFIn2()");
-    }
-    public void Pathfinding3()
-    {
-        Vector3 Dir_PathP3 = (PathP3.transform.position - transform.position).normalized;
-        RigBod.linearVelocity = (Dir_PathP3 * Pathfinding_Speed);
-        Debug.Log("Pathfinding2()");
-    }
     public void Chasing()
     {
         Vector3 Direction_To_Player = (Player.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Direction_To_Player * Follow_Speed);
         Enemy_Shoot_Mech.enabled = true;
-       PathP2.SetActive(false);
-        PathP3.SetActive(false);
         Debug.Log("Chasing()");
     }
     public void Recalling()
@@ -205,21 +186,8 @@ public void FixedUpdate()
         //Enemy_Player_Detetction.enabled = false;
         ForceField_Collider.enabled = false;
         Player_Detection_Collider.enabled = false;
-       // RigBod.linearVelocity = Vector2.zero;
-    }
-    public IEnumerator SystemFailureTimer()
-    {
-        transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
-        TriggEventFin2.enabled = false;
-        Enemy_Shoot_Mech.enabled = false;
-        //Enemy_Player_Detetction.enabled = false;
-        ForceField_Collider.enabled = false;
-        Player_Detection_Collider.enabled = false;
-        // RigBod.linearVelocity = Vector2.zero;
-        yield return new WaitForSeconds(10);
-        this.gameObject.SetActive(false);
-        yield return null;
-    }
+        RigBod.linearVelocity = Vector2.zero;
+}
     public void FullDead()
     {
         transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
@@ -232,9 +200,20 @@ public void FixedUpdate()
         interact_.Enemies.Remove(transform);
         
     }
-   
+    public void DeepSleep()
+    {
+        TriggEventFin2.enabled = false; //custom
+        Enemy_Shoot_Mech.enabled = false;
+        Enemy_Player_Detetction.enabled = false; //custom
+        ForceField_Collider.enabled = false;
+        Player_Detection_Collider.enabled = false;
+        RigBod.linearVelocity = Vector2.zero;
+        interact_.Enemies.Remove(transform);
 
- 
+    }
+
+
+
 }
 
 

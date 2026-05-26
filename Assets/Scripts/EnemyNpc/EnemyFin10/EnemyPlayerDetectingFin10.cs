@@ -5,14 +5,14 @@ using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Rendering.Universal;
 
-public class EnemyPlayerDetectingFin8 : MonoBehaviour
+public class EnemyPlayerDetectingFin10 : MonoBehaviour
 {
     public float Detection_Light_timer = 10.0f;
     public float Damage_Effect_Timer = 2.0f;
     public float lightSpeed = 2.0f;
     public bool IsSystemFail = false;
     public bool Is_Detection_Light_timer_Done;
-    public EnemyMovementFinalFin8 EnemyFinFin2;
+    public EnemyMovementFinalFin10 EnemyFinFin2;
     public EnemySHootMech Enemeyshoot;
     public Light2D PlayerDetection_Light;
     public GameObject PlayerDetectObj;
@@ -28,16 +28,16 @@ public class EnemyPlayerDetectingFin8 : MonoBehaviour
     {
         
 
-        if (EnemyFinFin2.Move_Type == EnemyMovementFinalFin8.EnemyMovementType.Chasing)
+        if (EnemyFinFin2.Move_Type == EnemyMovementFinalFin10.EnemyMovementType.Chasing)
         {
             Chasing_Light_Effect();
         }
 
-        if (EnemyFinFin2.Move_Type == EnemyMovementFinalFin8.EnemyMovementType.FullDead)
+        if (EnemyFinFin2.Move_Type == EnemyMovementFinalFin10.EnemyMovementType.FullDead)
         {
             DeadEffect();
         }
-        if (EnemyFinFin2.Move_Type == EnemyMovementFinalFin8.EnemyMovementType.SystemFailure)
+        if (EnemyFinFin2.Move_Type == EnemyMovementFinalFin10.EnemyMovementType.SystemFailure)
         {
             Enemy_System_Failure2();
            // StartCoroutine(Enemy_System_Failure());
@@ -159,8 +159,7 @@ public class EnemyPlayerDetectingFin8 : MonoBehaviour
      
        if(collider.gameObject.CompareTag("Player"))
         {
-        EnemyFinFin2
-            .Move_Type = EnemyMovementFinalFin8.EnemyMovementType.Chasing;
+        EnemyFinFin2.Move_Type = EnemyMovementFinalFin10.EnemyMovementType.Chasing;
 
         }
     }
