@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 public class EnemyHealth7 : MonoBehaviour
-
 {
     //custom
     public EnemyMovementFinal7 Enemy_Move_Fin7;
