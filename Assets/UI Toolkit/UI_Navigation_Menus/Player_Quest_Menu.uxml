@@ -7,7 +7,7 @@
             <ui:Label text="Quest Description" name="Completed_Quest_Discription" class="Completed_Quest_Objective Current_Quest_Objective"/>
             <ui:Label text="Current quest name&#10;" name="Current_Quest_Name" class="Current_Quest_Heading"/>
             <ui:Label text="Cureent QUest Objective" name="Current_Quest_Objective" class="Current_Quest_Objective"/>
-            <ui:ScrollView touch-scroll-type="Clamped" mode="Vertical" vertical-scroller-visibility="AlwaysVisible" style="width: 37%; height: 21%; top: 31%; left: 8%;">
+            <ui:ScrollView touch-scroll-type="Clamped" mode="Vertical" vertical-scroller-visibility="AlwaysVisible" style="width: 37%; height: 21%; top: 24%; left: 8%;">
                 <ui:Button text="Button" name="Q1_Button" class="TabsL"/>
                 <ui:Button text="Button" name="Q2_Button" class="TabsL"/>
                 <ui:Button text="Button" name="Q3_Button" class="TabsL"/>
