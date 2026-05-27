@@ -3,6 +3,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static EnemyMovementRev;
 
 public class Dialogue3Real : MonoBehaviour
 {
@@ -17,9 +18,7 @@ public class Dialogue3Real : MonoBehaviour
     public string[] DialogueLines;
     public int DialogueIndex = 0;
 
-    public EnemyMovement enemySriptMove;
-    public ShootMech PlayerShoot;
-    public EnemySHootMech enemyScriptShoot;
+    public EnemyMovementFinalFin10 Enemy_Move;
     public GameObject PlayerWeapon;
 
     public GameObject TransitionCondition4;
@@ -103,13 +102,7 @@ public class Dialogue3Real : MonoBehaviour
         }
         void ShowGameObject()
         {
-            enemySriptMove.enabled = true;
-            enemyScriptShoot.enabled = true;
-      
-
-            PlayerWeapon.SetActive(true);
-            PlayerShoot.enabled = true;
-            
+            Enemy_Move.Move_Type = EnemyMovementFinalFin10.EnemyMovementType.Chasing;
 
 
 
