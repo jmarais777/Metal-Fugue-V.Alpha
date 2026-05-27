@@ -23,7 +23,7 @@ public class QuestTracker : MonoBehaviour
     public bool IsQ2ObjectiveUpdate13;
     public bool IsQ2ObjectiveUpdate14;
 
-
+    
     private string[] QuestName;
   private string[] CurrentObjective;
 

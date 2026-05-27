@@ -100,12 +100,12 @@
     -unity-material: url("");
 }
 
-#ExitButton {
+.ExitButton {
     margin-top: -6%;
     top: -379px;
 }
 
-.NuttonGlitch:hhover {
+.NuttonGlitch:hover {
     -unity-material: url("project://database/Assets/Materials/Glitch%20mateial.mat?fileID=2100000&guid=e077908475122b54695980c8a687eee7&type=2#Glitch mateial");
     background-color: rgb(137, 255, 231);
 }
