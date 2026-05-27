@@ -35,21 +35,23 @@ public class Interact : MonoBehaviour
     public QuestTracker quest;
     public EnemyMovementFinal Enemy_Move_fin;
 
+    public ConditionalAudios ForRechargeCheck;
+
 
 
     void Update()
     {
-       
+
         float RechargeStatCryo = Vector2.Distance(RechargeStationCryo.transform.position, Player.transform.position);
         float RechargeStatWind = Vector2.Distance(RechargeStationWind.transform.position, Player.transform.position);
         float RechargeStatShut = Vector2.Distance(RechargeStationShuttle.transform.position, Player.transform.position);
         float Cort = Vector2.Distance(CorticalProcessor.transform.position, Player.transform.position);
         float Sec = Vector2.Distance(SecurityGate.transform.position, Player.transform.position);
         float Scavarm = Vector2.Distance(ScavengerArmIngame.transform.position, Player.transform.position);
-        
 
-     
-       if (Input.GetKeyDown(KeyCode.E)) Debug.Log("E pressed. Distance to Arm is: " + Scavarm); //arm is to far away??
+
+
+        if (Input.GetKeyDown(KeyCode.E)) Debug.Log("E pressed. Distance to Arm is: " + Scavarm); //arm is to far away??
 
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -68,22 +70,24 @@ public class Interact : MonoBehaviour
 
             if (RechargeStatCryo < InteractProximity)
             {
-
+                ForRechargeCheck._rechargeCheck = true;
                 ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
                 ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
             }
             if (RechargeStatWind < InteractProximity)
             {
-
+                ForRechargeCheck._rechargeCheck = true;
                 ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
                 ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
             }
             if (RechargeStatShut < InteractProximity)
             {
-
+                ForRechargeCheck._rechargeCheck = true;
                 ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
                 ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
             }
+
+
 
 
             if (Scavarm < InteractProximity && ScavengerArmIngame.activeInHierarchy == true)
@@ -118,16 +122,17 @@ public class Interact : MonoBehaviour
 
             if (CorticalProcessor.activeSelf == false)
             {
-                quest.IsQ1ObjectiveUpdate2 = true ;
+                quest.IsQ1ObjectiveUpdate2 = true;
             }
 
-           
+
+
+         }
         }
+    }
 
 
-            }
-
-        }
+        
 
 
 
