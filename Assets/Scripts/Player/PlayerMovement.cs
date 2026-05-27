@@ -43,6 +43,11 @@ public class PlayerMovement : MonoBehaviour
     bool WalkB = true;
     bool WalkL = true;
 
+    bool DashF = true;
+    bool DashR = false;
+    bool DashL = true;
+    bool DashB = true;
+
     void Start()
     {
         RigBod = GetComponent<Rigidbody2D>();
@@ -87,13 +92,19 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("WalkR", WalkR);
             WalkR = true;
-        
+          
+           Input.GetKey(KeyCode.Space);
+            animator.SetBool("DashR", DashR);
+          
+
         }
         else
         {
             animator.SetBool("WalkR", false);
             WalkR = false;
-          
+            animator.SetBool("DashR", false);
+            DashR = false;
+
         }
         if (Input.GetKey(KeyCode.W))
         {
@@ -119,6 +130,12 @@ public class PlayerMovement : MonoBehaviour
             WalkL = false;
      
         }
+
+       
+
+
+
+
         //Sound Conditions
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
