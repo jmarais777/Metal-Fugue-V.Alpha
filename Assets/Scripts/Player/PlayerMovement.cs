@@ -144,20 +144,20 @@ public class PlayerMovement : MonoBehaviour
         //Sound Conditions
         if (Input.GetKey(KeyCode.W) && _inScrapyard == true || Input.GetKey(KeyCode.A) && _inScrapyard == true || Input.GetKey(KeyCode.S) && _inScrapyard == true || Input.GetKey(KeyCode.D) && _inScrapyard == true) 
         {
-            Walking.mute = false;       
-        }
-        else
-        {
-            Walking.mute = true;
-        }
-
-        if (Input.GetKey(KeyCode.W) && _inScrapyard == false || Input.GetKey(KeyCode.A) && _inScrapyard == false || Input.GetKey(KeyCode.S) && _inScrapyard == false || Input.GetKey(KeyCode.D) && _inScrapyard == false)
-        {
-            Walking2.mute = false;
+            Walking2.mute = false;       
         }
         else
         {
             Walking2.mute = true;
+        }
+
+        if (Input.GetKey(KeyCode.W) && _inScrapyard == false || Input.GetKey(KeyCode.A) && _inScrapyard == false || Input.GetKey(KeyCode.S) && _inScrapyard == false || Input.GetKey(KeyCode.D) && _inScrapyard == false)
+        {
+            Walking.mute = false;
+        }
+        else
+        {
+            Walking.mute = true;
         }
 
         //mapping movement controls for dash
@@ -203,14 +203,29 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.CompareTag("Walk2"))
+        if (collider.gameObject.CompareTag("Walk2"))
         {
             _inScrapyard = false;
 
         }
 
+        if(collider.gameObject.CompareTag("ToCryocombs"))
+        {
+            _inScrapyard = false;
+
+        }
+
+        if (collider.gameObject.CompareTag("FromShuttle"))
+        {
+            _inScrapyard = true;
+        }
+
+        if (collider.gameObject.CompareTag("FromCryocombs"))
+        {
+            _inScrapyard = true;
+        }
     }
 }
 
