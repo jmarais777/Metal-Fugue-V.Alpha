@@ -35,6 +35,8 @@ public class Interact : MonoBehaviour
     public QuestTracker quest;
     public EnemyMovementFinalFin1 Enemy_Move_fin;
 
+    public ConditionalAudios ForRechargeCheck;
+
 
 
     void Update()
