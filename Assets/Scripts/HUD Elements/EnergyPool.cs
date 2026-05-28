@@ -21,6 +21,7 @@ public class EnergyPool : MonoBehaviour
     public float MaxEnergy = 100;
 
     bool wasDashing = false;
+    public bool IsDraining = false;
     public Collider2D player;
     //Establishing variables for energy drain based on distance travelled
     public Rigidbody2D RigBod;
@@ -75,9 +76,11 @@ public class EnergyPool : MonoBehaviour
         if (ForIsShooting.IsShooting == true && Mouse.current.leftButton.wasPressedThisFrame)
         {
             CurrentAmmo -= 1;
+            IsDraining = true;
             CurrentAmmo = Mathf.Clamp(CurrentAmmo, 0, _maxAmmo);
             Debug.Log(CurrentAmmo);
         }
+        else {IsDraining = false;}
         if (ForIsBeingShot)
             CurrentEnergy -= 1;
         CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0, MaxEnergy);

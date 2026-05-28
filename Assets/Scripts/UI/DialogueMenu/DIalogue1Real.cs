@@ -22,7 +22,6 @@ public class Dialogue1Real : MonoBehaviour
     public GameObject TransitionCondition1;
     public QuestTracker quest;
 
-
     private void Update()
     {
         if (ScavengerDialogueMenu1Object != null && !ScavengerDialogueMenu1Object.activeSelf)
@@ -69,7 +68,6 @@ void ShowMenu1()
    
         }
         UpdateDialogueLines();
-
     }
 
     void HideMenu1()
@@ -78,10 +76,10 @@ void ShowMenu1()
         ScavengerDialogueMenu1Object.SetActive(false);
         TransitionCondition1.SetActive(true);
         Time.timeScale = 1.0f;
+        //quest stuff
         quest.IsQ2ObjectiveUpdate2 = true;
+     
     }
-
-
     void NextButtonOnClick()
     {
 

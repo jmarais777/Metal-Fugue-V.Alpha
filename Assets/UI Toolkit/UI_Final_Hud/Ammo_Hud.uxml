@@ -1,0 +1,5 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/UI_Final_Hud/Ammo.uss?fileID=7433441132597879392&amp;guid=175f5f3fca87d5744abb38428a3644d7&amp;type=3#Ammo"/>
+    <ui:ProgressBar value="22" title="my-progress" low-value="0" high-value="10" name="AmmoBar" style="top: 83%; left: 2%; width: 569px;"/>
+    <ui:Image name="Ammo_Container" source="project://database/Assets/Visual%20Assets/Hud_FInal_Assets/AmmoBlack.png?fileID=7481661463840772412&amp;guid=dd30b3b735b8b8648b8093e7ef38bd73&amp;type=3#AmmoBlack_0" style="width: 33%; height: 113%; left: 0%; top: 33%; background-color: rgba(0, 0, 0, 0);"/>
+</ui:UXML>

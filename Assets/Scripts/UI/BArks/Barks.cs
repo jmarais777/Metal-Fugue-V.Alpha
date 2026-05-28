@@ -67,4 +67,36 @@ public class Barks : MonoBehaviour
         Barks_Label.text = null;
         yield return null;
     }
+    public IEnumerator Bark_Popup1()
+    {
+        Bark_Objects[1].SetActive(false);
+        Barks_Label.text = Barks_Str[1];
+        yield return new WaitForSeconds(3);
+        Barks_Label.text = null;
+        yield return null;
+    }
+    public IEnumerator Bark_Popup2()
+    {
+        Bark_Objects[2].SetActive(false);
+        Barks_Label.text = Barks_Str[2];
+        yield return new WaitForSeconds(3);
+        Barks_Label.text = null;
+        yield return null;
+    }
+    public IEnumerator Bark_Popup3()
+    {
+        Bark_Objects[3].SetActive(false);
+        Barks_Label.text = Barks_Str[3];
+        yield return new WaitForSeconds(3);
+        Barks_Label.text = null;
+        yield return null;
+    }
+    public IEnumerator Bark_Popup4()
+    {
+        Bark_Objects[4].SetActive(false);
+        Barks_Label.text = Barks_Str[4];
+        yield return new WaitForSeconds(3);
+        Barks_Label.text = null;
+        yield return null;
+    }
 }
