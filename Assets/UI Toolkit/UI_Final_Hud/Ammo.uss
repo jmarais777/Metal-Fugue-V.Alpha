@@ -1,6 +1,12 @@
 :root {
-
 }
+
 .unity-progress-bar__title {
     display: none;
+}
+
+.unity-progress-bar__progress {
+    background-color: rgb(173, 216, 230);
+    height: 201%;
+    width: 81%;
 }

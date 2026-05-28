@@ -6,8 +6,6 @@ public class Ammo_Bar : MonoBehaviour
     public UIDocument Ammo_Hud_DOC;
     public ProgressBar ammo_bar;
     public EnergyPool energy_pool;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
         Ammo_Hud_DOC = GetComponent<UIDocument>();  
