@@ -9,6 +9,7 @@ public class QuestTrackerCollisions : MonoBehaviour
         {
             Debug.Log("Q1Objective1Set");
             quest.IsQ1ObjectiveUpdate1 = true;
+
         }
         if (collider.gameObject.CompareTag("Quest_FriendOrFoe_Objective1"))
         {

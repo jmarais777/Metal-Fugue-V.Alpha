@@ -1,0 +1,23 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/PlayerMainQuestMEnu.uss?fileID=7433441132597879392&amp;guid=552875595ac3d804f93d72f288be0ce5&amp;type=3#PlayerMainQuestMEnu"/>
+    <ui:VisualElement name="BackGround" style="flex-grow: 1; background-color: rgb(0, 0, 0);">
+        <ui:VisualElement name="Border" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Temporary_Tablet.png?fileID=-3562032748082272255&amp;guid=afe15dbdfae11024cacef3fc1fabf50f&amp;type=3#Temporary_Tablet_0&quot;); width: 100%; height: 100%;">
+            <ui:Button text="Button" name="Exit_Menu_Button" style="top: 18%; left: 5%;"/>
+            <ui:Label text="CompletedQuests" name="Completed_Quest_Heading_Label" data-source-path="" class="Completed_Quest_Heading"/>
+            <ui:Label text="Quest Description" name="Completed_Quest_Discription" class="Completed_Quest_Objective Current_Quest_Objective"/>
+            <ui:Label text="Current quest name&#10;" name="Current_Quest_Name" class="Current_Quest_Heading"/>
+            <ui:Label text="Cureent QUest Objective" name="Current_Quest_Objective" class="Current_Quest_Objective"/>
+            <ui:ScrollView touch-scroll-type="Clamped" mode="Vertical" vertical-scroller-visibility="AlwaysVisible" style="width: 37%; height: 21%; top: 24%; left: 8%;">
+                <ui:Button text="Button" name="Q1_Button" class="TabsL"/>
+                <ui:Button text="Button" name="Q2_Button" class="TabsL"/>
+                <ui:Button text="Button" name="Q3_Button" class="TabsL"/>
+                <ui:Button text="Button" name="Q4_Button" class="TabsL"/>
+                <ui:Button text="Button" name="Q5_Button" class="TabsL"/>
+                <ui:Button text="Button" name="Q6_Button" class="TabsL"/>
+                <ui:Button text="Button" name="Q7_Button" class="TabsL"/>
+                <ui:Button text="Button" name="Q8_Button" class="TabsL"/>
+                <ui:Button text="Button" name="Q9_Button" class="TabsL"/>
+            </ui:ScrollView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

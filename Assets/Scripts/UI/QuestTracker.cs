@@ -22,9 +22,8 @@ public class QuestTracker : MonoBehaviour
     public bool IsQ2ObjectiveUpdate12;
     public bool IsQ2ObjectiveUpdate13;
     public bool IsQ2ObjectiveUpdate14;
-
-
-    private string[] QuestName;
+    
+  private string[] QuestName;
   private string[] CurrentObjective;
 
     public UIDocument Questrack;
@@ -38,8 +37,7 @@ public class QuestTracker : MonoBehaviour
     public GameObject Enemy;
     public GameObject ScavArmOnPlayer;
     public GameObject ScavengerArmOnScav;
-
-
+    
    public void Awake()
     {
         Questrack = GetComponent<UIDocument>();
@@ -48,11 +46,9 @@ public class QuestTracker : MonoBehaviour
             var root = Questrack.rootVisualElement;
             Questname_label = root.Q<Label>("QuestName");
             Objective_label = root.Q<Label>("CurrentObjctive");
-        }
-        
+        }       
     }
 
-  
     void Update()
     {
         //Begginings
@@ -62,6 +58,7 @@ public class QuestTracker : MonoBehaviour
             IsQuestLine1 = true;
             StarterTimer = 0;
         }
+        
         if (IsQuestLine1 == true)
         {
             QuestNames();
@@ -247,4 +244,78 @@ public class QuestTracker : MonoBehaviour
 /*Where are teh conditions:
   public bool IsQ1ObjectiveUpdate2 = true. if Cortical.activeself
         CurrentObjective[4] = "Defeat the security Bot."; (
+*/
+/* 
+ * 
+ * public enum QuestNumber
+    {
+        Q1,
+        Q2,
+        Q3,
+        Q4,
+        Q5,
+        Q6,
+    }
+    public QuestNumber Quest_Number;
+    public enum QuestObjectiveUpdate
+    {
+        //Beggings
+        Update0,
+        Update1,
+        Update2,
+        //Friend or foe
+        Update3,
+        Update4,
+        Update5, 
+        Update6,
+        //Objective for 'A Helping Hand'
+        Update7,
+        Update8,
+        Update9,
+        //Objective for Into The Dark'
+        Update10,
+        Update11,
+        Update12,
+        Update13,
+        //Out of the frying pan
+        Update14,
+        //Into the fire
+        Update15,
+        Update16,
+    }
+    public QuestObjectiveUpdate Quest_Update;
+
+ * 
+ * 
+ * 
+ * 
+ * switch (Quest_Number)
+        {
+            case QuestNumber.Q1: QuestNames(); Questname_label.text = QuestName[0]; break;
+            case QuestNumber.Q2: QuestNames(); Questname_label.text = QuestName[1]; break;
+            case QuestNumber.Q3: QuestNames(); Questname_label.text = QuestName[2]; break;
+            case QuestNumber.Q4: QuestNames(); Questname_label.text = QuestName[3]; break;
+            case QuestNumber.Q5: QuestNames(); Questname_label.text = QuestName[4]; break;
+            case QuestNumber.Q6: QuestNames(); Questname_label.text = QuestName[5]; break;
+        }
+        switch (Quest_Update)
+        {
+            case QuestObjectiveUpdate.Update0: CurrentObjectives(); Objective_label.text = CurrentObjective[0]; break;
+            case QuestObjectiveUpdate.Update1: CurrentObjectives(); Objective_label.text = CurrentObjective[1]; break;
+            case QuestObjectiveUpdate.Update2: CurrentObjectives(); Objective_label.text = CurrentObjective[2]; break;
+            case QuestObjectiveUpdate.Update3: CurrentObjectives(); Objective_label.text = CurrentObjective[3]; break;
+            case QuestObjectiveUpdate.Update4: CurrentObjectives(); Objective_label.text = CurrentObjective[4]; break; //set in Dialogue1Real
+            case QuestObjectiveUpdate.Update5: CurrentObjectives(); Objective_label.text = CurrentObjective[5]; break;
+            case QuestObjectiveUpdate.Update6: CurrentObjectives(); Objective_label.text = CurrentObjective[6]; break;
+            case QuestObjectiveUpdate.Update7: CurrentObjectives(); Objective_label.text = CurrentObjective[7]; break;
+            case QuestObjectiveUpdate.Update8: CurrentObjectives(); Objective_label.text = CurrentObjective[8]; break;
+            case QuestObjectiveUpdate.Update9: CurrentObjectives(); Objective_label.text = CurrentObjective[9]; break;
+            case QuestObjectiveUpdate.Update10: CurrentObjectives(); Objective_label.text = CurrentObjective[10]; break;
+            case QuestObjectiveUpdate.Update11: CurrentObjectives(); Objective_label.text = CurrentObjective[11]; break;
+            case QuestObjectiveUpdate.Update12: CurrentObjectives(); Objective_label.text = CurrentObjective[12]; break;
+            case QuestObjectiveUpdate.Update13: CurrentObjectives(); Objective_label.text = CurrentObjective[13]; break;
+            case QuestObjectiveUpdate.Update14: CurrentObjectives(); Objective_label.text = CurrentObjective[14]; break;
+            case QuestObjectiveUpdate.Update15: CurrentObjectives(); Objective_label.text = CurrentObjective[15]; break;
+            case QuestObjectiveUpdate.Update16: CurrentObjectives(); Objective_label.text = CurrentObjective[16]; break;
+        }
 */
