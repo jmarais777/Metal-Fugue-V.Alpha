@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
     private AudioSource Walking;
+    public AudioSource Walking2;
     private Vector2 moveInput;
 
     Vector2 movement;
@@ -48,11 +49,15 @@ public class PlayerMovement : MonoBehaviour
     bool DashL = true;
     bool DashB = true;
 
+    bool _inScrapyard;
+    public GameObject ToShuttle;
+
     void Start()
     {
         RigBod = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         Walking = GetComponent<AudioSource>();
+        _inScrapyard = true;
         
     }
 
@@ -137,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         //Sound Conditions
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.W) && _inScrapyard == true || Input.GetKey(KeyCode.A) && _inScrapyard == true || Input.GetKey(KeyCode.S) && _inScrapyard == true || Input.GetKey(KeyCode.D) && _inScrapyard == true) 
         {
             Walking.mute = false;       
         }
@@ -146,8 +151,17 @@ public class PlayerMovement : MonoBehaviour
             Walking.mute = true;
         }
 
-            //mapping movement controls for dash
-            if (IsDashing)
+        if (Input.GetKey(KeyCode.W) && _inScrapyard == false || Input.GetKey(KeyCode.A) && _inScrapyard == false || Input.GetKey(KeyCode.S) && _inScrapyard == false || Input.GetKey(KeyCode.D) && _inScrapyard == false)
+        {
+            Walking2.mute = false;
+        }
+        else
+        {
+            Walking2.mute = true;
+        }
+
+        //mapping movement controls for dash
+        if (IsDashing)
         {
             return;
         }
@@ -187,6 +201,16 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Walk2"))
+        {
+            _inScrapyard = false;
+
+        }
+
     }
 }
 
