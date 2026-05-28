@@ -42,10 +42,9 @@ public class EnemyPlayerDetectingFin7 : MonoBehaviour
         {
             DeadEffect();
         }
-        if (EnemyFinFin2.Move_Type == EnemyMovementFinalFin7.EnemyMovementType.SystemFailure)
-        {
-            StartCoroutine(Enemy_System_Failure());
-        }
+        //REMOVE SYSTEM FAILURE
+
+        //REMOVE SYSTEM FAILURE
 
         if (EnemyFinFin2.isWalkingL == true)
         {
