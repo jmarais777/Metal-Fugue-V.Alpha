@@ -1,9 +1,9 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/UI_Navigation_Menus/PauseMenu_Proto2.uss?fileID=7433441132597879392&amp;guid=a6e48943f2efc654ab84103e0856b010&amp;type=3#PauseMenu_Proto2"/>
-    <ui:VisualElement name="Container" class="PauseMenu-VisualElement" style="top: -349px;">
+    <Style src="project://database/Assets/UI%20Toolkit/UI_Navigation_Menus/PauseMenu_Proto2.uss?fileID=7433441132597879392&amp;guid=a6e48943f2efc654ab84103e0856b010&amp;type=3"/>
+    <ui:VisualElement name="Container" enabled="true" class="PauseMenu-VisualElement" style="transform-origin: left top; -unity-text-align: upper-center; justify-content: center; flex-grow: 0; flex-wrap: nowrap; flex-basis: auto; align-items: center; position: relative; top: -45%; left: 0%; bottom: 0%; right: 0%; width: 100%;">
         <ui:Button text="RESUME" name="Resume" enabled="true" data-source-path="ButtonsNav" class="ButtonsNav"/>
         <ui:Button text="HOW TO PLAY" name="HowToButton" enabled="true" class="ButtonsNav"/>
-        <ui:Label text="GAME&#10;PAUSED" name="PauseLabel" class="Label PauseMenuTrue"/>
-        <ui:Button text="EXIT TO MENU" name="ExitButton" enabled="true" class="ButtonsNav"/>
+        <ui:Label text="GAME&#10;PAUSED" name="PauseLabel" class="Label PauseMenuTrue" style="color: rgb(255, 185, 223);"/>
+        <ui:Button text="EXIT TO MENU" name="ExitButton" enabled="true" class="ButtonsNav" style="top: -48%;"/>
     </ui:VisualElement>
 </ui:UXML>

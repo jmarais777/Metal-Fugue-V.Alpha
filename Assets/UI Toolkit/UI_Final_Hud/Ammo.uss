@@ -1,0 +1,6 @@
+:root {
+
+}
+.unity-progress-bar__title {
+    display: none;
+}

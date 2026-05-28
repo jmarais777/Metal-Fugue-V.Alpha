@@ -65,7 +65,7 @@
     background-position: left;
     flex-shrink: 0;
     width: 38%;
-    margin-top: 7%;
+    margin-top: 5%;
     visibility: visible;
     display: flex;
     flex-direction: row;
