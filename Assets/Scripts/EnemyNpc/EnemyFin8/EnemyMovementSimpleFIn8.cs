@@ -38,6 +38,8 @@ public class EnemyMovementFinalFin8 : MonoBehaviour
     public bool isWalkingR = false;
     public  bool isWalkingB = false;
     public bool isWalkingL = false;
+    //add new
+    public bool IsUnlocked = true;
 
     public enum EnemyMovementType
     {
@@ -55,7 +57,8 @@ public class EnemyMovementFinalFin8 : MonoBehaviour
     public void Start()
     {
        RigBod = GetComponent<Rigidbody2D>();
-       Move_Type = EnemyMovementType.DeepSleep;
+       Move_Type = EnemyMovementType.Chasing;
+
       
     }    
 public void FixedUpdate()
@@ -198,8 +201,14 @@ public void FixedUpdate()
     {
         Vector3 Direction_To_Player = (Player.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Direction_To_Player * Follow_Speed);
+
+        TriggEventFin2.enabled = true; //custom
         Enemy_Shoot_Mech.enabled = true;
+        Enemy_Player_Detetction.enabled = true; //custom
+        ForceField_Collider.enabled = true;
+        Player_Detection_Collider.enabled = true;
         Debug.Log("Chasing()");
+
     }
     public void Recalling()
     {    
@@ -207,6 +216,11 @@ public void FixedUpdate()
         Vector3 Direction_To_RecallStart = (RecallStart.position - transform.position).normalized;
         RigBod.AddForce(Direction_To_RecallStart, ForceMode2D.Impulse);
         Debug.Log("Recalling()");
+        TriggEventFin2.enabled = true; //custom
+        Enemy_Shoot_Mech.enabled = true;
+        Enemy_Player_Detetction.enabled = true; //custom
+        ForceField_Collider.enabled = true;
+        Player_Detection_Collider.enabled = true;
     }
     public void Recall_Parent_One()
     {
@@ -242,10 +256,11 @@ public void FixedUpdate()
         TriggEventFin2.enabled = false; //custom
         Enemy_Shoot_Mech.enabled = false;
         Enemy_Player_Detetction.enabled = false; //custom
-        ForceField_Collider.enabled = false;
-        Player_Detection_Collider.enabled = false;
         RigBod.linearVelocity = Vector2.zero;
         interact_.Enemies.Remove(transform);
+        Enem_Detection_Light.intensity = 0.0f;
+        ForceField_Collider.enabled = false;
+        Player_Detection_Collider.enabled = false;
 
     }
 

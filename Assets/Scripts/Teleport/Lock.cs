@@ -24,6 +24,8 @@ public class Lock : MonoBehaviour
 
     public EnemyMovementFinalFin8 Enemy_Move_Fin8;
     public EnemyMovementFinalFinBoss BossScr;
+    public Enemy_Trigger_EventsFin8 Enemy_Trigger_Events8;
+    //public EnemyPlayerDetectingFin8 Enemy_Detect_8;
 
     public bool IsPowerOn = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -48,11 +50,14 @@ public class Lock : MonoBehaviour
         }
         if (IsPowerOn == true)
         {
+            Enemy_Move_Fin8.enabled = false;
+            Enemy_Move_Fin8.ForceField_Collider.enabled = false;
+            Enemy_Move_Fin8.Player_Detection_Collider.enabled = false;
+           
             ToScrapYard.SetActive(false);
             ToSecurity1.SetActive(false);
             FromSecurity.SetActive(false);
             SecurityGatePowerIndicator.SetActive(true);
-          
             // SecurityGateUnlcoked.SetActive(false);
             if (bossTrig != null)
             { bossTrig.SetActive(false); }
@@ -60,6 +65,9 @@ public class Lock : MonoBehaviour
         }
         else
         {
+            Enemy_Move_Fin8.enabled = true;
+            Enemy_Move_Fin8.ForceField_Collider.enabled = true;
+            Enemy_Move_Fin8.Player_Detection_Collider.enabled = true;
             ToScrapYard.SetActive(true);
             ToSecurity1.SetActive(true);
             FromSecurity.SetActive(true);
@@ -84,7 +92,7 @@ public class Lock : MonoBehaviour
             if (!IsPowerOn && secgate<= proximity)
             {
                 Debug.Log("Yippe you did it!!");
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("VictoryScreen");
             }
            
         }
@@ -93,12 +101,13 @@ public class Lock : MonoBehaviour
 
         if (!IsPowerOn && Boss != null)
         {
-            Enemy_Move_Fin8.Move_Type = EnemyMovementFinalFin8.EnemyMovementType.Chasing;
+        
+          
+            //  Enemy_Move_Fin8.IsUnlocked = true;
             Boss.SetActive(true);
-            if (Boss.activeInHierarchy && bossTrig != null)
-            {
-                BossScr.Move_Type = EnemyMovementFinalFinBoss.EnemyMovementType.DeepSleep;
-            }
+            //Enemy_Move_Fin8.Move_Type = EnemyMovementFinalFin8.EnemyMovementType.Chasing;
+   
+            
         }
         else if (Boss != null) 
         {
@@ -108,12 +117,12 @@ public class Lock : MonoBehaviour
         if (bossTrig == null)
         {
             BossScr.Move_Type = EnemyMovementFinalFinBoss.EnemyMovementType.Chasing;
-           /* if (Bossmove != null && Bossshoot != null)
-            {
-                Bossmove.enabled = true;
-                Bossshoot.enabled = true;
-                quest.IsQ2ObjectiveUpdate13 = true;
-            } */
+            /* if (Bossmove != null && Bossshoot != null)
+             {
+                 Bossmove.enabled = true;
+                 Bossshoot.enabled = true;
+                 quest.IsQ2ObjectiveUpdate13 = true;
+             } */
 
 
         }

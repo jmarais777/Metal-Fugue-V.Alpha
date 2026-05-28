@@ -199,8 +199,14 @@ public void FixedUpdate()
     {
         Vector3 Direction_To_Player = (Player.transform.position - transform.position).normalized;
         RigBod.linearVelocity = (Direction_To_Player * Follow_Speed);
-        Enemy_Shoot_Mech.enabled = true;
         Debug.Log("Chasing()");
+
+
+        TriggEventFin2.enabled = true; //custom
+        Enemy_Shoot_Mech.enabled = true;
+        Enemy_Player_Detetction.enabled = true; //custom
+        ForceField_Collider.enabled = true;
+        Player_Detection_Collider.enabled = true;
     }
     public void Recalling()
     {    
