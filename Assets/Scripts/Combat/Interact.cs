@@ -68,18 +68,21 @@ public class Interact : MonoBehaviour
             if (RechargeStatCryo < InteractProximity)
             {
 
+                ForRechargeCheck.RechargeCheck = true;
                 ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
                 ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
             }
             if (RechargeStatWind < InteractProximity)
             {
 
+                ForRechargeCheck.RechargeCheck = true;
                 ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
                 ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
             }
             if (RechargeStatShut < InteractProximity)
             {
 
+                ForRechargeCheck.RechargeCheck = true;
                 ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
                 ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
             }

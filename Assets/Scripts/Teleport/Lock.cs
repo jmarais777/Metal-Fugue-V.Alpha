@@ -26,13 +26,15 @@ public class Lock : MonoBehaviour
     public EnemyMovementFinalFinBoss BossScr;
 
     public bool IsPowerOn = true;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-   // void Start()
-   // {
-       // Bossmove = Boss.GetComponent<EnemyMovement>();
-       // Bossshoot = Boss.GetComponent<EnemySHootMech>();
 
-   // }
+    public ConditionalAudios ForPowerDownCheck;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // void Start()
+    // {
+    // Bossmove = Boss.GetComponent<EnemyMovement>();
+    // Bossshoot = Boss.GetComponent<EnemySHootMech>();
+
+    // }
 
     // Update is called once per frame
     void Update()
@@ -53,7 +55,7 @@ public class Lock : MonoBehaviour
             FromSecurity.SetActive(false);
             SecurityGatePowerIndicator.SetActive(true);
           
-            // SecurityGateUnlcoked.SetActive(false);
+            //SecurityGateUnlcoked.SetActive(false);
             if (bossTrig != null)
             { bossTrig.SetActive(false); }
          
@@ -76,8 +78,9 @@ public class Lock : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.E))
         {
             if (PowBut <= proximity)
-            { 
-                   IsPowerOn = false;
+            {
+                ForPowerDownCheck.PowerDownCheck = true;
+                IsPowerOn = false;
                 Debug.Log("PowerOff");
 
             }

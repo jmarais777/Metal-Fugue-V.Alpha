@@ -23,6 +23,8 @@ public class ArtifactPopup : MonoBehaviour
     public GameObject Artifact_Defiance;
     public GameObject Artifact_Fear;
 
+    public ConditionalAudios ForArtifactCheck;
+
 
 
     public void Start()
@@ -45,6 +47,7 @@ public class ArtifactPopup : MonoBehaviour
            
             if (ArtAft <= proximity)
             {
+                ForArtifactCheck.ArtifactCheck = true;
                 ShowMenu1();
                 ArtifactText();
                 artifacttext.text = Artifact_Text[0];
@@ -55,6 +58,7 @@ public class ArtifactPopup : MonoBehaviour
 
             if (ArtHope <= proximity)
             {
+                ForArtifactCheck.ArtifactCheck = true;
                 ShowMenu1();
                 ArtifactText();
                 artifacttext.text = Artifact_Text[1];
@@ -65,6 +69,7 @@ public class ArtifactPopup : MonoBehaviour
 
             if (ArtDef <= proximity)
             {
+                ForArtifactCheck.ArtifactCheck = true;
                 ShowMenu1();
                 ArtifactText();
                 artifacttext.text = Artifact_Text[2];
@@ -76,6 +81,7 @@ public class ArtifactPopup : MonoBehaviour
 
             if (ArtFear <= proximity)
             {
+                ForArtifactCheck.ArtifactCheck = true;
                 ShowMenu1();
                 ArtifactText();
                 artifacttext.text = Artifact_Text[3];
