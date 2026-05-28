@@ -1,19 +1,27 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class ConditionalAudios : MonoBehaviour
 {
     public AudioSource HealthCritical;
     public AudioSource RechargeStations;
+    public AudioSource ArtifactSound;
+    public AudioSource CryocombsPowerDown;
+    public AudioSource EnergyShot;
     public EnergyPool ForCurrentEnergy;
     private bool _healthCheck;
-    public bool _rechargeCheck;
-    private float _previousEnergy;
+    public bool RechargeCheck;
+    public bool ArtifactCheck;
+    public bool PowerDownCheck;
+    bool _notPlayed;
+    public bool ShotHappened;
     
     void Start()
     {
         _healthCheck = false;
-        _rechargeCheck = false;
+        RechargeCheck = false;
+        _notPlayed = true;
        // _previousEnergy = ForCurrentEnergy.CurrentEnergy;
     }
 
@@ -21,6 +29,8 @@ public class ConditionalAudios : MonoBehaviour
     {
         TriggerHealthCritical();
         TriggerRechargeStation();
+        TriggerArtifact();
+        TriggerPowerDown();
 
        /* if (_previousEnergy < ForCurrentEnergy.CurrentEnergy)
         {
@@ -49,11 +59,37 @@ public class ConditionalAudios : MonoBehaviour
   public void TriggerRechargeStation()
     {
 
-        if (_rechargeCheck == true)
+        if (RechargeCheck == true)
         {
             RechargeStations.Play();
-            _rechargeCheck = false;
+            RechargeCheck = false;
         } 
    
+    }
+
+    public void TriggerArtifact()
+    {
+        if (ArtifactCheck == true)
+        {
+            ArtifactSound.Play();
+            ArtifactCheck = false;
+        }
+    }
+
+    public void TriggerPowerDown()
+    {
+        if (PowerDownCheck == true && _notPlayed == true)
+        {
+            CryocombsPowerDown.PlayOneShot(CryocombsPowerDown.clip);
+            _notPlayed = false;
+        }
+    }
+
+    public void TriggerShot()
+    {
+        if (ShotHappened == true)
+        {
+            EnergyShot.PlayOneShot(EnergyShot.clip);
+        }
     }
 }

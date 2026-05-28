@@ -8,7 +8,8 @@ public class ElectricityPuzzle : MonoBehaviour
     public GameObject ElectricityMeterGreen;
     public GameObject ElectricityMeterRed;
     public float TimePassing;
-    
+    public AudioSource Electricity;
+    bool _wasActive;
 
     private void Start()
     {
@@ -16,6 +17,8 @@ public class ElectricityPuzzle : MonoBehaviour
         ElectricityBridge.SetActive(false);
         ElectricityMeterGreen.SetActive(false);
         ElectricityMeterRed.SetActive(true);
+
+        _wasActive = false;
     }
 
     private void Update()
@@ -23,18 +26,23 @@ public class ElectricityPuzzle : MonoBehaviour
        
             //set countdown timer for puzzle connections
             TimePassing += Time.deltaTime;
+
         if (TimePassing > 4)
         {
             ElectricityBridge.SetActive(false);
+            TimePassing = 0;
         }
 
-        if (ElectricityBridge.activeSelf)
+        bool _isActive = ElectricityBridge.activeSelf;
+
+        if (_isActive && !_wasActive)
         {
+            Electricity.PlayOneShot(Electricity.clip);
             ElectricityMeterRed.SetActive(false);
             ElectricityMeterGreen.SetActive(true);
         }
        
-        else
+        else if (!_isActive && _wasActive)
         {
             
                 ElectricityMeterGreen.SetActive(false);
@@ -43,6 +51,8 @@ public class ElectricityPuzzle : MonoBehaviour
                 ElectricityMeterRed.SetActive(true);
             
         }
+
+        _wasActive = _isActive;
     }
 
 
@@ -60,4 +70,9 @@ public class ElectricityPuzzle : MonoBehaviour
 
        
     }
+
+   /* private void ElectricityPlayer()
+    {
+
+    }*/
 }
