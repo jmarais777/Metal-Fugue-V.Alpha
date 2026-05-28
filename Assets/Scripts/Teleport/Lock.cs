@@ -78,7 +78,7 @@ public class Lock : MonoBehaviour
             if (PowBut <= proximity)
             { 
                    IsPowerOn = false;
-                Debug.Log("PowerOff");
+                    Debug.Log("PowerOff");
 
             }
             if (!IsPowerOn && secgate<= proximity)

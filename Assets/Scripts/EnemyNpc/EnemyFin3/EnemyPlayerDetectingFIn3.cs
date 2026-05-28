@@ -77,12 +77,8 @@ public class EnemyPlayerDetectingFin3 : MonoBehaviour
         {
             transform.localPosition = new Vector3(0.288f, 1.054f, 0.0f);
 
-        }
-        
-        
+        }   
     }
-  
-
     public void Chasing_Light_Effect()
     {
         
