@@ -6,23 +6,34 @@ public class PuzzleDoorOpen : MonoBehaviour
     public GameObject ElectricityBridge1;
     public GameObject ElectricityBridge2;
     public GameObject ElectricityPuzzleDoor;
+    public AudioSource ElectricityPuzzleDoorOpen;
+    public AudioSource ElectricityPuzzleDoorClose;
+    bool puzzleSolved;
 
-    void Start()
+    void Awake()
     {
-        //primes door for puzzle, prevents players from progressing
         ElectricityPuzzleDoor.SetActive(true);
+        puzzleSolved = false;
     }
+
     void Update()
     {
-        // requries all ElectricityBridges to be active for the door to open
-        if (ElectricityBridge.activeSelf && ElectricityBridge1.activeSelf && ElectricityBridge2.activeSelf)
+        bool solved =
+            ElectricityBridge.activeSelf && ElectricityBridge1.activeSelf && ElectricityBridge2.activeSelf;
+
+        if (solved && !puzzleSolved)
         {
+            puzzleSolved = true;
+            ElectricityPuzzleDoorOpen.PlayOneShot(ElectricityPuzzleDoorOpen.clip);
             ElectricityPuzzleDoor.SetActive(false);
         }
-        else
-        { 
-            //ensures the door closes after timer elapses
+
+        else if (!solved && puzzleSolved)
+        {
+            puzzleSolved = false;
+
             ElectricityPuzzleDoor.SetActive(true);
+            ElectricityPuzzleDoorClose.PlayOneShot(ElectricityPuzzleDoorClose.clip);
         }
     }
 }
