@@ -10,6 +10,7 @@ public class Lock : MonoBehaviour
     public GameObject ToSecurity1;
     public GameObject FromSecurity;
     public GameObject SecurityGatePowerIndicator;
+
    // public GameObject SecurityGateUnlcoked;
     public GameObject bossTrig;
 
@@ -53,7 +54,9 @@ public class Lock : MonoBehaviour
             Enemy_Move_Fin8.enabled = false;
             Enemy_Move_Fin8.ForceField_Collider.enabled = false;
             Enemy_Move_Fin8.Player_Detection_Collider.enabled = false;
-           
+
+            
+
             ToScrapYard.SetActive(false);
             ToSecurity1.SetActive(false);
             FromSecurity.SetActive(false);
@@ -105,6 +108,8 @@ public class Lock : MonoBehaviour
           
             //  Enemy_Move_Fin8.IsUnlocked = true;
             Boss.SetActive(true);
+            BossScr.enabled = false;
+            BossScr.Enemy_Shoot_Mech.enabled = false;
             //Enemy_Move_Fin8.Move_Type = EnemyMovementFinalFin8.EnemyMovementType.Chasing;
    
             
@@ -116,7 +121,11 @@ public class Lock : MonoBehaviour
 
         if (bossTrig == null)
         {
-            BossScr.Move_Type = EnemyMovementFinalFinBoss.EnemyMovementType.Chasing;
+
+            BossScr.enabled = true;
+            //BossScr.ForceField_Collider.enabled = true;
+            //BossScr.Player_Detection_Collider.enabled = true;
+            //    BossScr.Move_Type = EnemyMovementFinalFinBoss.EnemyMovementType.Chasing;
             /* if (Bossmove != null && Bossshoot != null)
              {
                  Bossmove.enabled = true;

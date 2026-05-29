@@ -38,8 +38,6 @@ public class EnemyMovementFinalFin8 : MonoBehaviour
     public bool isWalkingR = false;
     public  bool isWalkingB = false;
     public bool isWalkingL = false;
-    //add new
-    public bool IsUnlocked = true;
 
     public enum EnemyMovementType
     {
