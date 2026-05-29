@@ -158,10 +158,44 @@ public void FixedUpdate()
             case EnemyMovementType.FullDead: FullDead(); break;
             case EnemyMovementType.Pathfinding2: Pathfinding2(); break;
             case EnemyMovementType.Pathfinding3: Pathfinding3(); break;
-            //custom
+         //ADD NEW
             case EnemyMovementType.Damage: StartCoroutine(DamageEffect()); break;
         }
     }
+    //ADDD NEWW
+    IEnumerator DamageEffect()
+    {
+        Enem_Detection_Light.blendStyleIndex = 1;
+        Enem_Detection_Light.intensity = 0.9f;
+        Enem_Detection_Light.pointLightInnerRadius = 1.0f;
+        Enem_Detection_Light.pointLightOuterRadius = 38f;
+        Enem_Detection_Light.falloffIntensity = 1.0f;
+        yield return new WaitForSeconds(0.1f);
+        Move_Type = EnemyMovementType.Chasing;
+
+    }
+    public IEnumerator SystemFailureTimer()
+    {
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
+        TriggEventFin2.enabled = false;
+        Enemy_Shoot_Mech.enabled = false;
+        //Enemy_Player_Detetction.enabled = false;
+        ForceField_Collider.enabled = false;
+        Player_Detection_Collider.enabled = false;
+        RigBod.mass = 50f;
+        // RigBod.linearVelocity = Vector2.zero;
+        Enem_Detection_Light.blendStyleIndex = 1;
+        Enem_Detection_Light.pointLightInnerRadius = 15.13f;
+        Enem_Detection_Light.pointLightOuterRadius = 75.46f;
+        Enem_Detection_Light.intensity = 0.37f;
+        yield return new WaitForSeconds(0.1f);
+        Enem_Detection_Light.intensity = 1f;
+        yield return new WaitForSeconds(0.1f);
+        Enem_Detection_Light.intensity = 2f;
+        this.gameObject.SetActive(false);
+        yield return null;
+    }
+    //NEW END
 
     public void Pathfinding2()
     {
@@ -198,48 +232,7 @@ public void FixedUpdate()
         RigBod.AddForce(Direction_To_RecallP1, ForceMode2D.Impulse);
         Debug.Log("RecallingP1()");
     }
-    //custom
-    IEnumerator DamageEffect()
-    {
-
-        Enem_Detection_Light.intensity = 50.0f;
-        Enem_Detection_Light.pointLightInnerRadius = 5.0f;
-        Enem_Detection_Light.pointLightOuterRadius = 5.0f;
-        yield return new WaitForSeconds(1f);
-        Move_Type = EnemyMovementType.Chasing;
-
-    }
-    public void System_Failure() //set in EnemyHealth Script
-    {
-        transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
-        TriggEventFin2.enabled = false;
-        Enemy_Shoot_Mech.enabled = false;
-        //Enemy_Player_Detetction.enabled = false;
-        ForceField_Collider.enabled = false;
-        Player_Detection_Collider.enabled = false;
-       // RigBod.linearVelocity = Vector2.zero;
-    }
-    public IEnumerator SystemFailureTimer()
-    {
-        transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
-        TriggEventFin2.enabled = false;
-        Enemy_Shoot_Mech.enabled = false;
-        //Enemy_Player_Detetction.enabled = false;
-        ForceField_Collider.enabled = false;
-        Player_Detection_Collider.enabled = false;
-        RigBod.mass = 50f;
-        // RigBod.linearVelocity = Vector2.zero;
-        Enem_Detection_Light.blendStyleIndex = 1;
-        Enem_Detection_Light.pointLightInnerRadius = 15.13f;
-        Enem_Detection_Light.pointLightOuterRadius = 75.46f;
-        Enem_Detection_Light.intensity = 0.37f;
-        yield return new WaitForSeconds(0.1f);
-        Enem_Detection_Light.intensity = 1f;
-        yield return new WaitForSeconds(0.1f);
-        Enem_Detection_Light.intensity = 2f;
-        this.gameObject.SetActive(false);
-        yield return null;
-    }
+   
     public void FullDead()
     {
         transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
