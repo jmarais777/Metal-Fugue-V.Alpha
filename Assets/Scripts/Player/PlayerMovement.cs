@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private AudioSource Walking;
     public AudioSource Walking2;
+    public AudioSource Dashing;
     private Vector2 moveInput;
 
     Vector2 movement;
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool _inScrapyard;
     public GameObject ToShuttle;
+    bool _hasDashed;
 
     void Start()
     {
@@ -58,15 +60,17 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         Walking = GetComponent<AudioSource>();
         _inScrapyard = true;
+        _hasDashed = false;
         
     }
 
 
 
     void Update()
-
-
     {
+
+            DashSound();
+        
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
@@ -166,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && canDash && ForCurrentEnergy.CurrentEnergy > 9)
+        if (Input.GetKeyDown(KeyCode.Space) && canDash && ForCurrentEnergy.CurrentEnergy > 9 && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
         {
             StartCoroutine(Dash());
         }
@@ -211,7 +215,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if(collider.gameObject.CompareTag("ToCryocombs"))
+        if (collider.gameObject.CompareTag("ToCryocombs"))
         {
             _inScrapyard = false;
 
@@ -227,7 +231,23 @@ public class PlayerMovement : MonoBehaviour
             _inScrapyard = true;
         }
     }
-}
+
+    public void DashSound()
+    {
+        if (IsDashing && !_hasDashed)
+        {
+            _hasDashed = true;
+            Dashing.PlayOneShot(Dashing.clip);
+        }
+
+        if (!IsDashing)
+        {
+            _hasDashed = false;
+        }
+    }
+
+    }
+
 
 
 
