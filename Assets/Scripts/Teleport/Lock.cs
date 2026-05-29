@@ -10,6 +10,7 @@ public class Lock : MonoBehaviour
     public GameObject ToSecurity1;
     public GameObject FromSecurity;
     public GameObject SecurityGatePowerIndicator;
+    public ConditionalAudios ForPowerDownCheck;
 
    // public GameObject SecurityGateUnlcoked;
     public GameObject bossTrig;
@@ -30,13 +31,16 @@ public class Lock : MonoBehaviour
 
     public bool IsPowerOn = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-   // void Start()
-   // {
-       // Bossmove = Boss.GetComponent<EnemyMovement>();
-       // Bossshoot = Boss.GetComponent<EnemySHootMech>();
+    // void Start()
+    // {
+    // Bossmove = Boss.GetComponent<EnemyMovement>();
+    // Bossshoot = Boss.GetComponent<EnemySHootMech>();
 
-   // }
-
+    // }
+    private void Start()
+    {
+        IsPowerOn = true;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -68,6 +72,7 @@ public class Lock : MonoBehaviour
         }
         else
         {
+            Debug.Log("power disabled");
             Enemy_Move_Fin8.enabled = true;
             Enemy_Move_Fin8.ForceField_Collider.enabled = true;
             Enemy_Move_Fin8.Player_Detection_Collider.enabled = true;
@@ -83,12 +88,13 @@ public class Lock : MonoBehaviour
         }
         float secgate = Vector2.Distance(SecurityGatePowerIndicator.transform.position, this.transform.position);
         float PowBut = Vector2.Distance(PowerButton.transform.position, this.transform.position);
-        //Debug.Log("Dist to Gate: " + secgate + " | Dist to Power: " + PowBut);
+        Debug.Log( PowBut);
         if (Input.GetKeyUp(KeyCode.E))
         {
             if (PowBut <= proximity)
             { 
                    IsPowerOn = false;
+                    ForPowerDownCheck.PowerDownCheck = true;
                     Debug.Log("PowerOff");
 
             }
