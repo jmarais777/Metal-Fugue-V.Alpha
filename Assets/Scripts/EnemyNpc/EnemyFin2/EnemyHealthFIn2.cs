@@ -21,7 +21,7 @@ public class EnemyHealthFin2 : MonoBehaviour
             Debug.Log("BulletHit");
             //custom
             Enemy_Move_Fin.Move_Type = EnemyMovementFinalFIn2.EnemyMovementType.Damage;
-            HitPoints--;
+                  HitPoints--;
 
         }
       

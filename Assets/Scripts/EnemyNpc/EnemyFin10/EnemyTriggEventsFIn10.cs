@@ -3,7 +3,7 @@ using UnityEngine;
 public class Enemy_Trigger_EventsFin10 : MonoBehaviour
 {
     public EnemyMovementFinalFin10 MovefinFin2;
-    public void OnTriggerEnter2D(Collider2D collider)
+    public void OnTriggerStay2D(Collider2D collider)
     {
 
         if (collider.gameObject.CompareTag("PlayerRadius"))

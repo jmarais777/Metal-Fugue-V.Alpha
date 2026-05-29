@@ -71,6 +71,7 @@ public class QuestTracker : MonoBehaviour
         {
             CurrentObjectives();
             Objective_label.text = CurrentObjective[1];
+            IsQuestLine1 = false;
             
         }
         if (IsQ1ObjectiveUpdate2 == true)

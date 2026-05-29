@@ -28,7 +28,7 @@ public class Dialogue4Real : MonoBehaviour
         if (ScavengerDialogueMenu4Object != null && !ScavengerDialogueMenu4Object.activeSelf)
         {
             
-                if (EnemyNPC == false)
+                if (EnemyNPC.activeSelf == false)
                 {
                     var dir = Vector2.Distance(UILinker_4_real.transform.position, Player.transform.position);
                     if (dir < InteractProximity)

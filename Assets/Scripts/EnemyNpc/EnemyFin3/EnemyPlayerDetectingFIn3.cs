@@ -42,10 +42,9 @@ public class EnemyPlayerDetectingFin3 : MonoBehaviour
         {
             DeadEffect();
         }
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin3.EnemyMovementType.SystemFailure)
-        {
-            StartCoroutine(Enemy_System_Failure());
-        }
+        //REMOVE SYSTEM FAILURE
+
+        //REMOVE SYSTEM FAILURE
 
         if (EnemyFin.isWalkingL == true)
         {
@@ -78,12 +77,8 @@ public class EnemyPlayerDetectingFin3 : MonoBehaviour
         {
             transform.localPosition = new Vector3(0.288f, 1.054f, 0.0f);
 
-        }
-        
-        
+        }   
     }
-  
-
     public void Chasing_Light_Effect()
     {
         

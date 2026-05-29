@@ -1,3 +1,4 @@
+
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ private string[] Tutorial_text;
     public bool isScrapbot = false;
     public enum TutorialNumber
     {
-     TutorialNull,  Tutorial1, Tutorial2, Tutorial3
+     TutorialNull, Tutorial0, Tutorial1, Tutorial2, Tutorial22, Tutorial2_1, Tutorial2_1_1, Tutorial2_2, Tutorial3,
     }
     public TutorialNumber Tut_Enum;
     public void Start()
@@ -25,12 +26,6 @@ private string[] Tutorial_text;
     }
     public void Update()
     {
-        switch (Tut_Enum)
-        {
-            case TutorialNumber.Tutorial1: StartCoroutine(Tutorial0()); break;
-            case TutorialNumber.TutorialNull: Hide_Popup(); break;
-        }
-
         if (isFound == true)
         {
             isScrapbot = false;
@@ -49,6 +44,19 @@ private string[] Tutorial_text;
         else if (isScrapbot == false)
         {
             Tutorial_Anim.SetBool("isScrapbot", false);
+        }
+
+        switch (Tut_Enum)
+        {
+            case TutorialNumber.Tutorial0:StartCoroutine(Tutorial0());break;
+            case TutorialNumber.Tutorial1:StartCoroutine(Tutorial1());break;
+            case TutorialNumber.Tutorial2: StartCoroutine(Tutorial2()); break;
+            case TutorialNumber.Tutorial22: StartCoroutine(Tutorial22()); break;
+            case TutorialNumber.Tutorial2_1: StartCoroutine(Tutorial2_1()); break;
+            case TutorialNumber.Tutorial2_1_1: StartCoroutine(Tutorial2_1_1()); break;
+            case TutorialNumber.Tutorial2_2: StartCoroutine(Tutorial2_2()); break;
+
+            case TutorialNumber.TutorialNull: Hide_Popup(); break;
         }
     }
     public void Popup()
@@ -77,9 +85,14 @@ private string[] Tutorial_text;
         Tutorial_text = new string[10];
         Tutorial_text[0] = "0";
         Tutorial_text[1] = "1";
-        Tutorial_text[2] = "1";
+        Tutorial_text[2] = "2";
+        Tutorial_text[3] = "22";
+        Tutorial_text[4] = "2.1";
+        Tutorial_text[5] = "2.1.1";
+        Tutorial_text[6] = "2.2";
+
     }
-    
+        //THE INUMERATORS OF DESTRUCTION!!!!!
     public IEnumerator  Tutorial0()
     {
         isFound = true;
@@ -93,6 +106,94 @@ private string[] Tutorial_text;
         Tut_Enum = TutorialNumber.TutorialNull;
         yield return null;
     }
-    
+    public IEnumerator Tutorial1()
+    {
+        transform.position = new Vector3(943.27f, -45.42f, 0);
+        Tutorial_Popup[1].SetActive(false);
+        yield return new WaitForSeconds(1.0f);
+        isFound = true;
+        isScrapbot = false;
+        yield return new WaitForSeconds(0f);
+        Popup();
+        TutorialText();
+        Tutorial_Text_Label.text = Tutorial_text[1];
+        yield return new WaitForSeconds(3);
+        Tut_Enum = TutorialNumber.TutorialNull;
+        yield return null;
+    }
+    //THE GANG OF 2!
+    public IEnumerator Tutorial2()
+    {
+        transform.position = new Vector3(984.98f, 8.35f, 0);
+        isFound = true;
+        isScrapbot = false;
+        Tutorial_Popup[2].SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        Popup();
+        TutorialText();
+        Tutorial_Text_Label.text = Tutorial_text[2];
+        yield return new WaitForSeconds(3);
+        Tut_Enum = TutorialNumber.TutorialNull;
+        yield return null;
+    }
+    public IEnumerator Tutorial22()
+    {
+        transform.position = new Vector3(984.98f, 8.35f, 0);
+        isFound = true;
+        isScrapbot = false;
+        Tutorial_Popup[3].SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        Popup();
+        TutorialText();
+        Tutorial_Text_Label.text = Tutorial_text[3];
+        yield return new WaitForSeconds(3);
+        Tut_Enum = TutorialNumber.TutorialNull;
+        yield return null;
+    }
+    public IEnumerator Tutorial2_1()
+    {
+        transform.position = new Vector3(998.48f, -7.17f, 0);
+        isFound = true;
+        isScrapbot = false;
+        Tutorial_Popup[4].SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        Popup();
+        TutorialText();
+        Tutorial_Text_Label.text = Tutorial_text[4];
+        yield return new WaitForSeconds(3);
+        Tut_Enum = TutorialNumber.TutorialNull;
+        yield return null;
+    }
+    public IEnumerator Tutorial2_1_1()
+    {
+        transform.position = new Vector3(943.27f, -45.42f, 0);
+        isFound = true;
+        isScrapbot = false;
+        Tutorial_Popup[5].SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        Popup();
+        TutorialText();
+        Tutorial_Text_Label.text = Tutorial_text[5];
+        yield return new WaitForSeconds(3);
+        Tut_Enum = TutorialNumber.TutorialNull;
+        yield return null;
+    }
+
+    public IEnumerator Tutorial2_2()
+    {
+        transform.position = new Vector3(1033.83f, -2.48f, 0);
+        isFound = true;
+        isScrapbot = false;
+        Tutorial_Popup[6].SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        Popup();
+        TutorialText();
+        Tutorial_Text_Label.text = Tutorial_text[6];
+        yield return new WaitForSeconds(3);
+        Tut_Enum = TutorialNumber.TutorialNull;
+        yield return null;
+    }
+    //The gang is dead;
+
 }
 
