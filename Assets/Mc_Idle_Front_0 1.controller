@@ -168,7 +168,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 555394215880945325}
-    m_Position: {x: 320, y: 130, z: 0}
+    m_Position: {x: 310, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -903594491546308018}
     m_Position: {x: 550, y: 120, z: 0}
@@ -330,7 +330,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: DashF
+    m_ConditionEvent: DashL
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5568993270692607367}

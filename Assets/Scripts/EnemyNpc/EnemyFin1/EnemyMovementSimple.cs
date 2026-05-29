@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -53,6 +54,8 @@ public class EnemyMovementFinalFin1 :  MonoBehaviour
         Recalling1,
         SystemFailure,
         FullDead,
+        //ADD NEW
+        Damage,
     }
     public EnemyMovementType Move_Type;
 
@@ -157,12 +160,49 @@ public void FixedUpdate()
             case EnemyMovementType.Chasing: Chasing(); break;
             case EnemyMovementType.Recalling: Recalling(); break;
             case EnemyMovementType.Recalling1: Recall_Parent_One(); break;
-            case EnemyMovementType.SystemFailure: System_Failure(); break;
+
             case EnemyMovementType.FullDead: FullDead(); break;
             case EnemyMovementType.Pathfinding0: Pathfinding0(); break;
-            case EnemyMovementType.Pathfinding1: Pathfinding1(); break;     
+            case EnemyMovementType.Pathfinding1: Pathfinding1(); break;
+            //ADD NEW (system failure error till changed in enem health)
+            case EnemyMovementType.SystemFailure: StartCoroutine(SystemFailureTimer()); break;        
+            case EnemyMovementType.Damage: StartCoroutine(DamageEffect1()); break;
         }
     }
+    //ADDD NEWW
+    IEnumerator DamageEffect1()
+    {
+        Enem_Detection_Light.blendStyleIndex = 1;
+        Enem_Detection_Light.intensity = 0.9f;
+        Enem_Detection_Light.pointLightInnerRadius = 1.0f;
+        Enem_Detection_Light.pointLightOuterRadius = 38f;
+        Enem_Detection_Light.falloffIntensity = 1.0f;
+        yield return new WaitForSeconds(0.1f);
+        Move_Type = EnemyMovementType.Chasing;
+
+    }
+    public IEnumerator SystemFailureTimer()
+    {
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, 59.19f);
+        TriggEvent.enabled = false;
+        Enemy_Shoot_Mech.enabled = false;
+        //Enemy_Player_Detetction.enabled = false;
+        ForceField_Collider.enabled = false;
+        Player_Detection_Collider.enabled = false;
+        RigBod.mass = 50f;
+        // RigBod.linearVelocity = Vector2.zero;
+        Enem_Detection_Light.blendStyleIndex = 1;
+        Enem_Detection_Light.pointLightInnerRadius = 15.13f;
+        Enem_Detection_Light.pointLightOuterRadius = 75.46f;
+        Enem_Detection_Light.intensity = 0.37f;
+        yield return new WaitForSeconds(0.1f);
+        Enem_Detection_Light.intensity = 1f;
+        yield return new WaitForSeconds(0.1f);
+        Enem_Detection_Light.intensity = 2f;
+        this.gameObject.SetActive(false);
+        yield return null;
+    }
+    //NEW END
 
     public void Pathfinding0()
     {
@@ -198,6 +238,18 @@ public void FixedUpdate()
         Vector3 Direction_To_RecallP1 = (RecallP1.position - transform.position ).normalized;
         RigBod.AddForce(Direction_To_RecallP1, ForceMode2D.Impulse);
         Debug.Log("RecallingP1()");
+    }
+    //custom
+    IEnumerator DamageEffect()
+    {
+        Enem_Detection_Light.blendStyleIndex = 1;
+        Enem_Detection_Light.intensity = 0.9f;
+        Enem_Detection_Light.pointLightInnerRadius = 1.0f;
+        Enem_Detection_Light.pointLightOuterRadius = 38f;
+        Enem_Detection_Light.falloffIntensity = 1.0f;
+        yield return new WaitForSeconds(0.1f);
+        Move_Type = EnemyMovementType.Chasing;
+
     }
     public void System_Failure() //set in EnemyHealth Script
     {
