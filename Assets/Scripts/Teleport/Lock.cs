@@ -89,7 +89,7 @@ public class Lock : MonoBehaviour
         float secgate = Vector2.Distance(SecurityGatePowerIndicator.transform.position, this.transform.position);
         float PowBut = Vector2.Distance(PowerButton.transform.position, this.transform.position);
         Debug.Log( PowBut);
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (PowBut <= proximity)
             { 
