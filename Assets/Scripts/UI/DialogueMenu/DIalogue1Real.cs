@@ -82,7 +82,6 @@ void ShowMenu1()
     }
     void NextButtonOnClick()
     {
-
         DialogueIndex++;
         UpdateDialogueLines();
 

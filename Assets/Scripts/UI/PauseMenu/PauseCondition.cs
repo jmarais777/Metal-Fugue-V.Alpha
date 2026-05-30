@@ -19,6 +19,7 @@ public class PauseCondition : MonoBehaviour
     public bool IsPaused = false;
     public GameObject TransitionCOndition_Pause1;
     public GameObject TransitionCOndition_Pause2;
+    public ConditionalAudios ForButtonCheck;
 
 
 
@@ -72,7 +73,7 @@ public class PauseCondition : MonoBehaviour
         }
     public void resButtonOnClick(ClickEvent clk)
     {
-
+        ForButtonCheck.ButtonCheck = true;
         Time.timeScale = 1.0f;
         PauseMenu.enabled = false;
         TransitionCOndition_Pause2.SetActive(false);
@@ -81,6 +82,7 @@ public class PauseCondition : MonoBehaviour
 
     void exitButtonOnClick (ClickEvent clk)
     {
+        ForButtonCheck.ButtonCheck = true;
         SceneManager.LoadScene("MainMenu");
         PauseMenu.enabled = false;
         Time.timeScale = 1.0f;
@@ -88,6 +90,7 @@ public class PauseCondition : MonoBehaviour
 
     void howButtonOnCLick(ClickEvent clk)
     {
+        ForButtonCheck.ButtonCheck = true;
         TransitionCOndition_Pause1.SetActive(true);
         PauseMenu.enabled = false;
         

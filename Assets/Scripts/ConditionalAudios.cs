@@ -9,14 +9,22 @@ public class ConditionalAudios : MonoBehaviour
     public AudioSource ArtifactSound;
     public AudioSource CryocombsPowerDown;
     public AudioSource EnergyShot;
+    public AudioSource EnemyEnergyShot;
+    public AudioSource TurretReload;
+    public AudioSource ButtonClick;
+    public AudioSource RobotDestroyed;
     public EnergyPool ForCurrentEnergy;
     private bool _healthCheck;
     public bool RechargeCheck;
     public bool ArtifactCheck;
     public bool PowerDownCheck;
-    bool _notPlayed;
+    private bool _notPlayed;
     public bool ShotHappened;
-    
+    public bool EnemyShot;
+    public bool ReloadCheck;
+    public bool ButtonCheck;
+    public bool enemydestroyed;
+
     void Start()
     {
         _healthCheck = false;
@@ -31,6 +39,8 @@ public class ConditionalAudios : MonoBehaviour
         TriggerRechargeStation();
         TriggerArtifact();
        // TriggerPowerDown();
+        TriggerPowerDown();
+        ButtonClicker();
 
        /* if (_previousEnergy < ForCurrentEnergy.CurrentEnergy)
         {
@@ -38,7 +48,7 @@ public class ConditionalAudios : MonoBehaviour
             Debug.Log("Meow");
         } */
 
-       // _previousEnergy = ForCurrentEnergy.CurrentEnergy;
+        // _previousEnergy = ForCurrentEnergy.CurrentEnergy;
     }
 
     void TriggerHealthCritical()
@@ -91,6 +101,38 @@ public class ConditionalAudios : MonoBehaviour
         if (ShotHappened == true)
         {
             EnergyShot.PlayOneShot(EnergyShot.clip);
+        }
+    }
+
+    public void TriggerEnemyShot()
+    {
+        if(EnemyShot == true)
+        {
+            EnemyEnergyShot.PlayOneShot(EnemyEnergyShot.clip);
+        }
+    }
+
+    public void TriggerReload()
+    {
+        if(ReloadCheck == true)
+        {
+            TurretReload.PlayOneShot(TurretReload.clip);
+        }
+    }
+
+    public void ButtonClicker()
+    {
+        if( ButtonCheck == true )
+        {
+            ButtonClick.PlayOneShot(ButtonClick.clip);
+        }
+    }
+
+    public void DestroyedRobot()
+    {
+        if( enemydestroyed == true )
+        {
+            RobotDestroyed.PlayOneShot(RobotDestroyed.clip);
         }
     }
 }
