@@ -36,15 +36,15 @@ public class EnemyPlayerDetectingFin1 : MonoBehaviour
         {
             Chasing_Light_Effect();
         }
+        
 
         if (EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.FullDead)
         {
             DeadEffect();
         }
-        if (EnemyFin.Move_Type == EnemyMovementFinalFin1.EnemyMovementType.SystemFailure)
-        {
-            StartCoroutine(Enemy_System_Failure());
-        }
+       //REMOVE SYSTEM FAILURE
+
+       //REMOVE SYSTEM FAILURE
 
         if (EnemyFin.isWalkingL == true)
         {

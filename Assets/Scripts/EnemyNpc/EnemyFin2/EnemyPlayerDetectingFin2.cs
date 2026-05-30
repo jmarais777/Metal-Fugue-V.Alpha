@@ -42,10 +42,10 @@ public class EnemyPlayerDetectingFin2 : MonoBehaviour
         {
             DeadEffect();
         }
-        if (EnemyFinFin2.Move_Type == EnemyMovementFinalFIn2.EnemyMovementType.SystemFailure)
+        /* REMOVE if (EnemyFinFin2.Move_Type == EnemyMovementFinalFIn2.EnemyMovementType.SystemFailure)
         {
             StartCoroutine(Enemy_System_Failure());
-        }
+        }*/
 
         if (EnemyFinFin2.isWalkingL == true)
         {

@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
     private AudioSource Walking;
+    public AudioSource Walking2;
+    public AudioSource Dashing;
     private Vector2 moveInput;
 
     Vector2 movement;
@@ -48,20 +50,27 @@ public class PlayerMovement : MonoBehaviour
     bool DashL = true;
     bool DashB = true;
 
+    bool _inScrapyard;
+    public GameObject ToShuttle;
+    bool _hasDashed;
+
     void Start()
     {
         RigBod = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         Walking = GetComponent<AudioSource>();
+        _inScrapyard = true;
+        _hasDashed = false;
         
     }
 
 
 
     void Update()
-
-
     {
+
+            DashSound();
+        
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
@@ -137,22 +146,31 @@ public class PlayerMovement : MonoBehaviour
 
 
         //Sound Conditions
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.W) && _inScrapyard == true || Input.GetKey(KeyCode.A) && _inScrapyard == true || Input.GetKey(KeyCode.S) && _inScrapyard == true || Input.GetKey(KeyCode.D) && _inScrapyard == true) 
         {
-            Walking.mute = false;       
+            Walking2.mute = false;       
+        }
+        else
+        {
+            Walking2.mute = true;
+        }
+
+        if (Input.GetKey(KeyCode.W) && _inScrapyard == false || Input.GetKey(KeyCode.A) && _inScrapyard == false || Input.GetKey(KeyCode.S) && _inScrapyard == false || Input.GetKey(KeyCode.D) && _inScrapyard == false)
+        {
+            Walking.mute = false;
         }
         else
         {
             Walking.mute = true;
         }
 
-            //mapping movement controls for dash
-            if (IsDashing)
+        //mapping movement controls for dash
+        if (IsDashing)
         {
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && canDash && ForCurrentEnergy.CurrentEnergy > 9)
+        if (Input.GetKeyDown(KeyCode.Space) && canDash && ForCurrentEnergy.CurrentEnergy > 9 && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
         {
             StartCoroutine(Dash());
         }
@@ -188,7 +206,48 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
-}
+
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Walk2"))
+        {
+            _inScrapyard = false;
+
+        }
+
+        if (collider.gameObject.CompareTag("ToCryocombs"))
+        {
+            _inScrapyard = false;
+
+        }
+
+        if (collider.gameObject.CompareTag("FromShuttle"))
+        {
+            _inScrapyard = true;
+        }
+
+        if (collider.gameObject.CompareTag("FromCryocombs"))
+        {
+            _inScrapyard = true;
+        }
+    }
+
+    public void DashSound()
+    {
+        if (IsDashing && !_hasDashed)
+        {
+            _hasDashed = true;
+            Dashing.PlayOneShot(Dashing.clip);
+        }
+
+        if (!IsDashing)
+        {
+            _hasDashed = false;
+        }
+    }
+
+    }
+
 
 
 

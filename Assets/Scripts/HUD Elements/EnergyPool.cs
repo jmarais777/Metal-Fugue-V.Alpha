@@ -18,18 +18,19 @@ public class EnergyPool : MonoBehaviour
 
     //Defining range of Energy Pool
     public float CurrentEnergy;
-    public float MaxEnergy = 100f;
+    public float MaxEnergy = 100;
 
     bool wasDashing = false;
+    public bool IsDraining = false;
     public Collider2D player;
     //Establishing variables for energy drain based on distance travelled
     public Rigidbody2D RigBod;
-    public float DistanceLimit = 12f;
-    public float MovementDrain = 0f;
+    //public float DistanceLimit = 12f;
+    //public float MovementDrain = 0;
 
     public int CurrentAmmo;
     private int _maxAmmo = 10;
-    public float BulletDrain = 1f;
+    public int BulletDrain = 1;
     
     Vector2 lastPoint;
     public GameOverUI gameOverUI;
@@ -45,18 +46,18 @@ public class EnergyPool : MonoBehaviour
         lastPoint = RigBod.position;
     }
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         //Energy subtraction for distance travelled
-        float distanceMoved = Vector2.Distance(lastPoint, RigBod.position);
+        /*float distanceMoved = Vector2.Distance(lastPoint, RigBod.position);
         if (distanceMoved >= DistanceLimit)
         {
             CurrentEnergy -= MovementDrain;
             CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0, MaxEnergy);
             lastPoint = RigBod.position;
             //Debug.Log(CurrentEnergy);
-        }
-    }
+        }*/
+    //}
 
     void Update()
     {
@@ -75,9 +76,11 @@ public class EnergyPool : MonoBehaviour
         if (ForIsShooting.IsShooting == true && Mouse.current.leftButton.wasPressedThisFrame)
         {
             CurrentAmmo -= 1;
+            IsDraining = true;
             CurrentAmmo = Mathf.Clamp(CurrentAmmo, 0, _maxAmmo);
             Debug.Log(CurrentAmmo);
         }
+        else {IsDraining = false;}
         if (ForIsBeingShot)
             CurrentEnergy -= 1;
         CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0, MaxEnergy);

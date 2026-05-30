@@ -41,6 +41,7 @@ TagManager:
   - Recall_Layout_Custom_Diag2
   - RecallLayout_Defualt
   - MainHeaps
+  - Walk2
   layers:
   - Default
   - TransparentFX
@@ -51,7 +52,7 @@ TagManager:
   - Enemies
   - RecallRepos
   - Heaps
-  - 
+  - Skell
   - 
   - 
   - 

@@ -35,6 +35,8 @@ public class Interact : MonoBehaviour
     public QuestTracker quest;
     public EnemyMovementFinalFin1 Enemy_Move_fin;
 
+    public ConditionalAudios ForRechargeCheck;
+
 
 
     void Update()
@@ -48,7 +50,6 @@ public class Interact : MonoBehaviour
         float Scavarm = Vector2.Distance(ScavengerArmIngame.transform.position, Player.transform.position);
         
 
-     
        if (Input.GetKeyDown(KeyCode.E)) Debug.Log("E pressed. Distance to Arm is: " + Scavarm); //arm is to far away??
 
 
@@ -69,18 +70,21 @@ public class Interact : MonoBehaviour
             if (RechargeStatCryo < InteractProximity)
             {
 
+                ForRechargeCheck.RechargeCheck = true;
                 ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
                 ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
             }
             if (RechargeStatWind < InteractProximity)
             {
 
+                ForRechargeCheck.RechargeCheck = true;
                 ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
                 ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
             }
             if (RechargeStatShut < InteractProximity)
             {
 
+                ForRechargeCheck.RechargeCheck = true;
                 ForCurrentEnergy.CurrentEnergy += ForCurrentEnergy.MaxEnergy;
                 ForCurrentEnergy.CurrentEnergy = Mathf.Clamp(ForCurrentEnergy.CurrentEnergy, 0, 100);
             }
