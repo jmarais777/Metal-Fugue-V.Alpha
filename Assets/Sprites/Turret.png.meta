@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 9e02fc41aa61775468168421f9d7a246
+guid: b27615ed4e660ab4ea44cee24b8e8404
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2192196653825926164
-    second: CrashImpact_0
-  - first:
-      213: 4563143853518952359
-    second: CrashImpact_1
+      213: -539579915749326718
+    second: Turret_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CrashImpact_0
+      name: Turret_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3424
-        height: 1683
+        x: 977
+        y: 357
+        width: 246
+        height: 246
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 414281ded3f3c6e10800000000000000
-      internalID: 2192196653825926164
+      spriteID: 28083d9ece60388f0800000000000000
+      internalID: -539579915749326718
       vertices: []
       indices: 
       edges: []
@@ -128,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f9de20f3f089d5045b1b502f138be67a
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -136,11 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":3424.0,"y":1683.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      CrashImpact_0: 2192196653825926164
+      Turret_0: -539579915749326718
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

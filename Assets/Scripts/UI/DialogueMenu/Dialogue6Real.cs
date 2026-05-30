@@ -21,8 +21,10 @@ public class Dialogue6Real : MonoBehaviour
 
    // public GameObject ScavenegrHeapGhostCondition;
     public GameObject TransitionCondition8;
- 
-   
+
+    public Scav_Move_Final ScavMove;
+
+
 
     private void Update()
     {
@@ -69,8 +71,9 @@ public class Dialogue6Real : MonoBehaviour
         {
            
             TransitionCondition8.SetActive(false);
+            ScavMove.IsDialogueFinished = true;
 
-            
+
             nextButton.SetEnabled(false);
             ScavengerDialogueMenu6Object.SetActive(false);
             //ScavenegrHeapGhostCondition.SetActive(false);

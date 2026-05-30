@@ -30,7 +30,7 @@ public class ConditionalAudios : MonoBehaviour
         TriggerHealthCritical();
         TriggerRechargeStation();
         TriggerArtifact();
-        TriggerPowerDown();
+       // TriggerPowerDown();
 
        /* if (_previousEnergy < ForCurrentEnergy.CurrentEnergy)
         {
@@ -78,6 +78,7 @@ public class ConditionalAudios : MonoBehaviour
 
     public void TriggerPowerDown()
     {
+       
         if (PowerDownCheck == true && _notPlayed == true)
         {
             CryocombsPowerDown.PlayOneShot(CryocombsPowerDown.clip);
