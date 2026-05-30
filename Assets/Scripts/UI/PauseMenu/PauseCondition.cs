@@ -73,27 +73,28 @@ public class PauseCondition : MonoBehaviour
         }
     public void resButtonOnClick(ClickEvent clk)
     {
-        ForButtonCheck.ButtonCheck = true;
+        
         Time.timeScale = 1.0f;
         PauseMenu.enabled = false;
         TransitionCOndition_Pause2.SetActive(false);
+        ForButtonCheck.ButtonCheck = true;
         Debug.Log("clikyclicky");
     }
 
     void exitButtonOnClick (ClickEvent clk)
     {
+        Time.timeScale = 1.0f;
         ForButtonCheck.ButtonCheck = true;
         SceneManager.LoadScene("MainMenu");
         PauseMenu.enabled = false;
-        Time.timeScale = 1.0f;
     }
 
     void howButtonOnCLick(ClickEvent clk)
     {
-        ForButtonCheck.ButtonCheck = true;
         TransitionCOndition_Pause1.SetActive(true);
         PauseMenu.enabled = false;
-        
+        ForButtonCheck.ButtonCheck = true;
+
     }
 
 
