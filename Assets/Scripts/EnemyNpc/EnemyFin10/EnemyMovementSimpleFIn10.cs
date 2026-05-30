@@ -39,6 +39,8 @@ public class EnemyMovementFinalFin10 : MonoBehaviour
     public  bool isWalkingB = false;
     public bool isWalkingL = false;
 
+    public ConditionalAudios ForEnemyDestroyed;
+
     public enum EnemyMovementType
     {
         Chasing,
@@ -189,6 +191,7 @@ public void FixedUpdate()
         yield return new WaitForSeconds(0.1f);
         Enem_Detection_Light.intensity = 1f;
         yield return new WaitForSeconds(0.1f);
+        ForEnemyDestroyed.enemydestroyed = true;
         Enem_Detection_Light.intensity = 2f;
         this.gameObject.SetActive(false);
         yield return null;

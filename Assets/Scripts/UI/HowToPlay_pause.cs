@@ -9,6 +9,7 @@ public class HowToPlay_pause : MonoBehaviour
     public GameObject TransitionCOndition_Pause1;
     public GameObject TransitionCOndition_Pause2;
     public PauseCondition PauseScreen;
+    public ConditionalAudios ForButtonCheck;
 
     public void Update()
     {
@@ -32,10 +33,9 @@ public class HowToPlay_pause : MonoBehaviour
     }
     void RetButtonOnClick(ClickEvent clk)
     {
-
         TransitionCOndition_Pause2.SetActive(true);
-       HowToPlayPause.enabled = false;
-       TransitionCOndition_Pause1.SetActive(false);
-       
+        HowToPlayPause.enabled = false;
+        TransitionCOndition_Pause1.SetActive(false);
+        ForButtonCheck.ButtonCheck = true;
     }
 }

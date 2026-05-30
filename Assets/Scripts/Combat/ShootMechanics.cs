@@ -19,7 +19,7 @@ public class ShootMech : MonoBehaviour
     public bool IsShooting = false;
     // public GameObject MuzzleFlash;
     public EnergyPool Energy_Pool;
-    //public ConditionalAudios ForShotHappened;
+    public ConditionalAudios ForShotHappened;
 
     private void Start()
     {
@@ -43,9 +43,10 @@ public class ShootMech : MonoBehaviour
             if (Mouse.current.leftButton.wasPressedThisFrame)
             {
             IsShooting = true;
-            //ForShotHappened.ShotHappened = true;
+            ForShotHappened.ShotHappened = true;
+            
 
-                Shoot();
+            Shoot();
             Debug.Log(Energy_Pool.CurrentAmmo);
             }
         else if (Mouse.current.leftButton.wasReleasedThisFrame)
