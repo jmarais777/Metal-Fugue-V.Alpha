@@ -84,7 +84,8 @@ public class Lock : MonoBehaviour
             //  SecurityGateUnlcoked.SetActive(true);
             if (bossTrig != null)
             { bossTrig.SetActive(true); }
-            
+           // ForPowerDownCheck.PowerDownCheck = true;
+
         }
         float secgate = Vector2.Distance(SecurityGatePowerIndicator.transform.position, this.transform.position);
         float PowBut = Vector2.Distance(PowerButton.transform.position, this.transform.position);
@@ -94,7 +95,7 @@ public class Lock : MonoBehaviour
             if (PowBut <= proximity)
             { 
                    IsPowerOn = false;
-                    ForPowerDownCheck.PowerDownCheck = true;
+                ForPowerDownCheck.TriggerPowerDown();
                     Debug.Log("PowerOff");
 
             }
