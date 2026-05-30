@@ -35,6 +35,9 @@ public class EnergyPool : MonoBehaviour
     Vector2 lastPoint;
     public GameOverUI gameOverUI;
 
+    public ConditionalAudios ForReloadCheck;
+    public AudioSource TurretReload;
+
     void Start()
     {
         ForIsDashing = GetComponent<PlayerMovement>();
@@ -98,42 +101,52 @@ public class EnergyPool : MonoBehaviour
                 case 0:
                     CurrentEnergy -= 5;
                     CurrentAmmo += 10;
+                    TurretReload.PlayOneShot(TurretReload.clip);
                     break;
                 case 1:
                     CurrentEnergy -= 5;
                     CurrentAmmo += 9;
+                    TurretReload.PlayOneShot(TurretReload.clip);
                     break;
                 case 2:
                     CurrentEnergy -= 4;
                     CurrentAmmo += 8;
+                    TurretReload.PlayOneShot(TurretReload.clip);
                     break;
                 case 3:
                     CurrentEnergy -= 4;
                     CurrentAmmo += 7;
+                    TurretReload.PlayOneShot(TurretReload.clip);
                     break;
                 case 4:
                     CurrentEnergy -= 3;
                     CurrentAmmo += 6;
+                    TurretReload.PlayOneShot(TurretReload.clip);
                     break;
                 case 5:
                     CurrentEnergy -= 3;
                     CurrentAmmo += 5;
+                    TurretReload.PlayOneShot(TurretReload.clip);
                     break;
                 case 6:
                     CurrentEnergy -= 3;
                     CurrentAmmo += 4;
+                    TurretReload.PlayOneShot(TurretReload.clip);
                     break;
                 case 7:
                     CurrentEnergy -= 2;
                     CurrentAmmo += 3;
+                    TurretReload.PlayOneShot(TurretReload.clip);
                     break;
                 case 8:
                     CurrentEnergy -= 2;
                     CurrentAmmo += 2;
+                    TurretReload.PlayOneShot(TurretReload.clip);
                     break;
                 case 9:
                     CurrentEnergy -= 1;
                     CurrentAmmo += 1;
+                    TurretReload.PlayOneShot(TurretReload.clip);
                     break;
             }
             Debug.Log(CurrentAmmo);

@@ -22,6 +22,7 @@ public class EnemySHootMech : MonoBehaviour
     private float LoopS = 3.0f;
     public float FireRate = 1.0f;
     public float BulletSpawnRate = 0.5f;
+    public ConditionalAudios ForEnemyShot;
 
  
 
@@ -67,6 +68,7 @@ public class EnemySHootMech : MonoBehaviour
         {
            
             Instantiate(EnemyBullets, FirePoint.position, FirePoint.rotation);
+            ForEnemyShot.EnemyShot = true;
             BulletSpawnRate = Time.time + FireRate;
 
         }

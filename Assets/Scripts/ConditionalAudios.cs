@@ -24,13 +24,26 @@ public class ConditionalAudios : MonoBehaviour
     public bool ReloadCheck;
     public bool ButtonCheck;
     public bool enemydestroyed;
+    private bool _hasClicked;
+    private bool _enemyHasShot;
+    private bool _enemyBoom;
+    private bool _shooting;
+    public bool IsReloading;
 
     void Start()
     {
         _healthCheck = false;
         RechargeCheck = false;
         _notPlayed = true;
-       // _previousEnergy = ForCurrentEnergy.CurrentEnergy;
+        ButtonCheck = false;
+        _hasClicked = false;
+        _enemyBoom = false;
+        _shooting = false; 
+        PowerDownCheck = false;
+        ShotHappened = false;
+        ReloadCheck = false;
+        IsReloading = false;
+        // _previousEnergy = ForCurrentEnergy.CurrentEnergy;
     }
 
     private void Update()
@@ -41,6 +54,8 @@ public class ConditionalAudios : MonoBehaviour
        // TriggerPowerDown();
         TriggerPowerDown();
         ButtonClicker();
+        //TriggerReload();
+        TriggerShot();
 
        /* if (_previousEnergy < ForCurrentEnergy.CurrentEnergy)
         {
@@ -72,7 +87,6 @@ public class ConditionalAudios : MonoBehaviour
         if (RechargeCheck == true)
         {
             RechargeStations.Play();
-            RechargeCheck = false;
         } 
    
     }
@@ -101,6 +115,13 @@ public class ConditionalAudios : MonoBehaviour
         if (ShotHappened == true)
         {
             EnergyShot.PlayOneShot(EnergyShot.clip);
+            _shooting = true;
+        }
+
+        if (_shooting == true)
+        {
+            ShotHappened = false;
+            _shooting = false;
         }
     }
 
@@ -109,6 +130,13 @@ public class ConditionalAudios : MonoBehaviour
         if(EnemyShot == true)
         {
             EnemyEnergyShot.PlayOneShot(EnemyEnergyShot.clip);
+            _enemyHasShot = true;
+        }
+
+        if(_enemyHasShot == true)
+        {
+            EnemyShot = false;
+            _enemyHasShot = false;
         }
     }
 
@@ -117,14 +145,28 @@ public class ConditionalAudios : MonoBehaviour
         if(ReloadCheck == true)
         {
             TurretReload.PlayOneShot(TurretReload.clip);
+            IsReloading = true;
+        }
+
+        if (IsReloading == true)
+        {
+            RechargeCheck = false;
+            IsReloading = false;
         }
     }
 
     public void ButtonClicker()
     {
-        if( ButtonCheck == true )
+        if( ButtonCheck == true && !_hasClicked )
         {
             ButtonClick.PlayOneShot(ButtonClick.clip);
+            _hasClicked = true;
+        }
+
+        if (_hasClicked == true)
+        {
+            ButtonCheck = false;
+            _hasClicked = false;
         }
     }
 
@@ -133,6 +175,13 @@ public class ConditionalAudios : MonoBehaviour
         if( enemydestroyed == true )
         {
             RobotDestroyed.PlayOneShot(RobotDestroyed.clip);
+            _enemyBoom = true;
+        }
+
+        if (_enemyBoom == true)
+        {
+            enemydestroyed = false;
+            _enemyBoom = false;
         }
     }
 }

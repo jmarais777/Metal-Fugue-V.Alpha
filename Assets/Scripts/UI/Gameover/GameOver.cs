@@ -12,6 +12,7 @@ public class GameOverUI : MonoBehaviour
     public UIDocument GameOver;
     public EnergyPool energyPool;
     public Button RetryButton;
+    public ConditionalAudios ForButtonCheck;
 
 
     private void OnEnable()
@@ -39,7 +40,7 @@ public class GameOverUI : MonoBehaviour
     }
     public void ButtOnClick(ClickEvent clk)
     {
-
+        ForButtonCheck.ButtonCheck = true;
         SceneManager.LoadScene("Proto2ScrapBlocking");
     }
 }

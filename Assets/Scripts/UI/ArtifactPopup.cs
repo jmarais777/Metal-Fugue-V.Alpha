@@ -109,6 +109,7 @@ public class ArtifactPopup : MonoBehaviour
     
     void BackButtonOnClick(ClickEvent evt)
     {
+        ForArtifactCheck.ButtonCheck = true;
         Artifact.enabled = false;
         Time.timeScale = 1.0f;
     } 
