@@ -11,14 +11,8 @@ public class ScavengerBotMovement : MonoBehaviour
     public Transform Scavpos2;
     public GameObject scrapHeap;
 
-
-
     public GameObject TransitionCondition8;
-
     public GameObject ScavBot;
-
-
-    
 
 
     public bool IsHeapActive = true;
@@ -33,45 +27,35 @@ public class ScavengerBotMovement : MonoBehaviour
 
     void Start()
     {
-        GetComponent<ScrapHeapsShuttle>();
-      
+        GetComponent<ScrapHeapsShuttle>(); 
     }
     void Update()
     { 
-
-
         //Vector3 direction = scavp1.position - ScavengerBot.transform.position;
         if (scrapHeap.gameObject.activeInHierarchy) //forgott to get the bool conidition
         {
             // this.enabled = true;
             return;
-
             // Debug.Log("HeapActive");
         }
 
 
         if (scrapHeap.gameObject.activeInHierarchy == false)
         {
-
             IsDialogueStart = true;
 
             if (IsDialogueStart == true)
             {
-                this.transform.eulerAngles = new Vector3(0, 0, 180);
+                transform.eulerAngles = new Vector3(0, 0, 180);
                 TransitionCondition8.SetActive(true);
-
             }
-
-
-           
-            if (this.transform.position == Scavpos2.position)
+          
+            if (transform.position == Scavpos2.position)
             {
                 Debug.Log("AtP2");
-
                 this.enabled = false;
                 UIlinker7.SetActive(true);
                 TransitionCondition9.SetActive(true);
-
             }
 
             MovemnetLogic();
@@ -89,14 +73,10 @@ public class ScavengerBotMovement : MonoBehaviour
 
         }
         else if (Time.timeScale == 1.0f)
-        {
-        
-            
+        {    
                 this.transform.position = Vector3.MoveTowards(this.transform.position, scavp1.position, MoveSpeed * Time.deltaTime);
-            
-
         }
-       
+      
 
     }
 }

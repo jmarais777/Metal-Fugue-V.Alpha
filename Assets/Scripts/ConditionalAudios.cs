@@ -38,6 +38,7 @@ public class ConditionalAudios : MonoBehaviour
         TriggerHealthCritical();
         TriggerRechargeStation();
         TriggerArtifact();
+       // TriggerPowerDown();
         TriggerPowerDown();
         ButtonClicker();
 
@@ -87,6 +88,7 @@ public class ConditionalAudios : MonoBehaviour
 
     public void TriggerPowerDown()
     {
+       
         if (PowerDownCheck == true && _notPlayed == true)
         {
             CryocombsPowerDown.PlayOneShot(CryocombsPowerDown.clip);

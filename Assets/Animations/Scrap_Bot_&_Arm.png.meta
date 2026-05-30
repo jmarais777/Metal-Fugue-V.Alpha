@@ -103,28 +103,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Scrap_Bot_&_Arm_0
-      rect:
-        serializedVersion: 2
-        x: 419
-        y: 417
-        width: 386
-        height: 196
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9f4b3a67715719ca0800000000000000
-      internalID: -6011895283927763719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Scrap_Bot_&_Arm_1
       rect:
         serializedVersion: 2
@@ -133,7 +111,7 @@ TextureImporter:
         width: 108
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,7 +128,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 359d25692a0ab4d43ae37980585365fe
     internalID: 0
     vertices: []
     indices: 

@@ -1,10 +1,10 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/UI_Navigation_Menus/PauseMenu_Proto2.uss?fileID=7433441132597879392&amp;guid=a6e48943f2efc654ab84103e0856b010&amp;type=3"/>
-    <ui:VisualElement name="Pause_Border" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Temporary_Tablet.png?fileID=-3562032748082272255&amp;guid=afe15dbdfae11024cacef3fc1fabf50f&amp;type=3#Temporary_Tablet_0&quot;);">
-        <ui:VisualElement name="Container" enabled="true" class="PauseMenu-VisualElement" style="top: 17%; width: 86%; height: 71%; left: 6%;">
+    <Style src="project://database/Assets/UI%20Toolkit/UI_Navigation_Menus/PauseMenu_Proto2.uss?fileID=7433441132597879392&amp;guid=a6e48943f2efc654ab84103e0856b010&amp;type=3#PauseMenu_Proto2"/>
+    <ui:VisualElement name="Pause_Border" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Temporary_Tablet.png?fileID=-3562032748082272255&amp;guid=afe15dbdfae11024cacef3fc1fabf50f&amp;type=3#Temporary_Tablet_0&quot;); left: -1%; background-size: 83% 82%;">
+        <ui:VisualElement name="Container" enabled="true" class="PauseMenu-VisualElement" style="top: 22%; width: 72%; height: 59%; left: 13%;">
             <ui:Button text="RESUME" name="Resume" enabled="true" data-source-path="ButtonsNav" class="ButtonsNav"/>
             <ui:Button text="HOW TO PLAY" name="HowToButton" enabled="true" class="ButtonsNav"/>
-            <ui:Label text="GAME&#10;PAUSED" name="PauseLabel" class="Label PauseMenuTrue" style="color: rgb(77, 255, 0); right: -2%; -unity-font-definition: url(&quot;project://database/Assets/Fonts/AssetFonts/Quantico-Regular%20SDF.asset?fileID=11400000&amp;guid=707b0b7b590f1584d9a4b8385827c478&amp;type=2#Quantico-Regular SDF&quot;);"/>
+            <ui:Label text="GAME&#10;PAUSED" name="PauseLabel" class="Label PauseMenuTrue" style="color: rgb(77, 255, 0); right: -2%; -unity-font-definition: url(&quot;project://database/Assets/Fonts/AssetFonts/Quantico-Regular%20SDF.asset?fileID=11400000&amp;guid=707b0b7b590f1584d9a4b8385827c478&amp;type=2#Quantico-Regular SDF&quot;); top: -40%; border-top-width: -8px; border-right-width: -8px; border-bottom-width: -8px; border-left-width: -8px; width: 43%; letter-spacing: 12px;"/>
             <ui:Button text="EXIT TO MENU" name="ExitButton" enabled="true" class="ButtonsNav" style="top: -48%;"/>
         </ui:VisualElement>
     </ui:VisualElement>
