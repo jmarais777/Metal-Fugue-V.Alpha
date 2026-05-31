@@ -39,6 +39,7 @@ public class Dialogue6Real : MonoBehaviour
 
             }
         }
+    }
 
         void ShowMenu1()
         {
@@ -108,7 +109,7 @@ public class Dialogue6Real : MonoBehaviour
 
 
         }
-    }
+    
 }
 //Old dialogue update system
 /* if (DialogueIndex >= DialogueLines.Length)

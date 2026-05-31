@@ -56,6 +56,7 @@ public class ConditionalAudios : MonoBehaviour
         ButtonClicker();
         //TriggerReload();
         TriggerShot();
+        //TriggerEnemyShot();
 
        /* if (_previousEnergy < ForCurrentEnergy.CurrentEnergy)
         {

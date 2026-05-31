@@ -11,8 +11,9 @@ public class Lock : MonoBehaviour
     public GameObject FromSecurity;
     public GameObject SecurityGatePowerIndicator;
     public ConditionalAudios ForPowerDownCheck;
+    public GameObject ScavenegrHandOnScav;
 
-   // public GameObject SecurityGateUnlcoked;
+    // public GameObject SecurityGateUnlcoked;
     public GameObject bossTrig;
 
     public GameObject PowerButton;
@@ -45,13 +46,13 @@ public class Lock : MonoBehaviour
     void Update()
     {
       
-        if (ScavenegrHandInGame.activeInHierarchy || ScavenegrHandOnPlayer.activeInHierarchy)
+        if (ScavenegrHandInGame.activeInHierarchy == false || ScavenegrHandOnScav.activeInHierarchy == true)
         {
-            ToCryo.SetActive(false);
+            ToCryo.SetActive(true);
         }
         else
         {
-            ToCryo.SetActive(true);
+            ToCryo.SetActive(false);
         }
         if (IsPowerOn == true)
         {
@@ -59,11 +60,9 @@ public class Lock : MonoBehaviour
             Enemy_Move_Fin8.ForceField_Collider.enabled = false;
             Enemy_Move_Fin8.Player_Detection_Collider.enabled = false;
 
-            
-
             ToScrapYard.SetActive(false);
             ToSecurity1.SetActive(false);
-            FromSecurity.SetActive(false);
+            FromSecurity.SetActive(false);          
             SecurityGatePowerIndicator.SetActive(true);
             // SecurityGateUnlcoked.SetActive(false);
             if (bossTrig != null)

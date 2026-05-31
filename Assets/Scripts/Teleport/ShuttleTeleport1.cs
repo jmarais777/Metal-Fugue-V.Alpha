@@ -7,12 +7,12 @@ using UnityEngine;
 //Date: 06/04/2026
 //Availability: https://www.youtube.com/watch?v=ucqDDUSMuiY
 
-public class ShuttleTeleport : MonoBehaviour
+public class ShuttleTeleport1 : MonoBehaviour
 {
 
     public GameObject player;
 
-    public Transform destination;
+    public Transform destination_In_Scrap;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +21,7 @@ public class ShuttleTeleport : MonoBehaviour
         Debug.Log("Colliding with: " + collision.name);
         if (collision.CompareTag("Player"))
         {
-            player.transform.position = destination.position;
+            player.transform.position = destination_In_Scrap.position;
             Debug.Log("playerrreg");
         }
 

@@ -26,9 +26,9 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D RigBod;
 
     private Animator animator;
-    private AudioSource Walking;
+    public AudioSource Walking;
     public AudioSource Walking2;
-    public AudioSource Dashing;
+   public AudioSource Dashing;
     private Vector2 moveInput;
 
     Vector2 movement;
@@ -45,12 +45,13 @@ public class PlayerMovement : MonoBehaviour
     bool WalkB = true;
     bool WalkL = true;
 
+
     bool DashF = true;
     bool DashR = false;
     bool DashL = true;
     bool DashB = true;
 
-    bool _inScrapyard;
+   public bool _inScrapyard;
     public GameObject ToShuttle;
     bool _hasDashed;
 
@@ -59,6 +60,8 @@ public class PlayerMovement : MonoBehaviour
         RigBod = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         Walking = GetComponent<AudioSource>();
+        Walking2 = GetComponent<AudioSource>();
+
         _inScrapyard = true;
         _hasDashed = false;
         
@@ -155,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
             Walking2.mute = true;
         }
 
-        if (Input.GetKey(KeyCode.W) && _inScrapyard == false || Input.GetKey(KeyCode.A) && _inScrapyard == false || Input.GetKey(KeyCode.S) && _inScrapyard == false || Input.GetKey(KeyCode.D) && _inScrapyard == false)
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S)  || Input.GetKey(KeyCode.D) && _inScrapyard == false)
         {
             Walking.mute = false;
         }
@@ -244,7 +247,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _hasDashed = false;
         }
-    }
+    } 
 
     }
 
