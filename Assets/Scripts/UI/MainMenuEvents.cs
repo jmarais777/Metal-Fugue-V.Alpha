@@ -7,6 +7,7 @@ public class MainMenuEvents : MonoBehaviour
 {
     private UIDocument document;
     private Button button;
+    public ConditionalAudios ForButtonCheck;
    
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class MainMenuEvents : MonoBehaviour
 
     private void OnPlayGameCLick(ClickEvent evt)
     {
+        ForButtonCheck.ButtonCheck = true;
         SceneManager.LoadScene("HowToPlayPOPUP");
     
 
