@@ -9,10 +9,8 @@ public class ConditionalAudios : MonoBehaviour
     public AudioSource ArtifactSound;
     public AudioSource CryocombsPowerDown;
     public AudioSource EnergyShot;
-    public AudioSource EnemyEnergyShot;
     public AudioSource TurretReload;
     public AudioSource ButtonClick;
-    public AudioSource RobotDestroyed;
     public EnergyPool ForCurrentEnergy;
     private bool _healthCheck;
     public bool RechargeCheck;
@@ -20,13 +18,9 @@ public class ConditionalAudios : MonoBehaviour
     public bool PowerDownCheck;
     private bool _notPlayed;
     public bool ShotHappened;
-    public bool EnemyShot;
     public bool ReloadCheck;
     public bool ButtonCheck;
-    public bool enemydestroyed;
     private bool _hasClicked;
-    private bool _enemyHasShot;
-    private bool _enemyBoom;
     private bool _shooting;
     public bool IsReloading;
 
@@ -37,7 +31,6 @@ public class ConditionalAudios : MonoBehaviour
         _notPlayed = true;
         ButtonCheck = false;
         _hasClicked = false;
-        _enemyBoom = false;
         _shooting = false; 
         PowerDownCheck = false;
         ShotHappened = false;
@@ -126,21 +119,6 @@ public class ConditionalAudios : MonoBehaviour
         }
     }
 
-    public void TriggerEnemyShot()
-    {
-        if(EnemyShot == true)
-        {
-            EnemyEnergyShot.PlayOneShot(EnemyEnergyShot.clip);
-            _enemyHasShot = true;
-        }
-
-        if(_enemyHasShot == true)
-        {
-            EnemyShot = false;
-            _enemyHasShot = false;
-        }
-    }
-
     public void TriggerReload()
     {
         if(ReloadCheck == true)
@@ -168,21 +146,6 @@ public class ConditionalAudios : MonoBehaviour
         {
             ButtonCheck = false;
             _hasClicked = false;
-        }
-    }
-
-    public void DestroyedRobot()
-    {
-        if( enemydestroyed == true )
-        {
-            RobotDestroyed.PlayOneShot(RobotDestroyed.clip);
-            _enemyBoom = true;
-        }
-
-        if (_enemyBoom == true)
-        {
-            enemydestroyed = false;
-            _enemyBoom = false;
         }
     }
 }
