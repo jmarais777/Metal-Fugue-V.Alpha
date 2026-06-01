@@ -25,10 +25,14 @@ public class ArtifactPopup : MonoBehaviour
 
     public ConditionalAudios ForArtifactCheck;
 
+    public GameObject ThisArtifact;
+
+
 
 
     public void Start()
     {
+        // Artifact = GetComponent<UIDocument>();
         Artifact = GetComponent<UIDocument>();
     }
     public void Update()
@@ -47,7 +51,7 @@ public class ArtifactPopup : MonoBehaviour
            
             if (ArtAft <= proximity)
             {
-                ForArtifactCheck.ArtifactCheck = true;
+               // ForArtifactCheck.ArtifactCheck = true;
                 ShowMenu1();
                 ArtifactText();
                 artifacttext.text = Artifact_Text[0];
@@ -58,7 +62,7 @@ public class ArtifactPopup : MonoBehaviour
 
             if (ArtHope <= proximity)
             {
-                ForArtifactCheck.ArtifactCheck = true;
+               // ForArtifactCheck.ArtifactCheck = true;
                 ShowMenu1();
                 ArtifactText();
                 artifacttext.text = Artifact_Text[1];
@@ -69,7 +73,7 @@ public class ArtifactPopup : MonoBehaviour
 
             if (ArtDef <= proximity)
             {
-                ForArtifactCheck.ArtifactCheck = true;
+              //  ForArtifactCheck.ArtifactCheck = true;
                 ShowMenu1();
                 ArtifactText();
                 artifacttext.text = Artifact_Text[2];
@@ -81,7 +85,7 @@ public class ArtifactPopup : MonoBehaviour
 
             if (ArtFear <= proximity)
             {
-                ForArtifactCheck.ArtifactCheck = true;
+               // ForArtifactCheck.ArtifactCheck = true;
                 ShowMenu1();
                 ArtifactText();
                 artifacttext.text = Artifact_Text[3];
@@ -94,8 +98,11 @@ public class ArtifactPopup : MonoBehaviour
 
     void ShowMenu1()
     {
-        Artifact.enabled = true;
-        Time.timeScale = 0.0f;
+       
+       ThisArtifact.SetActive(true);
+        //Artifact.enabled = true;
+      
+      
         if (Artifact != null)
         {
             var root = Artifact.rootVisualElement;
@@ -104,14 +111,16 @@ public class ArtifactPopup : MonoBehaviour
             header = root.Q<Label>("Header");
         }
         back.RegisterCallback<ClickEvent>(BackButtonOnClick);
+        //Time.timeScale = 0.0f;
 
     }
     
     void BackButtonOnClick(ClickEvent evt)
     {
-        ForArtifactCheck.ButtonCheck = true;
-        Artifact.enabled = false;
-        Time.timeScale = 1.0f;
+        //ForArtifactCheck.ButtonCheck = true;
+        //Artifact.enabled = false;
+        ThisArtifact.SetActive(false);
+        //Time.timeScale = 1.0f;
     } 
     void ArtifactText()
         {

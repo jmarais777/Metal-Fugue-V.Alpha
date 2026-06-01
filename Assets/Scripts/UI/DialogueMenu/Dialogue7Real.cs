@@ -25,13 +25,15 @@ public class Dialogue7Real : MonoBehaviour
 
     public bool IsUiDisplaying;
    
-
+    public EnergyPool EnergyPool;
+    public int AmmoSave;
     private void Update()
     { 
-     if (IsUiDisplaying == true)
+     /*if (IsUiDisplaying == true)  
         {
-            Time.timeScale = 0.0f;
-        }
+        
+        } 
+     */
         if (UILinker_7_real != null && !ScavengerDialogueMenu7Object.activeSelf)
         {
             {
@@ -53,8 +55,12 @@ public class Dialogue7Real : MonoBehaviour
         void ShowMenu1()
         {
             ScavengerDialogueMenu7Object.SetActive(true);
-            IsUiDisplaying = true;
+
+            AmmoSave = EnergyPool.CurrentAmmo;
+            EnergyPool.CurrentAmmo = 0;
+
             Time.timeScale = 0.0f;
+            IsUiDisplaying = true;
             var Ui1 = ScavengerUIDOC.GetComponent<UIDocument>();
             if (Ui1 == null || Ui1.rootVisualElement == null)
             {
@@ -79,7 +85,8 @@ public class Dialogue7Real : MonoBehaviour
 
         void HideMenu1()
         {
-           
+          
+
             TransitionCondition9.SetActive(false);
             TransitionCondition10.SetActive(true);
             nextButton.SetEnabled(false);

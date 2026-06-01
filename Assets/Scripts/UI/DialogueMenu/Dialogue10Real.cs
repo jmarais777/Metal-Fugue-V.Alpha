@@ -24,7 +24,8 @@ public class Dialogue10Real : MonoBehaviour
     public GameObject TransitionCondition14;
     public bool isUiDisplaying2;
 
-
+    public EnergyPool EnergyPool;
+    public int AmmoSave;
 
     private void Update()
     {
@@ -57,6 +58,9 @@ public class Dialogue10Real : MonoBehaviour
 
         void ShowMenu1()
         {
+            AmmoSave = EnergyPool.CurrentAmmo;
+            EnergyPool.CurrentAmmo = 0;
+
             ScavengerDialogueMenu10Object.SetActive(true);
             isUiDisplaying2 = true;
             Time.timeScale = 0.0f;

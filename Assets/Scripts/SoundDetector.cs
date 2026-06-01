@@ -9,7 +9,6 @@ public class SoundDetector : MonoBehaviour
     public GameObject LampFrontLit_3;
     public GameObject LampFrontLit_4;
     public GameObject LampFrontLit_5;
-    public GameObject LampRight_2;
     public GameObject Wind_Turbine;
 
 
@@ -58,7 +57,7 @@ public class SoundDetector : MonoBehaviour
             LampFrontLit_5.GetComponent<AudioSource>().mute = false;
             Debug.Log("Light Detetcted");
         }
-        if (collision.CompareTag("LightFlicker"))
+        if (collision.CompareTag("WindMill"))
         {
 
             Wind_Turbine.GetComponent<AudioSource>().mute = false;

@@ -15,7 +15,7 @@ public class Ammo_Bar : MonoBehaviour
              ammo_bar = root.Q<ProgressBar>("AmmoBar");
         }
         ammo_bar.highValue = 10;
-        ammo_bar.lowValue = 1;                
+        ammo_bar.lowValue = 0;                
     }
     void Update()
     {

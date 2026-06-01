@@ -1,6 +1,5 @@
 using System.Reflection.Emit;
 using Unity.VisualScripting;
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -19,7 +18,7 @@ public class PauseCondition : MonoBehaviour
     public bool IsPaused = false;
     public GameObject TransitionCOndition_Pause1;
     public GameObject TransitionCOndition_Pause2;
-    public ConditionalAudios ForButtonCheck;
+   // public ConditionalAudios ForButtonCheck;
 
 
 
@@ -36,10 +35,9 @@ public class PauseCondition : MonoBehaviour
     }
     public void ShowPauseMenu()
     {
+        PauseMenu = GetComponent<UIDocument>();
         PauseMenu.enabled = true;
-        Time.timeScale = 0.0f;
-         PauseMenu = GetComponent<UIDocument>();
-
+        
         if (PauseMenu == null)
         {
             return;
@@ -47,6 +45,7 @@ public class PauseCondition : MonoBehaviour
 
         else if (PauseMenu != null)
         {
+            Time.timeScale = 0.0f;
             Debug.Log("VisualElement yes");
             var root = PauseMenu.rootVisualElement;
             resume = root.Q<Button>("Resume");
@@ -77,14 +76,14 @@ public class PauseCondition : MonoBehaviour
         Time.timeScale = 1.0f;
         PauseMenu.enabled = false;
         TransitionCOndition_Pause2.SetActive(false);
-        ForButtonCheck.ButtonCheck = true;
+        //ForButtonCheck.ButtonCheck = true;
         Debug.Log("clikyclicky");
     }
 
     void exitButtonOnClick (ClickEvent clk)
     {
         Time.timeScale = 1.0f;
-        ForButtonCheck.ButtonCheck = true;
+       // ForButtonCheck.ButtonCheck = true;
         SceneManager.LoadScene("MainMenu");
         PauseMenu.enabled = false;
     }
@@ -93,7 +92,7 @@ public class PauseCondition : MonoBehaviour
     {
         TransitionCOndition_Pause1.SetActive(true);
         PauseMenu.enabled = false;
-        ForButtonCheck.ButtonCheck = true;
+       // ForButtonCheck.ButtonCheck = true;
 
     }
 
