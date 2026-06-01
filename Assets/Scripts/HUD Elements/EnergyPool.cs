@@ -76,25 +76,27 @@ public class EnergyPool : MonoBehaviour
         //Energy subtraction check for a shot fired
 
        
-        if (ForIsShooting.IsShooting == true && Mouse.current.leftButton.wasPressedThisFrame)
+        if (/*ForIsShooting.IsShooting == true &&*/ Mouse.current.leftButton.wasPressedThisFrame && CurrentAmmo > 0)
         {
-            CurrentAmmo -= 1;
+            CurrentAmmo --;
             IsDraining = true;
             CurrentAmmo = Mathf.Clamp(CurrentAmmo, 0, _maxAmmo);
             Debug.Log(CurrentAmmo);
         }
         else {IsDraining = false;}
         if (ForIsBeingShot)
+        {
             CurrentEnergy -= 1;
-        CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0, MaxEnergy);
+            CurrentEnergy = Mathf.Clamp(CurrentEnergy, 0, MaxEnergy);
+        }
 
         if (CurrentEnergy == 0)
         {
             //Debug.Log("You Have Died");
-            SceneManager.LoadScene("GameOverREAL");
+            SceneManager.LoadScene("GameOver");
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && CurrentEnergy > 10 && CurrentAmmo != 10)
+        if (Input.GetKeyDown(KeyCode.R) && CurrentEnergy > 10 && CurrentAmmo < 10)
         {
             switch(CurrentAmmo)
             {

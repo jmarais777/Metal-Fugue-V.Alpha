@@ -13,6 +13,7 @@ public class ConditionalAudios : MonoBehaviour
     public AudioSource ButtonClick;
     public EnergyPool ForCurrentEnergy;
     private bool _healthCheck;
+    private bool HealthPlay;
     public bool RechargeCheck;
     public bool ArtifactCheck;
     public bool PowerDownCheck;
@@ -23,6 +24,7 @@ public class ConditionalAudios : MonoBehaviour
     private bool _hasClicked;
     private bool _shooting;
     public bool IsReloading;
+    private bool ArtifactPlaying;
 
     void Start()
     {
@@ -49,6 +51,7 @@ public class ConditionalAudios : MonoBehaviour
         ButtonClicker();
         //TriggerReload();
         TriggerShot();
+        //TriggerEnemyShot();
 
        /* if (_previousEnergy < ForCurrentEnergy.CurrentEnergy)
         {
@@ -61,15 +64,16 @@ public class ConditionalAudios : MonoBehaviour
 
     void TriggerHealthCritical()
     {
-        if(ForCurrentEnergy.CurrentEnergy <= 30 && _healthCheck == false)
+        if(ForCurrentEnergy.CurrentEnergy <= 30.0f && _healthCheck == false)
         {
-            HealthCritical.Play();
-            _healthCheck = true;
+            HealthCritical.PlayOneShot(HealthCritical.clip);
+            HealthPlay = true;
         }
 
-        if(ForCurrentEnergy.CurrentEnergy >= 31)
+        if(HealthPlay == true)
         {
             _healthCheck = false;
+            HealthPlay = false;
         }
     }
 
@@ -80,6 +84,7 @@ public class ConditionalAudios : MonoBehaviour
         if (RechargeCheck == true)
         {
             RechargeStations.Play();
+            RechargeCheck = false;
         } 
    
     }
@@ -88,8 +93,13 @@ public class ConditionalAudios : MonoBehaviour
     {
         if (ArtifactCheck == true)
         {
-            ArtifactSound.Play();
+            ArtifactSound.PlayOneShot(ArtifactSound.clip);
+            ArtifactPlaying = true;
+        }
+        else if (ArtifactPlaying == true)
+        {
             ArtifactCheck = false;
+            ArtifactPlaying = false;
         }
     }
 

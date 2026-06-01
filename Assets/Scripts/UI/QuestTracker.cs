@@ -38,27 +38,12 @@ public class QuestTracker : MonoBehaviour
     public GameObject ScavArmOnPlayer;
     public GameObject ScavengerArmOnScav;
     
-   public void Awake()
-    {
-        Questrack = GetComponent<UIDocument>();
-        if (Questrack != null)
-        {
-            var root = Questrack.rootVisualElement;
-            Questname_label = root.Q<Label>("QuestName");
-            Objective_label = root.Q<Label>("CurrentObjctive");
-        }       
-    }
+
 
     void Update()
     {
         //Begginings
-        StarterTimer -= Time.deltaTime;
-        if (StarterTimer <= 0)
-        {
-            IsQuestLine1 = true;
-            StarterTimer = 0;
-        }
-        
+    
         if (IsQuestLine1 == true)
         {
             QuestNames();
@@ -103,6 +88,14 @@ public class QuestTracker : MonoBehaviour
         
         if (Enemy == null)
         {
+            Questrack = GetComponent<UIDocument>();
+            if (Questrack != null)
+            {
+                var root = Questrack.rootVisualElement;
+                Questname_label = root.Q<Label>("QuestName");
+                Objective_label = root.Q<Label>("CurrentObjctive");
+
+            }
             CurrentObjectives();
             Objective_label.text = CurrentObjective[3];
             IsQ2ObjectiveUpdate2 = false;
@@ -213,6 +206,7 @@ public class QuestTracker : MonoBehaviour
         //Objective for 'Friend Or foe'
         CurrentObjective[3] = "Speak to the trapped robot";
         CurrentObjective[4] = "Defeat the security Bot.";
+        //
         CurrentObjective[5] = "Shoot the obstacle to free the robot";
         CurrentObjective[6] = "Meet Scavenger Bot inside the space shuttle when you are ready";
 

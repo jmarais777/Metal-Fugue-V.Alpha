@@ -20,7 +20,7 @@ public class Dialogue1Real : MonoBehaviour
     public int DialogueIndex = 0;
 
     public GameObject TransitionCondition1;
-    public QuestTracker quest;
+    public QuestFinal quest;
 
     private void Update()
     {
@@ -77,7 +77,7 @@ void ShowMenu1()
         TransitionCondition1.SetActive(true);
         Time.timeScale = 1.0f;
         //quest stuff
-        quest.IsQ2ObjectiveUpdate2 = true;
+        quest.QuestObjectives_Enum = QuestFinal.QuestObjective.O4;
      
     }
     void NextButtonOnClick()

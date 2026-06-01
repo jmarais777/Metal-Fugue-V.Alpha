@@ -8,7 +8,7 @@ public class Victory_UI : MonoBehaviour
     public UIDocument Vic_UI_Doc;
     public Button MainMen_Button;
     public Label Vict_Label;
-    public ConditionalAudios ForButtonCheck;
+    //public ConditionalAudios ForButtonCheck;
 
     void Start()
     {
@@ -31,7 +31,7 @@ public class Victory_UI : MonoBehaviour
 
     public void Vict_Button_Onlick(ClickEvent clk)
     {
-        ForButtonCheck.ButtonCheck = true;
+        //ForButtonCheck.ButtonCheck = true;
         SceneManager.LoadScene("MainMenu");
     }
 }

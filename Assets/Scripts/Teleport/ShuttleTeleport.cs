@@ -9,13 +9,10 @@ using UnityEngine;
 
 public class ShuttleTeleport : MonoBehaviour
 {
-    public Transform destination;
-    public Transform ScavengerDestination;
 
     public GameObject player;
-    public GameObject scav;
 
-
+    public Transform destination;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,18 +21,8 @@ public class ShuttleTeleport : MonoBehaviour
         Debug.Log("Colliding with: " + collision.name);
         if (collision.CompareTag("Player"))
         {
-
             player.transform.position = destination.position;
             Debug.Log("playerrreg");
-
-
-        }
-        if (collision.CompareTag("ScavNew"))
-        {
-
-            scav.transform.position = ScavengerDestination.position;
-            Debug.Log("Scavengerreg");
-
         }
 
 

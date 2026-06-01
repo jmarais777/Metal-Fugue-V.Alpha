@@ -17,9 +17,12 @@ public class Dialogue9Real : MonoBehaviour
     public string[] DialogueLines;
     public int DialogueIndex = 0;
 
-    public QuestTracker quest;
+    public QuestFinal quest;
     public GameObject TransitionCondition13;
     public bool isUiDisplaying1;
+
+    public Dialogue7Real Dia7;
+    public EnergyPool EnergyPool_Scr;
 
     private void Update()
     {
@@ -33,7 +36,7 @@ public class Dialogue9Real : MonoBehaviour
                 if (TransitionCondition13.activeSelf == true)
                 {
                     ShowMenu1();
-                   
+                    quest.QuestObjectives_Enum = QuestFinal.QuestObjective.O7;
                 }
 
 
@@ -42,6 +45,7 @@ public class Dialogue9Real : MonoBehaviour
 
         void ShowMenu1()
         {
+         
             ScavengerDialogueMenu9Object.SetActive(true);
             isUiDisplaying1 = true;
             Time.timeScale = 0.0f;
@@ -69,13 +73,15 @@ public class Dialogue9Real : MonoBehaviour
 
         void HideMenu1()
         {
-          
+
+            EnergyPool_Scr.CurrentAmmo = Dia7.AmmoSave;
+
             TransitionCondition13.SetActive(false);
             nextButton.SetEnabled(false);
             ScavengerDialogueMenu9Object.SetActive(false);
             Time.timeScale = 1.0f;
             isUiDisplaying1 = false;
-            quest.IsQ2ObjectiveUpdate5 = true;
+
         } 
 
 
@@ -98,6 +104,7 @@ public class Dialogue9Real : MonoBehaviour
             else if (DialogueIndex >= DialogueLines.Length)
             {
                 HideMenu1();
+        
                 return;
             }
 

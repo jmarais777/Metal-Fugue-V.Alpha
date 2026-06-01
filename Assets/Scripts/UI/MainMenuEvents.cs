@@ -7,13 +7,16 @@ public class MainMenuEvents : MonoBehaviour
 {
     private UIDocument document;
     private Button button;
-    public ConditionalAudios ForButtonCheck;
+    private Button QuitToD;
+  //  public ConditionalAudios ForButtonCheck;
    
     private void Awake()
     {
         document = GetComponent<UIDocument>();
         button = document.rootVisualElement.Q("Startgame") as Button;
+        QuitToD = document.rootVisualElement.Q("QuitToDesktop") as Button;
         button.RegisterCallback<ClickEvent>(OnPlayGameCLick);
+        QuitToD.RegisterCallback<ClickEvent>(OnExitButtonClick);
     }
 
     private void OnDisable()
@@ -23,12 +26,15 @@ public class MainMenuEvents : MonoBehaviour
 
     private void OnPlayGameCLick(ClickEvent evt)
     {
-        ForButtonCheck.ButtonCheck = true;
+        //ForButtonCheck.ButtonCheck = true;
         SceneManager.LoadScene("HowToPlayPOPUP");
-    
-
     }
-   
+    private void OnExitButtonClick(ClickEvent evt)
+    {
+        //ForButtonCheck.ButtonCheck = true;
+        Application.Quit();
+    }
+
 
 }
 

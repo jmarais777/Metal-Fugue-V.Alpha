@@ -16,7 +16,7 @@ public class Dialogue6Real : MonoBehaviour
     public float InteractProximity = 3.0f;
     public string[] DialogueLines;
     public int DialogueIndex = 0;
-    public QuestTracker quest;
+    public QuestFinal quest;
 
 
    // public GameObject ScavenegrHeapGhostCondition;
@@ -34,17 +34,21 @@ public class Dialogue6Real : MonoBehaviour
                 if (TransitionCondition8.activeSelf == true)
                 {
                     ShowMenu1();
+                 
                 }
 
 
             }
         }
+    }
 
         void ShowMenu1()
         {
             ScavengerDialogueMenu6Object.SetActive(true);
+        
 
-            Time.timeScale = 0.0f;
+
+        Time.timeScale = 0.0f;
             var Ui1 = ScavengerUIDOC.GetComponent<UIDocument>();
             if (Ui1 == null || Ui1.rootVisualElement == null)
             {
@@ -78,7 +82,7 @@ public class Dialogue6Real : MonoBehaviour
             ScavengerDialogueMenu6Object.SetActive(false);
             //ScavenegrHeapGhostCondition.SetActive(false);
             Time.timeScale = 1.0f;
-            quest.IsQ2ObjectiveUpdate4 = true;
+ 
 
 
 }
@@ -108,7 +112,7 @@ public class Dialogue6Real : MonoBehaviour
 
 
         }
-    }
+    
 }
 //Old dialogue update system
 /* if (DialogueIndex >= DialogueLines.Length)

@@ -19,6 +19,6 @@ public class HowToPlayPOPUP : MonoBehaviour
     }
   void continButtonOnClick(ClickEvent clk)
     {
-        SceneManager.LoadScene("Proto2ScrapBlocking");
+        SceneManager.LoadScene("GAME");
     }
 }

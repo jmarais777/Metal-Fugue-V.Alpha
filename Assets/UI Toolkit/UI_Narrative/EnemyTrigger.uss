@@ -1,4 +1,4 @@
- :root {
+:root {
     justify-content: center;
     align-items: center;
     align-self: flex-start;
@@ -19,4 +19,5 @@
     justify-content: flex-start;
     -unity-font-style: normal;
     -unity-font-definition: resource("FlatSkin/Font/Roboto-ThinItalic");
+    font-size: 35px;
 }

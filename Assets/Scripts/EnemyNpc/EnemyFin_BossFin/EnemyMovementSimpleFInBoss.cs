@@ -39,7 +39,7 @@ public class EnemyMovementFinalFinBoss : MonoBehaviour
     public  bool isWalkingB = false;
     public bool isWalkingL = false;
 
-    public ConditionalAudios ForEnemyDestroyed;
+    public EnemyAudiosboss AudioBoss;
 
 
     public enum EnemyMovementType
@@ -192,7 +192,7 @@ public void FixedUpdate()
         yield return new WaitForSeconds(0.1f);
         Enem_Detection_Light.intensity = 1f;
         yield return new WaitForSeconds(0.1f);
-        ForEnemyDestroyed.enemydestroyed = true;
+        //AudioBoss.enemydestroyed = true;
         Enem_Detection_Light.intensity = 2f;
         Destroy(this.gameObject);
         //this.gameObject.SetActive(false);

@@ -9,9 +9,11 @@ public class Barks : MonoBehaviour
    public string[] Barks_Str;
     public UIDocument Barks_UiDoc;
     public Label Barks_Label;
-    public List<GameObject> Bark_Objects = new List<GameObject>();
+    // public List<GameObject> Bark_Objects = new List<GameObject>();
+    public GameObject Bark_0;
 
-    void Start()
+
+    void Awake ()
     {
         Barks_UiDoc = GetComponent<UIDocument>();
         if (Barks_UiDoc == null )
@@ -29,7 +31,8 @@ public class Barks : MonoBehaviour
     {
         if(collision.gameObject.name == "Bark_0")
         {
-            Bark_Text();
+    
+    
             StartCoroutine(Bark_Popup0());
         }
         if(collision.gameObject.name == "Bark_1")
@@ -61,7 +64,8 @@ public class Barks : MonoBehaviour
     }
     public IEnumerator Bark_Popup0()
     {
-        Bark_Objects[0].SetActive(false);
+        Bark_Text();
+        Bark_0.SetActive(false);
         Barks_Label.text = Barks_Str[0];
         yield return new WaitForSeconds(3);
         Barks_Label.text = null;
@@ -69,7 +73,7 @@ public class Barks : MonoBehaviour
     }
     public IEnumerator Bark_Popup1()
     {
-        Bark_Objects[1].SetActive(false);
+       // Bark_Objects[1].SetActive(false);
         Barks_Label.text = Barks_Str[1];
         yield return new WaitForSeconds(3);
         Barks_Label.text = null;
@@ -77,7 +81,7 @@ public class Barks : MonoBehaviour
     }
     public IEnumerator Bark_Popup2()
     {
-        Bark_Objects[2].SetActive(false);
+      //  Bark_Objects[2].SetActive(false);
         Barks_Label.text = Barks_Str[2];
         yield return new WaitForSeconds(3);
         Barks_Label.text = null;
@@ -85,7 +89,7 @@ public class Barks : MonoBehaviour
     }
     public IEnumerator Bark_Popup3()
     {
-        Bark_Objects[3].SetActive(false);
+       // Bark_Objects[3].SetActive(false);
         Barks_Label.text = Barks_Str[3];
         yield return new WaitForSeconds(3);
         Barks_Label.text = null;
@@ -93,7 +97,7 @@ public class Barks : MonoBehaviour
     }
     public IEnumerator Bark_Popup4()
     {
-        Bark_Objects[4].SetActive(false);
+      //  Bark_Objects[4].SetActive(false);
         Barks_Label.text = Barks_Str[4];
         yield return new WaitForSeconds(3);
         Barks_Label.text = null;
