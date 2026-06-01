@@ -42,6 +42,7 @@ TagManager:
   - RecallLayout_Defualt
   - MainHeaps
   - Walk2
+  - WindMill
   layers:
   - Default
   - TransparentFX

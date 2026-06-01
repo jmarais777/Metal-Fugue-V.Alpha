@@ -11,7 +11,7 @@
 }
 
 .Button {
-    top: 2%;
+    top: 27%;
     width: 28%;
     height: 8%;
     left: 7%;

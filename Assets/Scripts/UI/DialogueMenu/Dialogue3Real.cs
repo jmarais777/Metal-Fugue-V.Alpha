@@ -20,6 +20,7 @@ public class Dialogue3Real : MonoBehaviour
 
     public EnemyMovementFinalFin10 Enemy_Move;
     public GameObject PlayerWeapon;
+    public ShootMech ShootScr;
 
     public GameObject TransitionCondition4;
 
@@ -71,6 +72,8 @@ public class Dialogue3Real : MonoBehaviour
             TransitionCondition4.SetActive(false);
             nextButton.SetEnabled(false);
             ScavengerDialogueMenu3Object.SetActive(false);
+            ShootScr.enabled = true;
+            PlayerWeapon.SetActive(true);
             Time.timeScale = 1.0f;
             ShowGameObject();
         }

@@ -4,7 +4,7 @@
         <ui:VisualElement name="VisualElement" class="VisCont" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; height: 71%; width: 87%; top: 17%; flex-basis: initial; flex-shrink: initial; flex-grow: initial; left: 5%;">
             <ui:Label text="ARTIFACT NAME&#10;" name="Header" class="Header"/>
             <ui:Label text="wOW THE SUN IS SO VERBRIGHT TODAY I LOVE THE #10 SUN SO MUCH WWOW WEEE JEEE WILLLIECKERS THIS PLACE HOLDER TEXT IS SO GREAT YES VERY #10MUCH DO LOVE THAT " name="Label" class="ArtifactText"/>
-            <ui:Button text="CLOSE MENU" name="BackToGame" data-source-path="button" class="Button ButtonsNav"/>
+            <ui:Button text="CLOSE MENU" name="BackToGame" data-source-path="button" class="Button ButtonsNav" style="top: 23%;"/>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -32,8 +32,6 @@ public class Player_Dialogue4 : MonoBehaviour
             }
         }
 
-
-
     }
 
 
@@ -72,9 +70,6 @@ public class Player_Dialogue4 : MonoBehaviour
         TransitionCondition10.SetActive(false);
         TransitionCondition11.SetActive(true);
         Time.timeScale = 1.0f;
-     
-       
-
     }
 
 

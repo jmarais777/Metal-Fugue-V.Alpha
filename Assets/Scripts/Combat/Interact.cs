@@ -32,7 +32,7 @@ public class Interact : MonoBehaviour
 
     public EnergyPool CurrentEnergyPool;
     public GameObject PowerButton;
-    public QuestTracker quest;
+    public QuestFinal quest;
     public EnemyMovementFinalFin1 Enemy_Move_fin;
 
     public ConditionalAudios ForRechargeCheck;
@@ -95,6 +95,7 @@ public class Interact : MonoBehaviour
                 Debug.Log("Arm");
                 ScavengerArmIngame.SetActive(false);
                 ScavengerArmOnPlayer.SetActive(true);
+                quest.QuestObjectives_Enum = QuestFinal.QuestObjective.O9;
             }
 
 
@@ -118,12 +119,10 @@ public class Interact : MonoBehaviour
                 //these are just lighting controlls.
                 CorticalProcessorLight.pointLightInnerRadius = 2.63f;
                 CorticalProcessorLight.pointLightOuterRadius = 8.6f;
+                quest.QuestObjectives_Enum = QuestFinal.QuestObjective.O3;
             }
 
-            if (CorticalProcessor.activeSelf == false)
-            {
-                quest.IsQ1ObjectiveUpdate2 = true ;
-            }
+         
 
            
         }

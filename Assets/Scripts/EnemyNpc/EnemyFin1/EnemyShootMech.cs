@@ -68,7 +68,7 @@ public class EnemySHootMech : MonoBehaviour
         {
            
             Instantiate(EnemyBullets, FirePoint.position, FirePoint.rotation);
-            ForEnemyShot.EnemyShot = true;
+         
             BulletSpawnRate = Time.time + FireRate;
 
         }

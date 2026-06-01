@@ -26,9 +26,9 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D RigBod;
 
     private Animator animator;
-    private AudioSource Walking;
+    public AudioSource Walking;
     public AudioSource Walking2;
-    public AudioSource Dashing;
+   public AudioSource Dashing;
     private Vector2 moveInput;
 
     Vector2 movement;
@@ -45,12 +45,20 @@ public class PlayerMovement : MonoBehaviour
     bool WalkB = true;
     bool WalkL = true;
 
+
     bool DashF = true;
     bool DashR = false;
     bool DashL = true;
     bool DashB = true;
 
-    bool _inScrapyard;
+  // public bool _inScrapyard;
+    public enum WalkingSoundState
+    {
+        Walking,
+        Walking2,
+        HUSH,
+    }
+    public WalkingSoundState Walk_State;
     public GameObject ToShuttle;
     bool _hasDashed;
 
@@ -59,7 +67,9 @@ public class PlayerMovement : MonoBehaviour
         RigBod = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         Walking = GetComponent<AudioSource>();
-        _inScrapyard = true;
+        Walking2 = GetComponent<AudioSource>();
+
+       // _inScrapyard = true;
         _hasDashed = false;
         
     }
@@ -68,8 +78,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.W) && Walk_State == WalkingSoundState.Walking2|| Input.GetKey(KeyCode.A) && Walk_State == WalkingSoundState.Walking2 || Input.GetKey(KeyCode.S) && Walk_State == WalkingSoundState.Walking2 || Input.GetKey(KeyCode.D) && Walk_State == WalkingSoundState.Walking2)
+        {
+            Walking2.mute = false;
+        }
+        else
+        {
+            Walking2.mute = true;
+        }
 
-            DashSound();
+
+        DashSound();
         
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -140,31 +159,35 @@ public class PlayerMovement : MonoBehaviour
      
         }
 
-       
+
 
 
 
 
         //Sound Conditions
-        if (Input.GetKey(KeyCode.W) && _inScrapyard == true || Input.GetKey(KeyCode.A) && _inScrapyard == true || Input.GetKey(KeyCode.S) && _inScrapyard == true || Input.GetKey(KeyCode.D) && _inScrapyard == true) 
-        {
-            Walking2.mute = false;       
-        }
-        else
-        {
-            Walking2.mute = true;
-        }
+        /* if (Input.GetKey(KeyCode.W) && _inScrapyard == true || Input.GetKey(KeyCode.A) && _inScrapyard == true || Input.GetKey(KeyCode.S) && _inScrapyard == true || Input.GetKey(KeyCode.D) && _inScrapyard == true) 
+         {
+             Walking.mute = true;       
+         }
+         else
+         {
+             Walking.mute = false;
+         }
 
-        if (Input.GetKey(KeyCode.W) && _inScrapyard == false || Input.GetKey(KeyCode.A) && _inScrapyard == false || Input.GetKey(KeyCode.S) && _inScrapyard == false || Input.GetKey(KeyCode.D) && _inScrapyard == false)
-        {
-            Walking.mute = false;
-        }
-        else
-        {
-            Walking.mute = true;
-        }
+         if (Input.GetKey(KeyCode.W) && _inScrapyard == false  || Input.GetKey(KeyCode.A) && _inScrapyard == false || Input.GetKey(KeyCode.S) && _inScrapyard == false || Input.GetKey(KeyCode.D) && _inScrapyard == false)
+         {
+             Walking2.mute = false;
+         }
+         else
+         {
+             Walking2.mute = true;
+         }*/
 
         //mapping movement controls for dash
+  
+
+      
+        
         if (IsDashing)
         {
             return;
@@ -207,6 +230,15 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 
+
+    public void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.name == "WalkCollider")
+        {
+            Walk_State = WalkingSoundState.Walking2;
+        }
+    }
+    /*
     public void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Walk2"))
@@ -230,7 +262,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _inScrapyard = true;
         }
-    }
+    }*/
 
     public void DashSound()
     {
@@ -244,7 +276,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _hasDashed = false;
         }
-    }
+    } 
 
     }
 

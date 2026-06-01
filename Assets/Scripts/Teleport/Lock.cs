@@ -11,8 +11,10 @@ public class Lock : MonoBehaviour
     public GameObject FromSecurity;
     public GameObject SecurityGatePowerIndicator;
     public ConditionalAudios ForPowerDownCheck;
+    public GameObject ScavenegrHandOnScav;
+    public GameObject Lock_toCryocombs;
 
-   // public GameObject SecurityGateUnlcoked;
+    // public GameObject SecurityGateUnlcoked;
     public GameObject bossTrig;
 
     public GameObject PowerButton;
@@ -21,7 +23,7 @@ public class Lock : MonoBehaviour
     //public EnemyMovement Bossmove;
    // public EnemySHootMech Bossshoot;
     public GameObject CryCombsAudioCondition;
-    public QuestTracker quest;
+    public QuestFinal quest;
     public GameObject Quest_OutOfTheFryingPan_Objective1;
 
     public EnemyMovementFinalFin8 Enemy_Move_Fin8;
@@ -40,18 +42,21 @@ public class Lock : MonoBehaviour
     private void Start()
     {
         IsPowerOn = true;
+
     }
     // Update is called once per frame
     void Update()
     {
       
-        if (ScavenegrHandInGame.activeInHierarchy || ScavenegrHandOnPlayer.activeInHierarchy)
+        if (ScavenegrHandInGame.activeInHierarchy == false || ScavenegrHandOnScav.activeInHierarchy == true)
         {
-            ToCryo.SetActive(false);
+            ToCryo.SetActive(true);
+            Lock_toCryocombs.SetActive(false);
         }
         else
         {
-            ToCryo.SetActive(true);
+            ToCryo.SetActive(false);
+          
         }
         if (IsPowerOn == true)
         {
@@ -59,11 +64,9 @@ public class Lock : MonoBehaviour
             Enemy_Move_Fin8.ForceField_Collider.enabled = false;
             Enemy_Move_Fin8.Player_Detection_Collider.enabled = false;
 
-            
-
             ToScrapYard.SetActive(false);
             ToSecurity1.SetActive(false);
-            FromSecurity.SetActive(false);
+            FromSecurity.SetActive(false);          
             SecurityGatePowerIndicator.SetActive(true);
             // SecurityGateUnlcoked.SetActive(false);
             if (bossTrig != null)
@@ -80,7 +83,8 @@ public class Lock : MonoBehaviour
             ToSecurity1.SetActive(true);
             FromSecurity.SetActive(true);
             Quest_OutOfTheFryingPan_Objective1.SetActive(true);
-            quest.IsQ2ObjectiveUpdate11 = true;
+            SecurityGatePowerIndicator.SetActive(false);
+
             //  SecurityGateUnlcoked.SetActive(true);
             if (bossTrig != null)
             { bossTrig.SetActive(true); }
@@ -95,14 +99,15 @@ public class Lock : MonoBehaviour
             if (PowBut <= proximity)
             { 
                    IsPowerOn = false;
-                ForPowerDownCheck.TriggerPowerDown();
-                    Debug.Log("PowerOff");
+                ForPowerDownCheck.PowerDownCheck = true;
+                quest.QuestObjectives_Enum = QuestFinal.QuestObjective.O13;
+                Debug.Log("PowerOff");
 
             }
             if (!IsPowerOn && secgate<= proximity)
             {
                 Debug.Log("Yippe you did it!!");
-                SceneManager.LoadScene("VictoryScreen");
+                SceneManager.LoadScene("Victory");
             }
            
         }
